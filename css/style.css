@@ -14,7 +14,7 @@ html {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    height: 600px;
+    height: 60vh;
 }
 
 .clicker {
@@ -28,7 +28,7 @@ html {
 }
 
 .img-wrap {
-    height: 300px;
+    height: 50%;
     text-align: center;
     background-image: url('../img/zubr.png');
     background-size: contain;
@@ -58,7 +58,9 @@ html {
     height: 100%;
 }
 
-.menu button {
+.upgrades,
+.stats,
+.achievements {
     position: relative;
     top: 1px;
     width: 25%;
@@ -71,7 +73,7 @@ html {
     cursor: pointer;
 }
 
-#active {
+.active {
     background-color: white;
     color: black;
     border-left: 2px solid black;
@@ -79,8 +81,25 @@ html {
     border-right: 2px solid black;
 }
 
+
 .menu-div {
     height: 100%;
     border: 2px solid black;
     border-radius: 0 5px 5px 5px;
+    overflow: auto;
 }
+
+
+/* 
+.menu-div div {
+    width: 100%;
+    height: 150px;
+    border: 1px solid black;
+} */
+
+/* 
+@media screen and (max-width: 750px) {
+    .wrap {
+        flex-direction: column;
+    }
+} */
