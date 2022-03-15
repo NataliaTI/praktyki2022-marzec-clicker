@@ -3,3 +3,84 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: 600px;
+}
+
+.clicker {
+    margin-right: 40px;
+}
+
+.counter {
+    text-align: center;
+    margin-bottom: 55px;
+    font-size: 35px;
+}
+
+.img-wrap {
+    height: 300px;
+    text-align: center;
+    background-image: url('../img/zubr.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.img-wrap:hover {
+    transform: scale(1.2);
+}
+
+/* .img {
+    text-align: center;
+    background-image: url('../img/zubr.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+} */
+
+
+
+.menu {
+    width: 500px;
+    /* border: 2px solid black; */
+    height: 100%;
+}
+
+.menu button {
+    position: relative;
+    top: 1px;
+    width: 25%;
+    padding: 10px 5px;
+    margin-right: 5px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 5px 5px 0 0;
+    color: white;
+    cursor: pointer;
+}
+
+#active {
+    background-color: white;
+    color: black;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.menu-div {
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 0 5px 5px 5px;
+}
