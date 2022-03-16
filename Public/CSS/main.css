@@ -63,7 +63,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
 .img-wrap {
     height: 50%;
     text-align: center;
-    background-image: url('../img/zubr.png');
+    background-image: url('../Images/zubr.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
