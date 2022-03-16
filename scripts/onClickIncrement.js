@@ -1,7 +1,7 @@
 const counterElement = document.getElementById('counter');
 const counterButtonElement = document.getElementById('counter-button');
 
-let counter = 997;
+let counter = 0;
 let suffix = counter;
 
 
