@@ -163,32 +163,79 @@ body::-webkit-scrollbar-thumb:window-inactive {
     width: 100%;
 }
 
-.menu-div-upgrades .test,
+/* .menu-div-upgrades .test,
 .menu-div-achievements .test,
 .menu-div-stats .test {
     width: 100%;
     height: 150px;
     border-bottom: 1px solid black;
+} */
+
+.test-upgrade {
+    /* display: none; */
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid black;
 }
+
 
 .menu-div-active {
     display: block;
 }
 
-#upgrade1 {
+/* #upgrade1, */
+.test-upgrade {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     cursor: pointer;
     width: 100%;
     height: 150px;
     border-bottom: 1px solid black;
     cursor: pointer;
-
 }
 
-#upgrade1 .upgrade1-div {}
+
+.menu-div-achievements {
+    /* display: none; */
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid black;
+}
+
+.test-achievements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid black;
+}
+
+
+
+
+.menu-div-stats {
+    /* display: block; */
+    width: 100%;
+    height: 60px;
+    /* border-bottom: 1px solid black; */
+}
+
+.test-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+
 
 /* 
 @media screen and (max-width: 750px) {
