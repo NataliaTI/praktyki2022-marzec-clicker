@@ -2,6 +2,7 @@
 
  
 //  let counter = 0;
+// 123
  let upgradeLevel = 0;
  let upgradeCost = 10;
  let autoClick = 0;
