@@ -7,6 +7,7 @@
  let autoClick = 0;
 
 
+ 
 function menelUpgrade()
 {
      if(counter>=upgradeCost)
