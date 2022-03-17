@@ -1,5 +1,4 @@
 var a = achievements[i];
-
 function onClickHandler() {
     counter++;
     changeCounterElementText(counter);

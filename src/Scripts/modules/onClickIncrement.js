@@ -12,7 +12,7 @@ function changeCounterElementText(value) {
 }
 
 function onClickHandler() {
-    counter++;
+    counter ++;
     changeCounterElementText(counter);
 }
 
