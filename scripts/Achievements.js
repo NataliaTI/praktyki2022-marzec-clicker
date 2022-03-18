@@ -1,6 +1,6 @@
 Achievements = function()
 {
-	var array = {},
+	let array = {},
 		_localStorageKey,
 	
 	initialize = function(localStorageKey)
@@ -22,15 +22,15 @@ Achievements = function()
 	
 	getCount = function()
 	{
-		var count = 0;
-		for (var i in array) count++;
+		let count = 0;
+		for (let i in array) count++;
 		return count;
 	},
 	
 	getUnlockedCount = function()
 	{
-		var count = 0;
-		for (var i in array)
+		let count = 0;
+		for (let i in array)
 		{
 			if (array[i]["active"]) count++;
 		}
@@ -39,7 +39,7 @@ Achievements = function()
 	
 	clear = function()
 	{
-		for (var i in array)
+		for (let i in array)
 		{
 			if (array[i]["active"]) array[i]["active"] = false;
 		}
@@ -47,8 +47,8 @@ Achievements = function()
 	
 	list = function()
 	{
-		var result = "";
-		for (var i in array)
+		let result = "";
+		for (let i in array)
 		{
 			if (array[i]["active"]) result += '<div class="achievement"><span class="title">' + i + '</span><br /><span class="details">' + array[i]["description"] + '</span></div><br /><br />';
 			else result += '<div class="achievement locked"><span class="title">' + i + '</span><br /><span class="details">' + array[i]["description"] + '</span></div><br /><br />';

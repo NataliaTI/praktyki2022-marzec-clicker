@@ -8,24 +8,6 @@
     <title>Clicker</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css\osiag.css" />
-
-    <script>
-        $(document).ready(function()
-        {
-            Achievements.initialize('myGame');
-            Achievements.register('I clicked a button', '...and I liked it');
-            Achievements.register('Second button', 'This button is just for show.');
-        });
-        
-        
-        function toggleList()
-        {
-            $('#list').toggle('slow');
-            $('#list').html(Achievements.list);
-        }
-      </script>
 
 </head>
 
@@ -79,21 +61,8 @@
     </div>
     <!-- <script src="praktyki2022-marzec-clicker\formatowanie.js"></script> -->
     <script src="scripts/onClickIncrement.js"></script>
-    <script src="scripts\Achievements.js"></script>
+    <script src="../praktyki2022-marzec-clicker/scripts/Achievements.js"></script>
 
-    <div id="content">
-        <input name="Button1" type="button" value="Click for Achievement One" onclick="Achievements.show('I clicked a button');"><br />
-        <input name="Button2" type="button" value="Click for Achievement Two" onclick="Achievements.show('Second button');"><br />
-        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br />
-        <br />
-        <input name="Button4" type="button" value="List achievements" onclick="toggleList();"><br />
-      
-        <div id="list">
-            
-        </div>
-      </div>
-    
-      <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
 </body>
 
 </html>
