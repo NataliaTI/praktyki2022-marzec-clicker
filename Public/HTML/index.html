@@ -10,9 +10,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <script>
+        $(document).ready(function () {
+            Achievements.initialize('myGame');
+            Achievements.register('I clicked a button', '...and I liked it');
+            Achievements.register('Second button', 'This button is just for show.');
+        });
+
+
+        function toggleList() {
+            $('#list').toggle('slow');
+            $('#list').html(Achievements.list);
+        }
+    </script>
+
     <div class="wrap">
         <section class="clicker">
             <h1 id="counter" class="clicker__counter">0 $</h1>
@@ -101,6 +117,28 @@
     <script src="../../src/Scripts/modules/achivments.js"></script>
     <script src="../../Public/index.js"></script>
     <script src="../../src/Scripts/modules/menu.js"></script>
+    <<<<<<< HEAD=======<script src="../../src/Scripts/modules/Achievements.js">
+        </script>
+
+        <div id="content">
+            <input name="Button1" type="button" value="Click for Achievement One"
+                onclick="Achievements.show('I clicked a button');"><br />
+            <input name="Button2" type="button" value="Click for Achievement Two"
+                onclick="Achievements.show('Second button');"><br />
+            <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br />
+            <br />
+            <input name="Button4" type="button" value="List achievements" onclick="toggleList();"><br />
+
+            <div id="list">
+
+            </div>
+        </div>
+
+        <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br /><span id="text">Some
+                text</span></div>
+
+
+        >>>>>>> 899f31af113fe0beb489af79c72011a82c4dff08
 </body>
 
 </html>
