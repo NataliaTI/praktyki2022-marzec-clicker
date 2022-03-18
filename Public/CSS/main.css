@@ -45,22 +45,22 @@ body::-webkit-scrollbar-thumb:window-inactive {
 
 .clicker {
     margin-right: 40px;
-    width: 150px;
+    width: 200px;
 }
 
-.counter {
+.clicker__counter {
     text-align: center;
     font-size: 35px;
 }
 
-.multiplier {
+.clicker__multiplier {
     color: rgb(80, 80, 80);
     font-size: 14px;
     text-align: center;
     margin-bottom: 55px;
 }
 
-.img-wrap {
+.clicker-img {
     height: 50%;
     text-align: center;
     background-image: url('../Images/zubr.png');
@@ -71,18 +71,9 @@ body::-webkit-scrollbar-thumb:window-inactive {
     transition: .2s;
 }
 
-.img-wrap:hover {
+.clicker-img:hover {
     transform: scale(1.2);
 }
-
-/* .img {
-    text-align: center;
-    background-image: url('../img/zubr.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-} */
-
 
 
 .menu {
@@ -91,9 +82,9 @@ body::-webkit-scrollbar-thumb:window-inactive {
     height: 100%;
 }
 
-.upgrades,
-.stats,
-.achievements {
+
+
+.menu-item {
     position: relative;
     top: 1px;
     width: 25%;
@@ -106,7 +97,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     cursor: pointer;
 }
 
-.active {
+.active--menu-item {
     background-color: white;
     color: black;
     border-left: 2px solid black;
@@ -114,96 +105,65 @@ body::-webkit-scrollbar-thumb:window-inactive {
     border-right: 2px solid black;
 }
 
-.menu-div::-webkit-scrollbar {
+.menu__div::-webkit-scrollbar {
     width: 10px;
 }
 
-.menu-div::-webkit-scrollbar-button {
+.menu__div::-webkit-scrollbar-button {
     display: none;
 }
 
-.menu-div::-webkit-scrollbar-track {
+.menu__div::-webkit-scrollbar-track {
     background-color: gray;
 }
 
-.menu-div::-webkit-scrollbar-thumb {
+.menu__div::-webkit-scrollbar-thumb {
     background: lightgray;
     border-radius: 10px;
 }
 
-.menu-div::-webkit-scrollbar-thumb:hover {
+.menu__div::-webkit-scrollbar-thumb:hover {
     background: lightgray;
 }
 
-.menu-div::-webkit-scrollbar-thumb:window-inactive {
+.menu__div::-webkit-scrollbar-thumb:window-inactive {
     background: lightgray;
 }
 
-.menu-div {
+.menu__div {
     height: 100%;
     border: 2px solid black;
     border-radius: 0 5px 5px 5px;
     overflow: auto;
 }
 
-.menu-div-upgrades {
-    display: none;
-    width: 100%;
-    /* border-bottom: 1px solid black; */
-}
 
-.menu-div-achievements {
-    display: none;
-    width: 100%;
-    /* border-bottom: 1px solid black; */
-}
 
-.menu-div-stats {
+.menu__div-list {
     display: none;
     width: 100%;
 }
 
-/* .menu-div-upgrades .test,
-.menu-div-achievements .test,
-.menu-div-stats .test {
-    width: 100%;
-    height: 150px;
-    border-bottom: 1px solid black;
-} */
 
-.test-upgrade {
-    /* display: none; */
-    width: 100%;
-    height: 150px;
-    border-bottom: 1px solid black;
-}
-
-
-.menu-div-active {
+.menu__div--active {
     display: block;
 }
 
-/* #upgrade1, */
-.test-upgrade {
+.menu__upgrades-list-item {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
     width: 100%;
     height: 150px;
+    padding-left: 70px;
+    padding-right: 30px;
     border-bottom: 1px solid black;
     cursor: pointer;
 }
 
 
-.menu-div-achievements {
-    /* display: none; */
-    width: 100%;
-    height: 150px;
-    border-bottom: 1px solid black;
-}
-
-.test-achievements {
+.menu__achievements-list-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -216,14 +176,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
 
 
 
-.menu-div-stats {
-    /* display: block; */
-    width: 100%;
-    height: 60px;
-    /* border-bottom: 1px solid black; */
-}
-
-.test-stats {
+.menu__stats-list-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -231,7 +184,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     padding-left: 30px;
     padding-right: 10px;
     width: 100%;
-    height: 100%;
+    height: 60px;
     border-bottom: 1px solid black;
 }
 
