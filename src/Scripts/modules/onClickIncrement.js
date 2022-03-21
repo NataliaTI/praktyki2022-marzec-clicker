@@ -1,17 +1,17 @@
-const counterElement = document.getElementById("counter");
-const counterButtonElement = document.getElementById("counter-button");
+import {format} from './format.js';
 
-let counter = 100000;
+const counterElement = document.getElementById("counter");
+
 let returnedFormatedValue = counter;
 
-function changeCounterElementText(value) {
+function changeCounterElementText(value){
   returnedFormatedValue = format(value);
 
   counterElement.textContent = returnedFormatedValue + " $";
 }
 
-function onClickHandler() {
+export function onClickHandler(counter) {
   counter++;
   changeCounterElementText(counter);
+  return counter;
 }
-counterButtonElement.onclick = onClickHandler;

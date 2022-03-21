@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,28 +11,29 @@
 
 <body>
 
-    <script>
-        $(document).ready(function()
-        {
+    <!-- <script>
+
+        $(document).ready(function(){
             Achievements.initialize('myGame');
             Achievements.register('I clicked a button', '...and I liked it');
             Achievements.register('Second button', 'This button is just for show.');
         });
-        
-        
-        function toggleList()
-        {
+    
+        function toggleList(){
             $('#list').toggle('slow');
             $('#list').html(Achievements.list);
-        }
-    </script>
+        };
+
+    </script> -->
 
     <div class="wrap">
+
         <section class="clicker">
             <h1 id="counter" class="counter">0 $</h1>
             <p class="multiplier" id="moneyPerSecond">Na sekunde: <span class="multiplier-span">0</span></p>
             <div id="counter-button" class="img-wrap"></div>
         </section>
+
         <section class="menu">
             <button class="upgrades active">Ulepszenia</button>
             <button class="achievements">Osiągnięcia</button>
@@ -109,33 +106,28 @@
                     <div class="test-stats">
                     </div>
                     <div class="test-statst"></div>
-                </div>
+                </div>  
             </div>
         </section>
     </div>
-    <script src="../../src/Scripts/modules/format.js"></script>
+
+    <script src="../../Public/index.js"></script>
+    <!-- <script src="../../src/Scripts/modules/format.js"></script>
     <script src="../../src/Scripts/modules/onClickIncrement.js"></script>
     <script src="../../src/Scripts/modules/upgrades.js"></script>
-    <script src="../../src/Scripts/modules/achivments.js"></script>
-    <script src="../../Public/index.js"></script>
     <script src="../../src/Scripts/modules/menu.js"></script>
-    <script src="../../src/Scripts/modules/Achievements.js"></script>
+    <script src="../../src/Scripts/modules/achievements.js"></script> -->
 
     <div id="content">
+
         <input name="Button1" type="button" value="Click for Achievement One" onclick="Achievements.show('I clicked a button');"><br />
         <input name="Button2" type="button" value="Click for Achievement Two" onclick="Achievements.show('Second button');"><br />
-        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br />
-        <br />
+        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br /><br />
         <input name="Button4" type="button" value="List achievements" onclick="toggleList();"><br />
       
-        <div id="list">
-            
-        </div>
-      </div>
+    </div>
     
-      <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
-
+    <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
 
 </body>
-
 </html>

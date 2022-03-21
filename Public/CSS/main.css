@@ -195,7 +195,6 @@ body::-webkit-scrollbar-thumb:window-inactive {
     cursor: pointer;
 }
 
-
 .menu-div-achievements {
     /* display: none; */
     width: 100%;
@@ -212,9 +211,6 @@ body::-webkit-scrollbar-thumb:window-inactive {
     height: 150px;
     border-bottom: 1px solid black;
 }
-
-
-
 
 .menu-div-stats {
     /* display: block; */
@@ -235,15 +231,12 @@ body::-webkit-scrollbar-thumb:window-inactive {
     border-bottom: 1px solid black;
 }
 
-
-
 /* 
 @media screen and (max-width: 750px) {
     .wrap {
         flex-direction: column;
     }
 } */
-
 
 /* CSS osiagniecia */
 #status.achievement {
