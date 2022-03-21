@@ -13,36 +13,36 @@ const menuDivStats = document.querySelector('.menu-div-stats');
 
 
 btnUpgrades.addEventListener("click", function(){
-    btnUpgrades.classList.add('active');
-    btnAchievements.classList.remove('active');
-    btnStats.classList.remove('active');
+    btnUpgrades.classList.add('active--menu-item');
+    btnAchievements.classList.remove('active--menu-item');
+    btnStats.classList.remove('active--menu-item');
 
-    menuDivUpgrades.classList.add('menu-div-active');
-    menuDivAchievements.classList.remove('menu-div-active');
-    menuDivStats.classList.remove('menu-div-active');
+    menuDivUpgrades.classList.add('menu__div--active');
+    menuDivAchievements.classList.remove('menu__div--active');
+    menuDivStats.classList.remove('menu__div--active');
 })
 
 
 btnAchievements.addEventListener("click", function(){
-    btnAchievements.classList.add('active');
-    btnUpgrades.classList.remove('active');
-    btnStats.classList.remove('active');
+    btnAchievements.classList.add('active--menu-item');
+    btnUpgrades.classList.remove('active--menu-item');
+    btnStats.classList.remove('active--menu-item');
 
-    menuDivAchievements.classList.add('menu-div-active');
-    menuDivUpgrades.classList.remove('menu-div-active');
-    menuDivStats.classList.remove('menu-div-active');
+    menuDivAchievements.classList.add('menu__div--active');
+    menuDivUpgrades.classList.remove('menu__div--active');
+    menuDivStats.classList.remove('menu__div--active');
 
 })
 
 
 btnStats.addEventListener("click", function(){
-    btnStats.classList.add('active');
-    btnAchievements.classList.remove('active');
-    btnUpgrades.classList.remove('active');
+    btnStats.classList.add('active--menu-item');
+    btnAchievements.classList.remove('active--menu-item');
+    btnUpgrades.classList.remove('active--menu-item');
 
-    menuDivStats.classList.add('menu-div-active');
-    menuDivAchievements.classList.remove('menu-div-active');
-    menuDivUpgrades.classList.remove('menu-div-active');
+    menuDivStats.classList.add('menu__div--active');
+    menuDivAchievements.classList.remove('menu__div--active');
+    menuDivUpgrades.classList.remove('menu__div--active');
 })
 
 
