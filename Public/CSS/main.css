@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(../Images/tlo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -51,10 +57,11 @@ body::-webkit-scrollbar-thumb:window-inactive {
 .counter {
     text-align: center;
     font-size: 35px;
+    color: white;
 }
 
 .multiplier {
-    color: rgb(80, 80, 80);
+    color: lightgray;
     font-size: 14px;
     text-align: center;
     margin-bottom: 55px;
@@ -99,16 +106,16 @@ body::-webkit-scrollbar-thumb:window-inactive {
     width: 25%;
     padding: 10px 5px;
     margin-right: 5px;
-    background-color: gray;
+    background-color: rgb(61, 84, 59);
     border: 1px solid black;
     border-radius: 5px 5px 0 0;
-    color: white;
+    color: rgb(160, 160, 160);
     cursor: pointer;
 }
 
 .active {
-    background-color: white;
-    color: black;
+    background-color: rgba(14, 106, 32);
+    color: white;
     border-left: 2px solid black;
     border-top: 2px solid black;
     border-right: 2px solid black;
@@ -144,6 +151,9 @@ body::-webkit-scrollbar-thumb:window-inactive {
     border: 2px solid black;
     border-radius: 0 5px 5px 5px;
     overflow: auto;
+    background-color: rgba(14, 106, 32, 0.785);
+    backdrop-filter: blur(2px);
+    color: lightgray;
 }
 
 .menu-div-upgrades {
