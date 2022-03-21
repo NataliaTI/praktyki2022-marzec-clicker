@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,26 +11,29 @@
 
 <body>
 
-    <script>
-        $(document).ready(function () {
+    <!-- <script>
+
+        $(document).ready(function(){
             Achievements.initialize('myGame');
             Achievements.register('I clicked a button', '...and I liked it');
             Achievements.register('Second button', 'This button is just for show.');
         });
-
-
-        function toggleList() {
+    
+        function toggleList(){
             $('#list').toggle('slow');
             $('#list').html(Achievements.list);
-        }
-    </script>
+        };
+
+    </script> -->
 
     <div class="wrap">
+
         <section class="clicker">
             <h1 id="counter" class="clicker__counter">0 $</h1>
             <p class="clicker__multiplier" id="moneyPerSecond">Na sekunde: <span class="multiplier-span">0</span></p>
             <div id="counter-button" class="clicker-img"></div>
         </section>
+
         <section class="menu">
             <button class="menu-item upgrades active--menu-item">Ulepszenia</button>
             <button class="menu-item achievements">Osiągnięcia</button>
@@ -183,13 +182,9 @@
     <div class="footer">
         <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
     </div>
-    <script src="../../src/Scripts/modules/format.js"></script>
-    <script src="../../src/Scripts/modules/onClickIncrement.js"></script>
-    <script src="../../src/Scripts/modules/upgrades.js"></script>
-    <script src="../../src/Scripts/modules/achivments.js"></script>
-    <script src="../../Public/index.js"></script>
-    <script src="../../src/Scripts/modules/menu.js"></script>
-    <script src="../../src/Scripts/modules/Achievements.js">
+    <script src="../index.js"></script>
+
+    <!-- <script src="../../src/Scripts/modules/achievements.js"> -->
     </script>
 
     <div id="content">
@@ -210,5 +205,4 @@
             text</span></div>
 
 </body>
-
 </html>

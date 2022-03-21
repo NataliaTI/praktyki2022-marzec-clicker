@@ -19,6 +19,12 @@ const destylarniaUpgradeButton = document.getElementById("upgrade8");
 function otwieraczUpgrade()
 {
      if(counter>=otwieraczUpgradeCost)
+// let upgradeLevel = 0;
+// let upgradeCost = 10;
+// export let upgradeCostFormat = upgradeCost;
+
+// export function menelUpgrade(autoClick){
+//     if(counter>=upgradeCost)
     {  
         
         counter = counter - otwieraczUpgradeCost; 
@@ -90,8 +96,13 @@ function sebaUpgrade()
     document.getElementById('sebaCost').innerHTML = upgradeCostFormat +' $';
     document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
         
-    }
+        // upgradeCostFormat = format(upgradeCost);
     
+        // document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        // document.getElementById('menellevel').innerHTML = upgradeLevel;
+        // document.getElementById('menelcost').innerHTML = upgradeCostFormat +' $';
+        // document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+    }
 }
 
 sebaUpgradeButton.onclick= sebaUpgrade;
@@ -241,11 +252,8 @@ destylarniaUpgradeButton.onclick= destylarniaUpgrade;
 
 
 
-function timer() 
+export function timer() 
 {
     counter = counter + autoClick;
     document.getElementById('counter').innerHTML = counter + ' $';
 }
-
-
-setInterval(timer, 1000)
