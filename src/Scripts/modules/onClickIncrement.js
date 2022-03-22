@@ -11,7 +11,6 @@ function changeCounterElementText(value){
 }
 
 export function onClickHandler(counter) {
-  
   // TODO funkcja macieja moze nie dzialac
   // counter = counter + extraMoneyPerClick;
   counter++;
