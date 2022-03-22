@@ -201,8 +201,63 @@
         </div>
     </div>
 
+
+    
     <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br /><span id="text">Some
             text</span></div>
 
+            <script>const openSaveButtons = document.querySelectorAll ('[data-save-target]')
+                const closeSaveButtons = document.querySelectorAll ('[data-close-button]')
+                
+                
+                openSaveButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const save = document.querySelector(button.dataset.saveTarget)
+                        openSave(save)
+                    })
+                })
+                
+                closeSaveButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const save = button.closest('.save')
+                        closeSave(save)
+                    })
+                })
+                
+                
+                function openSave(save) {
+                    if (save == null) return
+                    save.classList.add('active')
+                    overlay.classList.add('active')
+                }
+                
+                
+                function closeSave(save) {
+                    if (save == null) return
+                    save.classList.remove('active')
+                    overlay.classList.remove('active')
+                }
+                </script>
+            <button data-save-target="#save">Zapisz Gre</button>
+            <div class="save" id="save">
+              <div class="save-header">
+                <div class="title"></div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="save-body">
+                Zapisano stan gry
+              </div>
+            </div>
+
+
+            <button data-save-target="#save">Przywróć stan gry</button>
+            <div class="save" id="save">
+              <div class="save-header">
+                <div class="title"></div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="save-body">
+                Przywrócono stan gry
+              </div>
 </body>
 </html>
