@@ -249,6 +249,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     left: 50%;
     bottom: -120px;
     margin-left: -160px;
+    transform: translate(-50%, -50%) scale(0);
 }
 
 .achievement {

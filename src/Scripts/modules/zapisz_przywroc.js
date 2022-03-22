@@ -29,3 +29,15 @@ function closeSave(save) {
     save.classList.remove('active')
     overlay.classList.remove('active')
 }
+
+
+function otwieraczUprageLevel;
+
+if (otwieraczUprageLevel >= 2) {
+    if (status == null) return
+    status.classList.add('active')
+    
+}
+
+
+
