@@ -75,4 +75,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
 
-// setInterval(timer, 1000);
+counter = setInterval(() => {
+    timer(counter, autoClick);
+  }, 1000)
