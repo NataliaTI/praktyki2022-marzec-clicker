@@ -2,95 +2,181 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/ci es es.css">
 </head>
 
 <body>
+
+    <!-- <script>
+
+        $(document).ready(function(){
+            Achievements.initialize('myGame');
+            Achievements.register('I clicked a button', '...and I liked it');
+            Achievements.register('Second button', 'This button is just for show.');
+        });
+    
+        function toggleList(){
+            $('#list').toggle('slow');
+            $('#list').html(Achievements.list);
+        };
+
+    </script> -->
+
     <div id="wrap" class="wrap">
+
         <section class="clicker">
-            <h1 id="counter" class="counter">0 $</h1>
-            <p class="multiplier" id="moneyPerSecond">Na sekunde: <span class="multiplier-span">0</span></p>
-            <div id="counter-button" class="img-wrap"></div>
+            <h1 id="counter" class="clicker__counter">0 $</h1>
+            <p class="clicker__multiplier" id="moneyPerSecond">Na sekunde: <span class="multiplier-span">0</span></p>
+            <div id="counter-button" class="clicker-img"></div>
         </section>
+
         <section class="menu">
-            <button class="upgrades active">Ulepszenia</button>
-            <button class="achievements">Osiągnięcia</button>
-            <button class="stats">Statystyki</button>
-            <div class="menu-div">
-                <div class="menu-div-upgrades menu-div-active">
-                    <div class="test-upgrade" id="upgrade1">
+            <button class="menu-item upgrades active--menu-item">Ulepszenia</button>
+            <button class="menu-item achievements">Osiągnięcia</button>
+            <button class="menu-item stats">Statystyki</button>
+            <div class="menu__div">
+                <div class="menu__div-list menu-div-upgrades menu__div--active">
+                    <div class="menu__upgrades-list-item upgrade" id="upgrade1">
                         <div class="upgrade1-div">
-                            <h2>Menelup</h2>
-                            <p id="menelcost">10$</p>
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Otwieracz</h2>
+                                <p id="otwieraczCost">10$</p>
+                            </div>
                         </div>
-                        <p id="menellevel">0</p>
+                        <p id="otwieraczLevel">0</p>
                     </div>
-                    <div class="test-upgrade">
+                    <div class="menu__upgrades-list-item" id="upgrade2">
                         <div class="upgrade1-div">
-                            <h2>Menelup</h2>
-                            <p id="menelcost">10$</p>
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Mietek żul</h2>
+                                <p id="mietekCost">150$</p>
+                            </div>
                         </div>
-                        <p id="menellevel">0</p>
+                        <p id="mietekLevel">0</p>
                     </div>
-                    <div class="test-upgrade">
+                    <div class="menu__upgrades-list-item" id="upgrade3">
                         <div class="upgrade1-div">
-                            <h2>Menelup</h2>
-                            <p id="menelcost">10$</p>
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Seba z osiedla</h2>
+                                <p id="sebaCost">1.20k $</p>
+                            </div>
                         </div>
-                        <p id="menellevel">0</p>
+                        <p id="sebaLevel">0</p>
                     </div>
-                    <div class="test-upgrade"></div>
-                    <div class="test-upgrade"></div>
-                    <div class="test-upgrade"></div>
-                    <div class="test-upgrade"></div>
-                    <div class="test-upgrade"></div>
+                    <div class="menu__upgrades-list-item" id="upgrade4">
+                        <div class="upgrade1-div">
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Ekspedientka Grażyna</h2>
+                                <p id="grazynaCost">5k $</p>
+                            </div>
+                        </div>
+                        <p id="grazynaLevel">0</p>
+                    </div>
+                    <div class="menu__upgrades-list-item" id="upgrade5">
+                        <div class="upgrade1-div">
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Gang z podstawówki</h2>
+                                <p id="gangCost">30k $</p>
+                            </div>
+                        </div>
+                        <p id="gangLevel">0</p>
+                    </div>
+                    <div class="menu__upgrades-list-item" id="upgrade6">
+                        <div class="upgrade1-div">
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Monopolowy 24/7</h2>
+                                <p id="monopolowyCost">115k $</p>
+                            </div>
+                        </div>
+                        <p id="monopolowyLevel">0</p>
+                    </div>
+                    <div class="menu__upgrades-list-item" id="upgrade7">
+                        <div class="upgrade1-div">
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Browar</h2>
+                                <p id="browarCost">750k $</p>
+                            </div>
+                        </div>
+                        <p id="browarLevel">0</p>
+                    </div>
+                    <div class="menu__upgrades-list-item" id="upgrade8">
+                        <div class="upgrade1-div">
+                            <div class="upgrade-img"></div>
+                            <div class="menu__upgrade-list-item-info">
+                                <h2>Destylarnia</h2>
+                                <p id="destylarniaCost">4m $</p>
+                            </div>
+                        </div>
+                        <p id="destylarniaLevel">0</p>
+                    </div>
                 </div>
-                <div class="menu-div-achievements">
-                    <div class="test-achievements">
-                        <h2>Nazwa osiągnięcia</h2>
-                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                <div class="menu__div-list menu-div-achievements">
+                    <div class="menu__achievements-list-item">
+                        <div class="achievements-img"></div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
                     </div>
-                    <div class="test-achievements">
-                        <h2>Nazwa osiągnięcia</h2>
-                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    <div class="menu__achievements-list-item">
+                        <div class="achievements-img"></div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
                     </div>
-                    <div class="test-achievements">
-                        <h2>Nazwa osiągnięcia</h2>
-                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    <div class="menu__achievements-list-item">
+                        <div class="achievements-img"></div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
                     </div>
-                    <div class="test-achievements">
-                        <h2>Nazwa osiągnięcia</h2>
-                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    <div class="menu__achievements-list-item">
+                        <div class="achievements-img"></div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
                     </div>
-                    <div class="test-achievements">
-                        <h2>Nazwa osiągnięcia</h2>
-                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    <div class="menu__achievements-list-item">
+                        <div class="achievements-img"></div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
                     </div>
 
                 </div>
-                <div class="menu-div-stats">
-                    <div class="test-stats">
-                        <p>Ilość kliknięć: </p>
+                <div class="menu__div-list menu-div-stats">
+                    <div class="menu__stats-list-item">
+                        <p>Liczba kliknięć: </p>
                         <p>4000</p>
                     </div>
-                    <div class="test-stats">
-                        <p>Ilość ulepszeń: </p>
+                    <div class="menu__stats-list-item">
+                        <p>Liczba ulepszeń: </p>
                         <p>40</p>
                     </div>
-                    <div class="test-stats">
-                        <p>Ilość złapanych bonusów: </p>
+                    <div class="menu__stats-list-item">
+                        <p>Liczba złapanych bonusów: </p>
                         <p>30</p>
                     </div>
-                    <div class="test-stats">
+                    <div class="menu__stats-list-item">
                     </div>
-                    <div class="test-statst"></div>
+                    <div class="menu__stats-list-item"></div>
                 </div>
             </div>
             <div id="catchbonus" class="catchbonus">test</div>
@@ -98,13 +184,62 @@
             <!-- ondblclick="test2();" onclick="test();" -->
         </section>
     </div>
-    <script src="../../src/Scripts/modules/format.js"></script>
-    <script src="../../src/Scripts/modules/onClickIncrement.js"></script>
-    <script src="../../src/Scripts/modules/upgrades.js"></script>
-    <script src="../../src/Scripts/modules/catchbonus.js"></script>
-    <script src="../../src/Scripts/modules/achivments.js"></script>
-    <script src="../../Public/index.js"></script>
-    <script src="../../src/Scripts/modules/menu.js"></script>
+    <div class="footer">
+        <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
+    </div>
+    <script src="../index.js"></script>
+
+    <script src="../zapisz_przywroc.js"></script>
+
+    <!-- <script src="../../src/Scripts/modules/achievements.js"> -->
+    </script>
+
+    <div id="content">
+        <input name="Button1" type="button" value="Click for Achievement One"
+            onclick="Achievements.show('I clicked a button');"><br />
+        <input name="Button2" type="button" value="Click for Achievement Two"
+            onclick="Achievements.show('Second button');"><br />
+        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br />
+        <br />
+        <input name="Button4" type="button" value="List achievements" onclick="toggleList();"><br />
+
+        <div id="list">
+
+        </div>
+    </div>
+
+
+
+    <div id="status" class="achievement">
+        <span class="title">Achievement unlocked</span>
+        <br />
+        <span id="text">Some text</span>
+    </div>
+
+    <button data-save-target="#save">Zapisz Gre</button>
+
+
+    <div class="save" id="save">
+        <div class="save-header">
+            <div class="title"></div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="save-body">
+            Zapisano stan gry
+        </div>
+    </div>
+
+
+    <button data-save-target="#save">Przywróć stan gry</button>
+    <div class="save" id="save">
+        <div class="save-header">
+            <div class="title"></div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="save-body">
+            Przywrócono stan gry
+        </div>
+
 </body>
 
 </html>
