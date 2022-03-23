@@ -249,6 +249,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     left: 50%;
     bottom: -120px;
     margin-left: -160px;
+    transform: translate(-50%, -50%) scale(0);
 }
 
 .achievement {
@@ -285,3 +286,53 @@ body::-webkit-scrollbar-thumb:window-inactive {
     font-weight: bold;
     text-shadow: 0px 0px 4px #888;
 }
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  .save {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+  }
+  
+  .save.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .save-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .save-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .save-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .save-body {
+    padding: 10px 15px;
+  }
+  
