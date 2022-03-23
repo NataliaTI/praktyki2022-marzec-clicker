@@ -1,16 +1,9 @@
 const btnUpgrades = document.querySelector(".upgrades");
-
 const btnAchievements = document.querySelector(".achievements");
-
 const btnStats = document.querySelector(".stats");
-
 const menuDivUpgrades = document.querySelector('.menu-div-upgrades');
-
 const menuDivAchievements = document.querySelector('.menu-div-achievements');
-
 const menuDivStats = document.querySelector('.menu-div-stats');
-
-
 
 btnUpgrades.addEventListener("click", function(){
     btnUpgrades.classList.add('active--menu-item');
@@ -22,7 +15,6 @@ btnUpgrades.addEventListener("click", function(){
     menuDivStats.classList.remove('menu__div--active');
 })
 
-
 btnAchievements.addEventListener("click", function(){
     btnAchievements.classList.add('active--menu-item');
     btnUpgrades.classList.remove('active--menu-item');
@@ -33,7 +25,6 @@ btnAchievements.addEventListener("click", function(){
     menuDivStats.classList.remove('menu__div--active');
 
 })
-
 
 btnStats.addEventListener("click", function(){
     btnStats.classList.add('active--menu-item');
