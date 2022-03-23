@@ -5,7 +5,7 @@ let pow = Math.pow,
 let abbrev = ["k","m","b","t","aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","an","ao","ap","ar","as","at","au","aw","az","ba",
 ];
 function round(n, precision) {
-  let prec = Math.pow(10, precision);
+  let prec = Math.pow(10, precision + 1);
   return Math.floor(n * prec) / prec;
 }
 function format(n) {
