@@ -1,4 +1,5 @@
 import {format} from './format.js'; 
+import {autoClick} from "../../main.js";
 
 let upgradeLevel = 0;
 let upgradeCost= 10;
@@ -42,7 +43,7 @@ export function otwieraczUpgrade(counter, autoClick)
         otwieraczUpgradeLevel += 1;
         autoClick += 2;
         upgradeCostFormat = format(otwieraczUpgradeCost);
-        extraMoneyPerClick += 2;
+        extraMoneyPerClick += 1;
         
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('otwieraczLevel').innerHTML = otwieraczUpgradeLevel;
@@ -62,7 +63,7 @@ export function mietekUpgrade(counter, autoClick)
         mietekUpgradeLevel += 1;
         autoClick += 9;
         upgradeCostFormat = format(mietekUpgradeCost);
-        extraMoneyPerClick += 5;
+        extraMoneyPerClick += 4;
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('mietekLevel').innerHTML = mietekUpgradeLevel;
@@ -82,7 +83,7 @@ export function sebaUpgrade(counter, autoClick)
         sebaUpgradeLevel += 1;
         autoClick += 73;
         upgradeCostFormat = format(sebaUpgradeCost);
-        extraMoneyPerClick += 15 ;
+        extraMoneyPerClick += 9;
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('sebaLevel').innerHTML = sebaUpgradeLevel;
@@ -194,7 +195,10 @@ export function destylarniaUpgrade(counter, autoClick)
 
 export function timer(counter, autoClick) 
 {
+    console.log(counter);
+    console.log(autoClick);
     counter += autoClick;
-    document.getElementById('counter').innerHTML = counter + ' $';
+    console.log(counter);
+    // document.getElementById('counter').innerHTML = counter + ' $';
     return counter;
 }
