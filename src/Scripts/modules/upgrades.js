@@ -1,15 +1,15 @@
 import {autoClick, counter} from "../../main";
 import {format} from './format.js'; 
 
-export let upgradeLevel = 0;
-export let upgradeCost= 10;
-export let upgradeCostFormat = upgradeCost;
-export let extraMoneyPerClick = 0;
-export let returnedFormatedValue = 0;
+let upgradeLevel = 0;
+let upgradeCost= 10;
+let upgradeCostFormat = upgradeCost;
+let extraMoneyPerClick = 0;
+let returnedFormatedValue = 0;
 
 // zmienne od poszczególnych ulepszeń
-export let otwieraczUpgradeLevel = 0;
-export let otwieraczUpgradeCost = 10;
+let otwieraczUpgradeLevel = 0;
+let otwieraczUpgradeCost = 10;
 
 let mietekUpgradeLevel = 0;
 let mietekUpgradeCost = 150;
@@ -49,144 +49,152 @@ export function otwieraczUpgrade(counter)
         document.getElementById('otwieraczCost').innerHTML = upgradeCostFormat +' $';
         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
     }
+    return counter;
 }
 
-// export function mietekUpgrade()
-// {
-//      if(counter>=mietekUpgradeCost)
-//     {  
-//         counter = counter - mietekUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         mietekUpgradeCost = mietekUpgradeCost + 150;
-//         mietekUpgradeLevel = mietekUpgradeLevel + 1;
-//         autoClick = autoClick + 9;
-//         upgradeCostFormat = format(mietekUpgradeCost);
+export function mietekUpgrade(counter)
+{
+     if(counter >= mietekUpgradeCost)
+    {  
+        counter = counter - mietekUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        mietekUpgradeCost = mietekUpgradeCost + 150;
+        mietekUpgradeLevel = mietekUpgradeLevel + 1;
+        // autoClick = autoClick + 9;
+        upgradeCostFormat = format(mietekUpgradeCost);
         
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('mietekLevel').innerHTML = mietekUpgradeLevel;
-//         document.getElementById('mietekCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
-//     }
-// }
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('mietekLevel').innerHTML = mietekUpgradeLevel;
+        document.getElementById('mietekCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+    }
+    return counter;
+}
 
-// export function sebaUpgrade()
-// {
-//      if(counter>=sebaUpgradeCost)
-//     {  
-//         counter = counter - sebaUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         sebaUpgradeCost = sebaUpgradeCost + 700;
-//         sebaUpgradeLevel = sebaUpgradeLevel + 1;
-//         autoClick = autoClick + 73;
-//         upgradeCostFormat = format(sebaUpgradeCost);
-//         extraMoneyPerClick = extraMoneyPerClick + 15 ;
+export function sebaUpgrade(counter)
+{
+     if(counter>=sebaUpgradeCost)
+    {  
+        counter = counter - sebaUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        sebaUpgradeCost = sebaUpgradeCost + 700;
+        sebaUpgradeLevel = sebaUpgradeLevel + 1;
+        autoClick = autoClick + 73;
+        upgradeCostFormat = format(sebaUpgradeCost);
+        extraMoneyPerClick = extraMoneyPerClick + 15 ;
 
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('sebaLevel').innerHTML = sebaUpgradeLevel;
-//         document.getElementById('sebaCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('sebaLevel').innerHTML = sebaUpgradeLevel;
+        document.getElementById('sebaCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
         
-//         // upgradeCostFormat = format(upgradeCost);
+        // upgradeCostFormat = format(upgradeCost);
     
-//         // document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         // document.getElementById('menellevel').innerHTML = upgradeLevel;
-//         // document.getElementById('menelcost').innerHTML = upgradeCostFormat +' $';
-//         // document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
-//     }
-// }
+        // document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        // document.getElementById('menellevel').innerHTML = upgradeLevel;
+        // document.getElementById('menelcost').innerHTML = upgradeCostFormat +' $';
+        // document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+    }
+    return counter;
+}
 
-// export function grazynaUpgrade()
-// {
-//      if(counter>=grazynaUpgradeCost)
-//     {  
-//         counter = counter - grazynaUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         grazynaUpgradeCost = grazynaUpgradeCost + 3000;
-//         grazynaUpgradeLevel = grazynaUpgradeLevel + 1;
-//         autoClick = autoClick + 223;
-//         upgradeCostFormat = format(grazynaUpgradeCost);
-//         extraMoneyPerClick = extraMoneyPerClick + 150 ;
+export function grazynaUpgrade(counter)
+{
+     if(counter>=grazynaUpgradeCost)
+    {  
+        counter = counter - grazynaUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        grazynaUpgradeCost = grazynaUpgradeCost + 3000;
+        grazynaUpgradeLevel = grazynaUpgradeLevel + 1;
+        autoClick = autoClick + 223;
+        upgradeCostFormat = format(grazynaUpgradeCost);
+        extraMoneyPerClick = extraMoneyPerClick + 150 ;
 
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('grazynaLevel').innerHTML = grazynaUpgradeLevel;
-//         document.getElementById('grazynaCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
-//     }
-// }
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('grazynaLevel').innerHTML = grazynaUpgradeLevel;
+        document.getElementById('grazynaCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+    }    
+    return counter;
+}
 
-// export function gangUpgrade()
-// {
-//      if(counter>=gangUpgradeCost)
-//     {  
-//         counter = counter - gangUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         gangUpgradeCost = gangUpgradeCost + 20000;
-//         gangUpgradeLevel = gangUpgradeLevel + 1;
-//         autoClick = autoClick + 641;
-//         upgradeCostFormat = format(gangUpgradeCost);
-//         extraMoneyPerClick = extraMoneyPerClick + 300 ;
+export function gangUpgrade(counter)
+{
+     if(counter>=gangUpgradeCost)
+    {  
+        counter = counter - gangUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        gangUpgradeCost = gangUpgradeCost + 20000;
+        gangUpgradeLevel = gangUpgradeLevel + 1;
+        autoClick = autoClick + 641;
+        upgradeCostFormat = format(gangUpgradeCost);
+        extraMoneyPerClick = extraMoneyPerClick + 300 ;
 
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('gangLevel').innerHTML = gangUpgradeLevel;
-//         document.getElementById('gangCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
-//     }
-// }
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('gangLevel').innerHTML = gangUpgradeLevel;
+        document.getElementById('gangCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+    }
+    return counter;
+}
 
-// export function monopolowyUpgrade()
-// {
-//      if(counter>=monopolowyUpgradeCost)
-//     {  
-//         counter = counter - monopolowyUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         monopolowyUpgradeCost = monopolowyUpgradeCost + 150000;
-//         monopolowyUpgradeLevel = monopolowyUpgradeLevel + 1;
-//         autoClick = autoClick + 1234;
-//         upgradeCostFormat = format(monopolowyUpgradeCost);
-//         extraMoneyPerClick = extraMoneyPerClick + 900 ;
+export function monopolowyUpgrade(counter)
+{
+     if(counter>=monopolowyUpgradeCost)
+    {  
+        counter = counter - monopolowyUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        monopolowyUpgradeCost = monopolowyUpgradeCost + 150000;
+        monopolowyUpgradeLevel = monopolowyUpgradeLevel + 1;
+        autoClick = autoClick + 1234;
+        upgradeCostFormat = format(monopolowyUpgradeCost);
+        extraMoneyPerClick = extraMoneyPerClick + 900 ;
 
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('monopolowyLevel').innerHTML = monopolowyUpgradeLevel;
-//         document.getElementById('monopolowyCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $'; 
-//     }
-// }
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('monopolowyLevel').innerHTML = monopolowyUpgradeLevel;
+        document.getElementById('monopolowyCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $'; 
+    }
+    return counter;
+}
 
-// export function browarUpgrade()
-// {
-//      if(counter>=browarUpgradeCost)
-//     {  
-//         counter = counter - browarUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         browarUpgradeCost = browarUpgradeCost + 1242353;
-//         browarUpgradeLevel = browarUpgradeLevel + 1;
-//         upgradeCostFormat = format(browarUpgradeCost);
-//         extraMoneyPerClick = extraMoneyPerClick + 3924 ;
+export function browarUpgrade(counter)
+{
+     if(counter>=browarUpgradeCost)
+    {  
+        counter = counter - browarUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        browarUpgradeCost = browarUpgradeCost + 1242353;
+        browarUpgradeLevel = browarUpgradeLevel + 1;
+        upgradeCostFormat = format(browarUpgradeCost);
+        extraMoneyPerClick = extraMoneyPerClick + 3924 ;
 
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
-//         document.getElementById('browarCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
-//     }
-// }
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
+        document.getElementById('browarCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+    }
+    return counter;
+}
 
-// export function destylarniaUpgrade()
-// {
-//      if(counter>=destylarniaUpgradeCost)
-//     {  
-//         counter = counter - destylarniaUpgradeCost; 
-//         returnedFormatedValue = format(counter);
-//         destylarniaUpgradeCost = destylarniaUpgradeCost + 3475675;
-//         destylarniaUpgradeLevel = destylarniaUpgradeLevel + 1;
-//         autoClick = autoClick + 4256;
-//         upgradeCostFormat = format(destylarniaUpgradeCost);
+export function destylarniaUpgrade(counter)
+{
+     if(counter>=destylarniaUpgradeCost)
+    {  
+        counter = counter - destylarniaUpgradeCost; 
+        returnedFormatedValue = format(counter);
+        destylarniaUpgradeCost = destylarniaUpgradeCost + 3475675;
+        destylarniaUpgradeLevel = destylarniaUpgradeLevel + 1;
+        autoClick = autoClick + 4256;
+        upgradeCostFormat = format(destylarniaUpgradeCost);
 
-//         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-//         document.getElementById('destylarniaLevel').innerHTML = destylarniaUpgradeLevel;
-//         document.getElementById('destylarniaCost').innerHTML = upgradeCostFormat +' $';
-//         document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';   
-//     }
-// }
+        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        document.getElementById('destylarniaLevel').innerHTML = destylarniaUpgradeLevel;
+        document.getElementById('destylarniaCost').innerHTML = upgradeCostFormat +' $';
+        document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';   
+    }
+    return counter;
+}
 
 export function timer() 
 {
