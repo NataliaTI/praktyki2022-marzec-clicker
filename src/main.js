@@ -25,49 +25,49 @@ if (counterButtonElement){
 
 if (otwieraczUpgradeButton) {
     otwieraczUpgradeButton.addEventListener('click', (event) => {
-        counter = otwieraczUpgrade(counter);
+        counter = otwieraczUpgrade(counter, autoClick);
     });
 }
 
 if (mietekUpgradeButton) {
     mietekUpgradeButton.addEventListener('click', (event) => {
-        counter = mietekUpgrade(counter);
+        counter = mietekUpgrade(counter, autoClick);
     });
 }
 
 if (sebaUpgradeButton) {
     sebaUpgradeButton.addEventListener('click', (event) => {
-        counter = sebaUpgrade(counter);
+        counter = sebaUpgrade(counter, autoClick);
     });
 }
 
 if (grazynaUpgradeButton) {
     grazynaUpgradeButton.addEventListener('click', (event) => {
-        counter = grazynaUpgrade(counter);
+        counter = grazynaUpgrade(counter, autoClick);
     });
 }
 
 if (gangUpgradeButton) {
     gangUpgradeButton.addEventListener('click', (event) => {
-        counter = gangUpgrade(counter);
+        counter = gangUpgrade(counter, autoClick);
     });
 }
 
 if (monopolowyUpgradeButton) {
     monopolowyUpgradeButton.addEventListener('click', (event) => {
-        counter = monopolowyUpgrade(counter);
+        counter = monopolowyUpgrade(counter, autoClick);
     });
 }
 
 if (browarUpgradeButton) {
     browarUpgradeButton.addEventListener('click', (event) => {
-        counter = browarUpgrade(counter);
+        counter = browarUpgrade(counter, autoClick);
     });
 }
 
 if (destylarniaUpgradeButton) {
     destylarniaUpgradeButton.addEventListener('click', (event) => {
-        counter = destylarniaUpgrade(counter);
+        counter = destylarniaUpgrade(counter, autoClick);
     });
 }
 
@@ -75,4 +75,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
 
-// setInterval(timer, 1000);
+setInterval(timer(counter, autoClick), 1000);

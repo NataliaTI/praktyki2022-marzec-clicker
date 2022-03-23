@@ -1,4 +1,5 @@
 import {format} from './format.js';
+import {extraMoneyPerClick} from './upgrades';
 
 const counterElement = document.getElementById("counter");
 
@@ -11,8 +12,7 @@ function changeCounterElementText(value){
 }
 
 export function onClickHandler(counter) {
-  // TODO funkcja macieja moze nie dzialac
-  // counter = counter + extraMoneyPerClick;
+  counter = counter + extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);
   return counter;
