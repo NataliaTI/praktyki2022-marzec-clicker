@@ -1,12 +1,11 @@
 import {format} from './format.js'; 
 import {autoClick} from "../../main.js";
 
-let upgradeLevel = 0;
-let upgradeCost= 10;
-let upgradeCostFormat = upgradeCost;
+// let upgradeCost= 10;
+let upgradeCostFormat = 10;
 export let extraMoneyPerClick = 0;
 let returnedFormatedValue = 0;
-autoClickFormat = format(autoClick)
+let autoClickFormat;
 
 // zmienne od poszczególnych ulepszeń
 let otwieraczUpgradeLevel = 0;
@@ -45,6 +44,7 @@ export function otwieraczUpgrade(counter, autoClick)
         autoClick += 2;
         upgradeCostFormat = format(otwieraczUpgradeCost);
         extraMoneyPerClick += 1;
+        autoClickFormat = format(autoClick);
         
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('otwieraczLevel').innerHTML = otwieraczUpgradeLevel;

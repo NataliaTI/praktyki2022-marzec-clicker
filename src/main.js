@@ -15,7 +15,7 @@ const browarUpgradeButton = document.getElementById("upgrade7");
 const destylarniaUpgradeButton = document.getElementById("upgrade8");
 
 export let counter = 0;
-export let autoClick = 1;
+export let autoClick = 0;
 
 if (counterButtonElement){
     counterButtonElement.addEventListener('click', (event) => {
@@ -77,4 +77,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 counter = setInterval(() => {
     timer(counter, autoClick);
-  }, 1000)
+  }, 3000)

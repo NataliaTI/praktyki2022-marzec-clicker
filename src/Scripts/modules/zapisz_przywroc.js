@@ -31,13 +31,10 @@ function closeSave(save) {
 }
 
 
-// function otwieraczUprageLevel;
+// function otwieraczUprageLevel();
 
 // if (otwieraczUprageLevel >= 2) {
-//     if (status == null) return;
+//     if (status == null)
 //     status.classList.add('active')
     
 // }
-
-
-
