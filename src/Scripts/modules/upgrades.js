@@ -193,12 +193,11 @@ export function destylarniaUpgrade(counter, autoClick)
     return counter;
 }
 
-export function timer(counter, autoClick) 
-{
-    console.log(counter);
-    console.log(autoClick);
-    counter += autoClick;
-    console.log(counter);
-    // document.getElementById('counter').innerHTML = counter + ' $';
-    return counter;
-}
+// export function timer(counter, autoClick) 
+// {
+//     // console.log(counter);
+//     // console.log(autoClick);
+//     counter += autoClick;
+//     // console.log(counter);
+//     return counter;
+// }

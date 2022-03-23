@@ -75,4 +75,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
 
-setInterval(timer, 1000);
+// setInterval(timer, 1000);
