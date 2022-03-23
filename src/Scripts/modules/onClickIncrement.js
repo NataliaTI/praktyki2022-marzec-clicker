@@ -1,7 +1,7 @@
 const counterElement = document.getElementById("counter");
 const counterButtonElement = document.getElementById("counter-button");
 
-let counter = 0;
+let counter = 4000000;
 let returnedFormatedValue = counter;
 
 function changeCounterElementText(value) {
