@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: transparent;
+}
+
 body {
     background: url(../Images/tlo.jpg) no-repeat center top;
 }
@@ -27,13 +31,13 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background: rgb(9, 70, 9);
-    -webkit-box-shadow: inset 1px 2px 10px 2px yellow;
+    box-shadow: inset 1px 2px 10px 2px yellow;
     border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
     background: rgb(1, 56, 1);
-    -webkit-box-shadow: inset 0 0 25px yellow;
+    box-shadow: inset 0 0 25px yellow;
 }
 
 body::-webkit-scrollbar-thumb:window-inactive {
@@ -67,18 +71,25 @@ body::-webkit-scrollbar-thumb:window-inactive {
 }
 
 .clicker-img {
-    height: 50%;
+    height: 60%;
+    width: 70%;
+    margin: 0 auto;
     text-align: center;
     background-image: url('../Images/zubr.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    transition: .2s;
+    transform: scale(1);
+    transition: .1s;
 }
 
 .clicker-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.clicker-img:active {
+    transform: scale(0.99);
 }
 
 
@@ -147,15 +158,71 @@ body::-webkit-scrollbar-thumb:window-inactive {
 }
 
 .achievements-img {
-    background-image: url('../Images/logo-zubr.png');
+    background-image: url('../Images/ikona-locked.png');
     width: 80px;
     height: 80px;
     background-size: cover;
     margin-right: 25px;
 }
 
-.upgrade-img {
-    background-image: url('../Images/kapsel.png');
+.upgrade__img-otwieracz {
+    background-image: url('../Images/ikona-otwieracz.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-mietek {
+    background-image: url('../Images/ikona-mietek.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-seba {
+    background-image: url('../Images/ikona-dostawa.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-ekspedientka {
+    background-image: url('../Images/ikona-ekspedientka.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-gang {
+    background-image: url('../Images/ikona-hurtownia.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-monopolowy {
+    background-image: url('../Images/ikona-monopolowy.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-browar {
+    background-image: url('../Images/ikona-browar.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-destylarnia {
+    background-image: url('../Images/ikona-destylarnia.png');
     background-size: cover;
     width: 100px;
     height: 100px;
@@ -233,6 +300,74 @@ body::-webkit-scrollbar-thumb:window-inactive {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 50%;
+}
+
+.click {
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.test-click {
+    top: 0;
+    left: 0;
+    display: block;
+    position: relative;
+    background-image: url(../Images/zubr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: click 1s linear infinite;
+}
+
+.moneyClick {
+    display: block;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    animation: money 1.5s linear infinite;
+}
+
+
+@keyframes click {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 60px;
+        height: 60px;
+        top: -20px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 60px;
+        height: 60px;
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes money {
+    0% {
+        top: -20px;
+        opacity: 1;
+    }
+
+    20% {
+
+
+        opacity: 1;
+    }
+
+    100% {
+
+        top: -100px;
+        opacity: 0;
+    }
 }
 
 /* 
