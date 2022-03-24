@@ -2,32 +2,31 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/ci es es.css">
 </head>
 
 <body>
 
-    <script>
-        $(document).ready(function () {
+    <!-- <script>
+
+        $(document).ready(function(){
             Achievements.initialize('myGame');
             Achievements.register('I clicked a button', '...and I liked it');
             Achievements.register('Second button', 'This button is just for show.');
         });
-
-
-        function toggleList() {
+    
+        function toggleList(){
             $('#list').toggle('slow');
             $('#list').html(Achievements.list);
-        }
-    </script>
+        };
+
+    </script> -->
 
     <div class="wrap">
         <section class="clicker">
@@ -183,14 +182,12 @@
     <div class="footer">
         <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
     </div>
-    <script src="../../src/Scripts/modules/format.js"></script>
-    <script src="../../src/Scripts/modules/onClickIncrement.js"></script>
-    <script src="../../src/Scripts/modules/upgrades.js"></script>
-    <script src="../../src/Scripts/modules/achivments.js"></script>
-    <script src="../../Public/index.js"></script>
-    <script src="../../src/Scripts/modules/menu.js"></script>
-    <script src="../../src/Scripts/modules/Achievements.js"></script>
-    <script src="../../src/Scripts/modules/animation.js"></script>
+    <script src="../index.js"></script>
+
+    <script src="../../src/Scripts/modules/zapisz_przywroc.js"></script>
+
+    <!-- <script src="../../src/Scripts/modules/achievements.js"> -->
+    </script>
 
     <div id="content">
         <input name="Button1" type="button" value="Click for Achievement One"
@@ -206,8 +203,37 @@
         </div>
     </div>
 
-    <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br /><span id="text">Some
-            text</span></div>
+
+
+    <div id="status" class="achievement">
+        <span class="title">Achievement unlocked</span>
+        <br />
+        <span id="text">Some text</span>
+    </div>
+
+    <button data-save-target="#save">Zapisz Gre</button>
+
+
+    <div class="save" id="save">
+        <div class="save-header">
+            <div class="title"></div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="save-body">
+            Zapisano stan gry
+        </div>
+    </div>
+
+
+    <button data-save-target="#save">Przywróć stan gry</button>
+    <div class="save" id="save">
+        <div class="save-header">
+            <div class="title"></div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="save-body">
+            Przywrócono stan gry
+        </div>
 
 </body>
 

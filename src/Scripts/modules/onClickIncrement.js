@@ -1,18 +1,19 @@
-const counterElement = document.getElementById("counter");
-const counterButtonElement = document.getElementById("counter-button");
+import {format} from './format.js';
+import {extraMoneyPerClick} from './upgrades';
 
-let counter = 0;
+const counterElement = document.getElementById("counter");
+
 let returnedFormatedValue = counter;
 
-function changeCounterElementText(value) {
+export function changeCounterElementText(value){
   returnedFormatedValue = format(value);
 
   counterElement.textContent = returnedFormatedValue + " $";
 }
 
- function onClickHandler() {
-  counter= counter + extraMoneyPerClick;
+export function onClickHandler(counter) {
+  counter = counter + extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);
+  return counter;
 }
-counterButtonElement.onclick = onClickHandler; 

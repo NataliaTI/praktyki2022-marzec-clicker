@@ -35,7 +35,7 @@ extraMoneyPerClick = 1;
 
         setTimeout(() => {
             ripples.remove()
-        },1000);
+        },1500);
 
 
     })
