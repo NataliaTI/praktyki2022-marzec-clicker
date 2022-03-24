@@ -1,5 +1,5 @@
-import {onClickHandler} from './Scripts/modules/onClickIncrement.js';
-import {otwieraczUpgrade, mietekUpgrade, sebaUpgrade, grazynaUpgrade, gangUpgrade, monopolowyUpgrade, browarUpgrade, destylarniaUpgrade, timer} from "./Scripts/modules/upgrades.js";
+import { changeCounterElementText, onClickHandler } from './Scripts/modules/onClickIncrement.js';
+import { otwieraczUpgrade, mietekUpgrade, sebaUpgrade, grazynaUpgrade, gangUpgrade, monopolowyUpgrade, browarUpgrade, destylarniaUpgrade, timer } from "./Scripts/modules/upgrades.js";
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
@@ -14,10 +14,10 @@ const monopolowyUpgradeButton = document.getElementById("upgrade6");
 const browarUpgradeButton = document.getElementById("upgrade7");
 const destylarniaUpgradeButton = document.getElementById("upgrade8");
 
-export let counter = 0;
+export let counter = 150;
 export let autoClick = 0;
 
-if (counterButtonElement){
+if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
         counter = onClickHandler(counter);
     });
@@ -31,43 +31,64 @@ if (otwieraczUpgradeButton) {
 
 if (mietekUpgradeButton) {
     mietekUpgradeButton.addEventListener('click', (event) => {
-        counter = mietekUpgrade(counter, autoClick);
+        const result = mietekUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
 if (sebaUpgradeButton) {
     sebaUpgradeButton.addEventListener('click', (event) => {
-        counter = sebaUpgrade(counter, autoClick);
+        const result = sebaUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
 if (grazynaUpgradeButton) {
     grazynaUpgradeButton.addEventListener('click', (event) => {
-        counter = grazynaUpgrade(counter, autoClick);
+        const result = grazynaUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
 if (gangUpgradeButton) {
     gangUpgradeButton.addEventListener('click', (event) => {
-        counter = gangUpgrade(counter, autoClick);
+        const result = gangUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
 if (monopolowyUpgradeButton) {
     monopolowyUpgradeButton.addEventListener('click', (event) => {
-        counter = monopolowyUpgrade(counter, autoClick);
+        const result = monopolowyUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
 if (browarUpgradeButton) {
     browarUpgradeButton.addEventListener('click', (event) => {
-        counter = browarUpgrade(counter, autoClick);
+        const result = browarUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
 if (destylarniaUpgradeButton) {
     destylarniaUpgradeButton.addEventListener('click', (event) => {
-        counter = destylarniaUpgrade(counter, autoClick);
+        const result = destylarniaUpgrade(counter, autoClick);
+
+        counter = result.counter;
+        autoClick = result.autoClick;
     });
 }
 
@@ -75,6 +96,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
 
-counter = setInterval(() => {
-    timer(counter, autoClick);
-  }, 3000)
+setInterval(() => {
+    counter = timer(counter, autoClick);
+    changeCounterElementText(counter)
+}, 1000)

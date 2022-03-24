@@ -5,7 +5,7 @@ const counterElement = document.getElementById("counter");
 
 let returnedFormatedValue = counter;
 
-function changeCounterElementText(value){
+export function changeCounterElementText(value){
   returnedFormatedValue = format(value);
 
   counterElement.textContent = returnedFormatedValue + " $";
