@@ -1,5 +1,5 @@
-import { changeCounterElementText, onClickHandler } from './Scripts/modules/onClickIncrement.js';
-import { otwieraczUpgrade, mietekUpgrade, sebaUpgrade, grazynaUpgrade, gangUpgrade, monopolowyUpgrade, browarUpgrade, destylarniaUpgrade, timer } from "./Scripts/modules/upgrades.js";
+import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
+import { otwieraczUpgrade, mietekUpgrade, sebaUpgrade, grazynaUpgrade, gangUpgrade, monopolowyUpgrade, browarUpgrade, destylarniaUpgrade, timer } from "../src/Scripts/modules/upgrades.js";
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
@@ -92,9 +92,7 @@ if (destylarniaUpgradeButton) {
     });
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-});
+window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 setInterval(() => {
     counter = timer(counter, autoClick);

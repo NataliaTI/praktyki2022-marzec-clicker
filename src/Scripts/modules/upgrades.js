@@ -1,7 +1,7 @@
-import { format } from "./format.js";
+import { format } from "../Components/format.js";
 
-let upgradeCostFormat = 10;
 export let extraMoneyPerClick = 0;
+let upgradeCostFormat = 10;
 let returnedFormatedValue = 0;
 let autoClickFormat;
 

@@ -1,5 +1,5 @@
-import {format} from './format.js';
-import {extraMoneyPerClick} from './upgrades';
+import {format} from '../Components/format.js';
+import {extraMoneyPerClick} from './upgrades.js';
 
 const counterElement = document.getElementById("counter");
 
@@ -12,7 +12,7 @@ export function changeCounterElementText(value){
 }
 
 export function onClickHandler(counter) {
-  counter = counter + extraMoneyPerClick;
+  counter += extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);
   return counter;
