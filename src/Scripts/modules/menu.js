@@ -35,5 +35,3 @@ btnStats.addEventListener("click", function(){
     menuDivAchievements.classList.remove('menu__div--active');
     menuDivUpgrades.classList.remove('menu__div--active');
 })
-
-
