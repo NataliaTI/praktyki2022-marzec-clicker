@@ -1,41 +1,35 @@
-// import { extraMoneyPerClick } from "./upgrades.js";
+import { extraMoneyPerClick } from "../src/Scripts/modules/upgrades.js";
 
 const clicker = document.querySelector('.clicker-img');
 
-let x;
-let y;
-let ripples;
-let beer;
-let money;
-let moneyClick;
-
-
 clicker.addEventListener('click', function(e) {
-    x = e.clientX - e.target.offsetLeft;
-    y = e.clientY - e.target.offsetTop;
+    const cos = extraMoneyPerClick + 1;
+    
+    let x = e.clientX - e.target.offsetLeft;
+    let y = e.clientY - e.target.offsetTop;
 
-    ripples = document.createElement('span');
+    let ripples = document.createElement('span');
     ripples.classList.add('click');
     ripples.style.left = x + 'px';
     ripples.style.top = y + 'px';
     this.appendChild(ripples);
 
-    beer = document.createElement('span');
+    let beer = document.createElement('span');
     beer.classList.add('test-click');
     ripples.appendChild(beer);
     
 
-    money = document.createElement('div');
+    let money = document.createElement('div');
     money.classList.add('click');
     money.style.left = x + 'px';
     money.style.top = y + 'px';
     this.appendChild(money);
 
-    moneyClick = document.createElement('span');
+    let moneyClick = document.createElement('span');
     moneyClick.classList.add('moneyClick');
     money.appendChild(moneyClick);
 
-    moneyClick.textContent = '+' + extraMoneyPerClick;
+    moneyClick.textContent = '+' + cos;
 
     setTimeout(() => {
         money.remove()
