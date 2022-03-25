@@ -20,7 +20,7 @@
             Achievements.register('I clicked a button', '...and I liked it');
             Achievements.register('Second button', 'This button is just for show.');
         });
-    
+
         function toggleList(){
             $('#list').toggle('slow');
             $('#list').html(Achievements.list);
@@ -235,6 +235,19 @@
         <div class="save-body">
             Przywrócono stan gry
         </div>
+    
+
+
+        <template>
+            <div id="achievementPopUp" class="achievement">
+                <img id="alertIcon" class="icon" src="">
+                <span class="title">Achievement unlocked</span>
+                <br />
+                <span id="PopUpText"></span>
+            </div>
+        </template>
+
+
 
 </body>
 

@@ -211,3 +211,13 @@ function timer()
     document.getElementById('counter').innerHTML = counter + ' $';
 }
 setInterval(timer, 1000)
+
+if (otwieraczUpgradeLevel == 2) {
+    achievementPopUp();
+}
+    function achievementPopUp()  {
+        document.getElementById('PopUpText').innerHTML = "Co dwa otwieracze to nie jeden";
+        document.getElementById("achievementPopUp").src = "dualies.png";
+    const elem = document.getElementById('achievementPopUp');
+
+    }
