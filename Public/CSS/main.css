@@ -5,9 +5,7 @@
 }
 
 body {
-    background-image: url(../Images/tlo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url(../Images/tlo.jpg) no-repeat center top;
 }
 
 html {
@@ -69,18 +67,27 @@ body::-webkit-scrollbar-thumb:window-inactive {
 }
 
 .clicker-img {
-    height: 50%;
+    /* position: relative; */
+    /* display: inline-block; */
+    height: 60%;
+    width: 70%;
+    margin: 0 auto;
     text-align: center;
     background-image: url('../Images/zubr.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    transition: .2s;
+    transform: scale(1);
+    transition: .1s;
 }
 
 .clicker-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.clicker-img:active {
+    transform: scale(0.99);
 }
 
 
@@ -98,7 +105,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     width: 25%;
     padding: 10px 5px;
     margin-right: 5px;
-    background-color: rgb(61, 84, 59);
+    background-color: rgb(61, 84, 59, 0.6);
     border: 1px solid black;
     border-radius: 5px 5px 0 0;
     color: rgb(160, 160, 160);
@@ -148,7 +155,21 @@ body::-webkit-scrollbar-thumb:window-inactive {
     color: lightgray;
 }
 
+.achievements-img {
+    background-image: url('../Images/logo-zubr.png');
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    margin-right: 25px;
+}
 
+.upgrade-img {
+    background-image: url('../Images/kapsel.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
 
 .menu__div-list {
     display: none;
@@ -167,17 +188,25 @@ body::-webkit-scrollbar-thumb:window-inactive {
     cursor: pointer;
     width: 100%;
     height: 150px;
-    padding-left: 70px;
+    padding-left: 10px;
     padding-right: 30px;
     border-bottom: 1px solid black;
     cursor: pointer;
 }
 
+.upgrade1-div {
+    display: flex;
+    align-items: center;
+}
+
+
+
 
 .menu__achievements-list-item {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     padding-left: 30px;
     width: 100%;
     height: 150px;
@@ -199,7 +228,62 @@ body::-webkit-scrollbar-thumb:window-inactive {
     border-bottom: 1px solid black;
 }
 
+.footer {
+    width: 100%;
+    position: absolute;
+    height: 10vh;
+    bottom: 0;
+    background-color: rgba(160, 160, 160, 0.4);
+}
 
+.footer__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+}
+
+.click {
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.test-click {
+    top: 0;
+    left: 0;
+    display: block;
+    position: relative;
+    background-image: url(../Images/zubr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: click 1s linear infinite;
+}
+
+
+@keyframes click {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 60px;
+        height: 60px;
+        top: -20px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 60px;
+        height: 60px;
+        top: 30px;
+        opacity: 0;
+    }
+}
 
 /* 
 @media screen and (max-width: 750px) {
@@ -208,7 +292,6 @@ body::-webkit-scrollbar-thumb:window-inactive {
     }
 } */
 
-
 /* CSS osiagniecia */
 #status.achievement {
     display: none;
@@ -216,6 +299,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     left: 50%;
     bottom: -120px;
     margin-left: -160px;
+    transform: translate(-50%, -50%) scale(0);
 }
 
 .achievement {
@@ -252,3 +336,53 @@ body::-webkit-scrollbar-thumb:window-inactive {
     font-weight: bold;
     text-shadow: 0px 0px 4px #888;
 }
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  .save {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+  }
+  
+  .save.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .save-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .save-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .save-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .save-body {
+    padding: 10px 15px;
+  }
+  
