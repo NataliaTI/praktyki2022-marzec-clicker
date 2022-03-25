@@ -2,8 +2,8 @@ import { format } from "../Components/format.js";
 
 export let extraMoneyPerClick = 0;
 let upgradeCostFormat = 10;
-let returnedFormatedValue = 0;
-let autoClickFormat;
+export let returnedFormatedValue = 0;
+export let autoClickFormat;
 
 // zmienne od poszczególnych ulepszeń
 let otwieraczUpgradeLevel = 0;
