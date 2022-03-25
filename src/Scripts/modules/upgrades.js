@@ -1,193 +1,220 @@
-import { format } from "../Components/format.js";
+const otwieraczUpgradeButton = document.getElementById("upgrade1");
+const mietekUpgradeButton = document.getElementById("upgrade2");
+const sebaUpgradeButton = document.getElementById("upgrade3");
+const grazynaUpgradeButton = document.getElementById("upgrade4");
+const gangUpgradeButton = document.getElementById("upgrade5");
+const monopolowyUpgradeButton = document.getElementById("upgrade6");
+const browarUpgradeButton = document.getElementById("upgrade7");
+const destylarniaUpgradeButton = document.getElementById("upgrade8");
 
 export let extraMoneyPerClick = 0;
 let upgradeCostFormat = 10;
-let returnedFormatedValue = 0;
-let autoClickFormat;
+export let returnedFormatedValue = 0;
+export let autoClickFormat;
 
-// zmienne od poszczególnych ulepszeń
-let otwieraczUpgradeLevel = 0;
-let otwieraczUpgradeCost = 10;
 
+function otwieraczUpgrade()
+{
+     if(counter>=otwieraczUpgradeCost)
+// let upgradeLevel = 0;
+// let upgradeCost = 10;
+// export let upgradeCostFormat = upgradeCost;
+
+// export function menelUpgrade(autoClick){
+//     if(counter>=upgradeCost)
+    {
+        counter = counter - otwieraczUpgradeCost;
+         returnedFormatedValue = format(counter);
+        otwieraczUpgradeCost = otwieraczUpgradeCost + 40;
+        otwieraczUpgradeLevel = otwieraczUpgradeLevel + 1;
+        upgradeCostFormat = format(otwieraczUpgradeCost);
+        extraMoneyPerClick = extraMoneyPerClick  + 2;
+
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('otwieraczLevel').innerHTML = otwieraczUpgradeLevel;
+    document.getElementById('otwieraczCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
+    }
+
+}
+
+
+otwieraczUpgradeButton.onclick= otwieraczUpgrade;
 let mietekUpgradeLevel = 0;
 let mietekUpgradeCost = 150;
-
-let sebaUpgradeLevel = 0;
-let sebaUpgradeCost = 1200;
-
-let grazynaUpgradeLevel = 0;
-let grazynaUpgradeCost = 5000;
-
-let gangUpgradeLevel = 0;
-let gangUpgradeCost = 30000;
-
-let monopolowyUpgradeLevel = 0;
-let monopolowyUpgradeCost = 115000;
-
-let browarUpgradeLevel = 0;
-let browarUpgradeCost= 750000;
-
-let destylarniaUpgradeLevel = 0;
-let destylarniaUpgradeCost = 4000000;
-
-// funkcje od ulepszeń 
-export function otwieraczUpgrade(counter, autoClick) {
-    if (counter >= otwieraczUpgradeCost) {
-        counter -= otwieraczUpgradeCost;
+function mietekUpgrade()
+{
+     if(counter>=mietekUpgradeCost)
+    {
+        counter = counter - mietekUpgradeCost;
         returnedFormatedValue = format(counter);
-        otwieraczUpgradeCost += 40;
-        otwieraczUpgradeLevel += 1;
-        upgradeCostFormat = format(otwieraczUpgradeCost);
-        extraMoneyPerClick += 1;
-        autoClickFormat = format(autoClick);
-
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('otwieraczLevel').innerHTML = otwieraczUpgradeLevel;
-        document.getElementById('otwieraczCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
-    }
-    
-    return counter;
-}
-
-export function mietekUpgrade(counter, autoClick) {
-    if (counter >= mietekUpgradeCost) {
-        counter -= mietekUpgradeCost;
-        returnedFormatedValue = format(counter);
-        mietekUpgradeCost += 150;
-        mietekUpgradeLevel += 1;
-        autoClick += 15;
+        mietekUpgradeCost = mietekUpgradeCost + 150;
+        mietekUpgradeLevel = mietekUpgradeLevel + 1;
+        autoClick = autoClick + 9;
         upgradeCostFormat = format(mietekUpgradeCost);
-        extraMoneyPerClick += 4;
-        autoClickFormat = format(autoClick);
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('mietekLevel').innerHTML = mietekUpgradeLevel;
-        document.getElementById('mietekCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('mietekLevel').innerHTML = mietekUpgradeLevel;
+    document.getElementById('mietekCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
     }
 
-    return { counter, autoClick };
 }
-
-export function sebaUpgrade(counter, autoClick) {
-    if (counter >= sebaUpgradeCost) {
-        counter -= sebaUpgradeCost;
+mietekUpgradeButton.onclick= mietekUpgrade;
+let sebaUpgradeLevel = 0;
+let sebaUpgradeCost= 1200;
+function sebaUpgrade()
+{
+     if(counter>=sebaUpgradeCost)
+    {
+        counter = counter - sebaUpgradeCost;
         returnedFormatedValue = format(counter);
-        sebaUpgradeCost += 700;
-        sebaUpgradeLevel += 1;
-        autoClick += 100;
+        sebaUpgradeCost = sebaUpgradeCost + 700;
+        sebaUpgradeLevel = sebaUpgradeLevel + 1;
+        autoClick = autoClick + 73;
         upgradeCostFormat = format(sebaUpgradeCost);
-        extraMoneyPerClick += 9;
-        autoClickFormat = format(autoClick);
+        extraMoneyPerClick = extraMoneyPerClick + 15 ;
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('sebaLevel').innerHTML = sebaUpgradeLevel;
-        document.getElementById('sebaCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('sebaLevel').innerHTML = sebaUpgradeLevel;
+    document.getElementById('sebaCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
+        // upgradeCostFormat = format(upgradeCost);
+
+        // document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+        // document.getElementById('menellevel').innerHTML = upgradeLevel;
+        // document.getElementById('menelcost').innerHTML = upgradeCostFormat +' $';
+        // document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
     }
-
-    return { counter, autoClick };
 }
-
-export function grazynaUpgrade(counter, autoClick) {
-    if (counter >= grazynaUpgradeCost) {
-        counter -= grazynaUpgradeCost;
+sebaUpgradeButton.onclick= sebaUpgrade;
+let grazynaUpgradeLevel = 0;
+let grazynaUpgradeCost= 5000;
+function grazynaUpgrade()
+{
+     if(counter>=grazynaUpgradeCost)
+    {
+        counter = counter - grazynaUpgradeCost;
         returnedFormatedValue = format(counter);
-        grazynaUpgradeCost += 3000;
-        grazynaUpgradeLevel += 1;
+        grazynaUpgradeCost = grazynaUpgradeCost + 3000;
+        grazynaUpgradeLevel = grazynaUpgradeLevel + 1;
         autoClick = autoClick + 223;
         upgradeCostFormat = format(grazynaUpgradeCost);
-        extraMoneyPerClick += 150;
-        autoClickFormat = format(autoClick);
+        extraMoneyPerClick = extraMoneyPerClick + 150 ;
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('grazynaLevel').innerHTML = grazynaUpgradeLevel;
-        document.getElementById('grazynaCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('grazynaLevel').innerHTML = grazynaUpgradeLevel;
+    document.getElementById('grazynaCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
     }
 
-    return { counter, autoClick };
 }
-
-export function gangUpgrade(counter, autoClick) {
-    if (counter >= gangUpgradeCost) {
-        counter -= gangUpgradeCost;
+grazynaUpgradeButton.onclick= grazynaUpgrade;
+let gangUpgradeLevel = 0;
+let gangUpgradeCost= 30000;
+function gangUpgrade()
+{
+     if(counter>=gangUpgradeCost)
+    {
+        counter = counter - gangUpgradeCost;
         returnedFormatedValue = format(counter);
-        gangUpgradeCost += 20000;
-        gangUpgradeLevel += 1;
-        autoClick += 641;
+        gangUpgradeCost = gangUpgradeCost + 20000;
+        gangUpgradeLevel = gangUpgradeLevel + 1;
+        autoClick = autoClick + 641;
         upgradeCostFormat = format(gangUpgradeCost);
-        extraMoneyPerClick += 300;
-        autoClickFormat = format(autoClick);
+        extraMoneyPerClick = extraMoneyPerClick + 300 ;
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('gangLevel').innerHTML = gangUpgradeLevel;
-        document.getElementById('gangCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('gangLevel').innerHTML = gangUpgradeLevel;
+    document.getElementById('gangCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
     }
 
-    return { counter, autoClick };
 }
-
-export function monopolowyUpgrade(counter, autoClick) {
-    if (counter >= monopolowyUpgradeCost) {
-        counter -= monopolowyUpgradeCost;
+gangUpgradeButton.onclick= gangUpgrade;
+let monopolowyUpgradeLevel = 0;
+let monopolowyUpgradeCost= 115000;
+function monopolowyUpgrade()
+{
+     if(counter>=monopolowyUpgradeCost)
+    {
+        counter = counter - monopolowyUpgradeCost;
         returnedFormatedValue = format(counter);
-        monopolowyUpgradeCost += 150000;
-        monopolowyUpgradeLevel += 1;
-        autoClick += 1234;
+        monopolowyUpgradeCost = monopolowyUpgradeCost + 150000;
+        monopolowyUpgradeLevel = monopolowyUpgradeLevel + 1;
+        autoClick = autoClick + 1234;
         upgradeCostFormat = format(monopolowyUpgradeCost);
-        extraMoneyPerClick += 900;
-        autoClickFormat = format(autoClick);
+        extraMoneyPerClick = extraMoneyPerClick + 900 ;
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('monopolowyLevel').innerHTML = monopolowyUpgradeLevel;
-        document.getElementById('monopolowyCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('monopolowyLevel').innerHTML = monopolowyUpgradeLevel;
+    document.getElementById('monopolowyCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
     }
 
-    return { counter, autoClick };
 }
-
-export function browarUpgrade(counter, autoClick) {
-    if (counter >= browarUpgradeCost) {
-        counter -= browarUpgradeCost;
+monopolowyUpgradeButton.onclick= monopolowyUpgrade;
+let browarUpgradeLevel = 0;
+let browarUpgradeCost= 750000;
+function browarUpgrade()
+{
+     if(counter>=browarUpgradeCost)
+    {
+        counter = counter - browarUpgradeCost;
         returnedFormatedValue = format(counter);
-        browarUpgradeCost += 1242353;
-        browarUpgradeLevel += 1;
-        autoClick += 2578;
+        browarUpgradeCost = browarUpgradeCost + 1242353;
+        browarUpgradeLevel = browarUpgradeLevel + 1;
         upgradeCostFormat = format(browarUpgradeCost);
-        extraMoneyPerClick += 3924;
-        autoClickFormat = format(autoClick);
+        extraMoneyPerClick = extraMoneyPerClick + 3924 ;
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
-        document.getElementById('browarCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
+    document.getElementById('browarCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
     }
-
-    return { counter, autoClick };
 }
-
-export function destylarniaUpgrade(counter, autoClick) {
-    if (counter >= destylarniaUpgradeCost) {
-        counter -= destylarniaUpgradeCost;
+browarUpgradeButton.onclick= browarUpgrade;
+let destylarniaUpgradeLevel = 0;
+let destylarniaUpgradeCost= 4000000;
+function destylarniaUpgrade()
+{
+     if(counter>=destylarniaUpgradeCost)
+    {
+        counter = counter - destylarniaUpgradeCost;
         returnedFormatedValue = format(counter);
-        destylarniaUpgradeCost += 3475675;
-        destylarniaUpgradeLevel += 1;
-        autoClick += 4256;
+        destylarniaUpgradeCost = destylarniaUpgradeCost + 3475675;
+        destylarniaUpgradeLevel = destylarniaUpgradeLevel + 1;
+        autoClick = autoClick + 4256;
         upgradeCostFormat = format(destylarniaUpgradeCost);
-        extraMoneyPerClick += 5398;
-        autoClickFormat = format(autoClick);
 
-        document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('destylarniaLevel').innerHTML = destylarniaUpgradeLevel;
-        document.getElementById('destylarniaCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+    document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
+    document.getElementById('destylarniaLevel').innerHTML = destylarniaUpgradeLevel;
+    document.getElementById('destylarniaCost').innerHTML = upgradeCostFormat +' $';
+    document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClick +' $';
+
     }
-    
-    return { counter, autoClick };
 }
+destylarniaUpgradeButton.onclick= destylarniaUpgrade;
+function timer()
+{
+    counter = counter + autoClick;
+    document.getElementById('counter').innerHTML = counter + ' $';
+}
+setInterval(timer, 1000)
 
-export const timer = (counter, autoClick) => counter + autoClick;
+if (otwieraczUpgradeLevel == 2) {
+    achievementPopUp();
+}
+    function achievementPopUp()  {
+        document.getElementById('PopUpText').innerHTML = "Co dwa otwieracze to nie jeden";
+        document.getElementById("achievementPopUp").src = "dualies.png";
+    const elem = document.getElementById('achievementPopUp');
+
+    }

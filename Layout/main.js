@@ -1,5 +1,7 @@
+import { menuUpgrades } from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { otwieraczUpgrade, mietekUpgrade, sebaUpgrade, grazynaUpgrade, gangUpgrade, monopolowyUpgrade, browarUpgrade, destylarniaUpgrade, timer } from "../src/Scripts/modules/upgrades.js";
+import {} from "./animation";
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");

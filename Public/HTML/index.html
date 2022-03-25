@@ -17,6 +17,21 @@
 
 <body>
 
+    <!-- <script>
+
+        $(document).ready(function(){
+            Achievements.initialize('myGame');
+            Achievements.register('I clicked a button', '...and I liked it');
+            Achievements.register('Second button', 'This button is just for show.');
+        });
+
+        function toggleList(){
+            $('#list').toggle('slow');
+            $('#list').html(Achievements.list);
+        };
+
+    </script> -->
+
     <div class="wrap">
 
         <section class="clicker">
@@ -33,7 +48,7 @@
                 <div class="menu__div-list menu-div-upgrades menu__div--active">
                     <div class="menu__upgrades-list-item upgrade" id="upgrade1">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-otwieracz"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Otwieracz</h2>
                                 <p id="otwieraczCost">10$</p>
@@ -43,7 +58,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade2">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-mietek"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Mietek żul</h2>
                                 <p id="mietekCost">150$</p>
@@ -53,7 +68,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade3">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-seba"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Seba z osiedla</h2>
                                 <p id="sebaCost">1.20k $</p>
@@ -63,7 +78,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade4">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-ekspedientka"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Ekspedientka Grażyna</h2>
                                 <p id="grazynaCost">5k $</p>
@@ -73,9 +88,9 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade5">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-gang"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
-                                <h2>Geng z podstawowki</h2>
+                                <h2>Gang z podstawówki</h2>
                                 <p id="gangCost">30k $</p>
                             </div>
                         </div>
@@ -83,7 +98,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade6">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-monopolowy"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Monopolowy 24/7</h2>
                                 <p id="monopolowyCost">115k $</p>
@@ -93,7 +108,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade7">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-browar"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Browar</h2>
                                 <p id="browarCost">750k $</p>
@@ -103,7 +118,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade8">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-destylarnia"></div>
+                            <div class="upgrade-img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Destylarnia</h2>
                                 <p id="destylarniaCost">4m $</p>
@@ -153,7 +168,7 @@
                 <div class="menu__div-list menu-div-stats">
                     <div class="menu__stats-list-item">
                         <p>Liczba kliknięć: </p>
-                        <p>4000</p>
+                        <p>dwa bulka</p>
                     </div>
                     <div class="menu__stats-list-item">
                         <p>Liczba ulepszeń: </p>
@@ -170,7 +185,6 @@
             </div>
         </section>
     </div>
-
     <div class="footer">
         <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
     </div>
@@ -216,6 +230,7 @@
 
     <!-- Importowanie plików JavaScript -->
     <script src="../index.js"></script>
+    <script src="../zapisz_przywroc.js"></script>
     <script src="../../src/Scripts/modules/mobileMenu.js"></script>
 
     <!-- <div id="content">
@@ -223,16 +238,25 @@
             onclick="Achievements.show('I clicked a button');"><br />
         <input name="Button2" type="button" value="Click for Achievement Two"
             onclick="Achievements.show('Second button');"><br />
-        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"> <br /> <br />
+        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br />
+        <br />
         <input name="Button4" type="button" value="List achievements" onclick="toggleList();"><br />
+
+        <div id="list">
+
+        </div>
     </div>
 
+
+
     <div id="status" class="achievement">
-        <span class="title">Achievement unlocked</span> <br />
+        <span class="title">Achievement unlocked</span>
+            <br />
         <span id="text">Some text</span>
     </div>
 
     <button data-save-target="#save">Zapisz Gre</button>
+
 
     <div class="save" id="save">
         <div class="save-header">
@@ -244,8 +268,8 @@
         </div>
     </div>
 
-    <button data-save-target="#save">Przywróć stan gry</button>
 
+    <button data-save-target="#save">Przywróć stan gry</button>
     <div class="save" id="save">
         <div class="save-header">
             <div class="title"></div>
@@ -254,7 +278,26 @@
         <div class="save-body">
             Przywrócono stan gry
         </div>
+<<<<<<< HEAD
     </div> -->
+
+
+
+
+    <template>
+        <div id="achievementPopUp" class="achievement">
+            <img id="alertIcon" class="icon" src="">
+            <span class="title">Achievement unlocked</span>
+            <br />
+            <span id="PopUpText"></span>
+        </div>
+    </template>
+
+
+
+
+
+
 
 </body>
 
