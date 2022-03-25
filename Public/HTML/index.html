@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/mobile.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/ci es es.css">
 </head>
+
 <body>
 
     <div class="wrap">
@@ -168,11 +174,51 @@
     <div class="footer">
         <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
     </div>
+    <div class="navigation">
+        <ul class="navigation__ul">
+            <li class="navigation__list active">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="beer-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+            <li class="navigation__list">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+            <li class="navigation__list">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+            <li class="navigation__list">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="stats-chart-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- Importowanie plików JavaScript -->
     <script src="../index.js"></script>
+    <script src="../../src/Scripts/modules/mobileMenu.js"></script>
 
-    <div id="content">
+    <!-- <div id="content">
         <input name="Button1" type="button" value="Click for Achievement One"
             onclick="Achievements.show('I clicked a button');"><br />
         <input name="Button2" type="button" value="Click for Achievement Two"
@@ -208,7 +254,8 @@
         <div class="save-body">
             Przywrócono stan gry
         </div>
-    </div>
+    </div> -->
 
 </body>
+
 </html>
