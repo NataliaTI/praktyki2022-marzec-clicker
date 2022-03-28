@@ -235,3 +235,33 @@ const updateList = {
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
+
+
+
+    /* achievementPopUp();
+    function achievementPopUp()  {
+        console.log(document.getElementById('PopUpText'));
+        document.getElementById('PopUpText').innerHTML = "Co dwa otwieracze to nie jeden";
+        document.getElementById("achievementPopUp").src = "dualies.png";
+        const elem = document.getElementById('achievementPopUp');
+    } */
+
+    //showContent();
+    function showContent() {
+
+        const temp = document.getElementsByTagName("template")[0];
+        const clon = temp.content.cloneNode(true);
+        const poptext = document.getElementById('PopUpText');
+        clon.querySelector("#achievementPopUp .title").textContent = 'Co dwa otwieracze to nie jeden!';
+        console.log(clon.querySelector("#achievementPopUp .title"));
+        clon.querySelector("#achievementPopUp .icon").src = ('../Images/dualies.png');
+        document.body.appendChild(clon);
+        
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+       // achievementPopUp();
+        showContent();
+    })
+
+    
