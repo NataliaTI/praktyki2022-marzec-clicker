@@ -16,7 +16,7 @@ const monopolowyUpgradeButton = document.getElementById("upgrade6");
 const browarUpgradeButton = document.getElementById("upgrade7");
 const destylarniaUpgradeButton = document.getElementById("upgrade8");
 
-export let counter = 1500;
+export let counter = 15000000;
 export let autoClick = 0;
 
 if (counterButtonElement) {
@@ -78,10 +78,7 @@ if (monopolowyUpgradeButton) {
 
 if (browarUpgradeButton) {
     browarUpgradeButton.addEventListener('click', (event) => {
-        const result = browarUpgrade(counter, autoClick);
-
-        counter = result.counter;
-        autoClick = result.autoClick;
+        counter = browarUpgrade(counter, autoClick);
     });
 }
 

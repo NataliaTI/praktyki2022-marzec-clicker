@@ -157,6 +157,7 @@ export function browarUpgrade(counter, autoClick) {
         browarUpgradeLevel += 1;
         upgradeCostFormat = format(browarUpgradeCost);
         extraMoneyPerClick += 3924;
+        autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
@@ -167,7 +168,7 @@ export function browarUpgrade(counter, autoClick) {
     return counter;
 }
 
-export function upgrade(counter, autoClick) {
+export function destylarniaUpgrade(counter, autoClick) {
     if (counter >= destylarniaUpgradeCost) {
         counter -= destylarniaUpgradeCost;
         returnedFormatedValue = format(counter);
