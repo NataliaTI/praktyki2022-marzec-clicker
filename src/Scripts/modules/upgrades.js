@@ -61,10 +61,12 @@ export function mietekUpgrade(counter, autoClick) {
         extraMoneyPerClick += 4;
         autoClickFormat = format(autoClick);
 
+      
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('mietekLevel').innerHTML = mietekUpgradeLevel;
         document.getElementById('mietekCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+        document.getElementById('stat3').innerHTML = autoClickFormat ;
     }
 
     return { counter, autoClick };
@@ -81,10 +83,12 @@ export function sebaUpgrade(counter, autoClick) {
         extraMoneyPerClick += 9;
         autoClickFormat = format(autoClick);
 
+        
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('sebaLevel').innerHTML = sebaUpgradeLevel;
         document.getElementById('sebaCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+        document.getElementById('stat3').innerHTML = autoClickFormat ;
     }
 
     return { counter, autoClick };
@@ -105,6 +109,7 @@ export function grazynaUpgrade(counter, autoClick) {
         document.getElementById('grazynaLevel').innerHTML = grazynaUpgradeLevel;
         document.getElementById('grazynaCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+        document.getElementById('stat3').innerHTML = autoClickFormat ;
     }
 
     return { counter, autoClick };
@@ -125,6 +130,7 @@ export function gangUpgrade(counter, autoClick) {
         document.getElementById('gangLevel').innerHTML = gangUpgradeLevel;
         document.getElementById('gangCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+        document.getElementById('stat3').innerHTML = autoClickFormat ;
     }
 
     return { counter, autoClick };
@@ -145,6 +151,7 @@ export function monopolowyUpgrade(counter, autoClick) {
         document.getElementById('monopolowyLevel').innerHTML = monopolowyUpgradeLevel;
         document.getElementById('monopolowyCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+        document.getElementById('stat3').innerHTML = autoClickFormat ;
     }
 
     return { counter, autoClick };
@@ -156,7 +163,6 @@ export function browarUpgrade(counter, autoClick) {
         returnedFormatedValue = format(counter);
         browarUpgradeCost += 1242353;
         browarUpgradeLevel += 1;
-        autoClick += 2578;
         upgradeCostFormat = format(browarUpgradeCost);
         extraMoneyPerClick += 3924;
         autoClickFormat = format(autoClick);
@@ -164,7 +170,7 @@ export function browarUpgrade(counter, autoClick) {
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
         document.getElementById('browarCost').innerHTML = upgradeCostFormat + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+       
     }
 
     return { counter, autoClick };
@@ -185,9 +191,12 @@ export function destylarniaUpgrade(counter, autoClick) {
         document.getElementById('destylarniaLevel').innerHTML = destylarniaUpgradeLevel;
         document.getElementById('destylarniaCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+        document.getElementById('stat3').innerHTML = autoClickFormat ;
     }
     
     return { counter, autoClick };
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
+
+
