@@ -364,6 +364,7 @@ html {
 }
 
 .achievement {
+    display: flex;
     filter: alpha(opacity=100);
     border: 1px solid #fff;
     background-color: rgb(0, 157, 65);
@@ -399,9 +400,13 @@ padding-top: 8px;
 }
 
 .icon {
-    float: left;
-    size: 64px;
+    width: 64px;
+    height: 64px;
+    padding-left: 6px;
+    padding-bottom: 18px;
 }
+
+
 
 
 *,
