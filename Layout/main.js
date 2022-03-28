@@ -16,7 +16,7 @@ const monopolowyUpgradeButton = document.getElementById("upgrade6");
 const browarUpgradeButton = document.getElementById("upgrade7");
 const destylarniaUpgradeButton = document.getElementById("upgrade8");
 
-export let counter = 150;
+export let counter = 1500;
 export let autoClick = 0;
 
 if (counterButtonElement) {

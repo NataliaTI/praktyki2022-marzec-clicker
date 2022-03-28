@@ -58,7 +58,6 @@ export function mietekUpgrade(counter, autoClick) {
         mietekUpgradeLevel += 1;
         autoClick += 15;
         upgradeCostFormat = format(mietekUpgradeCost);
-        extraMoneyPerClick += 4;
         autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
@@ -156,10 +155,8 @@ export function browarUpgrade(counter, autoClick) {
         returnedFormatedValue = format(counter);
         browarUpgradeCost += 1242353;
         browarUpgradeLevel += 1;
-        autoClick += 2578;
         upgradeCostFormat = format(browarUpgradeCost);
         extraMoneyPerClick += 3924;
-        autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;
@@ -167,10 +164,10 @@ export function browarUpgrade(counter, autoClick) {
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
     }
 
-    return { counter, autoClick };
+    return counter;
 }
 
-export function destylarniaUpgrade(counter, autoClick) {
+export function upgrade(counter, autoClick) {
     if (counter >= destylarniaUpgradeCost) {
         counter -= destylarniaUpgradeCost;
         returnedFormatedValue = format(counter);
@@ -178,7 +175,6 @@ export function destylarniaUpgrade(counter, autoClick) {
         destylarniaUpgradeLevel += 1;
         autoClick += 4256;
         upgradeCostFormat = format(destylarniaUpgradeCost);
-        extraMoneyPerClick += 5398;
         autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
@@ -188,6 +184,53 @@ export function destylarniaUpgrade(counter, autoClick) {
     }
     
     return { counter, autoClick };
+}
+
+const updateList = {
+    'otwieracz': {
+        cost: 40,
+        level: 1,
+        extraMoneyPerClick: 1
+    },
+    'mietek': {
+        cost: 150,
+        level: 1,
+        autoClickValue: 15,
+    },
+    'seba': {
+        cost: 700,
+        level: 1,
+        autoClickValue: 100,
+        extraMoneyPerClick: 9
+    },
+    'grazyna': {
+        cost: 3000,
+        level: 1,
+        autoClickValue: 223,
+        extraMoneyPerClick: 150
+    },
+    'gang': {
+        cost: 20000,
+        level: 1,
+        autoClickValue: 641,
+        extraMoneyPerClick: 300
+    },
+    'monopolowy': {
+        cost: 150000,
+        level: 1,
+        autoClickValue: 1234,
+        extraMoneyPerClick: 900
+    },
+    'browar': {
+        cost: 1250000,
+        level: 1,
+        extraMoneyPerClick: 4000
+    },
+    'destylarnia': {
+        cost: 4000000,
+        level: 1,
+        autoClickValue: 4300
+    },
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
