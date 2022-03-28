@@ -10,7 +10,6 @@
 
 body {
     background: url(../Images/tlo.jpg) no-repeat center top;
-    overflow: hidden;
 }
 
 html {
@@ -139,68 +138,51 @@ html {
     background-repeat: no-repeat;
 }
 
-.upgrade__img-otwieracz {
-    background-image: url('../Images/ikona-otwieracz.png');
+.upgrade__img {
     background-size: cover;
     width: 100px;
     height: 100px;
     margin-right: 20px;
+}
+
+.upgrade__img-otwieracz {
+    background-image: url('../Images/ikona-otwieracz.png');
+
 }
 
 .upgrade__img-mietek {
     background-image: url('../Images/ikona-mietek.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-seba {
     background-image: url('../Images/ikona-dostawa.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-ekspedientka {
     background-image: url('../Images/ikona-ekspedientka.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-gang {
     background-image: url('../Images/ikona-hurtownia.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-monopolowy {
     background-image: url('../Images/ikona-monopolowy.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-browar {
     background-image: url('../Images/ikona-browar.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-destylarnia {
     background-image: url('../Images/ikona-destylarnia.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .menu__div-list {
@@ -238,7 +220,7 @@ html {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding-left: 30px;
     width: 100%;
     height: 150px;

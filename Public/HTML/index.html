@@ -41,14 +41,18 @@
         </section>
 
         <section class="menu">
-            <button class="menu-item upgrades active--menu-item">Ulepszenia</button>
-            <button class="menu-item achievements">Osiągnięcia</button>
-            <button class="menu-item stats">Statystyki</button>
+            <button class="menu-item upgrades active--menu-item menu-btn">Ulepszenia</button>
+            <button class="menu-item achievements menu-btn">Osiągnięcia</button>
+            <button class="menu-item stats menu-btn">Statystyki</button>
+            <div class="mobile_header">
+                <h2 class="mobile_header-h2"></h2>
+                <button class="mobile_header-btn">X</button>
+            </div>
             <div class="menu__div">
                 <div class="menu__div-list menu-div-upgrades menu__div--active">
                     <div class="menu__upgrades-list-item upgrade" id="upgrade1">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-otwieracz"></div>
+                            <div class="upgrade__img-otwieracz upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Otwieracz</h2>
                                 <p id="otwieraczCost">10$</p>
@@ -58,7 +62,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade2">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-mietek"></div>
+                            <div class="upgrade__img-mietek upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Mietek żul</h2>
                                 <p id="mietekCost">150$</p>
@@ -68,7 +72,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade3">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-seba"></div>
+                            <div class="upgrade__img-seba upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Seba z osiedla</h2>
                                 <p id="sebaCost">1.20k $</p>
@@ -78,7 +82,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade4">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-ekspedientka"></div>
+                            <div class="upgrade__img-ekspedientka upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Ekspedientka Grażyna</h2>
                                 <p id="grazynaCost">5k $</p>
@@ -88,7 +92,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade5">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-gang"></div>
+                            <div class="upgrade__img-gang upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Gang z podstawówki</h2>
                                 <p id="gangCost">30k $</p>
@@ -98,7 +102,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade6">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-monopolowy"></div>
+                            <div class="upgrade__img-monopolowy upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Monopolowy 24/7</h2>
                                 <p id="monopolowyCost">115k $</p>
@@ -108,7 +112,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade7">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-browar"></div>
+                            <div class="upgrade__img-browar upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Browar</h2>
                                 <p id="browarCost">750k $</p>
@@ -118,7 +122,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade8">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-destylarnia"></div>
+                            <div class="upgrade__img-destylarnia upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Destylarnia</h2>
                                 <p id="destylarniaCost">4m $</p>
@@ -192,7 +196,7 @@
     </div>
     <div class="navigation">
         <ul class="navigation__ul">
-            <li class="navigation__list active">
+            <li class="navigation__list active mobileHome">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="beer-outline"></ion-icon>
@@ -200,7 +204,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list">
+            <li class="navigation__list mobileUpgrade">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="cart-outline"></ion-icon>
@@ -208,7 +212,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list">
+            <li class="navigation__list mobileAchievement">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="trophy-outline"></ion-icon>
@@ -216,7 +220,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list">
+            <li class="navigation__list mobileStats">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="stats-chart-outline"></ion-icon>
@@ -234,6 +238,7 @@
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
     <script src="../../src/Scripts/modules/mobileMenu.js"></script>
+    <script src="../../src/Scripts/modules/popup.js"></script>
 
     <!-- <div id="content">
         <input name="Button1" type="button" value="Click for Achievement One"
