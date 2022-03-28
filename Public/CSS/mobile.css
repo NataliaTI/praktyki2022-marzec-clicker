@@ -1,9 +1,10 @@
 .navigation {
     width: 100%;
     height: 50px;
-    background-color: rgba(170, 170, 170, 0.7);
+    background-color: rgba(180, 180, 180, 0.6);
     position: absolute;
     bottom: 0;
+    backdrop-filter: blur(2px);
 }
 
 .navigation__ul {
@@ -41,10 +42,8 @@
 }
 
 .active .icon {
-    color: blue;
+    color: rgb(20, 218, 2);
 }
-
-
 
 .navigation {
     display: none;
