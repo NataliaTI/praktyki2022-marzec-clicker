@@ -16,4 +16,6 @@ export function onClickHandler(counter) {
   counter++;
   changeCounterElementText(counter);
   return counter;
+  
 }
+
