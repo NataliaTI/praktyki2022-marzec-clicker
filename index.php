@@ -1,1 +1,0 @@
-<?php header('Location: ./Public/HTML/index.html'); ?>
