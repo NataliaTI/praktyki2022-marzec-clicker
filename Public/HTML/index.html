@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/mobile.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/ci es es.css">
 </head>
+
 <body>
+
+    <!-- <script>
+
+        $(document).ready(function(){
+            Achievements.initialize('myGame');
+            Achievements.register('I clicked a button', '...and I liked it');
+            Achievements.register('Second button', 'This button is just for show.');
+        });
+
+        function toggleList(){
+            $('#list').toggle('slow');
+            $('#list').html(Achievements.list);
+        };
+
+    </script> -->
 
     <div class="wrap">
 
@@ -69,7 +90,7 @@
                         <div class="upgrade1-div">
                             <div class="upgrade__img-gang"></div>
                             <div class="menu__upgrade-list-item-info">
-                                <h2>Geng z podstawowki</h2>
+                                <h2>Gang z podstawówki</h2>
                                 <p id="gangCost">30k $</p>
                             </div>
                         </div>
@@ -166,32 +187,81 @@
             </div>
         </section>
     </div>
-
     <div class="footer">
         <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
     </div>
+    <div class="navigation">
+        <ul class="navigation__ul">
+            <li class="navigation__list active">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="beer-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+            <li class="navigation__list">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+            <li class="navigation__list">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+            <li class="navigation__list">
+                <a class="navigation__list-a" href="#">
+                    <span class="icon">
+                        <ion-icon name="stats-chart-outline"></ion-icon>
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- Importowanie plików JavaScript -->
     <script src="../index.js"></script>
     <script type="module" src="../../src/Scripts/modules/statistics.js"></script>  
     <script type="module" src="../../src/Scripts/modules/upgrades.js"></script>  
     <!-- <script src="../../Layout/animation.js"></script> -->
+    <script src="../zapisz_przywroc.js"></script>
+    <script src="../../src/Scripts/modules/mobileMenu.js"></script>
 
-    <div id="content">
+    <!-- <div id="content">
         <input name="Button1" type="button" value="Click for Achievement One"
             onclick="Achievements.show('I clicked a button');"><br />
         <input name="Button2" type="button" value="Click for Achievement Two"
             onclick="Achievements.show('Second button');"><br />
-        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"> <br /> <br />
+        <input name="Button3" type="button" value="Clear achievements" onclick="Achievements.clear();"><br />
+        <br />
         <input name="Button4" type="button" value="List achievements" onclick="toggleList();"><br />
+
+        <div id="list">
+
+        </div>
     </div>
 
+
+
     <div id="status" class="achievement">
-        <span class="title">Achievement unlocked</span> <br />
+        <span class="title">Achievement unlocked</span>
+            <br />
         <span id="text">Some text</span>
     </div>
 
     <button data-save-target="#save">Zapisz Gre</button>
+
 
     <div class="save" id="save">
         <div class="save-header">
@@ -203,8 +273,8 @@
         </div>
     </div>
 
-    <button data-save-target="#save">Przywróć stan gry</button>
 
+    <button data-save-target="#save">Przywróć stan gry</button>
     <div class="save" id="save">
         <div class="save-header">
             <div class="title"></div>
@@ -213,7 +283,27 @@
         <div class="save-body">
             Przywrócono stan gry
         </div>
-    </div>
+<<<<<<< HEAD
+    </div> -->
+
+
+
+
+    <template>
+        <div id="achievementPopUp" class="achievement">
+            <img id="alertIcon" class="icon" src="">
+            <span class="title">Achievement unlocked</span>
+            <br />
+            <span id="PopUpText"></span>
+        </div>
+    </template>
+
+
+
+
+
+
 
 </body>
+
 </html>

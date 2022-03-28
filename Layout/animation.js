@@ -1,9 +1,11 @@
+import { format } from "../src/Scripts/Components/format.js";
 import { extraMoneyPerClick } from "../src/Scripts/modules/upgrades.js";
 
 const clicker = document.querySelector('.clicker-img');
 
 clicker.addEventListener('click', function(e) {
     const cos = extraMoneyPerClick + 1;
+    let cosFormated = format(cos);
     
     let x = e.clientX - e.target.offsetLeft;
     let y = e.clientY - e.target.offsetTop;
@@ -28,8 +30,9 @@ clicker.addEventListener('click', function(e) {
     let moneyClick = document.createElement('span');
     moneyClick.classList.add('moneyClick');
     money.appendChild(moneyClick);
+    
 
-    moneyClick.textContent = '+' + cos;
+    moneyClick.textContent = '+' + cosFormated;
 
     setTimeout(() => {
         money.remove()

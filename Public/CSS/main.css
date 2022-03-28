@@ -10,6 +10,7 @@
 
 body {
     background: url(../Images/tlo.jpg) no-repeat center top;
+    overflow: hidden;
 }
 
 html {

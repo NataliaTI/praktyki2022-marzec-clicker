@@ -1,0 +1,99 @@
+.navigation {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(170, 170, 170, 0.7);
+    position: absolute;
+    bottom: 0;
+}
+
+.navigation__ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navigation__list {
+    position: relative;
+    list-style: none;
+    width: 15%;
+    height: 50px;
+    z-index: 1;
+}
+
+.navigation__list-a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.icon {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    color: black;
+    transition: 0.3s;
+}
+
+.active .icon {
+    color: blue;
+}
+
+
+
+.navigation {
+    display: none;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .wrap {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 35px;
+    }
+
+    .clicker {
+        height: 60vh;
+        margin: 0;
+        width: 100%;
+    }
+
+    .clicker__multiplier {
+        margin-bottom: 40px;
+    }
+
+    .clicker-img {
+        height: 35vh;
+        width: 135px;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        background: url(../Images/tlo-tel.jpg) no-repeat center top;
+    }
+}
