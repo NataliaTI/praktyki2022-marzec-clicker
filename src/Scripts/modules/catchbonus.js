@@ -2,6 +2,10 @@ let counter = 150;
 let autoClick = 2;
 let oldAutoClick
 oldAutoClick = autoClick
+let catchbonusaddable;
+let bonus1 = onclickbonus();
+let bonus2 = onclickbonus2();
+console.log(bonus1)
 import {format} from '../Components/format.js';
 //import {autoClickFormat, returnedFormatedValue} from '../modules/upgrades.js';
 //import {autoClick, counter} from '../../../Layout/main.js';
@@ -10,7 +14,7 @@ console.log(counter);
 
 const catchbonus = document.getElementById("catchbonus");
 const timeToCatch = setTimeout(disapear, 5000)
-let catchbonusaddable;
+catchbonus.onclick = onclickdisapear;
 
 catchbonusaddable = Boolean(true);
 
@@ -98,15 +102,25 @@ function getRandomHeight(minHeight,windowHeight) {
       }
       function onclickdisapear(){
         testt();
-        onclickbonus();
-        onclickbonus2();
+        //onclickbonus();
+        //onclickbonus2();
         console.log(counter);
 
-        catchbonus.remove();
+        //catchbonus.remove();
         catchbonusaddable = true
         //catchbonusaddable = Boolean(true);
+        return Math.floor (Math.random()*(bonus1 - bonus2 + 1)+ bonus2);
         
         }
+        let randombonus = onclickdisapear();
+        if (randombonus == bonus1) {
+          onclickbonus();
+        }else{
+          onclickbonus2();
+        }
+
+        console.log(randombonus)
+        console.log(onclickdisapear)
         function disapear(){
           catchbonus.remove();
           catchbonusaddable = true
@@ -114,25 +128,27 @@ function getRandomHeight(minHeight,windowHeight) {
         }
         function stop(){
           setTimeout(() => {
-            autoClick = autoClick - oldAutoClick;
+            if (randombonus == bonus2) {
+              autoClick = autoClick - oldAutoClick;
+            }
           }, 5000);
         }
         function onclickbonus(){
           console.log(counter);
-          //let counter = counter;
           counter = counter + Math.floor(counter/5);          
         }
         function onclickbonus2(){
           autoClick = autoClick + autoClick          
           let autoClickFormat = format(autoClick)
           //autoClick = autoClickFormat
-          document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+          //document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
           setTimeout(stop(), 5000)
           console.log(autoClick)
           console.log(autoClickFormat)
         }
 
-      catchbonus.onclick = onclickdisapear;
+
+
 
     //  setInterval(getRandomTime, randomtime)
     //  setInterval(testt, randomtime)
@@ -140,3 +156,35 @@ function getRandomHeight(minHeight,windowHeight) {
     //  setInterval(getRandomWidth, randomtime)
     //  setInterval(test, randomtime)
     //  setInterval(test2, randomtime)
+
+
+
+
+
+
+    // const bonusList = [{
+    //   type: "counterValue"
+    // }, {
+    //   type: "autoClick",
+    //   time: 1000
+    // }]
+    
+    
+    
+    // function bonus(index) {
+    //   const bonus = bonusList[index];
+    
+    //   if (bonus.type == 'counterValue')  {
+    //     counter = counter + Math.floor(counter/5); 
+    //   } else {
+    //     autoClick = autoClick + autoClick  
+    //     document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+    //       setTimeout(stop(), 5000)
+    //   }
+    // }
+    
+    
+    // let randomBonusIndex = 1;
+    // bonus(randomBonusIndex)
+
+    
