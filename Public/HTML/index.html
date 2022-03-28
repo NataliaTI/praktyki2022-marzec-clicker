@@ -41,14 +41,18 @@
         </section>
 
         <section class="menu">
-            <button class="menu-item upgrades active--menu-item">Ulepszenia</button>
-            <button class="menu-item achievements">Osiągnięcia</button>
-            <button class="menu-item stats">Statystyki</button>
+            <button class="menu-item upgrades active--menu-item menu-btn">Ulepszenia</button>
+            <button class="menu-item achievements menu-btn">Osiągnięcia</button>
+            <button class="menu-item stats menu-btn">Statystyki</button>
+            <div class="mobile_header">
+                <h2 class="mobile_header-h2"></h2>
+                <button class="mobile_header-btn">X</button>
+            </div>
             <div class="menu__div">
                 <div class="menu__div-list menu-div-upgrades menu__div--active">
                     <div class="menu__upgrades-list-item upgrade" id="upgrade1">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-otwieracz"></div>
+                            <div class="upgrade__img-otwieracz upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Otwieracz</h2>
                                 <p id="otwieraczCost">10$</p>
@@ -59,7 +63,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade2">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-mietek"></div>
+                            <div class="upgrade__img-mietek upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Mietek żul</h2>
                                 <p id="mietekCost">150$</p>
@@ -69,7 +73,7 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade3">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-seba"></div>
+                            <div class="upgrade__img-seba upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info">
                                 <h2>Seba z osiedla</h2>
                                 <p id="sebaCost">1.20k $</p>
@@ -79,122 +83,122 @@
                     </div>
                     <div class="menu__upgrades-list-item" id="upgrade4">
                         <div class="upgrade1-div">
-                            <div class="upgrade__img-ekspedientka"></div>
-                            <div class="menu__upgrade-list-item-info tooltip">
+                            <div class="upgrade__img-ekspedientka upgrade__img"></div>
+                            <div class="menu__upgrade-list-item-info">
                                 <h2>Ekspedientka Grażyna</h2>
                                 <p id="grazynaCost">5k $</p>
-                                <span class="tooltiptext">Punkty na klikniecie: 1$<br>Punkty na sekunde: 0$</span>
                             </div>
                         </div>
                         <p id="grazynaLevel">0</p>
                     </div>
-                    <div class="menu__upgrades-list-item" id="upgrade5">
-                        <div class="upgrade1-div">
-                            <div class="upgrade__img-gang"></div>
-                            <div class="menu__upgrade-list-item-info">
-                                <h2>Gang z podstawówki</h2>
-                                <p id="gangCost">30k $</p>
-                            </div>
-                        </div>
-                        <p id="gangLevel">0</p>
-                    </div>
-                    <div class="menu__upgrades-list-item" id="upgrade6">
-                        <div class="upgrade1-div">
-                            <div class="upgrade__img-monopolowy"></div>
-                            <div class="menu__upgrade-list-item-info">
-                                <h2>Monopolowy 24/7</h2>
-                                <p id="monopolowyCost">115k $</p>
-                            </div>
-                        </div>
-                        <p id="monopolowyLevel">0</p>
-                    </div>
-                    <div class="menu__upgrades-list-item" id="upgrade7">
-                        <div class="upgrade1-div">
-                            <div class="upgrade__img-browar"></div>
-                            <div class="menu__upgrade-list-item-info">
-                                <h2>Browar</h2>
-                                <p id="browarCost">750k $</p>
-                            </div>
-                        </div>
-                        <p id="browarLevel">0</p>
-                    </div>
-                    <div class="menu__upgrades-list-item" id="upgrade8">
-                        <div class="upgrade1-div">
-                            <div class="upgrade__img-destylarnia"></div>
-                            <div class="menu__upgrade-list-item-info">
-                                <h2>Destylarnia</h2>
-                                <p id="destylarniaCost">4m $</p>
-                            </div>
-                        </div>
-                        <p id="destylarniaLevel">0</p>
-                    </div>
                 </div>
-                <div class="menu__div-list menu-div-achievements">
-                    <div class="menu__achievements-list-item">
-                        <div class="achievements-img"></div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2>Nazwa osiągnięcia</h2>
-                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                <div class="menu__upgrades-list-item" id="upgrade5">
+                    <div class="upgrade1-div">
+                        <div class="upgrade__img-gang upgrade__img"></div>
+                        <div class="menu__upgrade-list-item-info">
+                            <h2>Gang z podstawówki</h2>
+                            <p id="gangCost">30k $</p>
                         </div>
                     </div>
-                    <div class="menu__achievements-list-item">
-                        <div class="achievements-img"></div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2>Nazwa osiągnięcia</h2>
-                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item">
-                        <div class="achievements-img"></div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2>Nazwa osiągnięcia</h2>
-                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item">
-                        <div class="achievements-img"></div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2>Nazwa osiągnięcia</h2>
-                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item">
-                        <div class="achievements-img"></div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2>Nazwa osiągnięcia</h2>
-                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
-                        </div>
-                    </div>
-
+                    <p id="gangLevel">0</p>
                 </div>
-                <div class="menu__div-list menu-div-stats">
-                    <div class="menu__stats-list-item">
-                        <p>Liczba kliknięć: </p>
-                        <p id="stat1">0</p>
+                <div class="menu__upgrades-list-item" id="upgrade6">
+                    <div class="upgrade1-div">
+                        <div class="upgrade__img-monopolowy upgrade__img"></div>
+                        <div class="menu__upgrade-list-item-info">
+                            <h2>Monopolowy 24/7</h2>
+                            <p id="monopolowyCost">115k $</p>
+                        </div>
                     </div>
-                    <div class="menu__stats-list-item">
-                        <p>Liczba ulepszeń: </p>
-                        <p id="stat2">0</p>
+                    <p id="monopolowyLevel">0</p>
+                </div>
+                <div class="menu__upgrades-list-item" id="upgrade7">
+                    <div class="upgrade1-div">
+                        <div class="upgrade__img-browar upgrade__img"></div>
+                        <div class="menu__upgrade-list-item-info">
+                            <h2>Browar</h2>
+                            <p id="browarCost">750k $</p>
+                        </div>
                     </div>
-                    <div class="menu__stats-list-item">
-                        <p>Kliknięcia na sekundę: </p>
-                        <p id="stat3">0</p>
+                    <p id="browarLevel">0</p>
+                </div>
+                <div class="menu__upgrades-list-item" id="upgrade8">
+                    <div class="upgrade1-div">
+                        <div class="upgrade__img-destylarnia upgrade__img"></div>
+                        <div class="menu__upgrade-list-item-info">
+                            <h2>Destylarnia</h2>
+                            <p id="destylarniaCost">4m $</p>
+                        </div>
                     </div>
-                    <div class="menu__stats-list-item">
-                        <p>Suma punktów: </p>
-                        <p id="stat4">0</p>
-                    </div>
-                    <div class="menu__stats-list-item"></div>
+                    <p id="destylarniaLevel">0</p>
                 </div>
             </div>
-        </section>
+            <div class="menu__div-list menu-div-achievements">
+                <div class="menu__achievements-list-item">
+                    <div class="achievements-img"></div>
+                    <div class="menu__achievements-list-item-info">
+                        <h2>Nazwa osiągnięcia</h2>
+                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    </div>
+                </div>
+                <div class="menu__achievements-list-item">
+                    <div class="achievements-img"></div>
+                    <div class="menu__achievements-list-item-info">
+                        <h2>Nazwa osiągnięcia</h2>
+                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    </div>
+                </div>
+                <div class="menu__achievements-list-item">
+                    <div class="achievements-img"></div>
+                    <div class="menu__achievements-list-item-info">
+                        <h2>Nazwa osiągnięcia</h2>
+                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    </div>
+                </div>
+                <div class="menu__achievements-list-item">
+                    <div class="achievements-img"></div>
+                    <div class="menu__achievements-list-item-info">
+                        <h2>Nazwa osiągnięcia</h2>
+                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    </div>
+                </div>
+                <div class="menu__achievements-list-item">
+                    <div class="achievements-img"></div>
+                    <div class="menu__achievements-list-item-info">
+                        <h2>Nazwa osiągnięcia</h2>
+                        <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="menu__div-list menu-div-stats">
+                <div class="menu__stats-list-item">
+                    <p>Liczba kliknięć: </p>
+                    <p id="stat1">0</p>
+                </div>
+                <div class="menu__stats-list-item">
+                    <p>Liczba ulepszeń: </p>
+                    <p id="stat2">0</p>
+                </div>
+                <div class="menu__stats-list-item">
+                    <p>Kliknięcia na sekundę: </p>
+                    <p id="stat3">0</p>
+                </div>
+                <div class="menu__stats-list-item">
+                    <p>Suma punktów: </p>
+                    <p id="stat4">0</p>
+                </div>
+                <div class="menu__stats-list-item"></div>
+            </div>
+    </div>
+    </section>
     </div>
     <div class="footer">
         <img class="footer__img" src="../Images/abc_alkoholu_czern.png" alt="">
     </div>
     <div class="navigation">
         <ul class="navigation__ul">
-            <li class="navigation__list active">
+            <li class="navigation__list active mobileHome">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="beer-outline"></ion-icon>
@@ -202,7 +206,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list">
+            <li class="navigation__list mobileUpgrade">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="cart-outline"></ion-icon>
@@ -210,7 +214,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list">
+            <li class="navigation__list mobileAchievement">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="trophy-outline"></ion-icon>
@@ -218,7 +222,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list">
+            <li class="navigation__list mobileStats">
                 <a class="navigation__list-a" href="#">
                     <span class="icon">
                         <ion-icon name="stats-chart-outline"></ion-icon>
@@ -236,6 +240,7 @@
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
     <script src="../../src/Scripts/modules/mobileMenu.js"></script>
+    <script src="../../src/Scripts/modules/popup.js"></script>
 
     <!-- <div id="content">
         <input name="Button1" type="button" value="Click for Achievement One"
@@ -290,10 +295,10 @@
 
     <template>
         <div id="achievementPopUp" class="achievement">
-            <img id="alertIcon" class="icon" src="">
-            <span class="title">Achievement unlocked</span>
+            <img id="alertIcon" class="icon">
+            <span id="PopUpText">Zdobyto osiagniecie!!!</span><br>
+            <span class="title"></span>
             <br />
-            <span id="PopUpText"></span>
         </div>
     </template>
 

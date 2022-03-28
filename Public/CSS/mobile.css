@@ -50,6 +50,11 @@
 }
 
 
+.mobile_header {
+    display: none;
+    height: 50px;
+    width: 100%;
+}
 
 
 
@@ -89,10 +94,91 @@
     .navigation {
         display: block;
     }
+
+    .mobile_header {
+        color: white;
+        background-color: rgb(14, 106, 32);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 30px;
+        padding-right: 10px;
+        height: 50px;
+        width: 100%;
+    }
+
+    .mobile_header-btn {
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        color: white;
+        font-size: 25px;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: calc(100% - 100px);
+        width: 100%;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .menu__div {
+        border-left: 0;
+    }
+
+
 }
 
 @media screen and (max-width: 640px) {
     body {
         background: url(../Images/tlo-tel.jpg) no-repeat center top;
     }
+}
+
+@media screen and (max-width: 540px) {
+    .menu__achievements-list-item {
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .achievements-img {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menu-div-upgrades {
+        font-size: 14px;
+    }
+
+    .upgrade__img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .menu-div-upgrades {
+        font-size: 12px;
+    }
+
+    .upgrade__img {
+        width: 60px;
+        height: 60px;
+        margin-right: 5px;
+    }
+
+    .menu__upgrades-list-item {
+        padding-right: 15px;
+    }
+
 }
