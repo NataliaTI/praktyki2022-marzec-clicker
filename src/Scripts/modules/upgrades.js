@@ -157,7 +157,6 @@ export function browarUpgrade(counter, autoClick) {
         browarUpgradeLevel += 1;
         upgradeCostFormat = format(browarUpgradeCost);
         extraMoneyPerClick += 3924;
-        autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('browarLevel').innerHTML = browarUpgradeLevel;

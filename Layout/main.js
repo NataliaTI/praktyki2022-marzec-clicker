@@ -1,10 +1,15 @@
-import { menuUpgrades } from '../src/Scripts/modules/menu.js';
+//import { format } from "../src/Scripts/Components/format.js"
+import { bonus } from "../src/Scripts/modules/catchbonusReworked";
+import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { otwieraczUpgrade, mietekUpgrade, sebaUpgrade, grazynaUpgrade, gangUpgrade, monopolowyUpgrade, browarUpgrade, destylarniaUpgrade, timer } from "../src/Scripts/modules/upgrades.js";
 import {} from "./animation";
+import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
+//bonus do zlapania
+//const catchbonus = document.getElementById("catchbonus");
 
 // ulepszenia
 const otwieraczUpgradeButton = document.getElementById("upgrade1");
@@ -16,8 +21,10 @@ const monopolowyUpgradeButton = document.getElementById("upgrade6");
 const browarUpgradeButton = document.getElementById("upgrade7");
 const destylarniaUpgradeButton = document.getElementById("upgrade8");
 
-export let counter = 15000000;
-export let autoClick = 0;
+let returnedFormatedValue = 0;
+let autoClickFormat;
+let counter = 150;
+let autoClick = 0;
 
 if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
@@ -90,6 +97,20 @@ if (destylarniaUpgradeButton) {
         autoClick = result.autoClick;
     });
 }
+
+    catchbonusstart();
+
+    document.getElementById("wrap").addEventListener('click', (event) => {
+        if (event.target && event.target.matches(".catchbonus")) {
+            let result = bonus(counter, autoClick);
+            console.log(result)
+            if (result.autoClick) {
+                autoClick = result.autoClick
+            }else if (result.counter) {                
+                counter = result.counter
+            }
+        } 
+ });
 
 window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
