@@ -329,32 +329,163 @@ html {
 .tooltip {
     position: relative;
     display: inline-block;
-    /* border-bottom: 1px dotted black; */
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltiptext-otwieracz {
     visibility: hidden;
-    background-color: gray;
-    color: #fff;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
     text-align: center;
     border-radius: 6px;
     padding: 5px;
-    width: 200px;
-
-    /* Position the tooltip */
+    width: 220px;
     position: absolute;
     z-index: 1;
-    top: -5px;
-    left: 50%;
+    top: -7px;
+    left: 40%;
 }
 
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext-otwieracz {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-mietek {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-mietek {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-seba {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-seba {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-ekspedientka {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-ekspedientka {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-gang {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-gang {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-monopolowy {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-monopolowy {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-browar {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-browar {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-destylarnia {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-destylarnia {
     visibility: visible;
 }
 
 /* CSS osiagniecia */
-/* #status.achievement {
+#status.achievement {
     display: none;
     position: absolute;
     left: 50%;
@@ -371,16 +502,17 @@ html {
     color: #ddd;
     border-radius: 18px 18px 18px 18px;
     /*background-image: url(../Images/kapsel.png);*/
-/* background-size: 64px;
-background-repeat: no-repeat;
-background-position: 6px 6px;
-width: 320px;
-height: 64px;
-padding-left: 80px;
-padding-bottom: 8px;
-padding-right: 12px;
-padding-top: 8px;
-} */
+    background-size: 64px;
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+    width: 320px;
+    height: 64px;
+    padding-left: 80px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-top: 8px;
+}
+
 
 .achievement.locked {
     background-color: #ccc;
@@ -462,9 +594,9 @@ padding-top: 8px;
     position: absolute;
     /* top: 50% ;
     left: 50%; */
-    /* transform: translate(-50%,-50%);
-width: 100px;
-height: 100px;
-background-color: blueviolet;
-cursor: pointer;
-}*/
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    cursor: pointer;
+}
