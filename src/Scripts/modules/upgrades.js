@@ -234,3 +234,55 @@ const updateList = {
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
+
+
+
+    /* achievementPopUp();
+    function achievementPopUp()  {
+        console.log(document.getElementById('PopUpText'));
+        document.getElementById('PopUpText').innerHTML = "Co dwa otwieracze to nie jeden";
+        document.getElementById("achievementPopUp").src = "dualies.png";
+        const elem = document.getElementById('achievementPopUp');
+    } */
+
+    //showContent();
+    //if achievement == true {
+        
+    function showContent(alertmessage, text, icon) {
+
+        const temp = document.getElementsByTagName("template")[0];
+        const clon = temp.content.cloneNode(true);
+        const poptext = document.getElementById('PopUpText');
+
+        clon.querySelector("#achievementPopUp .title").textContent = text;
+        clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage,
+        console.log(clon.querySelector("#achievementPopUp .title"));
+        clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
+        document.body.appendChild(clon);
+
+    }
+    function hideContent() {
+
+
+    }
+    window.addEventListener('DOMContentLoaded', function(){
+       // achievementPopUp();
+       //do showContent wpisuj co chcesz zeby alert oddal, pierwsze to text, drugie nazwa pliku z folderu images (NIE DAWAJ PELNEJ SCIEZKI TYLKO NP. KAPSEL.PNG)
+        showContent('Odblokowano osiągnięcie!', 'Co dwa otwieracze to nie jeden!', 'dualies.png');
+    });
+
+    const closeSaveButtons = document.querySelectorAll ('[data-close-button]');
+
+    closeSaveButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const save = button.closest('.save');
+            closeSave(save);
+        })
+    })
+
+    function closeSave(save) {
+        if (save == null) return;
+        save.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+    
