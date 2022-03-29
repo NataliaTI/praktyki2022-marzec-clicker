@@ -326,15 +326,35 @@ html {
     }
 }
 
-/* 
-@media screen and (max-width: 750px) {
-    .wrap {
-        flex-direction: column;
-    }
-} */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 200px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 50%;
+}
+
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 
 /* CSS osiagniecia */
-#status.achievement {
+/* #status.achievement {
     display: none;
     position: absolute;
     left: 50%;
@@ -351,16 +371,17 @@ html {
     background-color: rgb(0, 157, 65);
     color: #ddd;
     border-radius: 18px 18px 18px 18px;
-    /*background-image: url(../Images/kapsel.png);*/;
-    background-size: 64px;
-    background-repeat: no-repeat;
-    background-position: 6px 6px;
-    width: 320px;
-    height: 64px;
-    padding-bottom: 8px;
-    padding-right: 12px;
-    padding-top: 8px;
-}
+    /*background-image: url(../Images/kapsel.png);*/
+/* background-size: 64px;
+background-repeat: no-repeat;
+background-position: 6px 6px;
+width: 320px;
+height: 64px;
+padding-left: 80px;
+padding-bottom: 8px;
+padding-right: 12px;
+padding-top: 8px;
+} */
 
 .achievement.locked {
     background-color: #ccc;
@@ -442,9 +463,9 @@ html {
     position: absolute;
     /* top: 50% ;
     left: 50%; */
-    /* transform: translate(-50%,-50%); */
-    width: 100px;
-    height: 100px;
-    background-color: blueviolet;
-    cursor: pointer;
-}
+    /* transform: translate(-50%,-50%);
+width: 100px;
+height: 100px;
+background-color: blueviolet;
+cursor: pointer;
+}*/
