@@ -248,7 +248,7 @@ export const timer = (counter, autoClick) => counter + autoClick;
 
     //showContent();
     //if achievement == true {
-
+        
     function showContent(alertmessage, text, icon) {
 
         const temp = document.getElementsByTagName("template")[0];
@@ -260,8 +260,12 @@ export const timer = (counter, autoClick) => counter + autoClick;
         console.log(clon.querySelector("#achievementPopUp .title"));
         clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
         document.body.appendChild(clon);
-    }
 
+    }
+    function hideContent() {
+
+
+    }
     window.addEventListener('DOMContentLoaded', function(){
        // achievementPopUp();
        //do showContent wpisuj co chcesz zeby alert oddal, pierwsze to text, drugie nazwa pliku z folderu images (NIE DAWAJ PELNEJ SCIEZKI TYLKO NP. KAPSEL.PNG)
