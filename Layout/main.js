@@ -60,4 +60,4 @@ window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully 
 setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter)
-}, 1000)
+}, 1)
