@@ -1,5 +1,5 @@
 import { format } from "../src/Scripts/Components/format.js";
-import { extraMoneyPerClick } from "../src/Scripts/modules/upgrades.js";
+import { extraMoneyPerClick } from "./main.js";
 
 const clicker = document.querySelector('.clicker-img');
 
