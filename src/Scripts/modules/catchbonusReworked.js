@@ -1,9 +1,6 @@
-//const catchbonus = document.getElementById("catchbonus");
 import {format} from '../Components/format.js';
-import {autoClickFormat, returnedFormatedValue} from '../modules/upgrades.js';
-//import {autoClick, counter} from '../../../Layout/main.js';
+//import {autoClickFormat} from '../modules/upgrades.js';
 let catchbonusaddable = Boolean(true);
-//autoClickFormat = format(autoClick);
 
 function getRandomcoordinates() {
     const mincoordinates = 135
@@ -45,11 +42,8 @@ function getRandomcoordinates() {
   }, 10000)
 }
   function removebonus(catchbonus){
-    //onclickbonus();
-    //onclickbonus2();
     catchbonus.remove();
     catchbonusaddable = true
-    //return Math.floor (Math.random()*(bonus1 - bonus2 + 1)+ bonus2);
     
     }
     const bonusList = [{
@@ -58,7 +52,7 @@ function getRandomcoordinates() {
         type: "autoClick",
         time: 5000
       }]
-      export function bonus(counter, autoClick) {
+      export function bonus(counter, autoClick, e) {
         const max = 1;
         const min = 0 
         let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
@@ -69,22 +63,14 @@ function getRandomcoordinates() {
           counter = counter + Math.floor(counter/5); 
           console.log(counter)
           return { counter };
-        } else {
-          const oldAutoClick = autoClick
+      
+         }else {     
           autoClick = autoClick + autoClick  
-          autoClickFormat = format(autoClick)
+          let autoClickFormat = format(autoClick)
            document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
-           setTimeout(() => {
-            autoClick = autoClick - oldAutoClick;
-            autoClickFormat = format(autoClick)
-            document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
-            return { autoClick };
-        }, 5000);
 
             return { autoClick };
         }
       }
-      
-      //let randomBonusIndex = 1;
-      //bonus(randomBonusIndex)
+    
   
