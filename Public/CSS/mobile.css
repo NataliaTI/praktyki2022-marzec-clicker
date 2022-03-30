@@ -156,6 +156,8 @@
         height: 80px;
         margin-right: 20px;
     }
+
+
 }
 
 @media screen and (max-width: 500px) {
@@ -168,6 +170,17 @@
         height: 80px;
         margin-right: 10px;
     }
+
+    /* .menu__achievements-list-item {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+    .achievements-img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    } */
 }
 
 @media screen and (max-width: 390px) {
@@ -183,6 +196,19 @@
 
     .menu__upgrades-list-item {
         padding-right: 15px;
+    }
+
+    .upgrade1-div {
+        margin-right: 5px;
+    }
+
+    .menu__achievements-list-item {
+        padding-left: 5px;
+    }
+
+    .achievements-img {
+
+        margin-right: 5px;
     }
 
 }

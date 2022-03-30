@@ -262,31 +262,34 @@ export const timer = (counter, autoClick) => counter + autoClick;
         setTimeout(() => {
             deleteContent(clon)
         }, 5000);
+
+        const closePopUpButtons = document.querySelectorAll ('[data-close-button]')
+
+        closePopUpButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const close = button.closest('.achievement')
+                console.log(close)
+                deleteContent(clon)
+           })         
+        })
+   
+
     }
     function deleteContent(clon) {
     document.getElementById("achievementPopUp").remove()
-        }
-    
+        };
+
+
+
+
     window.addEventListener('DOMContentLoaded', function(){
        // achievementPopUp();
        //do showContent wpisuj co chcesz zeby alert oddal, pierwsze to text, drugie nazwa pliku z folderu images (NIE DAWAJ PELNEJ SCIEZKI TYLKO NP. KAPSEL.PNG)
         showContent('Odblokowano osiągnięcie!', 'Co dwa otwieracze to nie jeden!', 'dualies.png');
     });
 
-    const closeSaveButtons = document.querySelectorAll ('[data-close-button]');
+    
 
-    closeSaveButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const save = button.closest('.save');
-            closeSave(save);
-        })
-    })
-
-    function closeSave(save) {
-        if (save == null) return;
-        save.classList.remove('active');
-        overlay.classList.remove('active');
-    }
     
 
  

@@ -129,16 +129,10 @@ html {
     color: lightgray;
 }
 
-.achievements-img {
-    background-image: url('../Images/ikona-locked.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 25px;
-    background-repeat: no-repeat;
-}
+
 
 .upgrade__img {
+    align-self: center;
     background-size: cover;
     width: 100px;
     height: 100px;
@@ -210,7 +204,12 @@ html {
 
 .upgrade1-div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.menu__upgrade-list-item-info {
+    align-self: center;
 }
 
 
@@ -221,11 +220,44 @@ html {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 30px;
+    padding-left: 10px;
+    padding-right: 5px;
     width: 100%;
     height: 150px;
     border-bottom: 1px solid black;
 }
+
+.achievements-img__wrap {
+    display: flex;
+    height: 100%;
+}
+
+.achievements-img {
+    background-image: url('../Images/ikona-locked.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+/* .menu__achievements-list-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+} */
+
+/* .menu__achievements-list-item-info h2 {
+    display: block;
+    height: 50%;
+}
+
+.menu__achievements-list-item-info p {
+    display: block;
+    height: 50%;
+} */
 
 
 
@@ -235,7 +267,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 30px;
+    padding-left: 10px;
     padding-right: 10px;
     width: 100%;
     height: 60px;
@@ -599,5 +631,10 @@ html {
     width: 100px;
     height: 100px;
     background-color: blueviolet;
-    cursor: pointer;
+       cursor: pointer;
+}
+
+.frachudajesz {
+    display:flex;
+    flex-direction: column;
 }
