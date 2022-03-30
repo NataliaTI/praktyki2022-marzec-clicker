@@ -16,10 +16,15 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+.ikon-volume {
+    font-size: 30px;
+    color: lightgray;
+}
+
 .wrap {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     height: 60vh;
 }
 
@@ -374,8 +379,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 60%;
 }
 
 
@@ -394,8 +399,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 60%;
 }
 
 .tooltip:hover .tooltiptext-mietek {
@@ -413,8 +418,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 45%;
 }
 
 .tooltip:hover .tooltiptext-seba {
@@ -432,8 +437,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 25%;
 }
 
 .tooltip:hover .tooltiptext-ekspedientka {
@@ -451,8 +456,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 30%;
 }
 
 .tooltip:hover .tooltiptext-gang {
@@ -470,8 +475,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 35%;
 }
 
 .tooltip:hover .tooltiptext-monopolowy {
@@ -489,8 +494,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 90%;
 }
 
 .tooltip:hover .tooltiptext-browar {
@@ -508,8 +513,8 @@ html {
     width: 220px;
     position: absolute;
     z-index: 1;
-    top: -7px;
-    left: 40%;
+    top: 35px;
+    left: 55%;
 }
 
 .tooltip:hover .tooltiptext-destylarnia {
