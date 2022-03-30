@@ -1,5 +1,5 @@
-import {format} from '../Components/format.js';
-import {extraMoneyPerClick} from './upgrades.js';
+import { format } from '../Components/format.js';
+import { extraMoneyPerClick } from '../../../Layout/main.js';
 
 const counterElement = document.getElementById("counter");
 
@@ -9,6 +9,8 @@ export function changeCounterElementText(value){
   returnedFormatedValue = format(value);
 
   counterElement.textContent = returnedFormatedValue + " $";
+
+  mobileHeaderH2.textContent = returnedFormatedValue + ' $';
 }
 
 export function onClickHandler(counter) {
