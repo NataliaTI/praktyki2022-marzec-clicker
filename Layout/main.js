@@ -13,7 +13,7 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 15000000;
+export let counter = 1;
 export let autoClick = 0;
 export let extraMoneyPerClick = 0;
 
@@ -59,5 +59,8 @@ window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully 
 
 setInterval(() => {
     counter = timer(counter, autoClick);
-    changeCounterElementText(counter)
+    // changeCounterElementText(counter)
 }, 1000)
+setInterval(() => {
+    changeCounterElementText(counter)
+}, 1)

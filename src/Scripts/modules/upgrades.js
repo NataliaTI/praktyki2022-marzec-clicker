@@ -2,7 +2,7 @@ import { format } from "../Components/format.js";
 
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
-let autoClickFormat;
+export let autoClickFormat;
 
 export const updateList = {
     'otwieracz': {
