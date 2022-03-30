@@ -1,5 +1,5 @@
-import {format} from '../Components/format.js';
-import {extraMoneyPerClick} from './upgrades.js';
+import { format } from '../Components/format.js';
+import { extraMoneyPerClick } from '../../../Layout/main.js';
 
 const counterElement = document.getElementById("counter");
 

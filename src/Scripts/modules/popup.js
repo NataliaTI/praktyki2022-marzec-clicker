@@ -1,3 +1,4 @@
+
 const mobileHome = document.querySelector('.mobileHome');
 const mobileUpgrade = document.querySelector('.mobileUpgrade');
 const mobileAchievements = document.querySelector('.mobileAchievement');
