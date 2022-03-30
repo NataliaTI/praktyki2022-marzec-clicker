@@ -1,9 +1,6 @@
-//const catchbonus = document.getElementById("catchbonus");
 import {format} from '../Components/format.js';
-import {autoClickFormat, returnedFormatedValue} from '../modules/upgrades.js';
-//import {autoClick, counter} from '../../../Layout/main.js';
+import {autoClickFormat} from '../modules/upgrades.js';
 let catchbonusaddable = Boolean(true);
-//autoClickFormat = format(autoClick);
 
 function getRandomcoordinates() {
     const mincoordinates = 135
@@ -45,11 +42,8 @@ function getRandomcoordinates() {
   }, 10000)
 }
   function removebonus(catchbonus){
-    //onclickbonus();
-    //onclickbonus2();
     catchbonus.remove();
     catchbonusaddable = true
-    //return Math.floor (Math.random()*(bonus1 - bonus2 + 1)+ bonus2);
     
     }
     const bonusList = [{

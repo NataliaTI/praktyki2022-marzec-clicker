@@ -111,6 +111,7 @@ if (destylarniaUpgradeButton) {
                 autoClick = result.autoClick
             }else if (result.counter) {                
                 counter = result.counter
+                
             }
         } 
  });
