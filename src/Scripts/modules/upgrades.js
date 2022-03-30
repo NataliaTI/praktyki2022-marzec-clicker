@@ -248,7 +248,6 @@ export const timer = (counter, autoClick) => counter + autoClick;
 
     //showContent();
     //if achievement == true {
-        
     function showContent(alertmessage, text, icon) {
 
         const temp = document.getElementsByTagName("template")[0];
@@ -256,16 +255,18 @@ export const timer = (counter, autoClick) => counter + autoClick;
         const poptext = document.getElementById('PopUpText');
 
         clon.querySelector("#achievementPopUp .title").textContent = text;
-        clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage,
+        clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage;
         console.log(clon.querySelector("#achievementPopUp .title"));
         clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
         document.body.appendChild(clon);
-
+        setTimeout(() => {
+            deleteContent(clon)
+        }, 5000);
     }
-    function hideContent() {
-
-
-    }
+    function deleteContent(clon) {
+    document.getElementById("achievementPopUp").remove()
+        }
+    
     window.addEventListener('DOMContentLoaded', function(){
        // achievementPopUp();
        //do showContent wpisuj co chcesz zeby alert oddal, pierwsze to text, drugie nazwa pliku z folderu images (NIE DAWAJ PELNEJ SCIEZKI TYLKO NP. KAPSEL.PNG)
@@ -287,3 +288,5 @@ export const timer = (counter, autoClick) => counter + autoClick;
         overlay.classList.remove('active');
     }
     
+
+ 
