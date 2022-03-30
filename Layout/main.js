@@ -48,6 +48,14 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
+            const oldAutoClick = autoClick
+
+            setTimeout(() => {
+                autoClick = autoClick - oldAutoClick;
+                let autoClickFormat = format(autoClick)
+                //autoClick = autoClickFormat
+                document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+            }, 5000);
             autoClick = result.autoClick
         }else if (result.counter) {                
             counter = result.counter
