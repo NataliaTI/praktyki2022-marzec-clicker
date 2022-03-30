@@ -10,39 +10,10 @@
 
 body {
     background: url(../Images/tlo.jpg) no-repeat center top;
-    overflow: hidden;
 }
 
 html {
     font-family: 'Roboto', sans-serif;
-}
-
-body::-webkit-scrollbar {
-    width: 20px;
-}
-
-body::-webkit-scrollbar-button {
-    display: none;
-}
-
-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 10px grey;
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: rgb(9, 70, 9);
-    box-shadow: inset 1px 2px 10px 2px yellow;
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: rgb(1, 56, 1);
-    box-shadow: inset 0 0 25px yellow;
-}
-
-body::-webkit-scrollbar-thumb:window-inactive {
-    background: rgb(9, 70, 9);
 }
 
 .wrap {
@@ -160,74 +131,58 @@ body::-webkit-scrollbar-thumb:window-inactive {
 
 .achievements-img {
     background-image: url('../Images/ikona-locked.png');
-    width: 80px;
-    height: 80px;
-    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
     margin-right: 25px;
+    background-repeat: no-repeat;
+}
+
+.upgrade__img {
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
 }
 
 .upgrade__img-otwieracz {
     background-image: url('../Images/ikona-otwieracz.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-mietek {
     background-image: url('../Images/ikona-mietek.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-seba {
     background-image: url('../Images/ikona-dostawa.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-ekspedientka {
     background-image: url('../Images/ikona-ekspedientka.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-gang {
     background-image: url('../Images/ikona-hurtownia.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-monopolowy {
     background-image: url('../Images/ikona-monopolowy.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-browar {
     background-image: url('../Images/ikona-browar.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .upgrade__img-destylarnia {
     background-image: url('../Images/ikona-destylarnia.png');
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+
 }
 
 .menu__div-list {
@@ -265,7 +220,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding-left: 30px;
     width: 100%;
     height: 150px;
@@ -371,12 +326,163 @@ body::-webkit-scrollbar-thumb:window-inactive {
     }
 }
 
-/* 
-@media screen and (max-width: 750px) {
-    .wrap {
-        flex-direction: column;
-    }
-} */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext-otwieracz {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+
+.tooltip:hover .tooltiptext-otwieracz {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-mietek {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-mietek {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-seba {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-seba {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-ekspedientka {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-ekspedientka {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-gang {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-gang {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-monopolowy {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-monopolowy {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-browar {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-browar {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext-destylarnia {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 40%;
+}
+
+.tooltip:hover .tooltiptext-destylarnia {
+    visibility: visible;
+}
 
 /* CSS osiagniecia */
 #status.achievement {
@@ -389,12 +495,14 @@ body::-webkit-scrollbar-thumb:window-inactive {
 }
 
 .achievement {
+    align-items: flex-start;
+    display: flex;
     filter: alpha(opacity=100);
     border: 1px solid #fff;
     background-color: rgb(0, 157, 65);
     color: #ddd;
     border-radius: 18px 18px 18px 18px;
-    background-image: url(../Images/kapsel.png);
+    /*background-image: url(../Images/kapsel.png);*/
     background-size: 64px;
     background-repeat: no-repeat;
     background-position: 6px 6px;
@@ -405,6 +513,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     padding-right: 12px;
     padding-top: 8px;
 }
+
 
 .achievement.locked {
     background-color: #ccc;
@@ -422,6 +531,14 @@ body::-webkit-scrollbar-thumb:window-inactive {
     font-weight: bold;
     text-shadow: 0px 0px 4px #888;
 }
+
+.icon {
+    width: 64px;
+    height: 64px;
+    padding-left: 6px;
+    padding-bottom: 18px;
+}
+
 
 
 
@@ -478,7 +595,7 @@ body::-webkit-scrollbar-thumb:window-inactive {
     position: absolute;
     /* top: 50% ;
     left: 50%; */
-    /* transform: translate(-50%,-50%); */
+    transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
     background-color: blueviolet;
