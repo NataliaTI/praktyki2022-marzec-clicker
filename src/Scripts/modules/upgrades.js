@@ -67,7 +67,7 @@ export const updateList = {
     },
 }
 
-export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName) {
+export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv) {
     const upgrade = updateList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
@@ -85,17 +85,16 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName) {
         autoClickFormat = format(autoClick);
              
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('upgradeLevel').innerHTML = upgrade.level;
-        document.getElementById('sebaCost').innerHTML = upgradeCostFormat + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClick + ' $';
+
+        upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
+        upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
     }
 
     return { counter, autoClick, extraMoneyPerClick };
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
-
-
 
 /* achievementPopUp();
 function achievementPopUp()  {

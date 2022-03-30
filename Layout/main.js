@@ -13,7 +13,7 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 1;
+export let counter = 0;
 export let autoClick = 0;
 export let extraMoneyPerClick = 0;
 
@@ -26,7 +26,7 @@ if (upgradeFromHtml.length) {
         upgradeId.id;
 
         upgradeDiv.addEventListener('click', (event) => {
-            const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id);
+            const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv);
             
             counter = result.counter;
             autoClick = result.autoClick;
