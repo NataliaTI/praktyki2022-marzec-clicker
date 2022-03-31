@@ -33,7 +33,6 @@ function getRandomcoordinates() {
     }
   }
   export function catchbonusstart(){
-    console.log(counter)
   setInterval(() => {
     let coordinates = getRandomcoordinates();
     makediv(coordinates);
@@ -52,22 +51,43 @@ function getRandomcoordinates() {
         type: "autoClick",
         time: 5000
       }]
-      export function bonus(counter, autoClick, e) {
+      export function bonus(counter, autoClick) {
         const max = 1;
         const min = 0 
         let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
         const bonus = bonusList[randombonus];
       console.log(bonus.type);
         if (bonus.type == 'counterValue')  {
-            console.log(counter)
-          counter = counter + Math.floor(counter/5); 
-          console.log(counter)
+          counter = counter + Math.floor(counter/5);  
+          console.log(Math.floor(counter/5))
           return { counter };
       
          }else {     
+          let oldAutoClick = format(autoClick)
+          oldAutoClick = oldAutoClick.replace('.',',')
           autoClick = autoClick + autoClick  
           let autoClickFormat = format(autoClick)
+          autoClickFormat = autoClickFormat.replace('.',',')
+          const this2 = document.querySelector("body");
+          let x = 50;
+          let y = 50;
+          let money = document.createElement('div');
+          money.classList.add('click');
+          money.style.backgroundColor = "grey"
+          money.style.left = x + '%';
+          money.style.top = y + '%';
+          this2.appendChild(money);
+
+          let moneyClick = document.createElement('span');
+          moneyClick.classList.add('moneyClick');
+          money.appendChild(moneyClick);
+  
+
+          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekunde przez xyz sekund';
            document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+           setTimeout(() => {
+            money.remove()
+        },1500);
 
             return { autoClick };
         }

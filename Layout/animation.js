@@ -6,6 +6,7 @@ const clicker = document.querySelector('.clicker-img');
 clicker.addEventListener('click', function(e) {
     const cos = extraMoneyPerClick + 1;
     let cosFormated = format(cos);
+    cosFormated = cosFormated.replace('.',',')
     
     let x = e.clientX - e.target.offsetLeft;
     let y = e.clientY - e.target.offsetTop;

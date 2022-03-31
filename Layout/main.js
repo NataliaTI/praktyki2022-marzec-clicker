@@ -4,7 +4,7 @@ import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
 import {} from "./animation";
-import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
+import { catchbonusstart, getRandomcoordinates } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 
 // guzik do klikania
@@ -13,9 +13,10 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 0;
+export let counter = 150000;
 export let autoClick = 0;
 export let extraMoneyPerClick = 0;
+
 
 login();
 
@@ -48,17 +49,44 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
-            const oldAutoClick = autoClick
+            let oldAutoClick = format(autoClick)
+            oldAutoClick = oldAutoClick.replace('.',',')
 
             setTimeout(() => {
                 autoClick = autoClick - oldAutoClick;
                 let autoClickFormat = format(autoClick)
+                autoClickFormat = autoClickFormat.replace('.',',')
                 //autoClick = autoClickFormat
                 document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
             }, 5000);
             autoClick = result.autoClick
         }else if (result.counter) {                
             counter = result.counter
+            //const this2 = document.getElementsByTagName('body');
+            const this2 = document.querySelector("body");
+            let x = 50;
+            let y = 50;
+            let money = document.createElement('div');
+            money.classList.add('click');
+            money.style.backgroundColor = "grey"
+            money.style.left = x + '%';
+            money.style.top = y + '%';
+            this2.appendChild(money);
+
+            let moneyClick = document.createElement('span');
+            moneyClick.classList.add('moneyClick');
+            money.appendChild(moneyClick);
+            let bonuscounter = format(Math.floor(counter/5))
+            bonuscounter = bonuscounter.replace('.',',')
+           
+    
+
+            moneyClick.textContent = '+' + bonuscounter + ' $';
+            
+
+            setTimeout(() => {
+                money.remove()
+            },1500);
         }
     } 
 });
