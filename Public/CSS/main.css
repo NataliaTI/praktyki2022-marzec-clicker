@@ -302,7 +302,7 @@ html {
     pointer-events: none;
 }
 
-.test-click {
+.click-beer {
     top: 0;
     left: 0;
     display: block;
@@ -637,11 +637,11 @@ html {
     height: 100px;
     background-size: cover;
     background-image: url("../Images/kapselwin.png");
-       cursor: pointer;
+    cursor: pointer;
 }
 
 .frachudajesz {
-    display:flex;
+    display: flex;
     flex-direction: column;
     background-size: cover;
     cursor: pointer;

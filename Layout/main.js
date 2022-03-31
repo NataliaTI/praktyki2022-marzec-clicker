@@ -2,8 +2,8 @@ import { format } from "../src/Scripts/Components/format.js"
 import { bonus } from "../src/Scripts/modules/catchbonusReworked";
 import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
-import { timer, upgrade } from "../src/Scripts/modules/upgrades.js";
-import {} from "./animation";
+import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
+import {clicker, clickAnimation} from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
@@ -61,6 +61,13 @@ setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
+
+
+clicker.addEventListener('click', (e) => {
+    clickAnimation(e);
+})
+
+
 
 mobileHome.addEventListener('click', (e) => {
     changeToHome();
