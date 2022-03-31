@@ -1,5 +1,4 @@
 import { format } from '../Components/format.js';
-import { extraMoneyPerClick } from '../../../Layout/main.js';
 
 const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
 
@@ -16,7 +15,7 @@ export function changeCounterElementText(value){
   mobileHeaderH2.textContent = returnedFormatedValue + ' $';
 }
 
-export function onClickHandler(counter) {
+export function onClickHandler(counter, extraMoneyPerClick) {
   counter += extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);

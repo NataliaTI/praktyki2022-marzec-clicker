@@ -8,15 +8,17 @@ import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
 
+window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); }); 
+
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
 
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 1000;
-export let autoClick = 0;
-export let extraMoneyPerClick = 0;
+let counter = 1000;
+let autoClick = 0;
+let extraMoneyPerClick = 0;
 
 login();
 
@@ -37,7 +39,7 @@ if (upgradeFromHtml.length) {
 
 if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
-        counter = onClickHandler(counter);
+        counter = onClickHandler(counter, extraMoneyPerClick);
     });
 };
 
@@ -54,8 +56,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         }
     } 
 });
-
-window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 setInterval(() => {
     counter = timer(counter, autoClick);
