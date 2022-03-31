@@ -65,17 +65,17 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             counter = result.counter
             //const this2 = document.getElementsByTagName('body');
             const this2 = document.querySelector("body");
-            let x = 50;
-            let y = 50;
             let money = document.createElement('div');
             money.classList.add('click');
-            money.style.backgroundColor = "grey"
-            money.style.left = x + '%';
-            money.style.top = y + '%';
+           // money.id='money';
+            //money.style.backgroundColor = "grey"
+            //money.style.fontSize = 'large'
+            money.style.left = 50 + '%';
+            money.style.top = 50 + '%';
             this2.appendChild(money);
 
             let moneyClick = document.createElement('span');
-            moneyClick.classList.add('moneyClick');
+            moneyClick.classList.add('moneyClick2');
             money.appendChild(moneyClick);
             let bonuscounter = format(Math.floor(counter/5))
             bonuscounter = bonuscounter.replace('.',',')
