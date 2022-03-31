@@ -32,6 +32,7 @@
         };
 
     </script> -->
+    <ion-icon class="ikon-volume" name="volume-mute-outline"></ion-icon>
 
     <div id="wrap" class="wrap">
 
@@ -56,8 +57,8 @@
                             <div class="upgrade__img-otwieracz upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Otwieracz</h2>
-                                <p class="upgradeCost">10$</p>
-                                <span class="tooltiptext tooltiptext-otwieracz">Punkty na klikniecie: 1$<br>Punkty na
+                                <p id="otwieraczCost">10$</p>
+                                <span class="tooltiptext tooltiptext-otwieracz">Punkty na klikniecie: +1$<br>Punkty na
                                     sekunde: 0$</span>
                             </div>
                         </div>
@@ -70,7 +71,7 @@
                                 <h2>Mietek żul</h2>
                                 <p class="upgradeCost">150$</p>
                                 <span class="tooltiptext tooltiptext-mietek">Punkty na klikniecie: 0$<br>Punkty na
-                                    sekunde: 15$</span>
+                                    sekunde: +15$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -80,9 +81,9 @@
                             <div class="upgrade__img-seba upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Seba z osiedla</h2>
-                                <p class="upgradeCost">1.20k $</p>
-                                <span class="tooltiptext tooltiptext-seba">Punkty na klikniecie: 9$<br>Punkty na
-                                    sekunde: 100$</span>
+                                <p id="sebaCost">1.20k $</p>
+                                <span class="tooltiptext tooltiptext-seba">Punkty na klikniecie: +9$<br>Punkty na
+                                    sekunde: +100$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -92,9 +93,9 @@
                             <div class="upgrade__img-ekspedientka upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Ekspedientka Grażyna</h2>
-                                <p class="upgradeCost">5k $</p>
-                                <span class="tooltiptext tooltiptext-ekspedientka">Punkty na klikniecie: 150$<br>Punkty
-                                    na sekunde: 223$</span>
+                                <p id="grazynaCost">5k $</p>
+                                <span class="tooltiptext tooltiptext-ekspedientka">Punkty na klikniecie: +150$<br>Punkty
+                                    na sekunde: +223$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -104,9 +105,9 @@
                             <div class="upgrade__img-gang upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Gang z podstawówki</h2>
-                                <p class="upgradeCost">30k $</p>
-                                <span class="tooltiptext tooltiptext-gang">Punkty na klikniecie: 300$<br>Punkty na
-                                    sekunde: 641$</span>
+                                <p id="gangCost">30k $</p>
+                                <span class="tooltiptext tooltiptext-gang">Punkty na klikniecie: +300$<br>Punkty na
+                                    sekunde: +641$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -116,9 +117,10 @@
                             <div class="upgrade__img-monopolowy upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Monopolowy 24/7</h2>
-                                <p class="upgradeCost">115k $</p>
-                                <span class="tooltiptext tooltiptext-monopolowy">Punkty na klikniecie: 900$<br>Punkty na
-                                    sekunde: 1 234$</span>
+                                <p id="monopolowyCost">115k $</p>
+                                <span class="tooltiptext tooltiptext-monopolowy">Punkty na klikniecie: +900$<br>Punkty
+                                    na
+                                    sekunde: +1 234$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -128,8 +130,8 @@
                             <div class="upgrade__img-browar upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Browar</h2>
-                                <p class="upgradeCost">750k $</p>
-                                <span class="tooltiptext tooltiptext-browar">Punkty na klikniecie: 3 924$<br>Punkty na
+                                <p id="browarCost">750k $</p>
+                                <span class="tooltiptext tooltiptext-browar">Punkty na klikniecie: +3 924$<br>Punkty na
                                     sekunde: 0$</span>
                             </div>
                         </div>
@@ -142,7 +144,7 @@
                                 <h2>Destylarnia</h2>
                                 <p class="upgradeCost">4m $</p>
                                 <span class="tooltiptext tooltiptext-destylarnia">Punkty na klikniecie: 0$<br>Punkty na
-                                    sekunde: 4 256$</span>
+                                    sekunde: +4 256$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -321,8 +323,10 @@
 
         <div id="achievementPopUp" class="achievement">
             <img id="alertIcon" class="icon">
+            <div class="frachudajesz">
             <span id="PopUpText" class="PUT"></span><br>
             <span class="title"></span>
+            </div>
             <br />
             <button data-close-button class="close-button">&times;</button>
         </div>
