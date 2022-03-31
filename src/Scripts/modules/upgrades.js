@@ -94,9 +94,7 @@ function showContent(alertmessage, text, icon) {
     const poptext = document.getElementById('PopUpText');
 
     clon.querySelector("#achievementPopUp .title").textContent = text;
-    clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage;
-    console.log(clon.querySelector("#achievementPopUp .title"));
-    clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
+    clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage;    clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
     document.body.appendChild(clon);
 
     setTimeout(() => {
@@ -108,7 +106,7 @@ function showContent(alertmessage, text, icon) {
     closePopUpButtons.forEach(button => {
         button.addEventListener('click', () => {
             const close = button.closest('.achievement')
-            console.log(close)
+            // console.log(close)
             deleteContent(clon)
         })         
     })

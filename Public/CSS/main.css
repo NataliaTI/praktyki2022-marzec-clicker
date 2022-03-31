@@ -368,7 +368,7 @@ html {
     display: inline-block;
 }
 
-.tooltip .tooltiptext-otwieracz {
+.tooltip .tooltip__tooltiptext--otwieracz {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -384,11 +384,11 @@ html {
 }
 
 
-.tooltip:hover .tooltiptext-otwieracz {
+.tooltip:hover .tooltip__tooltiptext--otwieracz {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-mietek {
+.tooltip .tooltip__tooltiptext--mietek {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -403,11 +403,11 @@ html {
     left: 60%;
 }
 
-.tooltip:hover .tooltiptext-mietek {
+.tooltip:hover .tooltip__tooltiptext--mietek {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-seba {
+.tooltip .tooltip__tooltiptext--seba {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -422,11 +422,11 @@ html {
     left: 45%;
 }
 
-.tooltip:hover .tooltiptext-seba {
+.tooltip:hover .tooltip__tooltiptext--seba {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-ekspedientka {
+.tooltip .tooltip__tooltiptext--ekspedientka {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -441,11 +441,11 @@ html {
     left: 25%;
 }
 
-.tooltip:hover .tooltiptext-ekspedientka {
+.tooltip:hover .tooltip__tooltiptext--ekspedientka {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-gang {
+.tooltip .tooltip__tooltiptext--gang {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -460,11 +460,11 @@ html {
     left: 30%;
 }
 
-.tooltip:hover .tooltiptext-gang {
+.tooltip:hover .tooltip__tooltiptext--gang {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-monopolowy {
+.tooltip .tooltip__tooltiptext--monopolowy {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -479,11 +479,11 @@ html {
     left: 35%;
 }
 
-.tooltip:hover .tooltiptext-monopolowy {
+.tooltip:hover .tooltip__tooltiptext--monopolowy {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-browar {
+.tooltip .tooltip__tooltiptext--browar {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -498,11 +498,11 @@ html {
     left: 90%;
 }
 
-.tooltip:hover .tooltiptext-browar {
+.tooltip:hover .tooltip__tooltiptext--browar {
     visibility: visible;
 }
 
-.tooltip .tooltiptext-destylarnia {
+.tooltip .tooltip__tooltiptext--destylarnia {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -517,7 +517,7 @@ html {
     left: 55%;
 }
 
-.tooltip:hover .tooltiptext-destylarnia {
+.tooltip:hover .tooltip__tooltiptext--destylarnia {
     visibility: visible;
 }
 

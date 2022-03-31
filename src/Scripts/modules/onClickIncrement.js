@@ -20,7 +20,6 @@ export function onClickHandler(counter) {
   counter += extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);
-  return counter;
-  
-}
 
+  return counter;  
+}

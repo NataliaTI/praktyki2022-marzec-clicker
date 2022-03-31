@@ -1,5 +1,5 @@
 import {format} from '../Components/format.js';
-//import {autoClickFormat} from '../modules/upgrades.js';
+import {autoClickFormat} from '../modules/upgrades.js';
 let catchbonusaddable = Boolean(true);
 
 function getRandomcoordinates() {
@@ -72,5 +72,3 @@ function getRandomcoordinates() {
             return { autoClick };
         }
       }
-    
-  

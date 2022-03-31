@@ -14,7 +14,11 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
+<<<<<<< HEAD
 export let counter = 150;
+=======
+export let counter = 1000;
+>>>>>>> a2c95d62e4767910417cb00df5f7320aa91c03d7
 export let autoClick = 0;
 export let extraMoneyPerClick = 0;
 
@@ -23,8 +27,7 @@ login();
 if (upgradeFromHtml.length) {
     for (let name = 0; name < upgradeFromHtml.length; name++) {
         const upgradeDiv = upgradeFromHtml[name];
-        let upgradeId = upgradeDiv;
-        upgradeId.id;
+        const upgradeId = upgradeDiv;
 
         upgradeDiv.addEventListener('click', (event) => {
             const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv);
@@ -49,14 +52,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
-            const oldAutoClick = autoClick
-
-            setTimeout(() => {
-                autoClick = autoClick - oldAutoClick;
-                let autoClickFormat = format(autoClick)
-                //autoClick = autoClickFormat
-                document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
-            }, 5000);
             autoClick = result.autoClick
         }else if (result.counter) {                
             counter = result.counter
@@ -70,10 +65,6 @@ setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
-
-    
-
-
 
 mobileHome.addEventListener('click', (e) => {
     changeToHome();
