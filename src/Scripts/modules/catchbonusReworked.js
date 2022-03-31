@@ -1,5 +1,6 @@
 import {format} from '../Components/format.js';
-import {autoClickFormat} from '../modules/upgrades.js';
+import {autoClickFormat} from './upgrades.js';
+
 let catchbonusaddable = Boolean(true);
 
 function getRandomcoordinates() {
@@ -59,16 +60,17 @@ function getRandomcoordinates() {
         const bonus = bonusList[randombonus];
       console.log(bonus.type);
         if (bonus.type == 'counterValue')  {
-            console.log(counter)
+          console.log(counter)
           counter = counter + Math.floor(counter/5); 
           console.log(counter)
           return { counter };
       
          }else {     
           autoClick = autoClick + autoClick  
-          let autoClickFormat = format(autoClick)
-           document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+          autoClickFormat = format(autoClick)
 
-            return { autoClick };
+          document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+
+          return { autoClick };
         }
       }

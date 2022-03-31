@@ -1,11 +1,11 @@
-// import { format } from "../src/Scripts/Components/format.js"
-// import { bonus } from "../src/Scripts/modules/catchbonusReworked";
-// import {} from '../src/Scripts/modules/menu.js';
+import { format } from "../src/Scripts/Components/format.js"
+import { bonus } from "../src/Scripts/modules/catchbonusReworked";
+import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { timer, upgrade } from "../src/Scripts/modules/upgrades.js";
 import {} from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
-// import { login } from '../src/Scripts/modules/apiLogin.js';
+import { login } from '../src/Scripts/modules/apiLogin.js';
 import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
 
 // guzik do klikania
@@ -14,11 +14,11 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 1000;s
+export let counter = 1000;
 export let autoClick = 0;
 export let extraMoneyPerClick = 0;
 
-// login();
+login();
 
 if (upgradeFromHtml.length) {
     for (let name = 0; name < upgradeFromHtml.length; name++) {
