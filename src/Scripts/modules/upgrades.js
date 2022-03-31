@@ -1,5 +1,6 @@
 import { format } from "../Components/format.js";
 
+let sumOfUpgrades= 0;
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 export let autoClickFormat;
@@ -62,19 +63,22 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
 
         upgrade.currentCost += upgrade.cost;
         upgrade.level++;
+        sumOfUpgrades++
         updateList.current.currentAutoClickValue += upgrade.autoClickValue;
         updateList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
 
         autoClick = updateList.current.currentAutoClickValue;  
         extraMoneyPerClick = updateList.current.currentExtraMoneyPerClick;
 
+        
         returnedFormatedValue = format(counter);
         upgradeCostFormat = format(upgrade.currentCost);
         autoClickFormat = format(autoClick);
              
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClick + ' $';
-
+        document.getElementById('stat2').innerHTML = sumOfUpgrades;
+        document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
     }
