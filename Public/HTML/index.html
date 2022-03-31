@@ -61,19 +61,19 @@
                                     sekunde: 0$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="mietek">
                         <div class="upgrade1-div">
                             <div class="upgrade__img-mietek upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Mietek żul</h2>
-                                <p class="upgradeCost">150$</p>
+                                <p id="mietekCost">150$</p>
                                 <span class="tooltiptext tooltiptext-mietek">Punkty na klikniecie: 0$<br>Punkty na
                                     sekunde: 15$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="seba">
                         <div class="upgrade1-div">
@@ -85,7 +85,7 @@
                                     sekunde: 100$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="grazyna">
                         <div class="upgrade1-div">
@@ -97,7 +97,7 @@
                                     na sekunde: 223$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="gang">
                         <div class="upgrade1-div">
@@ -109,7 +109,7 @@
                                     sekunde: 641$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="monopolowy">
                         <div class="upgrade1-div">
@@ -121,7 +121,7 @@
                                     sekunde: 1 234$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="browar">
                         <div class="upgrade1-div">
@@ -133,19 +133,19 @@
                                     sekunde: 0$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                     <div class="menu__upgrades-list-item" id="destylarnia">
                         <div class="upgrade1-div">
                             <div class="upgrade__img-destylarnia upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Destylarnia</h2>
-                                <p class="upgradeCost">4m $</p>
+                                <p id="destylarniaCost">4m $</p>
                                 <span class="tooltiptext tooltiptext-destylarnia">Punkty na klikniecie: 0$<br>Punkty na
                                     sekunde: 4 256$</span>
                             </div>
                         </div>
-                        <p class="upgradeLevel">0</p>
+                        <p id="upgradeLevel">0</p>
                     </div>
                 </div>
                 <div class="menu__div-list menu-div-achievements">
@@ -277,10 +277,10 @@
     <!-- Importowanie plików JavaScript -->
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
-    <script src="../../src/Scripts/modules/mobileMenu.js"></script>
     <script type="module" src="../../src/Scripts/modules/upgrades.js"></script>
-    <script src="../../src/Scripts/modules/popup.js"></script>
     <script type ="module" src="../../src/Scripts/modules/statistics.js"></script>
+    <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
+    <!-- <script src="../../src/Scripts/modules/popup.js"></script> -->
 
     <!-- <div id="content">
         <input name="Button1" type="button" value="Click for Achievement One"
@@ -335,8 +335,15 @@
 
         <div id="achievementPopUp" class="achievement">
             <img id="alertIcon" class="icon">
+<<<<<<< HEAD
             <span id="PopUpText" class="PUT"></span><br>
             <span class="title"></span>
+=======
+            <div class="frachudajesz">
+                <span id="PopUpText" class="PUT"></span><br>
+                <span class="title"></span>
+            </div>
+>>>>>>> ca75d54f11c8911f16b1474ae8948154106daf8e
             <br />
             <button data-close-button class="close-button">&times;</button>
         </div>
