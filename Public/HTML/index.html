@@ -32,7 +32,6 @@
         };
 
     </script> -->
-    <ion-icon class="ikon-volume" name="volume-mute-outline"></ion-icon>
 
     <div id="wrap" class="wrap">
 
@@ -49,7 +48,7 @@
             <button class="menu-item stats menu-btn">Statystyki</button>
 
             <div class="mobile_header">
-                <h2 class="mobile_header-h2"></h2>
+                <h2 class="mobile_header-h2">123123$</h2>
                 <button class="mobile_header-btn">X</button>
             </div>
 
@@ -222,8 +221,20 @@
                         <p id="stat3">0</p>
                     </div>
                     <div class="menu__stats-list-item">
-                        <p>Suma punktów: </p>
+                        <p>Czas gry: </p>
                         <p id="stat4">0</p>
+                    </div>
+                    <div class="menu__stats-list-item">
+                        <p>Liczba złapanych bonusów: </p>
+                        <p id="stat5">0</p>
+                    </div>
+                    <div class="menu__stats-list-item">
+                        <p>Odblokowane osiągnięcia: </p>
+                        <p id="stat6">0</p>
+                    </div>
+                    <div class="menu__stats-list-item">
+                        <p>Łączna liczba zdobytych punktów: </p>
+                        <p id="stat7">0</p>
                     </div>
                     <div class="menu__stats-list-item"></div>
                 </div>
@@ -278,6 +289,7 @@
     <!-- Importowanie plików JavaScript -->
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
+    <script type ="module" src="../../src/Scripts/modules/statistics.js"></script>
     <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/popup.js"></script> -->
 
@@ -334,10 +346,15 @@
 
         <div id="achievementPopUp" class="achievement">
             <img id="alertIcon" class="icon">
+<<<<<<< HEAD
+            <span id="PopUpText" class="PUT"></span><br>
+            <span class="title"></span>
+=======
             <div class="frachudajesz">
                 <span id="PopUpText" class="PUT"></span><br>
                 <span class="title"></span>
             </div>
+>>>>>>> ca75d54f11c8911f16b1474ae8948154106daf8e
             <br />
             <button data-close-button class="close-button">&times;</button>
         </div>

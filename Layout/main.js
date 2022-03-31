@@ -2,11 +2,11 @@ import { format } from "../src/Scripts/Components/format.js"
 import { bonus } from "../src/Scripts/modules/catchbonusReworked";
 import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
-import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
+import { timer, upgrade } from "../src/Scripts/modules/upgrades.js";
 import {} from "./animation";
 import { catchbonusstart, getRandomcoordinates } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
-import {mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeader, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu} from "../src/Scripts/modules/mobileMenu.js";
+import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
