@@ -84,36 +84,34 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
 
 export const timer = (counter, autoClick) => counter + autoClick;
 
-function showContent(alertmessage, text, icon) {
-    const temp = document.getElementsByTagName("template")[0];
-    const clon = temp.content.cloneNode(true);
-    const poptext = document.getElementById('PopUpText');
+// function showContent(alertmessage, text, icon) {
+//     const temp = document.getElementsByTagName("template")[0];
+//     const clon = temp.content.cloneNode(true);
+//     const poptext = document.getElementById('PopUpText');
 
-    clon.querySelector("#achievementPopUp .title").textContent = text;
-    clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage;
-    console.log(clon.querySelector("#achievementPopUp .title"));
-    clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
-    document.body.appendChild(clon);
+//     clon.querySelector("#achievementPopUp .title").textContent = text;
+//     clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage;    clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
+//     document.body.appendChild(clon);
 
-    setTimeout(() => {
-        deleteContent(clon)
-    }, 5000);
+//     setTimeout(() => {
+//         deleteContent(clon)
+//     }, 5000);
 
-    const closePopUpButtons = document.querySelectorAll ('[data-close-button]')
+//     const closePopUpButtons = document.querySelectorAll ('[data-close-button]')
 
-    closePopUpButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const close = button.closest('.achievement')
-            console.log(close)
-            deleteContent(clon)
-        })         
-    })
-}
-function deleteContent(clon) {
-    document.getElementById("achievementPopUp").remove()
-}; 
+//     closePopUpButtons.forEach(button => {
+//         button.addEventListener('click', () => {
+//             const close = button.closest('.achievement')
+//             // console.log(close)
+//             deleteContent(clon)
+//         })         
+//     })
+// }
+// function deleteContent(clon) {
+//     document.getElementById("achievementPopUp").remove()
+// }; 
  
-window.addEventListener('DOMContentLoaded', function(){
-    //do showContent wpisuj co chcesz zeby alert oddal, pierwsze to text, drugie nazwa pliku z folderu images (NIE DAWAJ PELNEJ SCIEZKI TYLKO NP. KAPSEL.PNG)
-    showContent('Odblokowano osiągnięcie!', 'Co dwa otwieracze to nie jeden!', 'dualies.png');
-});
+// window.addEventListener('DOMContentLoaded', function(){
+//     //do showContent wpisuj co chcesz zeby alert oddal, pierwsze to text, drugie nazwa pliku z folderu images (NIE DAWAJ PELNEJ SCIEZKI TYLKO NP. KAPSEL.PNG)
+//     showContent('Odblokowano osiągnięcie!', 'Co dwa otwieracze to nie jeden!', 'dualies.png');
+// });
