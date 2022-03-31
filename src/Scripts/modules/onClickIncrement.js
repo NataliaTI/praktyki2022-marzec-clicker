@@ -1,6 +1,9 @@
 import { format, replacedot } from '../Components/format.js';
 import { extraMoneyPerClick } from '../../../Layout/main.js';
 
+const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
+
+
 const counterElement = document.getElementById("counter");
 
 let returnedFormatedValue = counter;
@@ -18,7 +21,6 @@ export function onClickHandler(counter) {
   counter += extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);
-  return counter;
-  
-}
 
+  return counter;  
+}

@@ -96,7 +96,7 @@
 
     .mobile_header {
         color: white;
-        background-color: rgb(170, 170, 170, 0.65);
+        background-color: rgb(170, 170, 170, 0.8);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -133,7 +133,7 @@
         backdrop-filter: blur(5px);
     }
 
-    .tooltiptext {
+    .tooltip__tooltiptext {
         display: none;
     }
 
