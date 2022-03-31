@@ -1,13 +1,13 @@
 export function login(params) {
     if(!localStorage.getItem("Token")){
-        fetch('http://praktyki-trol-clicker-api.herokuapp.com/login/').then(response => response.json())
+        fetch('http://praktyki-trol-clicker-api.herokuapp.com/login').then(response => response.json())
         .then(data => data.Data.Token).then(token => {
             localStorage.setItem("Token", token);
-            let tok = localStorage.getItem("Token");           
-            console.log(tok);
+            //let tok = localStorage.getItem("Token");           
+            //console.log(tok);
         });
     }else{
-        console.log("test");    
+        //console.log("test");    
     }
 }
 //TEST
