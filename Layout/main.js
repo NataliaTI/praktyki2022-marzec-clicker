@@ -13,7 +13,7 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 0;
+export let counter = 150;
 export let autoClick = 0;
 export let extraMoneyPerClick = 0;
 
@@ -48,6 +48,14 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
+            const oldAutoClick = autoClick
+
+            setTimeout(() => {
+                autoClick = autoClick - oldAutoClick;
+                let autoClickFormat = format(autoClick)
+                //autoClick = autoClickFormat
+                document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+            }, 5000);
             autoClick = result.autoClick
         }else if (result.counter) {                
             counter = result.counter
@@ -59,5 +67,8 @@ window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully 
 
 setInterval(() => {
     counter = timer(counter, autoClick);
-    changeCounterElementText(counter)
+    // changeCounterElementText(counter)
 }, 1000)
+setInterval(() => {
+    changeCounterElementText(counter)
+}, 1)

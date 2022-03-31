@@ -9,6 +9,8 @@ export function changeCounterElementText(value){
   returnedFormatedValue = format(value);
 
   counterElement.textContent = returnedFormatedValue + " $";
+
+  mobileHeaderH2.textContent = returnedFormatedValue + ' $';
 }
 
 export function onClickHandler(counter) {
