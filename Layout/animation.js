@@ -1,8 +1,6 @@
 import { format } from "../src/Scripts/Components/format.js";
-import { extraMoneyPerClick } from "./main.js";
 
 export const clicker = document.querySelector('.clicker-img');
-
 
 export function clickAnimation(e){
 

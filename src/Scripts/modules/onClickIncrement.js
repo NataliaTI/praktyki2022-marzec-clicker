@@ -1,26 +1,25 @@
-import { format, replacedot } from '../Components/format.js';
-import { extraMoneyPerClick } from '../../../Layout/main.js';
+import { format, replacedot, osiagniecia } from '../Components/format.js';
 
 const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
-
 
 const counterElement = document.getElementById("counter");
 
 let returnedFormatedValue = counter;
 
-export function changeCounterElementText(value){
+export function changeCounterElementText(value) {
   returnedFormatedValue = format(value);
-  returnedFormatedValue = returnedFormatedValue.replace('.',',')
+  returnedFormatedValue = returnedFormatedValue.replace('.', ',')
 
   counterElement.textContent = returnedFormatedValue + " $";
 
   mobileHeaderH2.textContent = returnedFormatedValue + ' $';
 }
 
-export function onClickHandler(counter) {
+export function onClickHandler(counter, extraMoneyPerClick) {
   counter += extraMoneyPerClick;
   counter++;
   changeCounterElementText(counter);
 
-  return counter;  
+  return counter;
 }
+osiagniecia()
