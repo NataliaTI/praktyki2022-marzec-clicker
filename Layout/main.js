@@ -100,7 +100,7 @@ setInterval(() => {
 
 
 clicker.addEventListener('click', (e) => {
-    clickAnimation(e);
+    clickAnimation(e, extraMoneyPerClick);
 })
 
 
