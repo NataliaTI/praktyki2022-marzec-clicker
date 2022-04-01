@@ -17,7 +17,7 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-let counter = 0;
+let counter = 1000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -125,5 +125,3 @@ mobileStats.addEventListener('click', (e) => {
 mobileHeaderBtn.addEventListener('click', (e) => {
     closeMenu();
 });
-
-osiagniecia(counter);

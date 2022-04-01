@@ -8,7 +8,7 @@ const menuDivStats = document.querySelector('.menu-div-stats');
 const buttons = document.querySelectorAll('.menu-item');
 
 
-console.log(buttons);
+// console.log(buttons);
 
 
 
