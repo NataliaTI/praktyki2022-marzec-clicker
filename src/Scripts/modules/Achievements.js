@@ -1,42 +1,53 @@
 import { counterElement } from './onClickIncrement.js';
 import { upgradeList } from "./upgrades.js";
-import { counterButtonElementStats } from "./statistics";
+import { sumOfClicks } from "./statistics";
 
-// export const upgradeList = {
-//     'ach1': {
-//         currentCost: 10,
-//         level: 0,
-//         autoClickValue: 0,
-//         extraMoneyPerClick: 1
-//     },
-//     'ach2': {
-//         currentCost: 150,
-//         level: 0,
-//         autoClickValue: 15,
-//         extraMoneyPerClick: 0
-//     },
-//     'ach3': {
-//         currentCost: 4000000,
-//         level: 0,
-//         autoClickValue: 4300,
-//         extraMoneyPerClick: 0
-//     },
-//     'ach4': {
-//         currentAutoClickValue: 0,
-//         currentExtraMoneyPerClick: 0
-//     },
-// }
+export const achievementsList = {
+    'achievementLevelOne': {
+        level: 1,
+    },
+    'achievementLevelTwo': {
+        level: 10,
+    },
+    'achievementLevelThree': {
+        level: 100,
+    },
+    'ach4': {
+        currentAutoClickValue: 0,
+        currentExtraMoneyPerClick: 0
+    },
+}
 
 
+export function osiagniecia(upgradeLevel, upgradeName) {
+
+    // console.log(achievementsList.achievementLevelOne.level)
+    // console.log(upgradeLevel)
+
+    if (achievementsList.achievementLevelOne.level == upgradeLevel)
+    {
+        console.log(upgradeName)
+    }
+
+    if (achievementsList.achievementLevelTwo.level == upgradeLevel)
+    {
+        console.log('dziala')
+    }
+
+    if (achievementsList.achievementLevelThree.level == upgradeLevel)
+    {
+        console.log('dziala')
+    }
+};
 
 
-export function osiagniecia(counter) {
-    // console.log('dziala')
-        if (counter == 1){
-            console.log('dziala')
-        }
 
-        //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
+
+
+
+
+
+      //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
         //         returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
         //     }
         // returnedFormatedValue = returnedFormatedValue1;
@@ -52,16 +63,6 @@ export function osiagniecia(counter) {
     //     }
     //     achievement: [{ req: "returnedFormatedValue.counterElement>1", gotten: false, text: "zdobyłeś pierwszy returnedFormatedValue" }];
     // }
-};
-
-
-
-
-
-
-
-
-
 
 
 
