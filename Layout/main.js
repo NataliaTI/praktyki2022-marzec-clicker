@@ -1,14 +1,14 @@
 import { format } from "../src/Scripts/Components/format.js"
 import { bonus } from "../src/Scripts/modules/catchbonusReworked";
-import {} from '../src/Scripts/modules/menu.js';
+import { } from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
-import {clicker, clickAnimation} from "./animation";
+import { clicker, clickAnimation } from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
 
-window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); }); 
+window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
@@ -29,7 +29,7 @@ if (upgradeFromHtml.length) {
 
         upgradeDiv.addEventListener('click', (event) => {
             const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv);
-            
+
             counter = result.counter;
             autoClick = result.autoClick;
             extraMoneyPerClick = result.extraMoneyPerClick;
@@ -51,24 +51,24 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         console.log(result)
         if (result.autoClick) {
             let oldAutoClick = format(autoClick)
-            oldAutoClick = oldAutoClick.replace('.',',')
+            oldAutoClick = oldAutoClick.replace('.', ',')
 
             setTimeout(() => {
                 autoClick = autoClick - oldAutoClick;
                 let autoClickFormat = format(autoClick)
-                autoClickFormat = autoClickFormat.replace('.',',')
+                autoClickFormat = autoClickFormat.replace('.', ',')
                 //autoClick = autoClickFormat
-                document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
-                autoClickFormat = autoClickFormat.replace(',','.')
+                document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
+                autoClickFormat = autoClickFormat.replace(',', '.')
             }, 5000);
             autoClick = result.autoClick
-        }else if (result.counter) {                
+        } else if (result.counter) {
             counter = result.counter
             //const this2 = document.getElementsByTagName('body');
             const this2 = document.querySelector("body");
             let money = document.createElement('div');
             money.classList.add('click');
-           // money.id='money';
+            // money.id='money';
             //money.style.backgroundColor = "grey"
             //money.style.fontSize = 'large'
             money.style.left = 50 + '%';
@@ -78,19 +78,19 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             let moneyClick = document.createElement('span');
             moneyClick.classList.add('moneyClick2');
             money.appendChild(moneyClick);
-            let bonuscounter = format(Math.floor(counter/5))
-            bonuscounter = bonuscounter.replace('.',',')
-           
-    
+            let bonuscounter = format(Math.floor(counter / 5))
+            bonuscounter = bonuscounter.replace('.', ',')
+
+
 
             moneyClick.textContent = '+' + bonuscounter + ' $';
-            
+
 
             setTimeout(() => {
                 money.remove()
-            },1500);
+            }, 1500);
         }
-    } 
+    }
 });
 
 setInterval(() => {
@@ -100,7 +100,7 @@ setInterval(() => {
 
 
 clicker.addEventListener('click', (e) => {
-    clickAnimation(e);
+    clickAnimation(e, extraMoneyPerClick);
 })
 
 
@@ -110,7 +110,7 @@ mobileHome.addEventListener('click', (e) => {
 });
 
 mobileUpgrade.addEventListener('click', (e) => {
-changeToUpgrade();
+    changeToUpgrade();
 });
 
 mobileAchievements.addEventListener('click', (e) => {
