@@ -112,9 +112,9 @@
                             <div class="upgrade__img-gang upgrade__img"></div>
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Gang z podstawówki</h2>
-                                <pclass="upgradeCost">30k $</p>
-                                    <span class="tooltip__tooltiptext tooltip__tooltiptext--gang">Punkty na klikniecie:
-                                        +300$<br>Punkty na sekunde: +641$</span>
+                                <p class="upgradeCost">30k $</p>
+                                <span class="tooltip__tooltiptext tooltip__tooltiptext--gang">Punkty na klikniecie:
+                                    +300$<br>Punkty na sekunde: +641$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -292,6 +292,7 @@
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
     <script type="module" src="../../src/Scripts/modules/statistics.js"></script>
+    <script src="../../src/Scripts/modules/menu.js"></script>
     <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/popup.js"></script> -->
 
@@ -348,12 +349,12 @@
 
         <div id="achievementPopUp" class="achievement">
             <img id="alertIcon" class="icon">
-            <div class="frachudajesz">
+            <div class="achievement__column">
                 <span id="PopUpText" class="PUT"></span><br>
                 <span class="title"></span>
             </div>
             <br />
-            <button data-close-button class="close-button">&times;</button>
+            <button data-close-button class="achievement__close-button">&times;</button>
         </div>
 
     </template>
