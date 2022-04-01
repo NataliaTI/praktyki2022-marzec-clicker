@@ -102,11 +102,12 @@ function showContent(alertmessage, text, icon) {
     const poptext = document.getElementById('PopUpText');
 
     clon.querySelector("#achievementPopUp .title").textContent = text;
-    clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage; clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
+    clon.querySelector("#achievementPopUp .PUT").textContent = alertmessage;    
+    clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
     document.body.appendChild(clon);
 
     setTimeout(() => {
-        deleteContent(clon)
+       deleteContent(clon)
     }, 5000);
 
     const closePopUpButtons = document.querySelectorAll('[data-close-button]')
