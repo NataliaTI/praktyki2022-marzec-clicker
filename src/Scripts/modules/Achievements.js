@@ -5,15 +5,48 @@ import { sumOfClicks } from "./statistics";
 const achievementsList = fetch('../../src/Catalog/achievements.json').then(response => response.json());
 console.log(achievementsList)
 
-export function osiagniecia(upgradeLevel, upgradeName) {
-    const achievementLevel = Object.entries(achievementsList);
-    console.log(achievementLevel)
-    for (let index = 0; index < achievementLevel.length; index++) {
-        console.log(upgradeLevel)
-        achievementLevel[index.level] == upgradeLevel;
-        console.log(achievementLevel)
-    }
-};
+
+
+
+
+
+
+
+
+
+
+// export function osiagniecia(upgradeLevel, upgradeName) {
+//     const achievementLevel = Object.entries(achievementsList)
+
+// export function osiagniecia(upgradeLevel, upgradeName) {
+
+//     // console.log(achievementsList.achievementLevelOne.level)
+//     // console.log(upgradeLevel)
+
+//     if (achievementsList.achievementLevelOne.level == upgradeLevel)
+//     {
+//         achievementsList.achievementLevelOne.unlocked = true
+//         console.log(upgradeName)
+//         function upgradeName
+//     }
+
+//     if (achievementsList.achievementLevelTwo.level == upgradeLevel)
+//     {
+//         console.log('dziala')
+//     }
+
+//     if (achievementsList.achievementLevelThree.level == upgradeLevel)
+//     {
+//         console.log('dziala')
+//     }
+// };
+
+
+
+
+
+
+
 
       //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
         //         returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];

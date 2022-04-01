@@ -7,7 +7,7 @@ import { clicker, clickAnimation } from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
-import { osiagniecia } from ".././src/Scripts/modules/achievements.js";
+import { osiagniecia } from "../src/Scripts/modules/achievements.js";
 
 window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
