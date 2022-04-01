@@ -1,5 +1,6 @@
 import { counterElement } from './onClickIncrement';
 import { achievement } from '../../../Public/HTML/index.html';
+
 export function osiagniecia() {
     for (i in counterElement) {
         if (returnedFormatedValue.counterElement[i] == 1)
@@ -20,20 +21,6 @@ export function osiagniecia() {
     }
 }
 console.log()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // for (i in otwieraczUpgradeLevel) {
         //     if (otwieracz.level[i] == null || otwieracz.level[i].text != otwieracz1.level[i].text) {
