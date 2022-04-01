@@ -5,7 +5,7 @@ log = Math.log;
 
 let abbrev = ["k","m","b","t","aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","an","ao","ap","ar","as","at","au","aw","az","ba",];
 
-function round(n, precision) {
+export function round(n, precision) {
   const prec = Math.pow(10, precision + 1);
   return Math.floor(n * prec) / prec;
 }
