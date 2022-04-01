@@ -1,5 +1,6 @@
 import {format} from '../Components/format.js';
-import {autoClickFormat} from '../modules/upgrades.js';
+import {autoClickFormat} from './upgrades.js';
+
 let catchbonusaddable = Boolean(true);
 
 function getRandomcoordinates() {
@@ -33,7 +34,6 @@ function getRandomcoordinates() {
     }
   }
   export function catchbonusstart(){
-    console.log(counter)
   setInterval(() => {
     let coordinates = getRandomcoordinates();
     makediv(coordinates);
@@ -52,23 +52,46 @@ function getRandomcoordinates() {
         type: "autoClick",
         time: 5000
       }]
-      export function bonus(counter, autoClick, e) {
+      export function bonus(counter, autoClick) {
         const max = 1;
         const min = 0 
         let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
         const bonus = bonusList[randombonus];
       console.log(bonus.type);
         if (bonus.type == 'counterValue')  {
-            console.log(counter)
-          counter = counter + Math.floor(counter/5); 
-          console.log(counter)
+          counter = counter + Math.floor(counter/5);  
+          console.log(Math.floor(counter/5))
           return { counter };
       
          }else {     
+          let oldAutoClick = format(autoClick)
+          oldAutoClick = oldAutoClick.replace('.',',')
           autoClick = autoClick + autoClick  
           let autoClickFormat = format(autoClick)
-           document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+          autoClickFormat = autoClickFormat.replace('.',',')
+          const this2 = document.querySelector("body");
+          let money = document.createElement('div');
+          money.classList.add('click');
+         // money.id='money';
+         // money.style.backgroundColor = "grey"
+         money.style.fontSize = 'large'
+          money.style.left = 50 + '%';
+          money.style.top = 50 + '%';
+          this2.appendChild(money);
 
-            return { autoClick };
+          let moneyClick = document.createElement('span');
+          moneyClick.classList.add('moneyClick2');
+          money.appendChild(moneyClick);
+  
+
+          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekunde przez xyz sekund';
+           document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+           setTimeout(() => {
+            money.remove()
+        },1500);
+
+          document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+
+          return { autoClick };
         }
       }

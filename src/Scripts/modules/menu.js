@@ -5,6 +5,14 @@ const menuDivUpgrades = document.querySelector('.menu-div-upgrades');
 const menuDivAchievements = document.querySelector('.menu-div-achievements');
 const menuDivStats = document.querySelector('.menu-div-stats');
 
+const buttons = document.querySelectorAll('.menu-item');
+
+
+// console.log(buttons);
+
+
+
+
 btnUpgrades.addEventListener("click", function(){
     btnUpgrades.classList.add('active--menu-item');
     btnAchievements.classList.remove('active--menu-item');
