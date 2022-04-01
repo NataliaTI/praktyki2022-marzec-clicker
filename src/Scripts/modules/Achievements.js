@@ -15,13 +15,6 @@ export function osiagniecia(upgradeLevel, upgradeName) {
     }
 };
 
-
-
-
-
-
-
-
       //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
         //         returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
         //     }
