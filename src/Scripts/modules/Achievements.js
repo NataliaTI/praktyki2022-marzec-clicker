@@ -15,6 +15,7 @@ export function osiagniecia(upgradeLevel, upgradeName) {
     }
 };
 
+<<<<<<< HEAD
 
 
 
@@ -35,6 +36,8 @@ export function osiagniecia(counter) {
 
 
 
+=======
+>>>>>>> fc6faf2d993fee905513b82984968170a7fe6a5e
       //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
         //         returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
         //     }
