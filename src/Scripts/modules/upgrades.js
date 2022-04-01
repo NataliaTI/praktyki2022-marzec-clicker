@@ -112,7 +112,7 @@ function showContent(alertmessage, text, icon) {
     document.body.appendChild(clon);
 
     setTimeout(() => {
-        deleteContent(clon)
+       deleteContent(clon)
     }, 5000);
 
     const closePopUpButtons = document.querySelectorAll('[data-close-button]')
