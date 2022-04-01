@@ -5,12 +5,12 @@
 const counterButtonElementStats = document.getElementById('counter-button');
 let sumOfClicks = 0;
 
-function clickCounter()
+export function clickCounter()
 {
     sumOfClicks ++;
     document.getElementById('stat1').innerHTML = sumOfClicks;
 }
-counterButtonElementStats.onclick= clickCounter;
+counterButtonElementStats.onclick = clickCounter;
 
 // Czas grania
 setInterval(() => {
