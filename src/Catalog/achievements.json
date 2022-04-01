@@ -1,0 +1,18 @@
+{
+    "Pierwszy-otwieracz": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "xyz",
+        "locked": "achievements-otwieracz"
+    },
+    "achievementLevelTwo": {
+        "level": 10
+    },
+    "achievementLevelThree": {
+        "level": 100
+    },
+    "ach4": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    }
+}
