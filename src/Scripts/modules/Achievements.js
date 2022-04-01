@@ -2,41 +2,16 @@ import { counterElement } from './onClickIncrement.js';
 import { upgradeList } from "./upgrades.js";
 import { sumOfClicks } from "./statistics";
 
-export const achievementsList = {
-    'achievementLevelOne': {
-        level: 1,
-    },
-    'achievementLevelTwo': {
-        level: 10,
-    },
-    'achievementLevelThree': {
-        level: 100,
-    },
-    'ach4': {
-        currentAutoClickValue: 0,
-        currentExtraMoneyPerClick: 0
-    },
-}
-
+const achievementsList = fetch('../../src/Catalog/achievements.json').then(response => response.json());
+console.log(achievementsList)
 
 export function osiagniecia(upgradeLevel, upgradeName) {
-
-    // console.log(achievementsList.achievementLevelOne.level)
-    // console.log(upgradeLevel)
-
-    if (achievementsList.achievementLevelOne.level == upgradeLevel)
-    {
-        console.log(upgradeName)
-    }
-
-    if (achievementsList.achievementLevelTwo.level == upgradeLevel)
-    {
-        console.log('dziala')
-    }
-
-    if (achievementsList.achievementLevelThree.level == upgradeLevel)
-    {
-        console.log('dziala')
+    const achievementLevel = Object.entries(achievementsList);
+    console.log(achievementLevel)
+    for (let index = 0; index < achievementLevel.length; index++) {
+        console.log(upgradeLevel)
+        achievementLevel[index.level] == upgradeLevel;
+        console.log(achievementLevel)
     }
 };
 
