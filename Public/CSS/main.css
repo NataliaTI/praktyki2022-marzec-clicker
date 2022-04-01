@@ -134,7 +134,10 @@ html {
     color: lightgray;
 }
 
-
+.upgradeLevel{
+    font-size: 24px;
+    font-weight: bold;
+}
 
 .upgrade__img {
     align-self: center;
@@ -239,6 +242,16 @@ html {
 
 .achievements-img {
     background-image: url('../Images/ikona-locked.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-otwieracz {
+    background-image: url('../Images/ikona-otwieracz.png');
     width: 100px;
     height: 100px;
     background-size: contain;
@@ -622,7 +635,7 @@ html {
     font-weight: bold;
 }
 
-.save-header .close-button {
+.achievement__close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -666,7 +679,7 @@ html {
     
 }
 
-.frachudajesz {
+.achievement__column {
     display: flex;
     flex-direction: column;
     background-size: cover;
