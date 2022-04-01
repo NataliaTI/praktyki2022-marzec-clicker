@@ -48,7 +48,10 @@ export function otwieraczUpgrade(counter, autoClick) {
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
 
 
-
+        if (counter == 1) {
+            achievements.counter++;
+            document.onload('achievement').innerHTML = 'zdobyłeś osiągniecie'.execute;
+        }
         // for (i in otwieraczUpgradeLevel) {
         //     if (otwieracz.level[i] == null || otwieracz.level[i].text != otwieracz1.level[i].text) {
         //         otwieracz1.level[i] = otwieracz.level[i]

@@ -1,6 +1,6 @@
 import { format } from '../Components/format.js';
 import { extraMoneyPerClick } from '../../../Layout/main.js';
-import { osiagniecia } from '../modules/Achievements.js';
+import { osiagniecia } from './Achievements.js';
 
 const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
 
@@ -24,4 +24,4 @@ export function onClickHandler(counter) {
 
   return counter;
 }
-Osiagniecia()
+osiagniecia()

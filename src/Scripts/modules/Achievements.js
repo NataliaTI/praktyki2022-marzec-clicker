@@ -1,12 +1,14 @@
 import { counterElement } from './onClickIncrement';
-
-function Osiagniecia() {
+import { achievement } from '../../../Public/HTML/index.html';
+export function osiagniecia() {
     for (i in counterElement) {
-        if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
-            returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
-        }
+        if (returnedFormatedValue.counterElement[i] == 1)
+            if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
+                returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
+            }
+        returnedFormatedValue = returnedFormatedValue1;
     }
-    returnedFormatedValue = returnedFormatedValue1;
+
 
     for (i in returnedFormatedValue.counterElement) {
         let a = new Function('counter' + returnedFormatedValue.counterElement[i].req);
@@ -14,10 +16,10 @@ function Osiagniecia() {
             returnedFormatedValue.counterElement[i].gotten = true;
             document.querySelector("achievements").innerHTML += 'Osiągnięcie zdobyte';
         }
-        achievements: [{ req: "returnedFormatedValue.counterElement>1", gotten: false, text: "zdobyłeś pierwszy returnedFormatedValue" }];
+        achievement: [{ req: "returnedFormatedValue.counterElement>1", gotten: false, text: "zdobyłeś pierwszy returnedFormatedValue" }];
     }
 }
-
+console.log()
 
 
 
