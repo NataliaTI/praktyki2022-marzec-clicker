@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import { counterElement } from './onClickIncrement';
-import { achievement } from '../../../Public/HTML/index.html';
-
-export function osiagniecia() {
-    for (i in counterElement) {
-        if (returnedFormatedValue.counterElement[i] == 1)
-            if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
-                returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
-            }
-        returnedFormatedValue = returnedFormatedValue1;
-    }
-=======
 import { counterElement } from './onClickIncrement.js';
 import { upgradeList } from "./upgrades.js";
 import { counterButtonElementStats } from "./statistics";
@@ -39,22 +26,21 @@ import { counterButtonElementStats } from "./statistics";
 //         currentExtraMoneyPerClick: 0
 //     },
 // }
->>>>>>> 270b3607cfd6e1b030c5af3e6605bd9e2747b067
 
 
 
 
 export function osiagniecia(counter) {
     // console.log('dziala')
-        if (counter == 1){
-            console.log('dziala')
-        }
+    if (counter == 1) {
+        console.log('dziala')
+    }
 
-        //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
-        //         returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
-        //     }
-        // returnedFormatedValue = returnedFormatedValue1;
-    
+    //     if (returnedFormatedValue.counterElement[i] == null || returnedFormatedValue.counterElement[i].text != returnedFormatedValue1.counterElement[i].text) {
+    //         returnedFormatedValue1.counterElement[i] = returnedFormatedValue.counterElement[i];
+    //     }
+    // returnedFormatedValue = returnedFormatedValue1;
+
 
 
 
