@@ -3,10 +3,12 @@ import { bonus } from "../src/Scripts/modules/catchbonusReworked";
 import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
-import {} from "./animation";
+import {clicker, clickAnimation} from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
-import {mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeader, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu} from "../src/Scripts/modules/mobileMenu.js";
+import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
+
+window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); }); 
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
@@ -14,9 +16,9 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-export let counter = 1000;
-export let autoClick = 0;
-export let extraMoneyPerClick = 0;
+let counter = 1000;
+let autoClick = 0;
+let extraMoneyPerClick = 0;
 
 login();
 
@@ -37,7 +39,7 @@ if (upgradeFromHtml.length) {
 
 if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
-        counter = onClickHandler(counter);
+        counter = onClickHandler(counter, extraMoneyPerClick);
     });
 };
 
@@ -48,19 +50,60 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
+            let oldAutoClick = format(autoClick)
+            oldAutoClick = oldAutoClick.replace('.',',')
+
+            setTimeout(() => {
+                autoClick = autoClick - oldAutoClick;
+                let autoClickFormat = format(autoClick)
+                autoClickFormat = autoClickFormat.replace('.',',')
+                //autoClick = autoClickFormat
+                document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+                autoClickFormat = autoClickFormat.replace(',','.')
+            }, 5000);
             autoClick = result.autoClick
         }else if (result.counter) {                
             counter = result.counter
+            //const this2 = document.getElementsByTagName('body');
+            const this2 = document.querySelector("body");
+            let money = document.createElement('div');
+            money.classList.add('click');
+           // money.id='money';
+            //money.style.backgroundColor = "grey"
+            //money.style.fontSize = 'large'
+            money.style.left = 50 + '%';
+            money.style.top = 50 + '%';
+            this2.appendChild(money);
+
+            let moneyClick = document.createElement('span');
+            moneyClick.classList.add('moneyClick2');
+            money.appendChild(moneyClick);
+            let bonuscounter = format(Math.floor(counter/5))
+            bonuscounter = bonuscounter.replace('.',',')
+           
+    
+
+            moneyClick.textContent = '+' + bonuscounter + ' $';
+            
+
+            setTimeout(() => {
+                money.remove()
+            },1500);
         }
     } 
 });
-
-window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
+
+
+clicker.addEventListener('click', (e) => {
+    clickAnimation(e);
+})
+
+
 
 mobileHome.addEventListener('click', (e) => {
     changeToHome();

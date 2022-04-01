@@ -1,127 +1,35 @@
- //  Liczba kliknięć- działało
- 
- const counterButtonElementStats = document.getElementById('counter-button');
-//  const counterButtonElementPoints = document.getElementById('counter-button');
+// Punkty na sekunde - w pliku upgrades.js
+// Liczba zakupionych ulepszeń - w pliku upgrades.js
 
+//  Liczba kliknięć
+const counterButtonElementStats = document.getElementById('counter-button');
+let sumOfClicks = 0;
 
- 
- let sumOfClicks = 0;
-
- function clickCounter()
- {
- sumOfClicks ++;
- document.getElementById('stat1').innerHTML = sumOfClicks;
- }
- counterButtonElementStats.onclick= clickCounter;
-
-//  let sumOfPoints = 0
-
-//  function pointsCounter()
-//  {
-//      sumOfPoints++
-//      document.getElementById('stat3').innerHTML = sumOfPoints;
-//  }
-//  counterButtonElementPoints.onclick= pointsCounter;
-
-
- 
-//  console.log('stat1');
-
-
-// autoclick na sekunde - nie dziala
-// import extraMoneyPerClick from "../../src/Scripts/modules/upgrades.js"
-
-
-
-
-// // Czas gry
-
-// let time = 0;
-
-// function timerStatistic() 
-// {
-  
-//     time ++; 
-//     document.getElementById('stat1').innerHTML = time ;
-//     console.log(time);
-// }
-// setInterval(timerStatistic, 1000);
-
-
-// let totalPoints = 0
-
-// function totalPointsStatistic()
-// {
-
-// }
-
-
-// function autoClickStatistic()
-// {
-
-
-//     document.getElementById('moneyPerSecond')=autoClick;
-//     document.getElementById('stat1').innerHTML= 'moneyPerSecond'
-//     console.log(autoClick)
-// }
-
-
-
-// import { gangUpgrade } from "./upgrades";
-// Liczba złapanych bonusów
-// let bonusCount = 0
-// function bonusStatistic()
-// {
-//     bonusCount += bonusCount
-    // document.getElementById('tuwpiszid').innerHTML = bonusCount;
-// }
-// catchbonus.onclick= bonusStatistic()
-
-
-// Liczba zakupionych ulepszeń
-
-const otwieraczUpgradeButton = document.getElementById("upgrade1");
-const mietekUpgradeButton = document.getElementById("upgrade2");
-const sebaUpgradeButton = document.getElementById("upgrade3");
-const grazynaUpgradeButton = document.getElementById("upgrade4");
-const gangUpgradeButton = document.getElementById("upgrade5");
-const monopolowyUpgradeButton = document.getElementById("upgrade6");
-const browarUpgradeButton = document.getElementById("upgrade7");
-const destylarniaUpgradeButton = document.getElementById("upgrade8");
-
-let totalUpgrades = 0;
-function sumOfUpgrades()
+function clickCounter()
 {
-totalUpgrades++
-document.getElementById('stat2').innerHTML = totalUpgrades;
+    sumOfClicks ++;
+    document.getElementById('stat1').innerHTML = sumOfClicks;
 }
-otwieraczUpgradeButton.onclick=sumOfUpgrades;
-mietekUpgradeButton.onclick=sumOfUpgrades;
-sebaUpgradeButton.onclick=sumOfUpgrades;
-grazynaUpgradeButton.onclick=sumOfUpgrades;
-gangUpgradeButton.onclick=sumOfUpgrades;
-monopolowyUpgradeButton.onclick=sumOfUpgrades;
-browarUpgradeButton.onclick=sumOfUpgrades;
-destylarniaUpgradeButton.onclick=sumOfUpgrades; 
+counterButtonElementStats.onclick= clickCounter;
 
+// Czas grania
+setInterval(() => {
 
+const dateOne = new Date("2022-03-29 10:00:00"); 
+const dateTwo = new Date(); 
 
-// import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
-// const tytyty = document.getElementById('counter')
-// function no()    
-// {   
-//     counter += extraMoneyPerClick;
-//     counter++;
-//     changeCounterElementText(counter);
-//     let totalMoney = totalMoney + counter;
-//     return counter;
-//     document.getElementById('stat3').innerHTML= totalMoney;
-//     console.log(totalMoney)
-//   }
-//   tytyty.onclick=no;
-  
+let seconds = Math.abs(dateTwo-dateOne)/1000;
+let minutes = parseInt(seconds/60);
+let hours = parseInt(minutes/60);
+let days = parseInt(hours/24);
+let months = parseInt(days/30);
+let years = parseInt(months/12);
 
+seconds = parseInt((seconds-minutes*60));
+minutes = parseInt((minutes-hours*60));
+hours = parseInt((hours-days*24));
+days = parseInt((days-months*30));
+months = parseInt((months-years*12));
+    document.getElementById('stat4').innerHTML = years + "l " + months + "m " + days + "d " + hours + "g " + minutes + "m " + seconds + "s";
+}, 1000)
 
-// Liczba osiągnięć
-
-// let sumOfAchievements = 0;
