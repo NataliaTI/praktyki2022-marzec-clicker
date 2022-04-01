@@ -134,7 +134,10 @@ html {
     color: lightgray;
 }
 
-
+.upgradeLevel{
+    font-size: 24px;
+    font-weight: bold;
+}
 
 .upgrade__img {
     align-self: center;
@@ -622,7 +625,7 @@ html {
     font-weight: bold;
 }
 
-.save-header .close-button {
+.achievement__close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -666,7 +669,7 @@ html {
     
 }
 
-.frachudajesz {
+.achievement__column {
     display: flex;
     flex-direction: column;
     background-size: cover;
