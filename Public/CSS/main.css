@@ -260,6 +260,75 @@ html {
     align-self: center;
 }
 
+.achievements-mietek {
+    background-image: url('../Images/ikona-mietek.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-seba {
+    background-image: url('../Images/ikona-dostawa.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-ekspedientka {
+    background-image: url('../Images/ikona-ekspedientka.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-gang {
+    background-image: url('../Images/ikona-hurtownia.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-monopolowy {
+    background-image: url('../Images/ikona-monopolowy.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-browar {
+    background-image: url('../Images/ikona-browar.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.achievements-destylarnia {
+    background-image: url('../Images/ikona-destylarnia.png');
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+}
 /* .menu__achievements-list-item-info {
     display: flex;
     flex-direction: column;

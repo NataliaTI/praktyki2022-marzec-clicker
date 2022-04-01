@@ -5,7 +5,8 @@ import { sumOfClicks } from "./statistics";
 const achievementsList = fetch('../../src/Catalog/achievements.json').then(response => response.json());
 console.log(achievementsList)
 
-
+export function osiagniecia(upgradeLevel, upgradeName) {
+    const achievementLevel = Object.entries(achievementsList)
 
 
 
