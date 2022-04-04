@@ -5,6 +5,12 @@
         "achievementDescription": "Po raz pierwszy kliknąłeś w piwko",
         "locked": "achievements-otwieracz"
     },
+    "klikacz2": {
+        "sumOfClicks": 10,
+        "achievementHeader": "Dziesiąty klik",
+        "achievementDescription": "Brawo już nabierasz wprawy i kliknąłeś 10 razy w piwko",
+        "locked": "achievements-otwieracz"
+    },
 
     "otwieracz1": {
         "level": 1,
