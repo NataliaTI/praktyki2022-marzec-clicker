@@ -6,9 +6,7 @@ const achievementsList = fetch('../../src/Catalog/achievements.json').then(respo
 console.log(achievementsList)
 
 export function osiagniecia(upgradeLevel, upgradeName) {
-    const achievementLevel = Object.entries(achievementsList)
-
-
+    const achievementLevel = Object.entries(achievementsList) 
 
 
 
@@ -86,4 +84,3 @@ export function osiagniecia(upgradeLevel, upgradeName) {
         //     }
         //     achievements: [{ req: "otwieracz.level>1", gotten: false, text: "zdobyłeś pierwszy otwieracz" }]
         // }
-   // }

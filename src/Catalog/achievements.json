@@ -1,138 +1,207 @@
 {
-    "Pierwszy-otwieracz": {
+    "otwieracz1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "xyz",
+        "achievementDescription": "Pierwszy otwieracz",
         "locked": "achievements-otwieracz"
     },
-    "achievementLevelTwo": {
-        "level": 10
+    "otwieracz10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąty otwieracz",
+        "locked": "achievements-otwieracz"
     },
-    "achievementLevelThree": {
-        "level": 100
+    "otwieracz100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setny otwieracz",
+        "locked": "achievements-otwieracz"
     },
-    "ach4": {
+    "otwieracz1000": {
         "currentAutoClickValue": 0,
         "currentExtraMoneyPerClick": 0
     },
 
-    "Pierwszy-mietek": {
+
+    "mietek1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwszy menelik",
         "locked": "achievements-mietek"
     },
-    "achievementLevel1Two": {
-        "level": 10
+    "mietek10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąty menelik",
+        "locked": "achievements-mietek"
     },
-    "achievementLevel1Three": {
-        "level": 100
+    "mietek100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setny menelik",
+        "locked": "achievements-mietek"
     },
-    "ach14": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "mietek1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczny menelik",
+        "locked": "achievements-mietek"
     },
 
-    "Pierwszy-seba": {
+
+    "seba1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwszy rycerz ortalionu",
         "locked": "achievements-seba"
     },
-    "achievementLevel2Two": {
-        "level": 10
+    "seba10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąty rycerz ortalionu",
+        "locked": "achievements-seba"    
     },
-    "achievementLevel2Three": {
-        "level": 100
+    "seba100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setny rycerz ortalionu",
+        "locked": "achievements-seba"    
     },
-    "ach24": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "seba1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczny rycerz ortalionu",
+        "locked": "achievements-seba"
     },
 
-    "Pierwsza-ekspedientka": {
+
+    "ekspedientka1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwsza Grażynka",
         "locked": "achievements-ekspedientka"
     },
-    "achievementLevel3Two": {
-        "level": 10
+    "ekspedientka10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąta Grażynka",
+        "locked": "achievements-ekspedientka"
     },
-    "achievementLevel3Three": {
-        "level": 100
+    "ekspedientka100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setna Grażynka",
+        "locked": "achievements-ekspedientka"
     },
-    "ach34": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "ekspedientka1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczna Grażynka",
+        "locked": "achievements-ekspedientka"
     },
 
-    "Pierwszy-gang": {
+
+    "gang1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwszy gang z podstawówki",
         "locked": "achievements-gang"
     },
-    "achievementLevel4Two": {
-        "level": 10
+    "gang10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąty gang z podstawówki",
+        "locked": "achievements-gang"
     },
-    "achievementLevel4Three": {
-        "level": 100
+    "gang100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setny gang z podstawówki",
+        "locked": "achievements-gang"
     },
-    "ach44": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "gang1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczny gang z podstawówki",
+        "locked": "achievements-gang"
     },
 
-    "Pierwszy-monopolowy": {
+
+    "monopolowy1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwszy sklep monopolowy",
         "locked": "achievements-monopolowy"
     },
-    "achievementLevel5Two": {
-        "level": 10
+    "monopolowy10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąty sklep monopolowy",
+        "locked": "achievements-monopolowy"
     },
-    "achievementLevel5Three": {
-        "level": 100
+    "monopolowy100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setny sklep monopolowy",
+        "locked": "achievements-monopolowy"
     },
-    "ach54": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "monopolowy1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczny sklep monopolowy",
+        "locked": "achievements-monopolowy"
     },
 
-    "Pierwszy-browar": {
+
+    "browar1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwszy browar",
         "locked": "achievements-browar"
     },
-    "achievementLevel6Two": {
-        "level": 10
+    "browar10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąty browar",
+        "locked": "achievements-browar"
     },
-    "achievementLevel6Three": {
-        "level": 100
+    "browar100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setny browar",
+        "locked": "achievements-browar"
     },
-    "ach64": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "browar1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczny browar",
+        "locked": "achievements-browar"
     },
+    
 
-    "Pierwszy-destylarnia": {
+    "destylarnia1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "menelaos",
+        "achievementDescription": "Pierwsza destylarnia",
         "locked": "achievements-destylarnia"
     },
-    "achievementLevel7Two": {
-        "level": 10
+    "destylarnia10": {
+        "level": 10,
+        "unlocked": false,
+        "achievementDescription": "Dziesiąta destylarnia",
+        "locked": "achievements-destylarnia"
     },
-    "achievementLevel7Three": {
-        "level": 100
+    "destylarnia100": {
+        "level": 100,
+        "unlocked": false,
+        "achievementDescription": "Setna destylarnia",
+        "locked": "achievements-destylarnia"
     },
-    "ach74": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+    "destylarnia1000": {
+        "level": 1000,
+        "unlocked": false,
+        "achievementDescription": "Tysięczna destylarnia",
+        "locked": "achievements-destylarnia"
     }
 }
 
