@@ -239,95 +239,48 @@ html {
     display: flex;
     height: 100%;
 }
-
-.achievements-img {
-    background-image: url('../Images/ikona-locked.png');
+.achievements {
     width: 100px;
     height: 100px;
     background-size: contain;
     margin-right: 20px;
     background-repeat: no-repeat;
     align-self: center;
+}
+.achievements-img {
+    background-image: url('../Images/ikona-locked.png');
 }
 
 .achievements-otwieracz {
     background-image: url('../Images/ikona-otwieracz.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-mietek {
     background-image: url('../Images/ikona-mietek.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-seba {
     background-image: url('../Images/ikona-dostawa.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-ekspedientka {
     background-image: url('../Images/ikona-ekspedientka.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-gang {
     background-image: url('../Images/ikona-hurtownia.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-monopolowy {
     background-image: url('../Images/ikona-monopolowy.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-browar {
     background-image: url('../Images/ikona-browar.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 
 .achievements-destylarnia {
     background-image: url('../Images/ikona-destylarnia.png');
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    align-self: center;
 }
 /* .menu__achievements-list-item-info {
     display: flex;
@@ -763,7 +716,7 @@ html {
 
 .PUT {
     font-size: 10p;
-    color: rgb(33, 31, 31);
+    color: black;
     text-shadow: 0px 0px 8px #eee;
     font-weight: bold;
 }
