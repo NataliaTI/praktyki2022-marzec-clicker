@@ -239,7 +239,7 @@ html {
     display: flex;
     height: 100%;
 }
-.achievements {
+.achievement {
     width: 100px;
     height: 100px;
     background-size: contain;
