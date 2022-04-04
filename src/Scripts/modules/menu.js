@@ -1,45 +1,36 @@
-const btnUpgrades = document.querySelector(".upgrades");
-const btnAchievements = document.querySelector(".achievements");
-const btnStats = document.querySelector(".stats");
-const menuDivUpgrades = document.querySelector('.menu-div-upgrades');
-const menuDivAchievements = document.querySelector('.menu-div-achievements');
-const menuDivStats = document.querySelector('.menu-div-stats');
 
 const buttons = document.querySelectorAll('.menu-item');
+const menuDivList = document.querySelectorAll('.menu__div-list');
 
 
-console.log(buttons);
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
 
+        const dataKey = button.getAttribute('data-key');
 
+        console.log(dataKey);
 
+        let menuCategoryId =  document.querySelector('#' + dataKey);
 
-btnUpgrades.addEventListener("click", function(){
-    btnUpgrades.classList.add('active--menu-item');
-    btnAchievements.classList.remove('active--menu-item');
-    btnStats.classList.remove('active--menu-item');
+        console.log(menuCategoryId);
 
-    menuDivUpgrades.classList.add('menu__div--active');
-    menuDivAchievements.classList.remove('menu__div--active');
-    menuDivStats.classList.remove('menu__div--active');
+        for(let i = 0; i < buttons.length ;i++){
+            buttons[i].classList.remove('active--menu-item');
+            menuDivList[i].classList.remove('menu__div--active');
+        }
+        
+
+        
+        button.classList.add('active--menu-item');
+        menuCategoryId.classList.add('menu__div--active');
+
+    })
+    
+
+        
+        
+    
 })
 
-btnAchievements.addEventListener("click", function(){
-    btnAchievements.classList.add('active--menu-item');
-    btnUpgrades.classList.remove('active--menu-item');
-    btnStats.classList.remove('active--menu-item');
 
-    menuDivAchievements.classList.add('menu__div--active');
-    menuDivUpgrades.classList.remove('menu__div--active');
-    menuDivStats.classList.remove('menu__div--active');
 
-})
-
-btnStats.addEventListener("click", function(){
-    btnStats.classList.add('active--menu-item');
-    btnAchievements.classList.remove('active--menu-item');
-    btnUpgrades.classList.remove('active--menu-item');
-
-    menuDivStats.classList.add('menu__div--active');
-    menuDivAchievements.classList.remove('menu__div--active');
-    menuDivUpgrades.classList.remove('menu__div--active');
-})
