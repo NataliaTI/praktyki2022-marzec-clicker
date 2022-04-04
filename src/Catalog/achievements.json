@@ -194,13 +194,14 @@
         "level": 100,
         "unlocked": false,
         "achievementHeader": "Rozpocznasz produkcję międzynarodową",
-        "achievementDescription": "Twoje browary sprzedają się za granicą jak ",
+        "achievementDescription": "Twoje browary sprzedają się za granicą jak Wachu na komendzie",
         "locked": "achievements-browar"
     },
     "browar1000": {
         "level": 1000,
         "unlocked": false,
-        "achievementDescription": "Tysięczny browar",
+        "achievementHeader": "Monopol browarowy",
+        "achievementDescription": "Jesteś w stanie uzupełnić zapotrzebowanie świata na piwo",
         "locked": "achievements-browar"
     },
 
@@ -208,25 +209,29 @@
     "destylarnia1": {
         "level": 1,
         "unlocked": false,
-        "achievementDescription": "Pierwsza destylarnia",
+        "achievementHeader": "Pierwsza destylarnia",
+        "achievementDescription": "Rozpocznij produkcję alkoholi wysoko procentowych",
         "locked": "achievements-destylarnia"
     },
     "destylarnia10": {
         "level": 10,
         "unlocked": false,
-        "achievementDescription": "Dziesiąta destylarnia",
+        "achievementHeader": "Dziesiąta destylarnia",
+        "achievementDescription": "Rozpocznij produkcję na wielką skalę",
         "locked": "achievements-destylarnia"
     },
     "destylarnia100": {
         "level": 100,
         "unlocked": false,
-        "achievementDescription": "Setna destylarnia",
+        "achievementHeader": "Setna destylarnia",
+        "achievementDescription": "Bądż jedną z bardziej rozpoznawanych marek alkoholowych na świecie",
         "locked": "achievements-destylarnia"
     },
     "destylarnia1000": {
         "level": 1000,
         "unlocked": false,
-        "achievementDescription": "Tysięczna destylarnia",
+        "achievementHeader": "Tysięczna destylarnia",
+        "achievementDescription": "Przejmij pałeczkę marki królowej alkoholów",
         "locked": "achievements-destylarnia"
     }
 }
