@@ -44,9 +44,9 @@
 
         <section class="menu">
 
-            <button class="menu-item upgrades active--menu-item menu-btn">Ulepszenia</button>
-            <button class="menu-item achievements menu-btn">Osiągnięcia</button>
-            <button class="menu-item stats menu-btn">Statystyki</button>
+            <button class="menu-item upgrades active--menu-item menu-btn" data-key="tab-upgrades">Ulepszenia</button>
+            <button class="menu-item achievements menu-btn" data-key="tab-achievements">Osiągnięcia</button>
+            <button class="menu-item stats menu-btn" data-key="tab-stats">Statystyki</button>
 
             <div class="mobile_header">
                 <h2 class="mobile_header-h2">123123$</h2>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="menu__div">
-                <div class="menu__div-list menu-div-upgrades menu__div--active">
+                <div class="menu__div-list menu-div-upgrades menu__div--active" id="tab-upgrades">
                     <div class="menu__upgrades-list-item" id="otwieracz">
                         <div class="upgrade1-div">
                             <div class="upgrade__img-otwieracz upgrade__img"></div>
@@ -451,7 +451,7 @@
                     </div>
 
                 </div>
-                <div class="menu__div-list menu-div-stats">
+                <div class="menu__div-list menu-div-stats" id="tab-stats">
                     <div class="menu__stats-list-item">
                         <p>Liczba kliknięć: </p>
                         <p id="stat1">0</p>
@@ -535,7 +535,7 @@
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
     <script type="module" src="../../src/Scripts/modules/statistics.js"></script>
-    <script src="../../src/Scripts/modules/menu.js"></script>
+    <!-- <script src="../../src/Scripts/modules/menu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/popup.js"></script> -->
 
