@@ -1,8 +1,6 @@
 import { format } from "../src/Scripts/Components/format.js";
 
-export const clicker = document.querySelector('.clicker-img');
-
-export function clickAnimation(e, extraMoneyPerClick){
+export function clickAnimation(e, extraMoneyPerClick, counterButtonElement){
 
     const moneyOnClick = extraMoneyPerClick + 1;
     let moneyOnClickFormated = format(moneyOnClick);
@@ -15,7 +13,7 @@ export function clickAnimation(e, extraMoneyPerClick){
     beerWrap.classList.add('click');
     beerWrap.style.left = x + 'px';
     beerWrap.style.top = y + 'px';
-    clicker.appendChild(beerWrap);
+    counterButtonElement.appendChild(beerWrap);
 
     let beer = document.createElement('span');
     beer.classList.add('click-beer');
@@ -25,7 +23,7 @@ export function clickAnimation(e, extraMoneyPerClick){
     moneyClickWrap.classList.add('click');
     moneyClickWrap.style.left = x + 'px';
     moneyClickWrap.style.top = y + 'px';
-    clicker.appendChild(moneyClickWrap);
+    counterButtonElement.appendChild(moneyClickWrap);
 
     let moneyClick = document.createElement('span');
     moneyClick.classList.add('moneyClick');
@@ -40,5 +38,4 @@ export function clickAnimation(e, extraMoneyPerClick){
     setTimeout(() => {
         beerWrap.remove()
     },1000);
-  
 }
