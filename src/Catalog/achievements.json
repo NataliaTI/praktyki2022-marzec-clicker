@@ -1,0 +1,138 @@
+{
+    "Pierwszy-otwieracz": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "xyz",
+        "locked": "achievements-otwieracz"
+    },
+    "achievementLevelTwo": {
+        "level": 10
+    },
+    "achievementLevelThree": {
+        "level": 100
+    },
+    "ach4": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwszy-mietek": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-mietek"
+    },
+    "achievementLevel1Two": {
+        "level": 10
+    },
+    "achievementLevel1Three": {
+        "level": 100
+    },
+    "ach14": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwszy-seba": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-seba"
+    },
+    "achievementLevel2Two": {
+        "level": 10
+    },
+    "achievementLevel2Three": {
+        "level": 100
+    },
+    "ach24": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwsza-ekspedientka": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-ekspedientka"
+    },
+    "achievementLevel3Two": {
+        "level": 10
+    },
+    "achievementLevel3Three": {
+        "level": 100
+    },
+    "ach34": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwszy-gang": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-gang"
+    },
+    "achievementLevel4Two": {
+        "level": 10
+    },
+    "achievementLevel4Three": {
+        "level": 100
+    },
+    "ach44": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwszy-monopolowy": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-monopolowy"
+    },
+    "achievementLevel5Two": {
+        "level": 10
+    },
+    "achievementLevel5Three": {
+        "level": 100
+    },
+    "ach54": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwszy-browar": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-browar"
+    },
+    "achievementLevel6Two": {
+        "level": 10
+    },
+    "achievementLevel6Three": {
+        "level": 100
+    },
+    "ach64": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    },
+
+    "Pierwszy-destylarnia": {
+        "level": 1,
+        "unlocked": false,
+        "achievementDescription": "menelaos",
+        "locked": "achievements-destylarnia"
+    },
+    "achievementLevel7Two": {
+        "level": 10
+    },
+    "achievementLevel7Three": {
+        "level": 100
+    },
+    "ach74": {
+        "currentAutoClickValue": 0,
+        "currentExtraMoneyPerClick": 0
+    }
+}
+

@@ -3,7 +3,7 @@
 
 //  Liczba kliknięć
 const counterButtonElementStats = document.getElementById('counter-button');
-let sumOfClicks = 0;
+export let sumOfClicks = 0;
 
 export function clickCounter()
 {
