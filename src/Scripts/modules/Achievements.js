@@ -37,11 +37,22 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList ) {
     //     }
     //     otwieracz = otwieracz1;
 
-    // for (i in otwieracz.level) {
-    //     let a = new Function('return ' + otwieracz.level[i].req);
-    //     if (b() && !otwieracz.level[i].gotten) {
-    //         otwieracz.level[i].gotten = true;
-    //         document.querySelector("achievements").innerHTML += 'Osiągnięcie zdobyte';
-    //     }
-    //     achievements: [{ req: "otwieracz.level>1", gotten: false, text: "zdobyłeś pierwszy otwieracz" }]
-    // }
+
+
+
+
+  // for (i in otwieraczUpgradeLevel) {
+        //     if (otwieracz.level[i] == null || otwieracz.level[i].text != otwieracz1.level[i].text) {
+        //         otwieracz1.level[i] = otwieracz.level[i]
+        //     }
+        // }
+        // otwieracz = otwieracz1;
+
+        // for (i in otwieracz.level) {
+        //     let a = new Function('return ' + otwieracz.level[i].req);
+        //     if (b() && !otwieracz.level[i].gotten) {
+        //         otwieracz.level[i].gotten = true;
+        //         document.querySelector("achievements").innerHTML += 'Osiągnięcie zdobyte';
+        //     }
+        //     achievements: [{ req: "otwieracz.level>1", gotten: false, text: "zdobyłeś pierwszy otwieracz" }]
+        // }
