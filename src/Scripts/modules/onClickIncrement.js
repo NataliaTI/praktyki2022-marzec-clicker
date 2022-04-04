@@ -21,4 +21,5 @@ export function onClickHandler(counter, extraMoneyPerClick) {
   changeCounterElementText(counter);
 
   return counter;
+
 }

@@ -8,7 +8,7 @@ console.log(achievementsList)
 export function osiagniecia(upgradeLevel, upgradeName) {
     const achievementLevel = Object.entries(achievementsList)
 
-
+}
 
 
 
