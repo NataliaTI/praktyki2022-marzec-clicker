@@ -41,14 +41,7 @@ if (upgradeFromHtml.length) {
 if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
         counter = onClickHandler(counter, extraMoneyPerClick);
-        playSound();
-}
-    });
-
-
-function playSound() {
-    var sound = document.getElementById("click_sound");
-    sound.play();
+})
 }
 
 catchbonusstart();
