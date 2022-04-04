@@ -3,16 +3,18 @@ import { bonus } from "../src/Scripts/modules/catchbonusReworked";
 import { } from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
-import { clicker, clickAnimation } from "./animation";
+import {clickAnimation } from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
-import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
+// import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
+import {} from "../src/Scripts/modules/mobileMenu.js";
 import { osiagniecia } from "../src/Scripts/modules/achievements.js";
 
 window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
+const clicker = document.querySelector('.clicker-img');
 
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
@@ -100,28 +102,31 @@ setInterval(() => {
 }, 1000)
 
 
-clicker.addEventListener('click', (e) => {
-    clickAnimation(e, extraMoneyPerClick);
-})
+if(clicker){
+    clicker.addEventListener('click', (e) => {
+        clickAnimation(e, extraMoneyPerClick, clicker);
+    })
+}
 
 
 
-mobileHome.addEventListener('click', (e) => {
-    changeToHome();
-});
 
-mobileUpgrade.addEventListener('click', (e) => {
-    changeToUpgrade();
-});
+// mobileHome.addEventListener('click', (e) => {
+//     changeToHome();
+// });
 
-mobileAchievements.addEventListener('click', (e) => {
-    changeToAchievements();
-});
+// mobileUpgrade.addEventListener('click', (e) => {
+//     changeToUpgrade();
+// });
 
-mobileStats.addEventListener('click', (e) => {
-    changeToStats();
-});
+// mobileAchievements.addEventListener('click', (e) => {
+//     changeToAchievements();
+// });
 
-mobileHeaderBtn.addEventListener('click', (e) => {
-    closeMenu();
-});
+// mobileStats.addEventListener('click', (e) => {
+//     changeToStats();
+// });
+
+// mobileHeaderBtn.addEventListener('click', (e) => {
+//     closeMenu();
+// });

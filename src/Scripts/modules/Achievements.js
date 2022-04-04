@@ -6,7 +6,7 @@ const achievementsList = fetch('../../src/Catalog/achievements.json').then(respo
 console.log(achievementsList)
 
 export function osiagniecia(upgradeLevel, upgradeName) {
-    const achievementLevel = Object.entries(achievementsList)
+    const achievementLevel = Object.entries(achievementsList)}
 
 
 

@@ -50,7 +50,7 @@
 
             <div class="mobile_header">
                 <h2 class="mobile_header-h2">123123$</h2>
-                <button class="mobile_header-btn">X</button>
+                <button class="mobile_header-btn exit-btn">X</button>
             </div>
 
             <div class="menu__div">
@@ -275,7 +275,7 @@
     </div>
     <div class="navigation">
         <ul class="navigation__ul">
-            <li class="navigation__list active mobileHome">
+            <li class="navigation__list active mobileHome exit-btn">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="beer-outline"></ion-icon>
@@ -283,7 +283,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list mobileUpgrade">
+            <li class="navigation__list mobileMenu-btn mobileUpgrade" data-key="tab-upgrades">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="cart-outline"></ion-icon>
@@ -291,7 +291,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list mobileAchievement">
+            <li class="navigation__list mobileMenu-btn mobileAchievement" data-key="tab-achievements">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="trophy-outline"></ion-icon>
@@ -299,7 +299,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list mobileStats">
+            <li class="navigation__list mobileMenu-btn mobileStats" data-key="tab-stats">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="stats-chart-outline"></ion-icon>
@@ -319,6 +319,7 @@
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
     <script type="module" src="../../src/Scripts/modules/statistics.js"></script>
+    <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/menu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/popup.js"></script> -->
@@ -373,17 +374,17 @@
 
 
     <template>
-<center>
-        <div id="achievementPopUp" class="achievement">
-            <img id="alertIcon" class="icon">
-            <div class="achievement__column">
-                <span id="PopUpText" class="PUT"></span><br>
-                <span class="title"></span>
+        <center>
+            <div id="achievementPopUp" class="achievement">
+                <img id="alertIcon" class="icon">
+                <div class="achievement__column">
+                    <span id="PopUpText" class="PUT"></span><br>
+                    <span class="title"></span>
+                </div>
+                <br />
+                <button data-close-button class="achievement__close-button">&times;</button>
             </div>
-            <br />
-            <button data-close-button class="achievement__close-button">&times;</button>
-        </div>
-</center>
+        </center>
     </template>
 
 </body>
