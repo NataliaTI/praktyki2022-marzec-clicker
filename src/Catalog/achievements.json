@@ -1,4 +1,11 @@
 {
+    "klikacz": {
+        "sumOfClicks": 1,
+        "achievementHeader": "Pierwsze kliknięcie",
+        "achievementDescription": "Po raz pierwszy kliknąłeś w piwko",
+        "locked": "achievements-otwieracz"
+    },
+
     "otwieracz1": {
         "level": 1,
         "unlocked": false,
