@@ -3,16 +3,17 @@ import { bonus } from "../src/Scripts/modules/catchbonusReworked";
 import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
-import { clickAnimation } from "./animation";
+import {clickAnimation } from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
-import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
+import {} from "../src/Scripts/modules/mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
 window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
+const clicker = document.querySelector('.clicker-img');
 
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
@@ -96,26 +97,8 @@ setInterval(() => {
     changeCounterElementText(counter);
 }, 1000)
 
-counterButtonElement.addEventListener('click', (e) => {
-    clickAnimation(e, extraMoneyPerClick, counterButtonElement);
-});
-
-mobileHome.addEventListener('click', (e) => {
-    changeToHome();
-});
-
-mobileUpgrade.addEventListener('click', (e) => {
-    changeToUpgrade();
-});
-
-mobileAchievements.addEventListener('click', (e) => {
-    changeToAchievements();
-});
-
-mobileStats.addEventListener('click', (e) => {
-    changeToStats();
-});
-
-mobileHeaderBtn.addEventListener('click', (e) => {
-    closeMenu();
-});
+if(clicker){
+    clicker.addEventListener('click', (e) => {
+        clickAnimation(e, extraMoneyPerClick, clicker);
+    })
+}
