@@ -1,6 +1,6 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
-import { osiagniecia } from "./achievements.js";
+import { osiagniecia } from "./Achievements.js";
 
 let sumOfUpgrades = 0;
 let upgradeCostFormat = 0;
@@ -73,7 +73,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         sumOfUpgrades++;
         updateList.current.currentAutoClickValue += upgrade.autoClickValue;
         updateList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
-       
+        
         osiagniecia(upgrade.level, upgradeName, achivementList);
 
         autoClick = updateList.current.currentAutoClickValue;
@@ -96,7 +96,5 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
 
     return { counter, autoClick, extraMoneyPerClick };
 }
-
-
 
 export const timer = (counter, autoClick) => counter + autoClick;
