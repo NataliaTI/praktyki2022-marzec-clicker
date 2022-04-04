@@ -4,9 +4,9 @@ import {autoClickFormat} from './upgrades.js';
 let catchbonusaddable = Boolean(true);
 
 function getRandomcoordinates() {
-    const mincoordinates = 135
-    const windowHeight = window.innerHeight - mincoordinates
-    const windowWidth = window.innerWidth - mincoordinates
+    const mincoordinates = 135;
+    const windowHeight = window.innerHeight - mincoordinates;
+    const windowWidth = window.innerWidth - mincoordinates;
 
     return{
         'Height' : Math.floor (Math.random()*(windowHeight - mincoordinates + 1)+ mincoordinates),
@@ -57,23 +57,21 @@ function getRandomcoordinates() {
         const min = 0 
         let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
         const bonus = bonusList[randombonus];
-      console.log(bonus.type);
+        console.log(bonus.type);
         if (bonus.type == 'counterValue')  {
           counter = counter + Math.floor(counter/5);  
           console.log(Math.floor(counter/5))
           return { counter };
       
          }else {     
-          let oldAutoClick = format(autoClick)
-          oldAutoClick = oldAutoClick.replace('.',',')
-          autoClick = autoClick + autoClick  
-          let autoClickFormat = format(autoClick)
+          let oldAutoClick = format(autoClick);
+          oldAutoClick = oldAutoClick.replace('.',',');
+          autoClick = autoClick + autoClick;
+          let autoClickFormat = format(autoClick);
           autoClickFormat = autoClickFormat.replace('.',',')
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
-         // money.id='money';
-         // money.style.backgroundColor = "grey"
          money.style.fontSize = 'large'
           money.style.left = 50 + '%';
           money.style.top = 50 + '%';
@@ -83,7 +81,6 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
   
-
           moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekunde przez xyz sekund';
            document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
            setTimeout(() => {

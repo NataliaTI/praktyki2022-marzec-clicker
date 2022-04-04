@@ -62,7 +62,7 @@ export const updateList = {
     },
 }
 
-export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv) {
+export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList) {
     const upgrade = updateList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
@@ -73,8 +73,8 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         sumOfUpgrades++;
         updateList.current.currentAutoClickValue += upgrade.autoClickValue;
         updateList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
-
-        osiagniecia(upgrade.level, upgradeName);
+       
+        osiagniecia(upgrade.level, upgradeName, achivementList);
 
         autoClick = updateList.current.currentAutoClickValue;
         extraMoneyPerClick = updateList.current.currentExtraMoneyPerClick;
