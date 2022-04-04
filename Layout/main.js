@@ -17,7 +17,7 @@ const counterButtonElement = document.getElementById("counter-button");
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-let counter = 10000;
+let counter = 100000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 

@@ -1,6 +1,7 @@
 {
     "otwieracz1": {
         "level": 1,
+        "upgradeName": "otwieracz",
         "unlocked": false,
         "achievementHeader": "Pierwszy otwieracz",
         "achievementDescription": "Zakupiłeś swój pierwszy otwieracz!",
@@ -8,6 +9,7 @@
     },
     "otwieracz10": {
         "level": 10,
+        "upgradeName": "otwieracz",
         "unlocked": false,
         "achievementHeader": "Dziesiąty otwieracz",
         "achievementDescription": "Zakupiłeś dziesiąty otwieracz!",
@@ -15,19 +17,25 @@
     },
     "otwieracz100": {
         "level": 100,
+        "upgradeName": "otwieracz",
         "unlocked": false,
         "achievementHeader": "Setny otwieracz",
         "achievementDescription": "Masz już sto otwieraczy!",
         "locked": "achievements-otwieracz"
     },
     "otwieracz1000": {
-        "currentAutoClickValue": 0,
-        "currentExtraMoneyPerClick": 0
+        "level": 1000,
+        "upgradeName": "otwieracz",
+        "unlocked": false,
+        "achievementHeader": "Tysięczny otwieracz",
+        "achievementDescription": "Masz już tysiąc otwieraczy",
+        "locked": "achievements-otwieracz"
     },
 
 
     "mietek1": {
         "level": 1,
+        "upgradeName": "mietek",
         "unlocked": false,
         "achievementHeader": "Pierwszy menelik",
         "achievementDescription": "Załatwiłeś sobie pierwszego zaufanego menela",
@@ -35,6 +43,7 @@
     },
     "mietek10": {
         "level": 10,
+        "upgradeName": "mietek",
         "unlocked": false,
         "achievementHeader": "Dziesiąty menelik",
         "achievementDescription": "Załatwiłeś sobie już dziesiątego zaufanego menela",
@@ -42,6 +51,7 @@
     },
     "mietek100": {
         "level": 100,
+        "upgradeName": "mietek",
         "unlocked": false,
         "achievementHeader": "Setny menelik",
         "achievementDescription": "Masz już stu zaufanych menelów",
@@ -49,6 +59,7 @@
     },
     "mietek1000": {
         "level": 1000,
+        "upgradeName": "mietek",
         "unlocked": false,
         "achievementHeader": "tysięczny menelik",
         "achievementDescription": "Masz już tysięczną armię zaufanych meneli",
@@ -58,6 +69,7 @@
 
     "seba1": {
         "level": 1,
+        "upgradeName": "seba",
         "unlocked": false,
         "achievementHeader": "Pierwszy rycerz ortalionu",
         "achievementDescription": "Odnalazłeś pierwszego prawdziwego Sebastiana",
@@ -65,6 +77,7 @@
     },
     "seba10": {
         "level": 10,
+        "upgradeName": "seba",
         "unlocked": false,
         "achievementHeader": "Dziesiąty rycerz ortalionu",
         "achievementDescription": "Odnalazłeś dziesiątego prawdziwego Sebastiana",
@@ -72,6 +85,7 @@
     },
     "seba100": {
         "level": 100,
+        "upgradeName": "seba",
         "unlocked": false,
         "achievementHeader": "Setny rycerz ortalionu",
         "achievementDescription": "Masz już sto prawdziwych rycerzy ortalionu w swoich szeregach",
@@ -79,6 +93,7 @@
     },
     "seba1000": {
         "level": 1000,
+        "upgradeName": "seba",
         "unlocked": false,
         "achievementHeader": "Tysięczny rycerz ortalionu",
         "achievementDescription": "Masz już tysięczną armię prawdziwych rycerzy ortalionu w swoich szeregach",
@@ -88,6 +103,7 @@
 
     "ekspedientka1": {
         "level": 1,
+        "upgradeName": "grazyna",
         "unlocked": false,
         "achievementHeader": "Pierwsza Grażynka",
         "achievementDescription": "Pierwsza kasjerka Grażynka sprzedaje twój browar",
@@ -95,6 +111,7 @@
     },
     "ekspedientka10": {
         "level": 10,
+        "upgradeName": "grazyna",
         "unlocked": false,
         "achievementHeader": "Dziesiąta Grażynka",
         "achievementDescription": "Dziesiąta kasjerka Grażynka sprzedaje twój browar ",
@@ -102,6 +119,7 @@
     },
     "ekspedientka100": {
         "level": 100,
+        "upgradeName": "grazyna",
         "unlocked": false,
         "achievementHeader": "Setna Grażynka",
         "achievementDescription": "Setna kasjerka Grażynka sprzedaje twój browar",
@@ -109,6 +127,7 @@
     },
     "ekspedientka1000": {
         "level": 1000,
+        "upgradeName": "grazyna",
         "unlocked": false,
         "achievementHeader": "Tysięczna Grażynka",
         "achievementDescription": "Tysiąć Grażynek sprzedaje już twoje piwo",
@@ -118,6 +137,7 @@
 
     "gang1": {
         "level": 1,
+        "upgradeName": "gang",
         "unlocked": false,
         "achievementHeader": "Pierwsze piwko gangu z podstawówki",
         "achievementDescription": "pierwsze piwko szóstoklasistów",
@@ -125,6 +145,7 @@
     },
     "gang10": {
         "level": 10,
+        "upgradeName": "gang",
         "unlocked": false,
         "achievementHeader": "Dziesiąte piwko gangu z podstawówki",
         "achievementDescription": "Dziesiąty piwko szóstoklasistów",
@@ -132,6 +153,7 @@
     },
     "gang100": {
         "level": 100,
+        "upgradeName": "gang",
         "unlocked": false,
         "achievementHeader": "Setne piwko gangu z podstawówki",
         "achievementDescription": "Gang z podstawówki zakupił już swojego tysięcznego browara",
@@ -139,6 +161,7 @@
     },
     "gang1000": {
         "level": 1000,
+        "upgradeName": "gang",
         "unlocked": false,
         "achievementHeader": "Jak oni szybko dorastają",
         "achievementDescription": "Gang z podstawówki zakupił już swojego tysięcznego browara",
@@ -148,6 +171,7 @@
 
     "monopolowy1": {
         "level": 1,
+        "upgradeName": "monopolowy",
         "unlocked": false,
         "achievementHeader": "Pierwszy sklep monopolowy",
         "achievementDescription": "To początek czegoś wielkiego",
@@ -155,6 +179,7 @@
     },
     "monopolowy10": {
         "level": 10,
+        "upgradeName": "monopolowy",
         "unlocked": false,
         "achievementHeader": "Dziesiąty sklep monopolowy",
         "achievementDescription": "Rozpoczyna się twój monopol",
@@ -162,6 +187,7 @@
     },
     "monopolowy100": {
         "level": 100,
+        "upgradeName": "monopolowy",
         "unlocked": false,
         "achievementHeader": "Setny sklep monopolowy",
         "achievementDescription": "Masz już wielką franczyzę monopolową",
@@ -169,6 +195,7 @@
     },
     "monopolowy1000": {
         "level": 1000,
+        "upgradeName": "monopolowy",
         "unlocked": false,
         "achievementHeader": "Tysięczny sklep monopolowy",
         "achievementDescription": "Jesteś już najbardzej znanym sklepem monopolowym w polsce",
@@ -178,6 +205,7 @@
 
     "browar1": {
         "level": 1,
+        "upgradeName": "browar",
         "unlocked": false,
         "achievementHeader": "Pierwszy browar",
         "achievementDescription": "Rozpocznij własną manufakturę piwną",
@@ -185,6 +213,7 @@
     },
     "browar10": {
         "level": 10,
+        "upgradeName": "browar",
         "unlocked": false,
         "achievementHeader": "Schodzi jak świeże bułeczki",
         "achievementDescription": "Postaw już 10 rozlewni piwa",
@@ -192,6 +221,7 @@
     },
     "browar100": {
         "level": 100,
+        "upgradeName": "browar",
         "unlocked": false,
         "achievementHeader": "Rozpocznasz produkcję międzynarodową",
         "achievementDescription": "Twoje browary sprzedają się za granicą jak ",
@@ -199,6 +229,7 @@
     },
     "browar1000": {
         "level": 1000,
+        "upgradeName": "browar",
         "unlocked": false,
         "achievementDescription": "Tysięczny browar",
         "locked": "achievements-browar"
@@ -207,24 +238,28 @@
 
     "destylarnia1": {
         "level": 1,
+        "upgradeName": "destylarnia",
         "unlocked": false,
         "achievementDescription": "Pierwsza destylarnia",
         "locked": "achievements-destylarnia"
     },
     "destylarnia10": {
         "level": 10,
+        "upgradeName": "destylarnia",
         "unlocked": false,
         "achievementDescription": "Dziesiąta destylarnia",
         "locked": "achievements-destylarnia"
     },
     "destylarnia100": {
         "level": 100,
+        "upgradeName": "destylarnia",
         "unlocked": false,
         "achievementDescription": "Setna destylarnia",
         "locked": "achievements-destylarnia"
     },
     "destylarnia1000": {
         "level": 1000,
+        "upgradeName": "destylarnia",
         "unlocked": false,
         "achievementDescription": "Tysięczna destylarnia",
         "locked": "achievements-destylarnia"

@@ -5,14 +5,17 @@ import { showContent } from "../Components/alert.js";
 
 export function osiagniecia(upgradeLevel, upgradeName, achivementList ) {
     const achievementLevel = Object.keys(achivementList);
+
         achievementLevel.forEach(achievementKey => {
-            if (achivementList[achievementKey].level == upgradeLevel) {
-                console.log(achivementList[achievementKey]);
-                showContent();
+            if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
+                const achievementName = achivementList[achievementKey].locked;
+                const header = achivementList[achievementKey].achievementHeader;
+                const description = achivementList[achievementKey].achievementDescription;
+            
+                showContent(header, description);
             }
         });
     }
-
 
 
 
