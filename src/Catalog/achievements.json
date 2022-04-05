@@ -1,18 +1,5 @@
 {
-    "klikacz": {
-        "sumOfClicks": 1,
-        "achievementHeader": "Pierwsze kliknięcie",
-        "achievementDescription": "Po raz pierwszy kliknąłeś w piwko",
-        "locked": "achievements-otwieracz"
-    },
-    "klikacz2": {
-        "sumOfClicks": 10,
-        "achievementHeader": "Dziesiąty klik",
-        "achievementDescription": "Brawo już nabierasz wprawy i kliknąłeś 10 razy w piwko",
-        "locked": "achievements-otwieracz"
-    },
-
-    "otwieracz1": {
+   "otwieracz1": {
         "level": 1,
         "upgradeName": "otwieracz",
         "iconName": "../../Public/Images/ikona-otwieracz.png",
@@ -277,7 +264,7 @@
         "locked": "achievements-browar"
     },
 
-
+    
     "destylarnia1": {
         "level": 1,
         "upgradeName": "destylarnia",
