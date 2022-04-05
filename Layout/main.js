@@ -1,23 +1,24 @@
-import { format } from "../src/Scripts/Components/format.js"
+import {format} from "../src/Scripts/Components/format.js";
 import { bonus } from "../src/Scripts/modules/catchbonusReworked";
-import { } from '../src/Scripts/modules/menu.js';
+import {} from '../src/Scripts/modules/menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
 import { updateList, timer, upgrade } from "../src/Scripts/modules/upgrades.js";
-import { clicker, clickAnimation } from "./animation";
+import {clickAnimation } from "./animation";
 import { catchbonusstart } from "../src/Scripts/modules/catchbonusReworked.js";
 import { login } from '../src/Scripts/modules/apiLogin.js';
-import { mobileHome, mobileUpgrade, mobileAchievements, mobileStats, mobileHeaderBtn, changeToHome, changeToUpgrade, changeToAchievements, changeToStats, closeMenu } from "../src/Scripts/modules/mobileMenu.js";
-import { osiagniecia } from "../src/Scripts/modules/achievements.js";
+import {} from "../src/Scripts/modules/mobileMenu.js";
+import achivementList from '../src/Catalog/achievements.json';
 
 window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully loaded and parsed'); });
 
 // guzik do klikania
 const counterButtonElement = document.getElementById("counter-button");
+const clicker = document.querySelector('.clicker-img');
 
 // ulepszenia
 const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
 
-let counter = 1000;
+let counter = 100000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -29,8 +30,8 @@ if (upgradeFromHtml.length) {
         const upgradeId = upgradeDiv;
 
         upgradeDiv.addEventListener('click', (event) => {
-            const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv);
-
+            const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
+            upgradeSound();
             counter = result.counter;
             autoClick = result.autoClick;
             extraMoneyPerClick = result.extraMoneyPerClick;
@@ -41,7 +42,19 @@ if (upgradeFromHtml.length) {
 if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
         counter = onClickHandler(counter, extraMoneyPerClick);
+        clickSound();
 })
+}
+
+function clickSound() {
+    const sound = document.getElementById("click_sound");
+    sound.play();
+}
+
+function upgradeSound() {
+    const sound = document.getElementById("upgrade_sound");
+    sound.play();
+    
 }
 
 catchbonusstart();
@@ -56,8 +69,8 @@ document.getElementById("wrap").addEventListener('click', (event) => {
 
             setTimeout(() => {
                 autoClick = autoClick - oldAutoClick;
-                let autoClickFormat = format(autoClick)
-                autoClickFormat = autoClickFormat.replace('.', ',')
+                let autoClickFormat = format(autoClick);
+                autoClickFormat = autoClickFormat.replace('.', ',');
                 //autoClick = autoClickFormat
                 document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
                 autoClickFormat = autoClickFormat.replace(',', '.')
@@ -100,28 +113,31 @@ setInterval(() => {
 }, 1000)
 
 
-clicker.addEventListener('click', (e) => {
-    clickAnimation(e, extraMoneyPerClick);
-})
+if(clicker){
+    clicker.addEventListener('click', (e) => {
+        clickAnimation(e, extraMoneyPerClick, clicker);
+    })
+}
 
 
 
-mobileHome.addEventListener('click', (e) => {
-    changeToHome();
-});
 
-mobileUpgrade.addEventListener('click', (e) => {
-    changeToUpgrade();
-});
+// mobileHome.addEventListener('click', (e) => {
+//     changeToHome();
+// });
 
-mobileAchievements.addEventListener('click', (e) => {
-    changeToAchievements();
-});
+// mobileUpgrade.addEventListener('click', (e) => {
+//     changeToUpgrade();
+// });
 
-mobileStats.addEventListener('click', (e) => {
-    changeToStats();
-});
+// mobileAchievements.addEventListener('click', (e) => {
+//     changeToAchievements();
+// });
 
-mobileHeaderBtn.addEventListener('click', (e) => {
-    closeMenu();
-});
+// mobileStats.addEventListener('click', (e) => {
+//     changeToStats();
+// });
+
+// mobileHeaderBtn.addEventListener('click', (e) => {
+//     closeMenu();
+// });

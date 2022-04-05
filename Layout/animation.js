@@ -1,8 +1,9 @@
 import { format } from "../src/Scripts/Components/format.js";
 
-export const clicker = document.querySelector('.clicker-img');
 
-export function clickAnimation(e, extraMoneyPerClick){
+
+
+export function clickAnimation(e, extraMoneyPerClick, clicker){
 
     const moneyOnClick = extraMoneyPerClick + 1;
     let moneyOnClickFormated = format(moneyOnClick);
