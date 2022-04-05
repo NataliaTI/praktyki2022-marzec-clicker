@@ -37,7 +37,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             counter = onClickHandler(counter, extraMoneyPerClick);
         });
     };
-
     if(counterButtonElement){
         counterButtonElement.addEventListener('click', (e) => {
             clickAnimation(e, extraMoneyPerClick, counterButtonElement);
@@ -46,16 +45,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed'); 
 });
 
-function clickSound() {
-    const sound = document.getElementById("click_sound");
-    sound.play();
-}
-
-function upgradeSound() {
-    const sound = document.getElementById("upgrade_sound");
-    sound.play();
+// function clickSound() {
+//     const sound = document.getElementById("click_sound");
+//     sound.play();
+// }
+// function upgradeSound() {
+//     const sound = document.getElementById("upgrade_sound");
+//     sound.play();
     
-}
+// }
 
 login();
 catchbonusstart();
@@ -67,7 +65,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         if (result.autoClick) {
             let oldAutoClick = format(autoClick)
             oldAutoClick = oldAutoClick.replace('.', ',')
-
             setTimeout(() => {
                 autoClick = autoClick - oldAutoClick;
                 let autoClickFormat = format(autoClick);
@@ -89,22 +86,18 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             money.style.left = 50 + '%';
             money.style.top = 50 + '%';
             this2.appendChild(money);
-
             let moneyClick = document.createElement('span');
             moneyClick.classList.add('moneyClick2');
             money.appendChild(moneyClick);
             let bonuscounter = format(Math.floor(counter / 5))
             bonuscounter = bonuscounter.replace('.', ',')
-
             moneyClick.textContent = '+' + bonuscounter + ' $';
-
             setTimeout(() => {
                 money.remove()
             }, 1500);
         }
     }
 });
-
 setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);

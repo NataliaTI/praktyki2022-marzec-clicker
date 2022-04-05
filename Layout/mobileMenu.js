@@ -21,9 +21,7 @@ mobileButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const dataKey = button.getAttribute('data-key');
 
-
         const menuCategoryId =  document.querySelector('#' + dataKey);
-
 
         for(let i = 0; i < menuDivList.length ;i++){
             menuDivList[i].classList.remove('menu__div--active');
