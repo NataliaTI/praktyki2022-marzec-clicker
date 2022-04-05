@@ -7,8 +7,15 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList ) {
                 const header = achivementList[achievementKey].achievementHeader;
                 const description = achivementList[achievementKey].achievementDescription;
                 const achievementImage = achivementList[achievementKey].iconName;
-                
+            
                 showContent(header, description, achievementImage);
+                achievementSound();
             }
         });
+    }
+
+
+    function achievementSound() {
+        const sound = document.getElementById("achievement_sound");
+        sound.play();
     }
