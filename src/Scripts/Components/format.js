@@ -3,7 +3,7 @@ floor = Math.floor,
 abs = Math.abs,
 log = Math.log;
 
-let abbrev = ["k","m","b","t","aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","an","ao","ap","ar","as","at","au","aw","az","ba",];
+const abbrev = ["k","m","b","t","aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","an","ao","ap","ar","as","at","au","aw","az","ba",];
 
 export function round(n, precision) {
   const prec = Math.pow(10, precision + 1);
@@ -16,7 +16,3 @@ export function format(n) {
   base = abbrev.indexOf(suffix) + 1;
   return suffix ? round(n / pow(1000, base), 2) + suffix : "" + n;
 }
-// export function replacedot(p) {
-// p = p.replace('.',',')
-// p.textContent = p
-// }

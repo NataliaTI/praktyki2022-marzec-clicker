@@ -6,13 +6,12 @@ export const counterElement = document.getElementById("counter");
 
 let returnedFormatedValue = counter;
 
-export function changeCounterElementText(value) {
-  returnedFormatedValue = format(value);
+export function changeCounterElementText(counter) {
+  returnedFormatedValue = format(counter);
   returnedFormatedValue = returnedFormatedValue.replace('.', ',')
-
+  
+  mobileHeaderH2.textContent = returnedFormatedValue + " $";
   counterElement.textContent = returnedFormatedValue + " $";
-
-  mobileHeaderH2.textContent = returnedFormatedValue + ' $';
 }
 
 export function onClickHandler(counter, extraMoneyPerClick) {
@@ -21,4 +20,5 @@ export function onClickHandler(counter, extraMoneyPerClick) {
   changeCounterElementText(counter);
 
   return counter;
+
 }

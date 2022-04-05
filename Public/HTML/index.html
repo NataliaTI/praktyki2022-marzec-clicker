@@ -14,24 +14,13 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/ci es es.css">
     <script src="../../src/Scripts/modules/apiStatus.js"></script>
+    <script src="../../src/Scripts/Components/sound.js"></script>
+    <audio id="click_sound" src="../Sounds/mixkit-spice-jar-open-1809.wav"></audio>
+    <audio id="upgrade_sound" src="../Sounds/upgrade.wav"></audio>
+    <audio id="achievement_sound" src="../Sounds/achievement.wav"></audio>
 </head>
 
 <body>
-
-    <!-- <script>
-
-        $(document).ready(function(){
-            Achievements.initialize('myGame');
-            Achievements.register('I clicked a button', '...and I liked it');
-            Achievements.register('Second button', 'This button is just for show.');
-        });
-
-        function toggleList(){
-            $('#list').toggle('slow');
-            $('#list').html(Achievements.list);
-        };
-
-    </script> -->
     <ion-icon class="ikon-volume" name="volume-mute-outline"></ion-icon>
 
     <div id="wrap" class="wrap">
@@ -44,17 +33,17 @@
 
         <section class="menu">
 
-            <button class="menu-item upgrades active--menu-item menu-btn">Ulepszenia</button>
-            <button class="menu-item achievements menu-btn">Osiągnięcia</button>
-            <button class="menu-item stats menu-btn">Statystyki</button>
+            <button class="menu-item upgrades active--menu-item menu-btn" data-key="tab-upgrades">Ulepszenia</button>
+            <button class="menu-item achievements menu-btn" data-key="tab-achievements">Osiągnięcia</button>
+            <button class="menu-item stats menu-btn" data-key="tab-stats">Statystyki</button>
 
             <div class="mobile_header">
                 <h2 class="mobile_header-h2">123123$</h2>
-                <button class="mobile_header-btn">X</button>
+                <button class="mobile_header-btn exit-btn">X</button>
             </div>
 
             <div class="menu__div">
-                <div class="menu__div-list menu-div-upgrades menu__div--active">
+                <div class="menu__div-list menu-div-upgrades menu__div--active" id="tab-upgrades">
                     <div class="menu__upgrades-list-item" id="otwieracz">
                         <div class="upgrade1-div">
                             <div class="upgrade__img-otwieracz upgrade__img"></div>
@@ -139,8 +128,7 @@
                             <div class="menu__upgrade-list-item-info tooltip">
                                 <h2>Browar</h2>
                                 <p class="upgradeCost">750k $</p>
-                                <span class="tooltip__tooltiptext tooltip__tooltiptext--browar">Punkty na klikniecie: +3
-                                    924$<br>Punkty na sekunde: 0$</span>
+                                <span class="tooltip__tooltiptext tooltip__tooltiptext--browar">Punkty na klikniecie: +3924$<br>Punkty na sekunde: 0$</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -160,46 +148,289 @@
                     </div>
                 </div>
 
-                <div class="menu__div-list menu-div-achievements">
-                    <div class="menu__achievements-list-item">
+                <div class="menu__div-list menu-div-achievements" id="tab-achievements">
+                    <div class="menu__achievements-list-item" id="otwieracz1">
                         <div class="achievements-img__wrap">
-                            <div class="achievements-otwieracz"></div>
+                            <div class="achievements-otwieracz achievement"></div>
                         </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2>Pierwszy otwieracz</h2>
-                            <p>Zakupiłeś swój pierszy otwieracz do piwka</p>
+                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
+                            <h2>Zablokowane</h2>
+                            <p>Opis niedostępny</p>
                         </div>
                     </div>
-                    <div class="menu__achievements-list-item">
+                    <div class="menu__achievements-list-item" id="otwieracz10">
                         <div class="achievements-img__wrap">
-                            <div class="achievements-img"></div>
+                            <div class="achievements-otwieracz achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
+                            <h2>Zablokowane</h2>
+                            <p>Opis niedostępny</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="otwieracz100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-otwieracz achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
+                            <h2>Zablokowane</h2>
+                            <p>Opis niedostępny</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="otwieracz1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-otwieracz achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
+                            <h2>Zablokowane</h2>
+                            <p>Opis niedostępny</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="mietek1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-mietek achievement"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
                             <h2>Nazwa osiągnięcia</h2>
                             <p>Informacja za co osiągnięcie zostało odblokowane</p>
                         </div>
                     </div>
-                    <div class="menu__achievements-list-item">
+                    <div class="menu__achievements-list-item" id="mietek10">
                         <div class="achievements-img__wrap">
-                            <div class="achievements-img"></div>
+                            <div class="achievements-mietek achievement"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
                             <h2>Nazwa osiągnięcia</h2>
                             <p>Informacja za co osiągnięcie zostało odblokowane</p>
                         </div>
                     </div>
-                    <div class="menu__achievements-list-item">
+                    <div class="menu__achievements-list-item" id="mietek100">
                         <div class="achievements-img__wrap">
-                            <div class="achievements-img"></div>
+                            <div class="achievements-mietek achievement"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
                             <h2>Nazwa osiągnięcia</h2>
                             <p>Informacja za co osiągnięcie zostało odblokowane</p>
                         </div>
                     </div>
-                    <div class="menu__achievements-list-item">
+                    <div class="menu__achievements-list-item" id="mietek1000">
                         <div class="achievements-img__wrap">
-                            <div class="achievements-img"></div>
+                            <div class="achievements-mietek achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="seba1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-seba achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="seba10">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-seba achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="seba100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-seba achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="seba1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-seba achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="ekspedientka1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-ekspedientka achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="ekspedientka10">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-ekspedientka achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="ekspedientka100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-ekspedientka achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="ekspedientka1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-ekspedientka achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="gang1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-gang achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="gang10">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-gang achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="gang100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-gang achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="gang1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-gang achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="monopolowy1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-monopolowy achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="monopolowy10">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-monopolowy achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="monopolowy100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-monopolowy achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="monopolowy1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-monopolowy achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="browar1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-browar achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="browar10">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-browar achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="browar100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-browar achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="browar1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-browar achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="destylarnia1">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-destylarnia achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="destylarnia10">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-destylarnia achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="destylarnia100">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-destylarnia achievement"></div>
+                        </div>
+                        <div class="menu__achievements-list-item-info">
+                            <h2>Nazwa osiągnięcia</h2>
+                            <p>Informacja za co osiągnięcie zostało odblokowane</p>
+                        </div>
+                    </div>
+                    <div class="menu__achievements-list-item" id="destylarnia1000">
+                        <div class="achievements-img__wrap">
+                            <div class="achievements-destylarnia achievement"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
                             <h2>Nazwa osiągnięcia</h2>
@@ -208,7 +439,7 @@
                     </div>
 
                 </div>
-                <div class="menu__div-list menu-div-stats">
+                <div class="menu__div-list menu-div-stats" id="tab-stats">
                     <div class="menu__stats-list-item">
                         <p>Liczba kliknięć: </p>
                         <p id="stat1">0</p>
@@ -248,7 +479,7 @@
     </div>
     <div class="navigation">
         <ul class="navigation__ul">
-            <li class="navigation__list active mobileHome">
+            <li class="navigation__list active mobileHome exit-btn">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="beer-outline"></ion-icon>
@@ -256,7 +487,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list mobileUpgrade">
+            <li class="navigation__list mobileMenu-btn mobileUpgrade" data-key="tab-upgrades">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="cart-outline"></ion-icon>
@@ -264,7 +495,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list mobileAchievement">
+            <li class="navigation__list mobileMenu-btn mobileAchievement" data-key="tab-achievements">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="trophy-outline"></ion-icon>
@@ -272,7 +503,7 @@
 
                 </a>
             </li>
-            <li class="navigation__list mobileStats">
+            <li class="navigation__list mobileMenu-btn mobileStats" data-key="tab-stats">
                 <a class="navigation__list-a" href="#">
                     <span class="mobile-icon">
                         <ion-icon name="stats-chart-outline"></ion-icon>
@@ -292,7 +523,8 @@
     <script src="../index.js"></script>
     <!-- <script src="../zapisz_przywroc.js"></script> -->
     <script type="module" src="../../src/Scripts/modules/statistics.js"></script>
-    <script src="../../src/Scripts/modules/menu.js"></script>
+    <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
+    <!-- <script src="../../src/Scripts/modules/menu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/mobileMenu.js"></script> -->
     <!-- <script src="../../src/Scripts/modules/popup.js"></script> -->
 
@@ -346,17 +578,17 @@
 
 
     <template>
-<center>
-        <div id="achievementPopUp" class="achievement">
-            <img id="alertIcon" class="icon">
-            <div class="achievement__column">
-                <span id="PopUpText" class="PUT"></span><br>
-                <span class="title"></span>
+        <center>
+            <div id="achievementPopUp" class="achievement">
+                <img id="alertIcon" class="icon">
+                <div class="achievement__column">
+                    <span id="PopUpText" class="PUT"></span><br>
+                    <span class="title"></span>
+                </div>
+                <br />
+                <button data-close-button class="achievement__close-button">&times;</button>
             </div>
-            <br />
-            <button data-close-button class="achievement__close-button">&times;</button>
-        </div>
-</center>
+        </center>
     </template>
 
 </body>

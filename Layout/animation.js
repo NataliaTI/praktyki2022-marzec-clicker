@@ -1,33 +1,30 @@
 import { format } from "../src/Scripts/Components/format.js";
 
-export const clicker = document.querySelector('.clicker-img');
-
-export function clickAnimation(e, extraMoneyPerClick){
-
+export function clickAnimation(e, extraMoneyPerClick, counterButtonElement){
     const moneyOnClick = extraMoneyPerClick + 1;
     let moneyOnClickFormated = format(moneyOnClick);
     moneyOnClickFormated = moneyOnClickFormated.replace('.',',')
     
-    let x = e.clientX - e.target.offsetLeft;
-    let y = e.clientY - e.target.offsetTop;
+    const x = e.clientX - e.target.offsetLeft;
+    const y = e.clientY - e.target.offsetTop;
 
-    let beerWrap = document.createElement('span');
+    const beerWrap = document.createElement('span');
     beerWrap.classList.add('click');
     beerWrap.style.left = x + 'px';
     beerWrap.style.top = y + 'px';
-    clicker.appendChild(beerWrap);
+    counterButtonElement.appendChild(beerWrap);
 
-    let beer = document.createElement('span');
+    const beer = document.createElement('span');
     beer.classList.add('click-beer');
     beerWrap.appendChild(beer);
 
-    let moneyClickWrap = document.createElement('div');
+    const moneyClickWrap = document.createElement('div');
     moneyClickWrap.classList.add('click');
     moneyClickWrap.style.left = x + 'px';
     moneyClickWrap.style.top = y + 'px';
-    clicker.appendChild(moneyClickWrap);
+    counterButtonElement.appendChild(moneyClickWrap);
 
-    let moneyClick = document.createElement('span');
+    const moneyClick = document.createElement('span');
     moneyClick.classList.add('moneyClick');
     moneyClickWrap.appendChild(moneyClick);
 
@@ -40,5 +37,4 @@ export function clickAnimation(e, extraMoneyPerClick){
     setTimeout(() => {
         beerWrap.remove()
     },1000);
-  
 }
