@@ -1,6 +1,6 @@
 import {format} from "../src/Scripts/Components/format.js";
 import {bonus} from "../src/Scripts/modules/catchbonusReworked";
-import {} from '../src/Scripts/modules/menu.js';
+import {} from './menu.js';
 import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
 import {updateList, timer, upgrade} from "../src/Scripts/modules/upgrades.js";
 import {clickAnimation} from "./animation";
