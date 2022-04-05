@@ -1,5 +1,4 @@
 import {format} from '../Components/format.js';
-import {autoClickFormat} from './upgrades.js';
 
 let catchbonusaddable = Boolean(true);
 
@@ -28,9 +27,9 @@ function getRandomcoordinates() {
             catchbonusaddable = true
         })
         setTimeout(() => {
-                removebonus(catchbonus);
-                catchbonusaddable = true
-             }, 5000);
+            removebonus(catchbonus);
+            catchbonusaddable = true
+          }, 5000);
     }
   }
   export function catchbonusstart(){
@@ -72,7 +71,7 @@ function getRandomcoordinates() {
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
-         money.style.fontSize = 'large'
+          money.style.fontSize = 'large'
           money.style.left = 50 + '%';
           money.style.top = 50 + '%';
           this2.appendChild(money);
@@ -89,6 +88,6 @@ function getRandomcoordinates() {
 
           document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
 
-          return { autoClick };
+          return autoClick;
         }
       }
