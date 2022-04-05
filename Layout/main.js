@@ -6,7 +6,7 @@ import {updateList, timer, upgrade} from "../src/Scripts/modules/upgrades.js";
 import {clickAnimation} from "./animation";
 import {catchbonusstart} from "../src/Scripts/modules/catchbonusReworked.js";
 import {login} from '../src/Scripts/modules/apiLogin.js';
-import {} from "../src/Scripts/modules/mobileMenu.js";
+import {} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
 let counter = 0;
