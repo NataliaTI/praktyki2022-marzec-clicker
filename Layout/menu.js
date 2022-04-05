@@ -6,8 +6,7 @@ buttons.forEach((button) => {
 
         const dataKey = button.getAttribute('data-key');
 
-        let menuCategoryId =  document.querySelector('#' + dataKey);
-
+        const menuCategoryId =  document.querySelector('#' + dataKey);
 
         for(let i = 0; i < buttons.length ;i++){
             buttons[i].classList.remove('active--menu-item');

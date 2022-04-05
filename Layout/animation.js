@@ -1,4 +1,4 @@
-import { format } from "../Scripts/Components/format.js";
+import { format } from "../src/Scripts/Components/format.js";
 
 export function clickAnimation(e, extraMoneyPerClick, counterButtonElement){
     const moneyOnClick = extraMoneyPerClick + 1;

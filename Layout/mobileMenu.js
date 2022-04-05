@@ -1,10 +1,15 @@
 const navigation__list = document.querySelectorAll('.navigation__list');
 
-function activeLink() {
-    navigation__list.forEach((item) => item.classList.remove('active'));
-    this.classList.add('active');
-}
-navigation__list.forEach((item) => item.addEventListener('click', activeLink));
+
+navigation__list.forEach((item) => {
+    item.addEventListener('click', () => {
+
+    for(let i = 0; i<navigation__list.length ;i++){
+        navigation__list[i].classList.remove('active');
+    }
+    item.classList.add('active');
+    })
+})
 
 const menu = document.querySelector('.menu');
 const mobileButtons = document.querySelectorAll('.mobileMenu-btn');
@@ -16,11 +21,7 @@ mobileButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const dataKey = button.getAttribute('data-key');
 
-        console.log(dataKey);
-
-        let menuCategoryId =  document.querySelector('#' + dataKey);
-
-        console.log(menuCategoryId);
+        const menuCategoryId =  document.querySelector('#' + dataKey);
 
         for(let i = 0; i < menuDivList.length ;i++){
             menuDivList[i].classList.remove('menu__div--active');

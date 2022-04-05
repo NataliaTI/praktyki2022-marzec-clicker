@@ -1,13 +1,13 @@
-import {format} from "../Scripts/Components/format.js";
-import {bonus} from "../Scripts/modules/catchbonusReworked";
-import {} from '../Scripts/modules/menu.js';
-import {changeCounterElementText, onClickHandler} from '../Scripts/modules/onClickIncrement.js';
-import {updateList, timer, upgrade} from "../Scripts/modules/upgrades.js";
+import {format} from "../src/Scripts/Components/format.js";
+import {bonus} from "../src/Scripts/modules/catchbonusReworked";
+import {} from './menu.js';
+import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
+import {updateList, timer, upgrade} from "../src/Scripts/modules/upgrades.js";
 import {clickAnimation} from "./animation";
-import {catchbonusstart} from "../Scripts/modules/catchbonusReworked.js";
-import {login} from '../Scripts/modules/apiLogin.js';
-import {} from "../Scripts/modules/mobileMenu.js";
-import achivementList from '../Catalog/achievements.json';
+import {catchbonusstart} from "../src/Scripts/modules/catchbonusReworked.js";
+import {login} from '../src/Scripts/modules/apiLogin.js';
+import {} from './mobileMenu.js';
+import achivementList from '../src/Catalog/achievements.json';
 
 let counter = 0;
 let autoClick = 0;
