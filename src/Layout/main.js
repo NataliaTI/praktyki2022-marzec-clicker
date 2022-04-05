@@ -1,13 +1,13 @@
-import {format} from "../src/Scripts/Components/format.js";
-import {bonus} from "../src/Scripts/modules/catchbonusReworked";
-import {} from '../src/Scripts/modules/menu.js';
-import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
-import {updateList, timer, upgrade} from "../src/Scripts/modules/upgrades.js";
+import {format} from "../Scripts/Components/format.js";
+import {bonus} from "../Scripts/modules/catchbonusReworked";
+import {} from '../Scripts/modules/menu.js';
+import {changeCounterElementText, onClickHandler} from '../Scripts/modules/onClickIncrement.js';
+import {updateList, timer, upgrade} from "../Scripts/modules/upgrades.js";
 import {clickAnimation} from "./animation";
-import {catchbonusstart} from "../src/Scripts/modules/catchbonusReworked.js";
-import {login} from '../src/Scripts/modules/apiLogin.js';
-import {} from "../src/Scripts/modules/mobileMenu.js";
-import achivementList from '../src/Catalog/achievements.json';
+import {catchbonusstart} from "../Scripts/modules/catchbonusReworked.js";
+import {login} from '../Scripts/modules/apiLogin.js';
+import {} from "../Scripts/modules/mobileMenu.js";
+import achivementList from '../Catalog/achievements.json';
 
 let counter = 0;
 let autoClick = 0;
@@ -46,17 +46,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed'); 
 });
 
-function clickSound() {
-    const sound = document.getElementById("click_sound");
-    sound.play();
-}
-
-function upgradeSound() {
-    const sound = document.getElementById("upgrade_sound");
-    sound.play();
-    
-}
-
 login();
 catchbonusstart();
 
@@ -65,8 +54,8 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
-            let oldAutoClick = format(autoClick)
-            oldAutoClick = oldAutoClick.replace('.', ',')
+            let oldAutoClick = format(autoClick);
+            oldAutoClick = oldAutoClick.replace('.', ',');
 
             setTimeout(() => {
                 autoClick = autoClick - oldAutoClick;
