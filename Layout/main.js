@@ -16,6 +16,9 @@ import {catchbonusstart} from "../src/Scripts/modules/catchbonusReworked.js";
 import {login} from '../src/Scripts/modules/apiLogin.js';
 import {} from "./mobileMenu.js";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
 =======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
@@ -52,12 +55,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
             });
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
 =======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
     }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 if (counterButtonElement) {
@@ -69,6 +76,8 @@ if (counterButtonElement) {
 =======
 =======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
     if(counterButtonElement){
         counterButtonElement.addEventListener('click', (e) => {
             clickAnimation(e, extraMoneyPerClick, counterButtonElement);
@@ -77,6 +86,9 @@ if (counterButtonElement) {
     console.log('DOM fully loaded and parsed'); 
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
 
 function clickSound() {
