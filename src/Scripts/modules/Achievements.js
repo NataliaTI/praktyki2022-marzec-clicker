@@ -3,6 +3,7 @@ import { showContent } from "../Components/alert.js";
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 <<<<<<< HEAD
+<<<<<<< HEAD
         achievementLevel.forEach(achievementKey => {
             if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
                 const header = achivementList[achievementKey].achievementHeader;
@@ -21,6 +22,8 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
         sound.play();
     }
 =======
+=======
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
     achievementLevel.forEach(achievementKey => {
         if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
             const szklana = achivementList[achievementKey].upgradeName;
@@ -38,4 +41,7 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
         }
     });
 }
+<<<<<<< HEAD
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008

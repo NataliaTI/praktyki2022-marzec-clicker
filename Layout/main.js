@@ -15,6 +15,9 @@ import {clickAnimation} from "./animation";
 import {catchbonusstart} from "../src/Scripts/modules/catchbonusReworked.js";
 import {login} from '../src/Scripts/modules/apiLogin.js';
 import {} from "./mobileMenu.js";
+<<<<<<< HEAD
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
 import achivementList from '../src/Catalog/achievements.json';
 
@@ -31,22 +34,6 @@ let counter = 100000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
-<<<<<<< HEAD
-login();
-
-if (upgradeFromHtml.length) {
-    for (let name = 0; name < upgradeFromHtml.length; name++) {
-        const upgradeDiv = upgradeFromHtml[name];
-        const upgradeId = upgradeDiv;
-
-        upgradeDiv.addEventListener('click', (event) => {
-            const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
-            upgradeSound();
-            counter = result.counter;
-            autoClick = result.autoClick;
-            extraMoneyPerClick = result.extraMoneyPerClick;
-        });
-=======
 window.addEventListener('DOMContentLoaded', (event) => { 
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
@@ -64,10 +51,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 extraMoneyPerClick = result.extraMoneyPerClick;
             });
         }
+<<<<<<< HEAD
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
+=======
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
     }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 if (counterButtonElement) {
     counterButtonElement.addEventListener('click', (event) => {
@@ -76,6 +67,8 @@ if (counterButtonElement) {
 })
 }
 =======
+=======
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
     if(counterButtonElement){
         counterButtonElement.addEventListener('click', (e) => {
             clickAnimation(e, extraMoneyPerClick, counterButtonElement);
@@ -83,12 +76,18 @@ if (counterButtonElement) {
     }
     console.log('DOM fully loaded and parsed'); 
 });
+<<<<<<< HEAD
 >>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
 
 function clickSound() {
     const sound = document.getElementById("click_sound");
     sound.preload = 'auto';
 sound.load();
+=======
+
+function clickSound() {
+    const sound = document.getElementById("click_sound");
+>>>>>>> 0fe11da1018a9e6ae824f707c9ef282159219008
     sound.play();
 }
 
