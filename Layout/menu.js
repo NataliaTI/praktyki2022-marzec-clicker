@@ -1,11 +1,11 @@
+import { menuDivList } from "./mobileMenu.js";
+
 const buttons = document.querySelectorAll('.menu-item');
-const menuDivList = document.querySelectorAll('.menu__div-list');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
         const dataKey = button.getAttribute('data-key');
-
         const menuCategoryId =  document.querySelector('#' + dataKey);
 
         for(let i = 0; i < buttons.length ;i++){

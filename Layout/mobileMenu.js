@@ -1,6 +1,5 @@
 const navigation__list = document.querySelectorAll('.navigation__list');
 
-
 navigation__list.forEach((item) => {
     item.addEventListener('click', () => {
 
@@ -13,7 +12,7 @@ navigation__list.forEach((item) => {
 
 const menu = document.querySelector('.menu');
 const mobileButtons = document.querySelectorAll('.mobileMenu-btn');
-const menuDivList = document.querySelectorAll('.menu__div-list');
+export const menuDivList = document.querySelectorAll('.menu__div-list');
 const exitBtn = document.querySelectorAll('.exit-btn');
 const mobileHome = document.querySelector('.mobileHome');
 
