@@ -239,15 +239,13 @@ html {
     display: flex;
     height: 100%;
 }
-.achievement {
+.achievements-look {
     width: 100px;
     height: 100px;
     background-size: contain;
     margin-right: 20px;
     background-repeat: no-repeat;
     align-self: center;
-}
-.achievements-img {
     background-image: url('../Images/ikona-locked.png');
 }
 
