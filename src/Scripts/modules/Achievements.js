@@ -15,8 +15,6 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 
             achievement.querySelector('.achievements-look').classList.add(name);
-            console.log(achievement.querySelector('.achievements-look'))
-            // document.getElementsByClassName('achievements-img').classList.remove('achievements-img');
             showContent(header, description, achievementImage);
         }
     });
