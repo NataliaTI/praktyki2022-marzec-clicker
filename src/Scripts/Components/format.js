@@ -16,7 +16,3 @@ export function format(n) {
   base = abbrev.indexOf(suffix) + 1;
   return suffix ? round(n / pow(1000, base), 2) + suffix : "" + n;
 }
-// export function replacedot(p) {
-// p = p.replace('.',',')
-// p.textContent = p
-// }
