@@ -66,14 +66,14 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
     const upgrade = updateList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
-        
+
         upgrade.currentCost *= 1.15;
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;
         sumOfUpgrades++;
         updateList.current.currentAutoClickValue += upgrade.autoClickValue;
         updateList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
-        
+
         osiagniecia(upgrade.level, upgradeName, achivementList);
 
         autoClick = updateList.current.currentAutoClickValue;
