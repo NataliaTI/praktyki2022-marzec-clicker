@@ -46,6 +46,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed'); 
 });
 
+function clickSound() {
+    const sound = document.getElementById("click_sound");
+    sound.play();
+}
+
+function upgradeSound() {
+    const sound = document.getElementById("upgrade_sound");
+    sound.play();
+    
+}
+
 login();
 catchbonusstart();
 
