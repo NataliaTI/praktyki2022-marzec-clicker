@@ -1,4 +1,5 @@
 import {format} from "../src/Scripts/Components/format.js";
+import {} from "../src/Scripts/Components/statistics.js";
 import {bonus, catchbonusstart} from "../src/Scripts/modules/catchbonusReworked";
 import {changeMenuCategory} from './menu.js';
 import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
@@ -56,6 +57,7 @@ function clickSound() {
     sound.load();
     sound.play();
 }
+
 function upgradeSound() {
     const sound = document.getElementById("upgrade_sound");
     sound.play();
@@ -73,7 +75,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             let oldAutoClick = autoClick
             autoClick = autoClick + autoClick;
             setTimeout(() => {
-                
                 autoClick = autoClick - oldAutoClick;
                 let autoClickFormat = format(autoClick);
                 document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';

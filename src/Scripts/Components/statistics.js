@@ -18,7 +18,7 @@
 const counterButtonElementStats = document.getElementById('counter-button');
 let sumOfClicks = 0;
 
- function clickCounter()
+function clickCounter()
 {
     sumOfClicks ++;
     document.getElementById('stat1').innerHTML = sumOfClicks;
@@ -45,4 +45,3 @@ days = parseInt((days-months*30));
 months = parseInt((months-years*12));
     document.getElementById('stat4').innerHTML = years + "l " + months + "m " + days + "d " + hours + "g " + minutes + "m " + seconds + "s";
 }, 1000)
-
