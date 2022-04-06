@@ -10,9 +10,9 @@ navigation__list.forEach((item) => {
     })
 })
 
+const menuDivList = document.querySelectorAll('.menu__div-list');
 const menu = document.querySelector('.menu');
 const mobileButtons = document.querySelectorAll('.mobileMenu-btn');
-export const menuDivList = document.querySelectorAll('.menu__div-list');
 const exitBtn = document.querySelectorAll('.exit-btn');
 const mobileHome = document.querySelector('.mobileHome');
 

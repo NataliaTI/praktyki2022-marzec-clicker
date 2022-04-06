@@ -6,9 +6,9 @@ import { osiagniecia } from "./Achievements.js";
 let sumOfUpgrades = 0;
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
-export let autoClickFormat;
+let autoClickFormat;
 
-export const updateList = {
+const upgradeList = {
     'otwieracz': {
         currentCost: 10,
         level: 0,
@@ -64,7 +64,7 @@ export const updateList = {
 }
 
 export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList) {
-    const upgrade = updateList[upgradeName];
+    const upgrade = upgradeList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
 
@@ -72,13 +72,13 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;
         sumOfUpgrades++;
-        updateList.current.currentAutoClickValue += upgrade.autoClickValue;
-        updateList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
+        upgradeList.current.currentAutoClickValue += upgrade.autoClickValue;
+        upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
 
         osiagniecia(upgrade.level, upgradeName, achivementList);
 
-        autoClick = updateList.current.currentAutoClickValue;
-        extraMoneyPerClick = updateList.current.currentExtraMoneyPerClick;
+        autoClick = upgradeList.current.currentAutoClickValue;
+        extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
         returnedFormatedValue = returnedFormatedValue.replace('.', ',')
