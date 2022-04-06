@@ -1,20 +1,3 @@
-// Punkty na sekunde - w pliku main.js, funkcja upgradesStatIncrement w upgradeDiv.addEventListener
-// Liczba zakupionych ulepszeń - w pliku main.js, funkcja upgradesIncrement w upgradeDiv.addEventListener 
-// Złapane bonusy- w pliku main.js, w catchbonusstart
-
-// export function upgradesStatIncrement(){
-
-//     if (counter >= upgrade.currentCost)
-//     {
-//         sumOfUpgrades ++;
-//         document.getElementById('stat2').innerHTML = sumOfUpgrades;
-//         document.getElementById('stat3').innerHTML = autoClick;
-//     }
-// }
-
-
-
-//  Liczba kliknięć
 const counterButtonElementStats = document.getElementById('counter-button');
 let sumOfClicks = 0;
 
@@ -25,7 +8,7 @@ let sumOfClicks = 0;
 }
 counterButtonElementStats.onclick = clickCounter;
 
-// Czas grania
+ 
 setInterval(() => {
 
 const dateOne = new Date("2022-03-29 10:00:00"); 
@@ -46,3 +29,23 @@ months = parseInt((months-years*12));
     document.getElementById('stat4').innerHTML = years + "l " + months + "m " + days + "d " + hours + "g " + minutes + "m " + seconds + "s";
 }, 1000)
 
+let sumOfUpgrades = 0; 
+ export function updateUpgradeStat(value)
+ {       
+            sumOfUpgrades ++;
+            document.getElementById('stat2').innerHTML = sumOfUpgrades; 
+ }
+
+ let achievementCounter = 0;
+ export function updateAchievementStat()
+ {
+            achievementCounter ++;
+            document.getElementById('stat6').innerHTML = achievementCounter + "/32" ;
+ }
+
+ let sumOfCatchedBonuses = 0;
+ export function updateCatchedBonusesStat()
+ {
+            sumOfCatchedBonuses++;
+            document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
+ }

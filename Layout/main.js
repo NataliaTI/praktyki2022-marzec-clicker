@@ -1,4 +1,5 @@
 import {format} from "../src/Scripts/Components/format.js";
+import { updateCatchedBonusesStat} from "../src/Scripts/Components/statistics.js";
 import {bonus, catchbonusstart} from "../src/Scripts/modules/catchbonusReworked";
 import {changeMenuCategory} from './menu.js';
 import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
@@ -66,8 +67,7 @@ catchbonusstart();
 
 document.getElementById("wrap").addEventListener('click', (event) => {
     if (event.target && event.target.matches(".catchbonus")) {
-        sumOfCatchedBonuses++;
-        document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
+        updateCatchedBonusesStat();
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {

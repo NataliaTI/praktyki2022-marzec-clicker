@@ -1,8 +1,9 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
+import {updateUpgradeStat } from "../Components/statistics.js"; 
 
-let sumOfUpgrades = 0;
+ 
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
@@ -70,7 +71,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         upgrade.currentCost *= 1.15;
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;
-        sumOfUpgrades++;
+        updateUpgradeStat();
         upgradeList.current.currentAutoClickValue += upgrade.autoClickValue;
         upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
 
@@ -87,8 +88,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         autoClickFormat = autoClickFormat.replace('.', ',')
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
-        document.getElementById('stat2').innerHTML = sumOfUpgrades;
+        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $'; 
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
