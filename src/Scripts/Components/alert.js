@@ -1,5 +1,5 @@
 export function showContent(alertmessage, text, icon) {
-    const temp = document.getElementsByTagName("template")[0];
+    const temp = document.getElementById("alertTemplate");
     const clon = temp.content.cloneNode(true);
     const poptext = document.getElementById('PopUpText');
 

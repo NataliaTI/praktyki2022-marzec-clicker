@@ -42,12 +42,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 counter = result.counter;
                 autoClick = result.autoClick;
                 extraMoneyPerClick = result.extraMoneyPerClick;
-<<<<<<< HEAD
                 upgradeSound();
-=======
-              
-                
->>>>>>> 031199aeeb52d60737004f44e5caa87836c1fd87
             });
 
         }
