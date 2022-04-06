@@ -5,7 +5,7 @@ const exitBtn = document.querySelectorAll('.exit-btn');
 const mobileHome = document.querySelector('.mobileHome');
 
 export function changeMobileMenuCategory(menuDivList){
-    navigation__list.forEach((item) => {
+        navigation__list.forEach((item) => {
         item.addEventListener('click', () => {
     
         for(let i = 0; i<navigation__list.length ;i++){

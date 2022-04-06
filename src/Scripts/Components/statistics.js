@@ -1,7 +1,7 @@
 const counterButtonElementStats = document.getElementById('counter-button');
 let sumOfClicks = 0;
 
- function clickCounter()
+function clickCounter()
 {
     sumOfClicks ++;
     document.getElementById('stat1').innerHTML = sumOfClicks;

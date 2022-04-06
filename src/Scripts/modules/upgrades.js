@@ -7,6 +7,7 @@ import {updateUpgradeStat } from "../Components/statistics.js";
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
+const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
 
 const upgradeList = {
     'otwieracz': {
@@ -81,17 +82,15 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
-        returnedFormatedValue = returnedFormatedValue.replace('.', ',')
         upgradeCostFormat = format(upgrade.currentCost);
-        upgradeCostFormat = upgradeCostFormat.replace('.', ',')
         autoClickFormat = format(autoClick);
-        autoClickFormat = autoClickFormat.replace('.', ',')
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $'; 
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
+        mobileHeaderH2.textContent = returnedFormatedValue + " $";
     }
 
     return { counter, autoClick, extraMoneyPerClick };
