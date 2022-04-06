@@ -2,7 +2,6 @@ import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
 
-
 let sumOfUpgrades = 0;
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;

@@ -1,5 +1,7 @@
 import { showContent } from "../Components/alert.js";
+
 let achievementCounter = 0;
+
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 
@@ -25,7 +27,6 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
          }
      });
 }
-
 
 function achievementSound() {
     const sound = document.getElementById("achievement_sound");

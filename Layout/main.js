@@ -13,17 +13,6 @@ let counter = 2220;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
-// function upgradesStatIncrement(){
-
-//         if (counter >= upgrade.currentCost)
-//         {
-//             sumOfUpgrades ++;
-//             document.getElementById('stat2').innerHTML = sumOfUpgrades;
-//             document.getElementById('stat3').innerHTML = autoClick;
-//         }
-//     }
-// if (counter >= upgrade.currentcost) { console.log(2) }
-
 window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
@@ -40,7 +29,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 extraMoneyPerClick = result.extraMoneyPerClick;
                 upgradeSound();
             });
-
         }
     }
 
@@ -60,17 +48,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed'); 
 });
 
-// function clickSound() {
-//     const sound = document.getElementById("click_sound");
-//     sound.preload = 'auto';
-//     sound.load();
-//     sound.play();
-// }
-// function upgradeSound() {
-//     const sound = document.getElementById("upgrade_sound");
-//     sound.play();
-
-// }
+function clickSound() {
+    const sound = document.getElementById("click_sound");
+    sound.preload = 'auto';
+    sound.load();
+    sound.play();
+}
+function upgradeSound() {
+    const sound = document.getElementById("upgrade_sound");
+    sound.play();
+}
 
 login();
 catchbonusstart();
@@ -88,20 +75,15 @@ document.getElementById("wrap").addEventListener('click', (event) => {
                 autoClick = autoClick - oldAutoClick;
                 let autoClickFormat = format(autoClick);
                 autoClickFormat = autoClickFormat.replace('.', ',');
-                //autoClick = autoClickFormat
                 document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
                 autoClickFormat = autoClickFormat.replace(',', '.')
             }, 5000);
             autoClick = result.autoClick
         } else if (result.counter) {
             counter = result.counter
-            //const this2 = document.getElementsByTagName('body');
             const this2 = document.querySelector("body");
             let money = document.createElement('div');
             money.classList.add('click');
-            //money.id='money';
-            //money.style.backgroundColor = "grey"
-            //money.style.fontSize = 'large'
             money.style.left = 50 + '%';
             money.style.top = 50 + '%';
             this2.appendChild(money);
@@ -117,6 +99,7 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         }
     }
 });
+
 setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
