@@ -1,8 +1,6 @@
 import { showContent } from "../Components/alert.js";
 import {updateAchievementStat } from "../Components/statistics.js"; 
 
- 
-
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 
