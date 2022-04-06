@@ -1,8 +1,7 @@
 import { format, replacedot } from '../Components/format.js';
 
-const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
-
 export const counterElement = document.getElementById("counter");
+const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
 let returnedFormatedValue = counter;
 
@@ -19,5 +18,4 @@ export function onClickHandler(counter, extraMoneyPerClick) {
   changeCounterElementText(counter);
 
   return counter;
-
 }

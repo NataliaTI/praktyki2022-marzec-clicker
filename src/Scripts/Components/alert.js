@@ -17,11 +17,11 @@ export function showContent(alertmessage, text, icon) {
     closePopUpButtons.forEach(button => {
         button.addEventListener('click', () => {
             const close = button.closest('.alert')
-            // console.log(close)
             deleteContent(clon)
         })
     })
 }
+
 function deleteContent(clon) {
     document.getElementById("achievementPopUp").remove()
 };

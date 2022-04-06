@@ -1,4 +1,5 @@
 import {format} from "../src/Scripts/Components/format.js";
+import { updateCatchedBonusesStat} from "../src/Scripts/Components/statistics.js";
 import {bonus, catchbonusstart} from "../src/Scripts/modules/catchbonusReworked";
 import {changeMenuCategory} from './menu.js';
 import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
@@ -8,12 +9,13 @@ import {login} from '../src/Scripts/modules/apiLogin.js';
 import {changeMobileMenuCategory} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
+const menuDivList = document.querySelectorAll('.menu__div-list');
+const buttons = document.querySelectorAll('.menu-item');
+
 let sumOfCatchedBonuses = 0;
-let counter = 2220000;
+let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
-const menuDivList = document.querySelectorAll('.menu__div-list');
-const buttons = document.querySelectorAll('.menu__item');
 
 window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
@@ -56,6 +58,7 @@ function clickSound() {
     sound.load();
     sound.play();
 }
+
 function upgradeSound() {
     const sound = document.getElementById("upgrade_sound");
     sound.play();
@@ -66,14 +69,12 @@ catchbonusstart();
 
 document.getElementById("wrap").addEventListener('click', (event) => {
     if (event.target && event.target.matches(".catchbonus")) {
-        sumOfCatchedBonuses++;
-        document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
+        updateCatchedBonusesStat();
         let result = bonus(counter, autoClick);
         if (result.autoClick) {
             let oldAutoClick = autoClick
             autoClick = autoClick + autoClick;
             setTimeout(() => {
-                
                 autoClick = autoClick - oldAutoClick;
                 let autoClickFormat = format(autoClick);
                 document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
@@ -81,20 +82,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             autoClick = result.autoClick
         } else if (result.counter) {
             counter = result.counter
-            const this2 = document.querySelector("body");
-            let money = document.createElement('div');
-            money.classList.add('click');
-            money.style.left = 50 + '%';
-            money.style.top = 50 + '%';
-            this2.appendChild(money);
-            let moneyClick = document.createElement('span');
-            moneyClick.classList.add('moneyClick2');
-            money.appendChild(moneyClick);
-            let bonuscounter = format(Math.floor(counter / 5))
-            moneyClick.textContent = '+' + bonuscounter + ' $';
-            setTimeout(() => {
-                money.remove()
-            }, 1500);
         }
     }
 });
