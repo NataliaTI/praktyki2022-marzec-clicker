@@ -29,7 +29,7 @@ function getRandomcoordinates() {
         setTimeout(() => {
             removebonus(catchbonus);
             catchbonusaddable = true
-          }, 5000);
+          }, 8000);
     }
   }
   export function catchbonusstart(){
@@ -37,14 +37,25 @@ function getRandomcoordinates() {
     let coordinates = getRandomcoordinates();
     makediv(coordinates);
     catchbonusaddable = false
-
+    if (catchbonus) {
+      if (catchbonus.classList.contains("catchbonus")){
+        setTimeout(() => { 
+          catchbonus.classList.add("catchbonus3")
+          if(catchbonus.classList.contains("catchbonus3")){
+            setTimeout(() => { 
+              catchbonus.classList.add("catchbonus2")
+              catchbonus.classList.remove("catchbonus3")
+            }, 3500);
+          }
+        }, 3500);
+    }
+  }
   }, 10000)
 }
   function removebonus(catchbonus){
     catchbonus.remove();
     catchbonusaddable = true
-    
-    }
+  }
     const bonusList = [{
         type: "counterValue"
       }, {
@@ -52,26 +63,35 @@ function getRandomcoordinates() {
         time: 5000
       }]
       export function bonus(counter, autoClick) {
-        const max = 1;
-        const min = 0 
-        let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
+        let randombonus = Math.floor (Math.random()*(1 - 0 + 1)+ 0);
         const bonus = bonusList[randombonus];
-        console.log(bonus.type);
         if (bonus.type == 'counterValue')  {
           counter = counter + Math.floor(counter/5);  
-          console.log(Math.floor(counter/5))
+          const this2 = document.querySelector("body");
+          let money = document.createElement('div');
+          money.classList.add('click');
+          money.style.left = 50 + '%';
+          money.style.top = 50 + '%';
+          this2.appendChild(money);
+
+          let moneyClick = document.createElement('span');
+          moneyClick.classList.add('moneyClick2');
+          money.appendChild(moneyClick);
+          
+          let bonuscounter = format(Math.floor(counter / 5))
+          moneyClick.textContent = '+' + bonuscounter + ' $';
+          setTimeout(() => {
+            money.remove()
+        }, 1500);
           return { counter };
       
          }else {     
           let oldAutoClick = format(autoClick);
-          oldAutoClick = oldAutoClick.replace('.',',');
           autoClick = autoClick + autoClick;
           let autoClickFormat = format(autoClick);
-          autoClickFormat = autoClickFormat.replace('.',',')
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
-          money.style.fontSize = 'large'
           money.style.left = 50 + '%';
           money.style.top = 50 + '%';
           this2.appendChild(money);
@@ -80,14 +100,14 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
   
-          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekunde przez xyz sekund';
-           document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekundę przez 10 sekund';
+           document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
            setTimeout(() => {
             money.remove()
         },1500);
 
-          document.getElementById('moneyPerSecond').innerHTML ='Na sekunde: ' + autoClickFormat +' $';
+          document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
 
-          return autoClick;
+          return { autoClick };
         }
       }

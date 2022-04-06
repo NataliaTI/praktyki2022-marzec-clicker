@@ -50,7 +50,7 @@
 }
 
 
-.mobile_header {
+.mobile__header {
     display: none;
     height: 50px;
     width: 100%;
@@ -77,9 +77,9 @@
         margin-bottom: 40px;
     }
 
-    .clicker-img {
-        height: 35vh;
-        width: 135px;
+    .clicker__img {
+        height: 55vh;
+        width: 190px;
     }
 
     .footer {
@@ -94,7 +94,7 @@
         display: block;
     }
 
-    .mobile_header {
+    .mobile__header {
         color: white;
         background-color: rgb(170, 170, 170, 0.8);
         display: flex;
@@ -106,7 +106,7 @@
         width: 100%;
     }
 
-    .mobile_header-btn {
+    .mobile__header--btn {
         cursor: pointer;
         background-color: transparent;
         border: 0;
@@ -123,7 +123,7 @@
         width: 100%;
     }
 
-    .menu-btn {
+    .menu__item--btn {
         display: none;
     }
 
@@ -133,7 +133,7 @@
         backdrop-filter: blur(5px);
     }
 
-    .tooltip__tooltiptext {
+    .menu-upgrades__tooltiptext {
         display: none;
     }
 
@@ -146,12 +146,12 @@
 }
 
 @media screen and (max-width: 540px) {
-    .menu__achievements-list-item {
+    .achievements__list-item {
         font-size: 14px;
         padding-left: 15px;
     }
 
-    .achievements-img {
+    .achievements__img-locked {
         width: 80px;
         height: 80px;
         margin-right: 20px;
@@ -161,11 +161,11 @@
 }
 
 @media screen and (max-width: 500px) {
-    .menu-div-upgrades {
+    .menu-upgrades {
         font-size: 14px;
     }
 
-    .upgradeLevel{
+    .upgradeLevel {
         font-size: 20px;
     }
 
@@ -174,25 +174,14 @@
         height: 80px;
         margin-right: 10px;
     }
-
-    /* .menu__achievements-list-item {
-        font-size: 12px;
-        padding-left: 10px;
-    }
-
-    .achievements-img {
-        width: 60px;
-        height: 60px;
-        margin-right: 10px;
-    } */
 }
 
 @media screen and (max-width: 390px) {
-    .menu-div-upgrades {
+    .menu-upgrades {
         font-size: 12px;
     }
 
-    .upgradeLevel{
+    .upgradeLevel {
         font-size: 16px;
     }
 
@@ -202,7 +191,7 @@
         margin-right: 5px;
     }
 
-    .menu__upgrades-list-item {
+    .menu-upgrades__list-item {
         padding-right: 15px;
     }
 
@@ -210,11 +199,11 @@
         margin-right: 5px;
     }
 
-    .menu__achievements-list-item {
+    .achievements__list-item {
         padding-left: 5px;
     }
 
-    .achievements-img {
+    .achievements__img-locked {
 
         margin-right: 5px;
     }
