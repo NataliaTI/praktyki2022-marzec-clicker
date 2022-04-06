@@ -1,11 +1,24 @@
-// Punkty na sekunde - w pliku upgrades.js
-// Liczba zakupionych ulepszeń - w pliku upgrades.js
+// Punkty na sekunde - w pliku main.js, funkcja upgradesStatIncrement w upgradeDiv.addEventListener
+// Liczba zakupionych ulepszeń - w pliku main.js, funkcja upgradesIncrement w upgradeDiv.addEventListener 
+// Złapane bonusy- w pliku main.js, w catchbonusstart
+
+// export function upgradesStatIncrement(){
+
+//     if (counter >= upgrade.currentCost)
+//     {
+//         sumOfUpgrades ++;
+//         document.getElementById('stat2').innerHTML = sumOfUpgrades;
+//         document.getElementById('stat3').innerHTML = autoClick;
+//     }
+// }
+
+
 
 //  Liczba kliknięć
 const counterButtonElementStats = document.getElementById('counter-button');
-export let sumOfClicks = 0;
+let sumOfClicks = 0;
 
-export function clickCounter()
+ function clickCounter()
 {
     sumOfClicks ++;
     document.getElementById('stat1').innerHTML = sumOfClicks;
