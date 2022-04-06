@@ -7,9 +7,9 @@ counter-buttons.addEventListener('click', (event) => {
 
 
 
-const counterButtonElement = document.getElementById("counter-button");
-var audio = new Audio("mixkit-spice-jar-open-1809.wav");
+// const counterButtonElement = document.getElementById("counter-button");
+// var audio = new Audio("mixkit-spice-jar-open-1809.wav");
 
-document.onclick = function() {
-  audio.play();
-}
+// document.onclick = function() {
+//   audio.play();
+// }

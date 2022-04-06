@@ -165,7 +165,7 @@
         font-size: 14px;
     }
 
-    .upgradeLevel{
+    .upgradeLevel {
         font-size: 20px;
     }
 
@@ -175,16 +175,6 @@
         margin-right: 10px;
     }
 
-    /* .menu__achievements-list-item {
-        font-size: 12px;
-        padding-left: 10px;
-    }
-
-    .achievements-img {
-        width: 60px;
-        height: 60px;
-        margin-right: 10px;
-    } */
 }
 
 @media screen and (max-width: 390px) {
@@ -192,7 +182,7 @@
         font-size: 12px;
     }
 
-    .upgradeLevel{
+    .upgradeLevel {
         font-size: 16px;
     }
 

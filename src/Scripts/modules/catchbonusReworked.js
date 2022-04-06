@@ -69,10 +69,8 @@ function getRandomcoordinates() {
         const min = 0; 
         let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
         const bonus = bonusList[randombonus];
-        console.log(bonus.type);
         if (bonus.type == 'counterValue')  {
           counter = counter + Math.floor(counter/5);  
-          console.log(Math.floor(counter/5))
           return { counter };
       
          }else {     
