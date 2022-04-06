@@ -1,6 +1,5 @@
-import { menuDivList } from "./mobileMenu.js";
-
 const buttons = document.querySelectorAll('.menu-item');
+const menuDivList = document.querySelectorAll('.menu__div-list');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
