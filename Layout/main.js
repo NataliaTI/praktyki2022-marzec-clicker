@@ -1,17 +1,19 @@
 import {format} from "../src/Scripts/Components/format.js";
 import {bonus, catchbonusstart} from "../src/Scripts/modules/catchbonusReworked";
-import {} from './menu.js';
+import {changeMenuCategory} from './menu.js';
 import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
 import {timer, upgrade} from "../src/Scripts/modules/upgrades.js";
 import {clickAnimation} from "./animation";
 import {login} from '../src/Scripts/modules/apiLogin.js';
-import {} from "./mobileMenu.js";
+import {changeMobileMenuCategory} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
 let sumOfCatchedBonuses = 0;
 let counter = 2220;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
+const menuDivList = document.querySelectorAll('.menu__div-list');
+const buttons = document.querySelectorAll('.menu-item');
 
 // function upgradesStatIncrement(){
 
@@ -121,3 +123,6 @@ setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
+
+changeMenuCategory(buttons, menuDivList);
+changeMobileMenuCategory(menuDivList);
