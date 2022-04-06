@@ -14,9 +14,6 @@ export function format(n) {
   let base = floor(log(abs(n)) / log(1000));
   const suffix = abbrev[Math.min(100, base - 1)];
   base = abbrev.indexOf(suffix) + 1;
-  return suffix ? round(n / pow(1000, base), 2) + suffix : "" + n;
+  let rep = suffix ? round(n / pow(1000, base), 2) + suffix : "" + n;
+  return rep = rep.replace('.',',')
 }
-// export function replacedot(p) {
-// p = p.replace('.',',')
-// p.textContent = p
-// }
