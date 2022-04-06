@@ -1,5 +1,5 @@
 import { showContent } from "../Components/alert.js";
-
+let achievementCounter = 0;
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 
@@ -13,12 +13,21 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             const description = achivementList[achievementKey].achievementDescription;
             const achievementImage = achivementList[achievementKey].iconName;
 
+            achievementCounter++
+            document.getElementById('stat6').innerHTML = achievementCounter + '/xyz';
             document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
             document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 
             achievement.querySelector('.achievements-look').classList.add(name);
             console.log(achievement.querySelector('.achievements-look'))
             showContent(header, description, achievementImage);
+            achievementSound();
          }
      });
+}
+
+
+function achievementSound() {
+    const sound = document.getElementById("achievement_sound");
+    sound.play();
 }
