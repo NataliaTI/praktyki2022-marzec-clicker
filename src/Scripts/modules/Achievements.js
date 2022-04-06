@@ -47,7 +47,7 @@ export function achievementShow(achievementList, achievementWrap, icon) {
         const achievementImage = achievementList[achievementKey].iconName;
 
 
-        if (unlocked == false) {
+        if (unlocked == true) {
             clone.querySelector(".achievements-look").achievementImage = document.getElementsByClassName(".achievements-otwieracz");
 
         }
