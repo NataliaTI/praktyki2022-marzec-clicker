@@ -47,7 +47,7 @@ html {
     margin-bottom: 55px;
 }
 
-.clicker-img {
+.clicker__img {
     height: 60%;
     width: 70%;
     margin: 0 auto;
@@ -61,24 +61,23 @@ html {
     transition: .1s;
 }
 
-.clicker-img:hover {
+.clicker__img:hover {
     transform: scale(1.1);
 }
 
-.clicker-img:active {
+.clicker__img:active {
     transform: scale(0.99);
 }
 
 
 .menu {
     width: 500px;
-    /* border: 2px solid black; */
     height: 100%;
 }
 
 
 
-.menu-item {
+.menu__item {
     position: relative;
     top: 1px;
     width: 25%;
@@ -91,7 +90,7 @@ html {
     cursor: pointer;
 }
 
-.active--menu-item {
+.menu__item--active {
     background-color: rgba(14, 106, 32);
     color: white;
     border-left: 2px solid black;
@@ -197,7 +196,7 @@ html {
     display: block;
 }
 
-.menu__upgrades-list-item {
+.menu-upgrades__list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -216,14 +215,11 @@ html {
     height: 100%;
 }
 
-.menu__upgrade-list-item-info {
+.menu-upgrades__list-item-info {
     align-self: center;
 }
 
-
-
-
-.menu__achievements-list-item {
+.achievements__list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -235,12 +231,12 @@ html {
     border-bottom: 1px solid black;
 }
 
-.achievements-img__wrap {
+.achievements__item {
     display: flex;
     height: 100%;
 }
 
-.achievements-img {
+.achievements__img-locked {
     background-image: url('../Images/ikona-locked.png');
     width: 100px;
     height: 100px;
@@ -329,25 +325,6 @@ html {
     background-repeat: no-repeat;
     align-self: center;
 }
-/* .menu__achievements-list-item-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-} */
-
-/* .menu__achievements-list-item-info h2 {
-    display: block;
-    height: 50%;
-}
-
-.menu__achievements-list-item-info p {
-    display: block;
-    height: 50%;
-} */
-
-
-
 
 .menu__stats-list-item {
     display: flex;
@@ -452,12 +429,12 @@ html {
     }
 }
 
-.tooltip {
+.menu-upgrades__tooltip {
     position: relative;
     display: inline-block;
 }
 
-.tooltip .tooltip__tooltiptext--otwieracz {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-otwieracz {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -473,11 +450,11 @@ html {
 }
 
 
-.tooltip:hover .tooltip__tooltiptext--otwieracz {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-otwieracz {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--mietek {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-mietek {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -492,11 +469,11 @@ html {
     left: 60%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--mietek {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-mietek {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--seba {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-seba {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -511,11 +488,11 @@ html {
     left: 45%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--seba {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-seba {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--ekspedientka {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-ekspedientka {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -530,11 +507,11 @@ html {
     left: 25%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--ekspedientka {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-ekspedientka {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--gang {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-gang {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -549,11 +526,11 @@ html {
     left: 30%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--gang {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-gang {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--monopolowy {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-monopolowy {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -568,11 +545,11 @@ html {
     left: 35%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--monopolowy {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-monopolowy {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--browar {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-browar {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -587,11 +564,11 @@ html {
     left: 90%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--browar {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-browar {
     visibility: visible;
 }
 
-.tooltip .tooltip__tooltiptext--destylarnia {
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-destylarnia {
     visibility: hidden;
     background-color: rgb(70, 70, 70, 0.7);
     backdrop-filter: blur(5px);
@@ -606,7 +583,7 @@ html {
     left: 55%;
 }
 
-.tooltip:hover .tooltip__tooltiptext--destylarnia {
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-destylarnia {
     visibility: visible;
 }
 
@@ -620,7 +597,7 @@ html {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.achievement {
+.alert {
     position: absolute;
     align-items: flex-start;
     display: flex;
@@ -642,24 +619,24 @@ html {
 }
 
 
-.achievement.locked {
+.alert.locked {
     background-color: #ccc;
     color: #444;
 }
 
-.achievement .title {
+.alert .alert__info {
     color: #fff;
     font-weight: bold;
     text-shadow: 0px 0px 8px #eee;
 }
 
-.achievement.locked .title {
+.alert.locked .alert__info {
     color: #444;
     font-weight: bold;
     text-shadow: 0px 0px 4px #888;
 }
 
-.icon {
+.alert__icon {
     width: 70px;
     height: 70px;
     padding-left: 0px;
@@ -701,12 +678,12 @@ html {
     align-items: center;
 }
 
-.save-header .title {
+.save-header .alert__info {
     font-size: 1.25rem;
     font-weight: bold;
 }
 
-.achievement__close-button {
+.alert__close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -750,7 +727,7 @@ html {
     
 }
 
-.achievement__column {
+.alert__column {
     flex-direction: column;
     background-size: cover;
 }
@@ -761,7 +738,7 @@ html {
 } 
 
 
-.PUT {
+.alert__text {
     font-size: 10p;
     color: black;
     text-shadow: 0px 0px 8px #eee;

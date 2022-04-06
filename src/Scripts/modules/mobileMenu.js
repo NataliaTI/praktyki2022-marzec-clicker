@@ -12,13 +12,13 @@ export const mobileUpgrade = document.querySelector('.mobileUpgrade');
 export const mobileAchievements = document.querySelector('.mobileAchievement');
 export const mobileStats = document.querySelector('.mobileStats');
 export const menu = document.querySelector('.menu');
-export const mobileHeader = document.querySelector('.mobile_header');
-export const mobileHeaderBtn = document.querySelector('.mobile_header-btn');
-export const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
+export const mobileHeader = document.querySelector('.mobile__header');
+export const mobileHeaderBtn = document.querySelector('.mobile__header--btn');
+export const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
 
 
-const menuDivUpgrades = document.querySelector('.menu-div-upgrades');
+const menuDivUpgrades = document.querySelector('.upgrades');
 const menuDivAchievements = document.querySelector('.menu-div-achievements');
 const menuDivStats = document.querySelector('.menu-div-stats');
 

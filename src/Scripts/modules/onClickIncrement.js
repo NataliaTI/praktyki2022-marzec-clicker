@@ -1,6 +1,6 @@
 import { format, replacedot } from '../Components/format.js';
 
-const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
+const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
 export const counterElement = document.getElementById("counter");
 

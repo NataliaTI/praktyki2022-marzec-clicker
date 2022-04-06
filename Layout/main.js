@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => { console.log('DOM fully 
 const counterButtonElement = document.getElementById("counter-button");
 
 // ulepszenia
-const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
+const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
 
 let counter = 1000;
 let autoClick = 0;

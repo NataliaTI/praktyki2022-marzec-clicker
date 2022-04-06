@@ -86,4 +86,4 @@ export function osiagniecia(upgradeLevel, upgradeName) {
         //     }
         //     achievements: [{ req: "otwieracz.level>1", gotten: false, text: "zdobyłeś pierwszy otwieracz" }]
         // }
-   // }
+    }
