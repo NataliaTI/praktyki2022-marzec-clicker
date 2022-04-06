@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/mobile.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/ci es es.css">
     <script src="../../src/Scripts/modules/apiStatus.js"></script>
     <script src="../../src/Scripts/Components/sound.js"></script>
@@ -154,6 +153,17 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
+                            <script type="text/javascript">
+                                fetch('achievements.json')
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data)
+                                })
+
+                                
+                            </script>
+
+
                             <h2 id="headlineotwieracz1">Zablokowane</h2>
                             <p id="specificationotwieracz1">Opis niedostępny</p>
                         </div>
@@ -190,8 +200,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek1">Nazwa osiągnięcia</h2>
-                            <p id="specificationmietek1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemietek1">Zablokowane</h2>
+                            <p id="specificationmietek1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="mietek10">
@@ -199,17 +209,17 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek10">Nazwa osiągnięcia</h2>
-                            <p id="specificationmietek10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemietek10">Zablokowane</h2>
+                            <p id="specificationmietek10">Opis niedostępny</p>
                         </div>
                     </div>
-                    <div class="menu__achievements-list-item" id="mietek100">
+                    <!-- <div class="menu__achievements-list-item" id="mietek100">
                         <div class="achievements-img__wrap">
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek100">Nazwa osiągnięcia</h2>
-                            <p id="specificationmietek100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemietek100">Zablokowane</h2>
+                            <p id="specificationmietek100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="mietek1000">
@@ -217,8 +227,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationmietek1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemietek1000">Zablokowane</h2>
+                            <p id="specificationmietek1000">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="seba1">
@@ -226,8 +236,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba1">Nazwa osiągnięcia</h2>
-                            <p id="specificationseba1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineseba1">Zablokowane</h2>
+                            <p id="specificationseba1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="seba10">
@@ -235,8 +245,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba10">Nazwa osiągnięcia</h2>
-                            <p id="specificationseba10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineseba10">Zablokowane</h2>
+                            <p id="specificationseba10">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="seba100">
@@ -244,8 +254,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba100">Nazwa osiągnięcia</h2>
-                            <p id="specificationseba100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineseba100">Zablokowane</h2>
+                            <p id="specificationseba100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="seba1000">
@@ -253,8 +263,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationseba1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineseba1000">Zablokowane</h2>
+                            <p id="specificationseba1000">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="ekspedientka1">
@@ -262,8 +272,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka1">Nazwa osiągnięcia</h2>
-                            <p id="specificationekspedientka1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineekspedientka1">Zablokowane</h2>
+                            <p id="specificationekspedientka1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="ekspedientka10">
@@ -271,8 +281,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka10">Nazwa osiągnięcia</h2>
-                            <p id="specificationekspedientka10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineekspedientka10">Zablokowane</h2>
+                            <p id="specificationekspedientka10">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="ekspedientka100">
@@ -280,8 +290,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka100">Nazwa osiągnięcia</h2>
-                            <p id="specificationekspedientka100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineekspedientka100">Zablokowane</h2>
+                            <p id="specificationekspedientka100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="ekspedientka1000">
@@ -289,8 +299,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationekspedientka1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlineekspedientka1000">Zablokowane</h2>
+                            <p id="specificationekspedientka1000">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="gang1">
@@ -298,8 +308,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang1">Nazwa osiągnięcia</h2>
-                            <p id="specificationgang1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinegang1">Zablokowane</h2>
+                            <p id="specificationgang1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="gang10">
@@ -307,8 +317,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang10">Nazwa osiągnięcia</h2>
-                            <p id="specificationgang10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinegang10">Zablokowane</h2>
+                            <p id="specificationgang10">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="gang100">
@@ -316,8 +326,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang100">Nazwa osiągnięcia</h2>
-                            <p id="specificationgang100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinegang100">Zablokowane</h2>
+                            <p id="specificationgang100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="gang1000">
@@ -325,8 +335,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationgang1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinegang1000">Zablokowane</h2>
+                            <p id="specificationgang1000">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="monopolowy1">
@@ -334,8 +344,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy1">Nazwa osiągnięcia</h2>
-                            <p id="specificationmonopolowy1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemonopolowy1">Zablokowane</h2>
+                            <p id="specificationmonopolowy1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="monopolowy10">
@@ -343,8 +353,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy10">Nazwa osiągnięcia</h2>
-                            <p id="specificationmonopolowy10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemonopolowy10">Zablokowane</h2>
+                            <p id="specificationmonopolowy10">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="monopolowy100">
@@ -352,8 +362,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy100">Nazwa osiągnięcia</h2>
-                            <p id="specificationmonopolowy100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemonopolowy100">Zablokowane</h2>
+                            <p id="specificationmonopolowy100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="monopolowy1000">
@@ -361,8 +371,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationmonopolowy1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinemonopolowy1000">Zablokowane</h2>
+                            <p id="specificationmonopolowy1000">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="browar1">
@@ -370,8 +380,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar1">Nazwa osiągnięcia</h2>
-                            <p id="specificationbrowar1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinebrowar1">Zablokowane</h2>
+                            <p id="specificationbrowar1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="browar10">
@@ -379,8 +389,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar10">Nazwa osiągnięcia</h2>
-                            <p id="specificationbrowar10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinebrowar10">Zablokowane</h2>
+                            <p id="specificationbrowar10">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="browar100">
@@ -388,8 +398,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar100">Nazwa osiągnięcia</h2>
-                            <p id="specificationbrowar100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinebrowar100">Zablokowane</h2>
+                            <p id="specificationbrowar100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="browar1000">
@@ -397,8 +407,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationbrowar1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinebrowar1000">Zablokowane</h2>
+                            <p id="specificationbrowar1000">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="destylarnia1">
@@ -406,8 +416,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia1">Nazwa osiągnięcia</h2>
-                            <p id="specificationdestylarnia1">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinedestylarnia1">Zablokowane</h2>
+                            <p id="specificationdestylarnia1">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="destylarnia10">
@@ -415,8 +425,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia10">Nazwa osiągnięcia</h2>
-                            <p id="specificationdestylarnia10">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinedestylarnia10">Zablokowane</h2>
+                            <p id="specificationdestylarnia10">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="destylarnia100">
@@ -424,8 +434,8 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia100">Nazwa osiągnięcia</h2>
-                            <p id="specificationdestylarnia100">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinedestylarnia100">Zablokowane</h2>
+                            <p id="specificationdestylarnia100">Opis niedostępny</p>
                         </div>
                     </div>
                     <div class="menu__achievements-list-item" id="destylarnia1000">
@@ -433,10 +443,10 @@
                             <div class="achievements-look"></div>
                         </div>
                         <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia1000">Nazwa osiągnięcia</h2>
-                            <p id="specificationdestylarnia1000">Informacja za co osiągnięcie zostało odblokowane</p>
+                            <h2 id="headlinedestylarnia1000">Zablokowane</h2>
+                            <p id="specificationdestylarnia1000">Opis niedostępny</p>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="menu__div-list menu-div-stats" id="tab-stats">
@@ -513,7 +523,6 @@
             </li>
         </ul>
     </div>
-    <!-- <div id="achievement"></div> -->
 
     <!-- Ikony od mobilnego menu -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
