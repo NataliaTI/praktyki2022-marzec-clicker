@@ -8,7 +8,6 @@ import {catchbonusstart} from "../src/Scripts/modules/catchbonusReworked.js";
 import {login} from '../src/Scripts/modules/apiLogin.js';
 import {} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
-
 let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
