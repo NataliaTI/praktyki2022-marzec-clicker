@@ -38,7 +38,6 @@ function getRandomcoordinates() {
     makediv(coordinates);
     catchbonusaddable = false
     if (catchbonus) {
-
       if (catchbonus.classList.contains("catchbonus")){
         setTimeout(() => { 
           catchbonus.classList.add("catchbonus3")
@@ -51,7 +50,6 @@ function getRandomcoordinates() {
         }, 3500);
     }
   }
-
   }, 10000)
 }
   function removebonus(catchbonus){
@@ -65,19 +63,31 @@ function getRandomcoordinates() {
         time: 5000
       }]
       export function bonus(counter, autoClick) {
-        const max = 1;
-        const min = 0; 
-        let randombonus = Math.floor (Math.random()*(max - min + 1)+ min);
+        let randombonus = Math.floor (Math.random()*(1 - 0 + 1)+ 0);
         const bonus = bonusList[randombonus];
         if (bonus.type == 'counterValue')  {
           counter = counter + Math.floor(counter/5);  
+          const this2 = document.querySelector("body");
+          let money = document.createElement('div');
+          money.classList.add('click');
+          money.style.left = 50 + '%';
+          money.style.top = 50 + '%';
+          this2.appendChild(money);
+
+          let moneyClick = document.createElement('span');
+          moneyClick.classList.add('moneyClick2');
+          money.appendChild(moneyClick);
+          
+          let bonuscounter = format(Math.floor(counter / 5))
+          moneyClick.textContent = '+' + bonuscounter + ' $';
+          setTimeout(() => {
+            money.remove()
+        }, 1500);
           return { counter };
       
          }else {     
           let oldAutoClick = format(autoClick);
-          console.log(autoClick, "przed")
           autoClick = autoClick + autoClick;
-          console.log(autoClick, "po")
           let autoClickFormat = format(autoClick);
           const this2 = document.querySelector("body");
           let money = document.createElement('div');

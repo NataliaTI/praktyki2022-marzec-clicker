@@ -9,12 +9,13 @@ import {login} from '../src/Scripts/modules/apiLogin.js';
 import {changeMobileMenuCategory} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
-let sumOfCatchedBonuses = 0;
-let counter = 2220000;
-let autoClick = 0;
-let extraMoneyPerClick = 0;
 const menuDivList = document.querySelectorAll('.menu__div-list');
 const buttons = document.querySelectorAll('.menu-item');
+
+let sumOfCatchedBonuses = 0;
+let counter = 0;
+let autoClick = 0;
+let extraMoneyPerClick = 0;
 
 window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
@@ -82,20 +83,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             autoClick = result.autoClick
         } else if (result.counter) {
             counter = result.counter
-            const this2 = document.querySelector("body");
-            let money = document.createElement('div');
-            money.classList.add('click');
-            money.style.left = 50 + '%';
-            money.style.top = 50 + '%';
-            this2.appendChild(money);
-            let moneyClick = document.createElement('span');
-            moneyClick.classList.add('moneyClick2');
-            money.appendChild(moneyClick);
-            let bonuscounter = format(Math.floor(counter / 5))
-            moneyClick.textContent = '+' + bonuscounter + ' $';
-            setTimeout(() => {
-                money.remove()
-            }, 1500);
         }
     }
 });

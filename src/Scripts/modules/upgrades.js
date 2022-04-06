@@ -81,11 +81,8 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
-       // returnedFormatedValue = returnedFormatedValue.replace('.', ',')
         upgradeCostFormat = format(upgrade.currentCost);
-       // upgradeCostFormat = upgradeCostFormat.replace('.', ',')
         autoClickFormat = format(autoClick);
-       // autoClickFormat = autoClickFormat.replace('.', ',')
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
@@ -100,4 +97,3 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
-
