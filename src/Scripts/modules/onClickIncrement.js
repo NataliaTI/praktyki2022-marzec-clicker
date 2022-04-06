@@ -1,14 +1,12 @@
-import { format, replacedot } from '../Components/format.js';
-
-const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
+import {format} from '../Components/format.js';
 
 export const counterElement = document.getElementById("counter");
+const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
 let returnedFormatedValue = counter;
 
 export function changeCounterElementText(counter) {
   returnedFormatedValue = format(counter);
-  returnedFormatedValue = returnedFormatedValue.replace('.', ',')
   
   mobileHeaderH2.textContent = returnedFormatedValue + " $";
   counterElement.textContent = returnedFormatedValue + " $";
@@ -20,5 +18,4 @@ export function onClickHandler(counter, extraMoneyPerClick) {
   changeCounterElementText(counter);
 
   return counter;
-
 }
