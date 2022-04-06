@@ -10,7 +10,7 @@ import {changeMobileMenuCategory} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
 const menuDivList = document.querySelectorAll('.menu__div-list');
-const buttons = document.querySelectorAll('.menu-item');
+const buttons = document.querySelectorAll('.menu__item');
 
 let counter = 0;
 let autoClick = 0;
