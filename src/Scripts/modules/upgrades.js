@@ -80,11 +80,11 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         extraMoneyPerClick = updateList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
-        returnedFormatedValue = returnedFormatedValue.replace('.', ',')
+       // returnedFormatedValue = returnedFormatedValue.replace('.', ',')
         upgradeCostFormat = format(upgrade.currentCost);
-        upgradeCostFormat = upgradeCostFormat.replace('.', ',')
+       // upgradeCostFormat = upgradeCostFormat.replace('.', ',')
         autoClickFormat = format(autoClick);
-        autoClickFormat = autoClickFormat.replace('.', ',')
+       // autoClickFormat = autoClickFormat.replace('.', ',')
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';

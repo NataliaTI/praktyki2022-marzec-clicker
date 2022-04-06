@@ -8,7 +8,6 @@ let returnedFormatedValue = counter;
 
 export function changeCounterElementText(counter) {
   returnedFormatedValue = format(counter);
-  returnedFormatedValue = returnedFormatedValue.replace('.', ',')
   
   mobileHeaderH2.textContent = returnedFormatedValue + " $";
   counterElement.textContent = returnedFormatedValue + " $";
