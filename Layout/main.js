@@ -81,20 +81,6 @@ document.getElementById("wrap").addEventListener('click', (event) => {
             autoClick = result.autoClick
         } else if (result.counter) {
             counter = result.counter
-            const this2 = document.querySelector("body");
-            let money = document.createElement('div');
-            money.classList.add('click');
-            money.style.left = 50 + '%';
-            money.style.top = 50 + '%';
-            this2.appendChild(money);
-            let moneyClick = document.createElement('span');
-            moneyClick.classList.add('moneyClick2');
-            money.appendChild(moneyClick);
-            let bonuscounter = format(Math.floor(counter / 5))
-            moneyClick.textContent = '+' + bonuscounter + ' $';
-            setTimeout(() => {
-                money.remove()
-            }, 1500);
         }
     }
 });
