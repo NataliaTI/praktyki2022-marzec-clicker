@@ -6,6 +6,7 @@ let sumOfUpgrades = 0;
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
+const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
 
 const upgradeList = {
     'otwieracz': {
@@ -92,9 +93,11 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
+        mobileHeaderH2.textContent = returnedFormatedValue + " $";
     }
 
     return { counter, autoClick, extraMoneyPerClick };
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
+
