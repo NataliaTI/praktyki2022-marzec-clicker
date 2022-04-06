@@ -1,10 +1,14 @@
 import { showContent } from "../Components/alert.js";
-let achievementCounter = 0;
+import {updateAchievementStat } from "../Components/statistics.js"; 
+
+ 
+
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 
     achievementLevel.forEach(achievementKey => {
         if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
+            updateAchievementStat();
             const szklana = achivementList[achievementKey].upgradeName;
             const achievement = document.getElementById(achievementKey);
             const upgradeLevel = achivementList[achievementKey].level;
@@ -12,9 +16,7 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             const header = achivementList[achievementKey].achievementHeader;
             const description = achivementList[achievementKey].achievementDescription;
             const achievementImage = achivementList[achievementKey].iconName;
-
-            achievementCounter++
-            document.getElementById('stat6').innerHTML = achievementCounter + '/xyz';
+            
             document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
             document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 
@@ -25,7 +27,6 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
          }
      });
 }
-
 
 function achievementSound() {
     const sound = document.getElementById("achievement_sound");

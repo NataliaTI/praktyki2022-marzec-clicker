@@ -1,14 +1,15 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
+import {updateUpgradeStat } from "../Components/statistics.js"; 
 
-
-let sumOfUpgrades = 0;
+ 
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
-export let autoClickFormat;
+let autoClickFormat;
+const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
-export const updateList = {
+const upgradeList = {
     'otwieracz': {
         currentCost: 10,
         level: 0,
@@ -64,35 +65,32 @@ export const updateList = {
 }
 
 export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList) {
-    const upgrade = updateList[upgradeName];
+    const upgrade = upgradeList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
 
         upgrade.currentCost *= 1.15;
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;
-        sumOfUpgrades++;
-        updateList.current.currentAutoClickValue += upgrade.autoClickValue;
-        updateList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
+        updateUpgradeStat();
+        upgradeList.current.currentAutoClickValue += upgrade.autoClickValue;
+        upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
 
         osiagniecia(upgrade.level, upgradeName, achivementList);
 
-        autoClick = updateList.current.currentAutoClickValue;
-        extraMoneyPerClick = updateList.current.currentExtraMoneyPerClick;
+        autoClick = upgradeList.current.currentAutoClickValue;
+        extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
-        returnedFormatedValue = returnedFormatedValue.replace('.', ',')
         upgradeCostFormat = format(upgrade.currentCost);
-        upgradeCostFormat = upgradeCostFormat.replace('.', ',')
         autoClickFormat = format(autoClick);
-        autoClickFormat = autoClickFormat.replace('.', ',')
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
-        document.getElementById('stat2').innerHTML = sumOfUpgrades;
+        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $'; 
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
+        mobileHeaderH2.textContent = returnedFormatedValue + " $";
     }
 
     return { counter, autoClick, extraMoneyPerClick };
