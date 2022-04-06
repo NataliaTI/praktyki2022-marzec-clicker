@@ -1,38 +1,34 @@
-import {format} from "../src/Scripts/Components/format.js";
-import {bonus, catchbonusstart} from "../src/Scripts/modules/catchbonusReworked";
-import {} from './menu.js';
-import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
-import {timer, upgrade} from "../src/Scripts/modules/upgrades.js";
-import {clickAnimation} from "./animation";
-import {login} from '../src/Scripts/modules/apiLogin.js';
-import {} from "./mobileMenu.js";
+import { format } from "../src/Scripts/Components/format.js";
+import { bonus, catchbonusstart } from "../src/Scripts/modules/catchbonusReworked";
+import { } from './menu.js';
+import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
+import { timer, upgrade } from "../src/Scripts/modules/upgrades.js";
+import { clickAnimation } from "./animation";
+import { login } from '../src/Scripts/modules/apiLogin.js';
+import { } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
+import { achievementShow } from '../src/Scripts/modules/Achievements.js'
 
 let sumOfCatchedBonuses = 0;
 let counter = 2220;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
-// function upgradesStatIncrement(){
-
-//         if (counter >= upgrade.currentCost)
-//         {
-//             sumOfUpgrades ++;
-//             document.getElementById('stat2').innerHTML = sumOfUpgrades;
-//             document.getElementById('stat3').innerHTML = autoClick;
-//         }
-//     }
-// if (counter >= upgrade.currentcost) { console.log(2) }
-
 window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu__upgrades-list-item");
+    const achievementWrap = document.getElementById("tab-achievements");
+
+    if (achievementWrap) {
+        achievementShow(achivementList, achievementWrap)
+    }
+
 
     if (upgradeFromHtml.length) {
         for (let name = 0; name < upgradeFromHtml.length; name++) {
             const upgradeDiv = upgradeFromHtml[name];
             const upgradeId = upgradeDiv;
-            
+
             upgradeDiv.addEventListener('click', (event) => {
                 const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
                 counter = result.counter;
@@ -47,17 +43,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (counterButtonElement) {
         counterButtonElement.addEventListener('click', (event) => {
             counter = onClickHandler(counter, extraMoneyPerClick);
-            clickSound();
+            // clickSound();
         });
     };
 
-    if(counterButtonElement){
+    if (counterButtonElement) {
         counterButtonElement.addEventListener('click', (e) => {
             clickAnimation(e, extraMoneyPerClick, counterButtonElement);
         })
     }
 
-    console.log('DOM fully loaded and parsed'); 
+    console.log('DOM fully loaded and parsed');
 });
 
 // function clickSound() {
@@ -121,3 +117,4 @@ setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
+
