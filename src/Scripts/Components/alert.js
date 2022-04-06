@@ -1,5 +1,5 @@
 export function showContent(alertmessage, text, icon) {
-    const temp = document.getElementById("alertTemplate");
+    const temp = document.getElementById('alertTemplate');
     const clon = temp.content.cloneNode(true);
 
     clon.querySelector("#achievementPopUp .alert__info").textContent = text;
