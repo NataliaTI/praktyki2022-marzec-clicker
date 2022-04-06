@@ -1,7 +1,6 @@
-export function showContent(alertmessage, text, icon) {
+    export function showContent(alertmessage, text, icon) {
     const temp = document.getElementsByTagName("template")[0];
     const clon = temp.content.cloneNode(true);
-    const poptext = document.getElementById('PopUpText');
 
     clon.querySelector("#achievementPopUp .alert__info").textContent = text;
     clon.querySelector("#achievementPopUp .alert__text").textContent = alertmessage;    
@@ -12,7 +11,7 @@ export function showContent(alertmessage, text, icon) {
        deleteContent(clon)
     }, 5000);
 
-    const closePopUpButtons = document.querySelectorAll('[data-close-button]')
+    const closePopUpButtons = document.querySelectorAll('data-close-button')
 
     closePopUpButtons.forEach(button => {
         button.addEventListener('click', () => {

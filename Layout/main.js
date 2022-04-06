@@ -12,7 +12,6 @@ import achivementList from '../src/Catalog/achievements.json';
 const menuDivList = document.querySelectorAll('.menu__div-list');
 const buttons = document.querySelectorAll('.menu-item');
 
-let sumOfCatchedBonuses = 0;
 let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
