@@ -134,7 +134,7 @@ html {
     color: lightgray;
 }
 
-.upgradeLevel{
+.upgradeLevel {
     font-size: 24px;
     font-weight: bold;
 }
@@ -239,6 +239,7 @@ html {
     display: flex;
     height: 100%;
 }
+
 .achievements-look {
     width: 100px;
     height: 100px;
@@ -334,6 +335,7 @@ html {
     position: relative;
     animation: money 1.5s linear infinite;
 }
+
 .moneyClick2 {
     display: block;
     color: white;
@@ -597,29 +599,34 @@ html {
     height: 100px;
     background-size: cover;
     background-image: url("../Images/kapselwin.png");
-       cursor: pointer;
-       animation:catchbonus 1.5s;
+    cursor: pointer;
+    animation: catchbonus 1.5s;
 }
+
 @keyframes catchbonus {
 
-    0%{
+    0% {
         opacity: 0;
         transform: scale(1);
     }
-    25%{
+
+    25% {
         transform: scale(1.2);
     }
-    50%{
+
+    50% {
         transform: scale(1.1);
     }
-    75%{
+
+    75% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: scale(1);
     }
-    
+
 }
 
 .achievement__column {
@@ -627,10 +634,10 @@ html {
     background-size: cover;
 }
 
- .click {
-     font-size: 100px;
- 
-} 
+.click {
+    font-size: 100px;
+
+}
 
 
 .PUT {
