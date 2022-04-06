@@ -1,4 +1,5 @@
 import {format} from "../src/Scripts/Components/format.js";
+import {} from "../src/Scripts/Components/statistics.js"
 import {bonus} from "../src/Scripts/modules/catchbonusReworked";
 import {} from './menu.js';
 import {changeCounterElementText, onClickHandler} from '../src/Scripts/modules/onClickIncrement.js';
@@ -9,9 +10,23 @@ import {login} from '../src/Scripts/modules/apiLogin.js';
 import {} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
-let counter = 0;
+
+let sumOfCatchedBonuses = 0;
+let counter = 2220;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
+
+// function upgradesStatIncrement(){
+
+//         if (counter >= upgrade.currentCost)
+//         {
+//             sumOfUpgrades ++;
+//             document.getElementById('stat2').innerHTML = sumOfUpgrades;
+//             document.getElementById('stat3').innerHTML = autoClick;
+//         }
+//     }
+if (counter >= upgrade.currentcost)
+{console.log(2)}
 
 window.addEventListener('DOMContentLoaded', (event) => { 
     const counterButtonElement = document.getElementById("counter-button");
@@ -27,8 +42,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 counter = result.counter;
                 autoClick = result.autoClick;
                 extraMoneyPerClick = result.extraMoneyPerClick;
+<<<<<<< HEAD
                 upgradeSound();
+=======
+              
+                
+>>>>>>> 031199aeeb52d60737004f44e5caa87836c1fd87
             });
+
         }
     }
     
@@ -63,6 +84,8 @@ catchbonusstart();
 
 document.getElementById("wrap").addEventListener('click', (event) => {
     if (event.target && event.target.matches(".catchbonus")) {
+        sumOfCatchedBonuses++;
+        document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
         let result = bonus(counter, autoClick);
         console.log(result)
         if (result.autoClick) {
