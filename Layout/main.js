@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         })
     }
 
-    console.log('DOM fully loaded and parsed'); 
+    console.log('DOM fully loaded and parsed');
 });
 
 function clickSound() {
@@ -102,10 +102,10 @@ document.getElementById("wrap").addEventListener('click', (event) => {
     }
 });
 
+changeMenuCategory(buttons, menuDivList);
+changeMobileMenuCategory(menuDivList);
+
 setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
-
-changeMenuCategory(buttons, menuDivList);
-changeMobileMenuCategory(menuDivList);

@@ -1,5 +1,4 @@
-
-function changeMenuCategory(buttons, menuDivList){
+export function changeMenuCategory(buttons, menuDivList){
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
     
@@ -16,4 +15,3 @@ function changeMenuCategory(buttons, menuDivList){
         })
     })
 }
-

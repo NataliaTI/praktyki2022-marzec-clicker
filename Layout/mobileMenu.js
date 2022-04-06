@@ -1,13 +1,10 @@
-
-
 const navigation__list = document.querySelectorAll('.navigation__list');
-const menuDivList = document.querySelectorAll('.menu__div-list');
 const menu = document.querySelector('.menu');
 const mobileButtons = document.querySelectorAll('.mobileMenu-btn');
 const exitBtn = document.querySelectorAll('.exit-btn');
 const mobileHome = document.querySelector('.mobileHome');
 
-function changeMobileMenuCategory(menuDivList){
+export function changeMobileMenuCategory(menuDivList){
     navigation__list.forEach((item) => {
         item.addEventListener('click', () => {
     
@@ -18,12 +15,9 @@ function changeMobileMenuCategory(menuDivList){
         })
     })
     
-    
-    
     mobileButtons.forEach((button) => {
         button.addEventListener('click', () => {
             const dataKey = button.getAttribute('data-key');
-    
             const menuCategoryId =  document.querySelector('#' + dataKey);
     
             for(let i = 0; i < menuDivList.length ;i++){
@@ -46,5 +40,3 @@ function changeMobileMenuCategory(menuDivList){
         })
     })
 }
-
-
