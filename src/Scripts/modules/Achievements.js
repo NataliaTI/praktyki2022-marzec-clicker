@@ -20,8 +20,8 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
             document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 
-            achievement.querySelector('.achievements-look').classList.add(name);
-            console.log(achievement.querySelector('.achievements-look'))
+            //achievement.querySelector('.achievements-look').classList.add(name);
+            //console.log(achievement.querySelector('.achievements-look'))
             showContent(header, description, achievementImage);
             clickSound("achievement_sound");
          }
