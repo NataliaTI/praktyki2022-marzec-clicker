@@ -32,7 +32,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $'; 
+        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $'; 
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';

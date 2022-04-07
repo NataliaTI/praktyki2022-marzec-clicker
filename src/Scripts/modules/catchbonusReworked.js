@@ -52,7 +52,6 @@ function getRandomcoordinates() {
       }]
       export function bonus(counter, autoClick) {
         let randombonus = Math.floor (Math.random()*((bonusList.length-1) + (bonusList.length-1)));
-        console.log(bonusList.length)
         const bonus = bonusList[randombonus];
         if (bonus.type == 'counterValue')  {
           const testcounter = counter
@@ -75,7 +74,7 @@ function getRandomcoordinates() {
         }, 1500);
           return { counter };
       
-         }else {     
+         }else {
           let oldAutoClick = format(autoClick+10);
           autoClick = autoClick + autoClick +10;
           let autoClickFormat = format(autoClick);
@@ -85,7 +84,7 @@ function getRandomcoordinates() {
           money.style.left = 50 + '%';
           money.style.top = 50 + '%';
           this2.appendChild(money);
-
+          
           let moneyClick = document.createElement('span');
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
@@ -95,9 +94,49 @@ function getRandomcoordinates() {
            setTimeout(() => {
             money.remove()
         },1500);
-
+      
           document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
-
+        
           return { autoClick };
         }
       }
+
+//  const test123 = document.getElementsByClassName('menu-upgrades__list-item')
+//  if (test123.length) {
+//   for (let name = 0; name < test123.length; name++){
+//     const upgradeDiv = test123[name];
+//     const upgradeId = upgradeDiv;
+  
+// console.log(test123)
+// test123.addEventListener('click', (event) => {
+
+//   let oldAutoClick = format(autoClick+10);
+//   autoClick = autoClick + autoClick +10;
+//   let autoClickFormat = format(autoClick);
+//   const this2 = document.querySelector("body");
+//   let money = document.createElement('div');
+//   money.classList.add('click');
+//   money.style.left = 50 + '%';
+//   money.style.top = 50 + '%';
+//   this2.appendChild(money);
+  
+//   let moneyClick = document.createElement('span');
+//   moneyClick.classList.add('moneyClick2');
+//   money.appendChild(moneyClick);
+
+//   moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekundę przez 10 sekund';
+//    document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
+//    setTimeout(() => {
+//     money.remove()
+// },1500);
+
+//   document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
+
+//   return { autoClick };
+  
+// })
+//  }
+// }
+    
+  
+  

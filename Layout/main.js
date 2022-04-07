@@ -94,6 +94,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
             
         }
+        document.getElementById("wrap").addEventListener('click', (event) => {
+            if (event.target && event.target.matches(".catchbonus")) {
+                updateCatchedBonusesStat();
+                let result = bonus(counter, autoClick);
+                if (result.autoClick) {
+                    let oldAutoClick = autoClick +10
+                    autoClick = autoClick + autoClick;
+                    setTimeout(() => {
+                        autoClick = autoClick - oldAutoClick;
+                        let autoClickFormat = format(autoClick);
+                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
+                    }, 5000);
+                    autoClick = result.autoClick
+                } else if (result.counter) {
+                    counter = result.counter
+                }
+            }
+        });
+
+        catchbonusstart();
     
         if (upgradeFromHtml.length) {
             for (let name = 0; name < upgradeFromHtml.length; name++) {
@@ -121,27 +141,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 clickAnimation(e, extraMoneyPerClick, counterButtonElement);
             })
         }
-
-        document.getElementById("wrap").addEventListener('click', (event) => {
-            if (event.target && event.target.matches(".catchbonus")) {
-                updateCatchedBonusesStat();
-                let result = bonus(counter, autoClick);
-                if (result.autoClick) {
-                    let oldAutoClick = autoClick +10
-                    autoClick = autoClick + autoClick;
-                    setTimeout(() => {
-                        autoClick = autoClick - oldAutoClick;
-                        let autoClickFormat = format(autoClick);
-                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
-                    }, 5000);
-                    autoClick = result.autoClick
-                } else if (result.counter) {
-                    counter = result.counter
-                }
-            }
-        });
-
-        catchbonusstart();
 
         if (buttons.length && menuDivList.length) {
             changeMenuCategory(buttons, menuDivList);
