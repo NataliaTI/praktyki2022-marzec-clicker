@@ -569,12 +569,7 @@ html {
     padding-right: 12px;
     padding-top: 8px;
     bottom: 10%;
-<<<<<<< HEAD
     right: 38%;
-    text-align: center;
-=======
-    right: 40%;
->>>>>>> d3a8d218cdbb7e050c5a762edd3b91033289a9b3
 }
 
 
@@ -602,10 +597,6 @@ html {
     padding-bottom: 18px;
     padding-right: 8px;
 }
-
-
-
-
 
 *,
 *::after,
@@ -742,7 +733,6 @@ html {
     font-size: 100px;
 
 }
-
 
 .alert__text {
     font-size: 10p;
