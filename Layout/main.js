@@ -13,7 +13,7 @@ import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.j
 import { achievementShow } from "../src/Scripts/modules/Achievements.js"
 
 let sumOfCatchedBonuses = 0;
-let counter = 1000000000;
+let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -93,9 +93,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log('game state', gameState);
         if (gameState) {
 
-            if (gameState.hasOwnProperty('points')) {
-                counter = gameState.points;
-            }
+            // if (gameState.hasOwnProperty('points')) {
+            //     counter = gameState.points;
+            // }
 
         }
         document.getElementById("wrap").addEventListener('click', (event) => {

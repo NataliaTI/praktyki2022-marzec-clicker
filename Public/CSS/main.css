@@ -59,6 +59,7 @@ html {
     cursor: pointer;
     transform: scale(1);
     transition: .1s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .clicker__img:hover {
@@ -717,7 +718,8 @@ html {
     25% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: scale(0);
     }
