@@ -1,6 +1,6 @@
 import { showContent } from "../Components/alert.js";
 import {updateAchievementStat } from "../Components/statistics.js"; 
-
+import { clickSound } from "../Components/sounds.js";
  
 
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
@@ -23,12 +23,9 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             achievement.querySelector('.achievements-look').classList.add(name);
             console.log(achievement.querySelector('.achievements-look'))
             showContent(header, description, achievementImage);
-            achievementSound();
+            clickSound("achievement_sound");
          }
      });
 }
 
-function achievementSound() {
-    const sound = document.getElementById("achievement_sound");
-    sound.play();
-}
+

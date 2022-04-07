@@ -5,7 +5,7 @@ export function showContent(alertmessage, text, icon) {
 
     clon.querySelector("#achievementPopUp .alert__info").textContent = text;
     clon.querySelector("#achievementPopUp .alert__text").textContent = alertmessage;    
-    clon.querySelector("#achievementPopUp .icon").src = ('../Images/' + icon);
+    clon.querySelector("#achievementPopUp .alert__icon").src = ('../Images/' + icon);
     document.body.appendChild(clon);
 
     setTimeout(() => {

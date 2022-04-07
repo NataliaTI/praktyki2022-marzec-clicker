@@ -8,7 +8,7 @@ import {clickAnimation} from "./animation";
 import {login} from '../src/Scripts/modules/apiLogin.js';
 import {changeMobileMenuCategory} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
-import Sound from '../src/Scripts/Components/sounds.js';
+import {clickSound} from '../src/Scripts/Components/sounds.js';
 
 const menuDivList = document.querySelectorAll('.menu__div-list');
 const buttons = document.querySelectorAll('.menu__item');
@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 counter = result.counter;
                 autoClick = result.autoClick;
                 extraMoneyPerClick = result.extraMoneyPerClick;
-              
+                clickSound("upgrade_sound");
             });
         }
     }
@@ -40,13 +40,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (counterButtonElement) {
         counterButtonElement.addEventListener('click', (event) => {
             counter = onClickHandler(counter, extraMoneyPerClick);
-            Sound('mixkit-spice-jar-open-1809.wav');
+            
         });
     };
 
     if(counterButtonElement){
         counterButtonElement.addEventListener('click', (e) => {
             clickAnimation(e, extraMoneyPerClick, counterButtonElement);
+            clickSound("click_sound");
         })
     }
 
