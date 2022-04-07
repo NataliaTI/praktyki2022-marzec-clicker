@@ -11,6 +11,7 @@
     "otwieracz10": {
         "level": 10,
         "upgradeName": "otwieracz",
+        "iconName": "../../Public/Images/ikona-otwieracz.png",
         "unlocked": false,
         "achievementHeader": "Dziesiąty otwieracz",
         "achievementDescription": "Zakupiłeś dziesiąty otwieracz!",
@@ -73,7 +74,6 @@
         "class": "achievements-mietek"
     },
 
-
     "seba1": {
         "level": 1,
         "upgradeName": "seba",
@@ -90,7 +90,7 @@
         "unlocked": false,
         "achievementHeader": "Dziesiąty rycerz ortalionu",
         "achievementDescription": "Odnalazłeś dziesiątego prawdziwego Sebastiana",
-        "class": "achievements-seba"    
+        "class": "achievements-seba"
     },
     "seba100": {
         "level": 100,
@@ -99,7 +99,7 @@
         "unlocked": false,
         "achievementHeader": "Setny rycerz ortalionu",
         "achievementDescription": "Masz już sto prawdziwych rycerzy ortalionu w swoich szeregach",
-        "class": "achievements-seba"    
+        "class": "achievements-seba"
     },
     "seba1000": {
         "level": 1000,
@@ -110,7 +110,6 @@
         "achievementDescription": "Masz już tysięczną armię prawdziwych rycerzy ortalionu w swoich szeregach",
         "class": "achievements-seba"
     },
-
 
     "ekspedientka1": {
         "level": 1,
