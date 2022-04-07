@@ -61,7 +61,7 @@
         "iconName": "../../Public/Images/ikona-mietek.png",
         "unlocked": false,
         "achievementHeader": "Setny menelik",
-        "achievementDescription": "Masz już stu zaufanych menelów",
+        "achievementDescription": "Masz już stu zaufanych meneli",
         "class": "achievements-mietek"
     },
     "mietek1000": {
@@ -69,7 +69,7 @@
         "upgradeName": "mietek",
         "iconName": "../../Public/Images/ikona-mietek.png",
         "unlocked": false,
-        "achievementHeader": "tysięczny menelik",
+        "achievementHeader": "Tysięczny menelik",
         "achievementDescription": "Masz już tysięczną armię zaufanych meneli",
         "class": "achievements-mietek"
     },
@@ -126,7 +126,7 @@
         "iconName": "../../Public/Images/ikona-ekspedientka.png",
         "unlocked": false,
         "achievementHeader": "Dziesiąta Grażynka",
-        "achievementDescription": "Dziesiąta kasjerka Grażynka sprzedaje twój browar ",
+        "achievementDescription": "Dziesiąta kasjerka Grażynka sprzedaje twój browar",
         "class": "achievements-ekspedientka"
     },
     "ekspedientka100": {
@@ -144,7 +144,7 @@
         "iconName": "../../Public/Images/ikona-ekspedientka.png",
         "unlocked": false,
         "achievementHeader": "Tysięczna Grażynka",
-        "achievementDescription": "Tysiąć Grażynek sprzedaje już twoje piwo",
+        "achievementDescription": "Tysiąc Grażynek sprzedaje już twoje piwo",
         "class": "achievements-ekspedientka"
     },
 
@@ -155,7 +155,7 @@
         "iconName": "../../Public/Images/ikona-hurtownia.png",
         "unlocked": false,
         "achievementHeader": "Pierwsze piwko gangu z podstawówki",
-        "achievementDescription": "pierwsze piwko szóstoklasistów",
+        "achievementDescription": "Pierwsze piwko szóstoklasistów",
         "class": "achievements-gang"
     },
     "gang10": {
@@ -164,7 +164,7 @@
         "iconName": "../../Public/Images/ikona-hurtownia.png",
         "unlocked": false,
         "achievementHeader": "Dziesiąte piwko gangu z podstawówki",
-        "achievementDescription": "Dziesiąty piwko szóstoklasistów",
+        "achievementDescription": "Dziesiąte piwko szóstoklasistów",
         "class": "achievements-gang"
     },
     "gang100": {
@@ -173,7 +173,7 @@
         "iconName": "../../Public/Images/ikona-hurtownia.png",
         "unlocked": false,
         "achievementHeader": "Setne piwko gangu z podstawówki",
-        "achievementDescription": "Gang z podstawówki zakupił już swojego tysięcznego browara",
+        "achievementDescription": "Gang z podstawówki zakupił już swojego setnego browara",
         "class": "achievements-gang"
     },
     "gang1000": {
@@ -296,7 +296,7 @@
         "iconName": "../../Public/Images/ikona-destylarnia.png",
         "unlocked": false,
         "achievementHeader": "Tysięczna destylarnia",
-        "achievementDescription": "Przejmij pałeczkę marki królowej alkoholów",
+        "achievementDescription": "Przejmij pałeczkę marki królowej alkoholi",
         "class": "achievements-destylarnia"
     }
 }
