@@ -1,5 +1,5 @@
 import { format } from "../src/Scripts/Components/format.js";
-import { updateCatchedBonusesStat, getStat } from "../src/Scripts/Components/statistics.js";
+import { updateCatchedBonusesStat, dateFunction, clickCounter, updateUpgradeStat, getStat } from "../src/Scripts/Components/statistics.js";
 import { bonus, catchbonusstart } from "../src/Scripts/modules/catchbonusReworked";
 import { changeMenuCategory } from './menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
@@ -12,8 +12,8 @@ import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
 import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
 
-let sumOfCatchedBonuses = 0;
-let counter = 0;
+
+let counter = 1000000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -91,16 +91,38 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log('game state', gameState);
         if (gameState) {
 
-            // if (gameState.hasOwnProperty('points')) {
-            //     counter = gameState.points;
-            // }
+            if ( gameState.hasOwnProperty('upgradeCount') ) {
+                updateUpgradeStat(gameState.upgradeCount);
+            }
+             
+
+            if ( gameState.hasOwnProperty('startDataTime') ) {
+                dateFunction(gameState.startDataTime);
+            }
+             
+            if ( gameState.hasOwnProperty('clickCount') ) {
+                clickCounter(gameState.clickCount);
+               
+            }
+
+            if ( gameState.hasOwnProperty('catchedBonuses') ) {
+             
+                updateCatchedBonusesStat(gameState.catchedBonuses);
+            }
+                      
+            if ( gameState.hasOwnProperty('points') ) {
+                counter = gameState.points;
+            }
 
             if (gameState.hasOwnProperty('upgrades')) {
                 upgradeList = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
             }
 
             if (gameState.hasOwnProperty('achievementsObtained')) {
-                achivementList = achievementListUpdate(achivementList, gameState.achievementsObtained);
+                const achivementListTmp = achievementListUpdate(achivementList, gameState.achievementsObtained);
+                if (achivementListTmp) {
+                    achivementList = achivementListTmp;
+                }
             }
         }
 
@@ -188,6 +210,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
             saveGameState(currentGameState);
-        }, 600);
+        }, 60000);
     });
 });
