@@ -81,13 +81,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
 
     loadGameState.then((gameState) => {
-        
         // na podstawie obiektu gameState w zaznaczonym poniżej warunku
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
         // N.
         console.log('game state', gameState);
         if (gameState) {
+
+            if ( gameState.hasOwnProperty('clickPerSec') ) {
+                autoClick = gameState.clickPerSec;
+            }
 
             if ( gameState.hasOwnProperty('points') ) {
                 counter = gameState.points;
@@ -127,16 +130,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
                 if (result.autoClick) {
-                    let oldAutoClick = autoClick
+                    let oldAutoClick = autoClick;
                     autoClick = autoClick + autoClick + 10;
                     setTimeout(() => {
                         autoClick = autoClick - oldAutoClick - 10;
                         let autoClickFormat = format(autoClick);
                         document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + 10 + ' $';
                     }, 5000);
-                    autoClick = result.autoClick
+                    autoClick = result.autoClick;
                 } else if (result.counter) {
-                    counter = result.counter
+                    counter = result.counter;
                 }
             }
         });
@@ -162,11 +165,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
 
-            const gameState = {"startDataTime":"2022-04-06 13:06:01","timeSpentPlaying":"92459750246436537","clickCount":extraMoneyPerClick,"clickPerSec":autoClick,"points":counter,"catchedBonuses":15,"upgradeCount":1500,"achievementsObtained":[1,2,6,12,15],"upgrades":[{"id":1,"quantity":500},{"id":2,"quantity":400},{"id":3,"quantity":300},{"id":4,"quantity":200},{"id":5,"quantity":100}]};
+            const gameState = {"startDataTime":"2022-04-06 13:06:01","timeSpentPlaying":"92459750246436537","clickCount":1000,"clickPerSec":autoClick,"points":counter,"catchedBonuses":15,"upgradeCount":1500,"achievementsObtained":[1,2,6,12,15],"upgrades":[{"id":1,"quantity":500},{"id":2,"quantity":400},{"id":3,"quantity":300},{"id":4,"quantity":200},{"id":5,"quantity":100}]};
 
-            // console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
+            console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
 
             saveGameState(gameState);
-        }, 5000);
+        }, 60000);
     });
 });
