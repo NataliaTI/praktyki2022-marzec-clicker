@@ -560,7 +560,6 @@ html {
     background-color: rgb(0, 157, 65);
     color: #ddd;
     border-radius: 18px 18px 18px 18px;
-    /*background-image: url(../Images/kapsel.png);*/
     background-size: 64px;
     background-repeat: no-repeat;
     background-position: 6px 6px;
@@ -598,10 +597,6 @@ html {
     padding-bottom: 18px;
     padding-right: 8px;
 }
-
-
-
-
 
 *,
 *::after,
@@ -738,7 +733,6 @@ html {
     font-size: 100px;
 
 }
-
 
 .alert__text {
     font-size: 10p;

@@ -1,6 +1,4 @@
-
 import { showContent } from "../Components/alert";
-
 
 export const loadGameState = fetch('https://praktyki-trol-clicker-api.herokuapp.com/game-states', {
     headers: {

@@ -1,9 +1,9 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
-import { updateUpgradeStat } from "../Components/statistics.js"; 
+import { updateUpgradeStat } from "../Components/statistics.js";
 import { upgradeList } from "../../../Layout/main.js";
-import {clickSound} from "../Components/sounds.js";
+import { clickSound } from "../Components/sounds.js";
 
 const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 let upgradeCostFormat = 0;
@@ -14,7 +14,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
     const upgrade = upgradeList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
-
+    
         upgrade.currentCost *= 1.15;
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;

@@ -10,9 +10,10 @@ import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
+import { achievementShow } from "../src/Scripts/modules/Achievements.js"
 
 let sumOfCatchedBonuses = 0;
-let counter = 0;
+let counter = 1000000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -79,9 +80,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const buttons = document.querySelectorAll('.menu__item');
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
+    const achievementWrap = document.getElementById("tab-achievements");
+
+    achievementShow(achivementList, achievementWrap);
 
     loadGameState.then((gameState) => {
-        
+
         // na podstawie obiektu gameState w zaznaczonym poniżej warunku
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
@@ -89,10 +93,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log('game state', gameState);
         if (gameState) {
 
-            if ( gameState.hasOwnProperty('points') ) {
+            if (gameState.hasOwnProperty('points')) {
                 counter = gameState.points;
             }
-            
+
         }
         document.getElementById("wrap").addEventListener('click', (event) => {
             if (event.target && event.target.matches(".catchbonus")) {
@@ -145,11 +149,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (buttons.length && menuDivList.length) {
             changeMenuCategory(buttons, menuDivList);
         }
-       
+
         if (menuDivList.length) {
             changeMobileMenuCategory(menuDivList);
-        }      
-        
+        }
+
         setInterval(() => {
             counter = timer(counter, autoClick);
             changeCounterElementText(counter);
@@ -161,11 +165,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
 
-            const gameState = {"startDataTime":"2022-04-06 13:06:01","timeSpentPlaying":"92459750246436537","clickCount":extraMoneyPerClick,"clickPerSec":autoClick,"points":counter,"catchedBonuses":15,"upgradeCount":1500,"achievementsObtained":[1,2,6,12,15],"upgrades":[{"id":1,"quantity":500},{"id":2,"quantity":400},{"id":3,"quantity":300},{"id":4,"quantity":200},{"id":5,"quantity":100}]};
+            const gameState = { "startDataTime": "2022-04-06 13:06:01", "timeSpentPlaying": "92459750246436537", "clickCount": 1000, "clickPerSec": autoClick, "points": counter, "catchedBonuses": 15, "upgradeCount": 1500, "achievementsObtained": [1, 2, 6, 12, 15], "upgrades": [{ "id": 1, "quantity": 500 }, { "id": 2, "quantity": 400 }, { "id": 3, "quantity": 300 }, { "id": 4, "quantity": 200 }, { "id": 5, "quantity": 100 }] };
 
-            // console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
+            console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
 
             saveGameState(gameState);
-        }, 5000);
+        }, 60000);
     });
 });
