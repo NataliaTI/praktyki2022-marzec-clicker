@@ -17,11 +17,10 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             const description = achivementList[achievementKey].achievementDescription;
             const achievementImage = achivementList[achievementKey].iconName;
 
-            document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
-            document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
+            // document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
+            // document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 
-            //achievement.querySelector('.achievements-look').classList.add(name);
-            //console.log(achievement.querySelector('.achievements-look'))
+            // achievement.querySelector('.achievements-look').classList.add(name);
             showContent(header, description, achievementImage);
             clickSound("achievement_sound");
          }
