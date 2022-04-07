@@ -9,9 +9,11 @@ import { login } from '../src/Scripts/modules/apiLogin.js';
 import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 import { sound } from '../src/Scripts/Components/sounds.js';
+import { achievementShow } from '../src/Scripts/modules/Achievements.js'
 
 const menuDivList = document.querySelectorAll('.menu__div-list');
 const buttons = document.querySelectorAll('.menu__item');
+const achievementWrap = document.getElementById("tab-achievements");
 
 let counter = 1000000;
 let autoClick = 0;
@@ -34,6 +36,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             });
         }
+    }
+
+    if (achievementWrap) {
+        achievementShow(achivementList, achievementWrap)
     }
 
     if (counterButtonElement) {
@@ -81,4 +87,3 @@ setInterval(() => {
     counter = timer(counter, autoClick);
     changeCounterElementText(counter);
 }, 1000)
-
