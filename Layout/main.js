@@ -21,48 +21,48 @@ export const upgradeList = {
         currentCost: 15,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 1
+        extraMoneyPerClick: 0.5
     },
     'mietek': {
         currentCost: 155,
         level: 0,
-        autoClickValue: 15,
+        autoClickValue: 10,
         extraMoneyPerClick: 0
     },
     'seba': {
         currentCost: 1600,
         level: 0,
-        autoClickValue: 100,
-        extraMoneyPerClick: 10
+        autoClickValue: 90,
+        extraMoneyPerClick: 9
     },
     'grazyna': {
         currentCost: 7500,
         level: 0,
-        autoClickValue: 223,
-        extraMoneyPerClick: 150
+        autoClickValue: 299,
+        extraMoneyPerClick: 73
     },
     'gang': {
         currentCost: 35000,
         level: 0,
-        autoClickValue: 640,
-        extraMoneyPerClick: 300
+        autoClickValue: 779,
+        extraMoneyPerClick: 133
     },
     'monopolowy': {
-        currentCost: 125000,
+        currentCost: 130000,
         level: 0,
-        autoClickValue: 1230,
-        extraMoneyPerClick: 900
+        autoClickValue: 1818,
+        extraMoneyPerClick: 421
     },
     'browar': {
         currentCost: 800000,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 4000
+        extraMoneyPerClick: 3901
     },
     'destylarnia': {
         currentCost: 4000000,
         level: 0,
-        autoClickValue: 4300,
+        autoClickValue: 6213,
         extraMoneyPerClick: 0
     },
     'current': {
