@@ -37,19 +37,6 @@ function getRandomcoordinates() {
     let coordinates = getRandomcoordinates();
     makediv(coordinates);
     catchbonusaddable = false
-    if (catchbonus) {
-      if (catchbonus.classList.contains("catchbonus")){
-        setTimeout(() => { 
-          catchbonus.classList.add("catchbonus3")
-          if(catchbonus.classList.contains("catchbonus3")){
-            setTimeout(() => { 
-              catchbonus.classList.add("catchbonus2")
-              catchbonus.classList.remove("catchbonus3")
-            }, 3500);
-          }
-        }, 3500);
-    }
-  }
   }, 10000)
   // 600000
 }
@@ -64,10 +51,12 @@ function getRandomcoordinates() {
         time: 5000
       }]
       export function bonus(counter, autoClick) {
-        let randombonus = Math.floor (Math.random()*(1 - 0 + 1)+ 0);
+        let randombonus = Math.floor (Math.random()*((bonusList.length-1) + (bonusList.length-1)));
+        console.log(bonusList.length)
         const bonus = bonusList[randombonus];
         if (bonus.type == 'counterValue')  {
-          counter = counter + Math.floor(counter/5 + 10);  
+          const testcounter = counter
+          counter = counter + Math.floor(counter / 5)+10;  
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
@@ -79,16 +68,16 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
           
-          let bonuscounter = format(Math.floor(counter / 5)+10)
-          moneyClick.textContent = '+' + bonuscounter + 10 + ' $';
+          let bonuscounter = format(Math.floor(testcounter / 5)+10)
+          moneyClick.textContent = '+' + bonuscounter + ' $';
           setTimeout(() => {
             money.remove()
         }, 1500);
           return { counter };
       
          }else {     
-          let oldAutoClick = format(autoClick);
-          autoClick = autoClick + autoClick + 10;
+          let oldAutoClick = format(autoClick+10);
+          autoClick = autoClick + autoClick +10;
           let autoClickFormat = format(autoClick);
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
@@ -101,7 +90,7 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
   
-          moneyClick.textContent = '+'+ oldAutoClick + 10 + ' $ na sekundę przez 10 sekund';
+          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekundę przez 10 sekund';
            document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
            setTimeout(() => {
             money.remove()

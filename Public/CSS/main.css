@@ -659,27 +659,7 @@ html {
     background-size: cover;
     background-image: url("../Images/kapselwin.png");
     cursor: pointer;
-    animation: catchbonus 1.5s;
-}
-
-.catchbonus2 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-image: url("../Images/kapselwin.png");
-    cursor: pointer;
-    animation: catchbonus2 1.5s;
-}
-
-.catchbonus3 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-image: url("../Images/kapselwin.png");
-    cursor: pointer;
-    animation: catchbonus3 1.5s;
+    animation: catchbonus 1.5s, catchbonus2 1.5s 3.5s, catchbonus3 1.5s 7s;
 }
 
 @keyframes catchbonus {
@@ -711,23 +691,6 @@ html {
 @keyframes catchbonus2 {
 
     0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(1.2);
-    }
-    100%{
-        opacity: 0;
-        transform: scale(0);
-    }
-
-}
-
-@keyframes catchbonus3 {
-
-    0% {
         transform: scale(1);
     }
 
@@ -745,6 +708,23 @@ html {
 
     100% {
         transform: scale(1);
+    }
+
+}
+
+@keyframes catchbonus3 {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
     }
 
 }

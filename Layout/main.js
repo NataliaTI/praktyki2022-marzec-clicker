@@ -68,12 +68,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
                 if (result.autoClick) {
-                    let oldAutoClick = autoClick
-                    autoClick = autoClick + autoClick + 10;
+                    let oldAutoClick = autoClick +10
+                    autoClick = autoClick + autoClick;
                     setTimeout(() => {
-                        autoClick = autoClick - oldAutoClick - 10;
+                        autoClick = autoClick - oldAutoClick;
                         let autoClickFormat = format(autoClick);
-                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + 10 + ' $';
+                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
                     }, 5000);
                     autoClick = result.autoClick
                 } else if (result.counter) {
