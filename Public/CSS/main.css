@@ -598,10 +598,6 @@ html {
     padding-right: 8px;
 }
 
-
-
-
-
 *,
 *::after,
 *::before {
@@ -737,7 +733,6 @@ html {
     font-size: 100px;
 
 }
-
 
 .alert__text {
     font-size: 10p;
