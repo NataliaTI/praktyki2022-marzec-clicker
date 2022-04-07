@@ -131,6 +131,7 @@
         border-left: 0;
         background-color: rgb(0, 89, 18, 0.9);
         backdrop-filter: blur(5px);
+        user-select: none;
     }
 
     .menu-upgrades__tooltiptext {
@@ -140,6 +141,11 @@
     .alert {
         right: 28%;
     }
+
+    .alert__close-button {
+        padding: 10px;
+    }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -159,8 +165,8 @@
         height: 80px;
         margin-right: 20px;
     }
-    
-    .alert{
+
+    .alert {
         right: 20%;
     }
 
@@ -214,7 +220,7 @@
         margin-right: 5px;
     }
 
-    .alert{
+    .alert {
         right: 10%;
     }
 }
