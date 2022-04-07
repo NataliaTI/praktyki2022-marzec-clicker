@@ -10,51 +10,52 @@ import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
+import { achievementShow } from "../src/Scripts/modules/Achievements.js"
 
 let sumOfCatchedBonuses = 0;
-let counter = 999;
+let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
 export const upgradeList = {
     'otwieracz': {
-        currentCost: 10,
+        currentCost: 15,
         level: 0,
         autoClickValue: 0,
         extraMoneyPerClick: 1
     },
     'mietek': {
-        currentCost: 150,
+        currentCost: 155,
         level: 0,
         autoClickValue: 15,
         extraMoneyPerClick: 0
     },
     'seba': {
-        currentCost: 1200,
+        currentCost: 1600,
         level: 0,
         autoClickValue: 100,
         extraMoneyPerClick: 10
     },
     'grazyna': {
-        currentCost: 5000,
+        currentCost: 7500,
         level: 0,
         autoClickValue: 223,
         extraMoneyPerClick: 150
     },
     'gang': {
-        currentCost: 30000,
+        currentCost: 35000,
         level: 0,
         autoClickValue: 640,
         extraMoneyPerClick: 300
     },
     'monopolowy': {
-        currentCost: 115000,
+        currentCost: 125000,
         level: 0,
         autoClickValue: 1230,
         extraMoneyPerClick: 900
     },
     'browar': {
-        currentCost: 750000,
+        currentCost: 800000,
         level: 0,
         autoClickValue: 0,
         extraMoneyPerClick: 4000
@@ -79,6 +80,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const buttons = document.querySelectorAll('.menu__item');
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
+    const achievementWrap = document.getElementById("tab-achievements");
+
+    achievementShow(achivementList, achievementWrap);
 
     loadGameState.then((gameState) => {
 
@@ -88,6 +92,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // N.
         console.log('game state', gameState);
         if (gameState) {
+
+            if (gameState.hasOwnProperty('points')) {
+                counter = gameState.points;
+            }
 
         }
 
