@@ -3,24 +3,25 @@ export function showContent(alertmessage, text, icon) {
     const clon = temp.content.cloneNode(true);
 
     clon.querySelector("#achievementPopUp .alert__info").textContent = text;
-    clon.querySelector("#achievementPopUp .alert__text").textContent = alertmessage;    
+    clon.querySelector("#achievementPopUp .alert__text").textContent = alertmessage;
     clon.querySelector("#achievementPopUp .alert__icon").src = ('../Images/' + icon);
     document.body.appendChild(clon);
 
-    setTimeout(() => {
-       deleteContent(clon)
+    const timer = setTimeout(() => {
+       deleteContent()
     }, 5000);
 
-    const closePopUpButtons = document.querySelectorAll('data-close-button')
+    const closePopUpButtons = document.querySelectorAll('[data-close-button]');
 
     closePopUpButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const close = button.closest(".alert")
-            deleteContent(clon)
+            const close = button.closest(".alert");
+            deleteContent()
+            clearTimeout(timer)
         })
     })
 }
 
-function deleteContent(clon) {
+function deleteContent() {
     document.getElementById("achievementPopUp").remove()
 };

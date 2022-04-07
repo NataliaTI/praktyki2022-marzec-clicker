@@ -9,6 +9,7 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     achievementLevel.forEach(achievementKey => {
         if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
             updateAchievementStat();
+
             const szklana = achivementList[achievementKey].upgradeName;
             const achievement = document.getElementById(achievementKey);
             const upgradeLevel = achivementList[achievementKey].level;
