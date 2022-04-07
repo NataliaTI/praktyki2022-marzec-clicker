@@ -1,4 +1,4 @@
-import { format, replacedot } from '../Components/format.js';
+import {format} from '../Components/format.js';
 
 export const counterElement = document.getElementById("counter");
 const mobileHeaderH2 = document.querySelector('.mobile__header--h2');

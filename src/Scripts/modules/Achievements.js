@@ -1,7 +1,7 @@
 import { showContent } from "../Components/alert.js";
-import {updateAchievementStat } from "../Components/statistics.js"; 
+import { updateAchievementStat } from "../Components/statistics.js";
+import achivementList from '../../Catalog/achievements.json';
 import { clickSound } from "../Components/sounds.js";
- 
 
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
@@ -16,7 +16,7 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             const header = achivementList[achievementKey].achievementHeader;
             const description = achivementList[achievementKey].achievementDescription;
             const achievementImage = achivementList[achievementKey].iconName;
-            
+
             document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
             document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 

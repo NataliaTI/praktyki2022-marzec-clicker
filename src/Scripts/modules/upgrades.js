@@ -4,7 +4,6 @@ import { osiagniecia } from "./Achievements.js";
 import {updateUpgradeStat } from "../Components/statistics.js"; 
 import {clickSound} from "../Components/sounds.js";
 
- 
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
@@ -12,51 +11,51 @@ const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
 const upgradeList = {
     'otwieracz': {
-        currentCost: 10,
+        currentCost: 15,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 1
+        extraMoneyPerClick: 0.5
     },
     'mietek': {
-        currentCost: 150,
+        currentCost: 155,
         level: 0,
-        autoClickValue: 15,
+        autoClickValue: 10,
         extraMoneyPerClick: 0
     },
     'seba': {
-        currentCost: 1200,
+        currentCost: 1600,
         level: 0,
-        autoClickValue: 100,
-        extraMoneyPerClick: 10
+        autoClickValue: 90,
+        extraMoneyPerClick: 9
     },
     'grazyna': {
-        currentCost: 5000,
+        currentCost: 7500,
         level: 0,
-        autoClickValue: 223,
-        extraMoneyPerClick: 150
+        autoClickValue: 299,
+        extraMoneyPerClick: 73
     },
     'gang': {
-        currentCost: 30000,
+        currentCost: 35000,
         level: 0,
-        autoClickValue: 640,
-        extraMoneyPerClick: 300
+        autoClickValue: 779,
+        extraMoneyPerClick: 133
     },
     'monopolowy': {
-        currentCost: 115000,
+        currentCost: 125000,
         level: 0,
-        autoClickValue: 1230,
-        extraMoneyPerClick: 900
+        autoClickValue: 1818,
+        extraMoneyPerClick: 421
     },
     'browar': {
-        currentCost: 750000,
+        currentCost: 800000,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 4000
+        extraMoneyPerClick: 3901
     },
     'destylarnia': {
         currentCost: 4000000,
         level: 0,
-        autoClickValue: 4300,
+        autoClickValue: 6213,
         extraMoneyPerClick: 0
     },
     'current': {

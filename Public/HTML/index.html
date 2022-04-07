@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/mobile.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script src="../../src/Scripts/modules/apiStatus.js"></script>
 </head>
 
@@ -20,15 +19,11 @@
     <audio id="click_sound" src="../Sounds/mixkit-spice-jar-open-1809.wav"></audio>
     <audio id="upgrade_sound" src="../Sounds/upgrade.wav"></audio>
     <audio id="achievement_sound" src="../Sounds/achievement.wav"></audio>
-</div>
-
-
-    <ion-icon class="ikon-volume" name="volume-mute-outline"></ion-icon>
     <div id="wrap" class="wrap">
 
         <section class="clicker">
             <h1 id="counter" class="clicker__counter">0 $</h1>
-            <p class="clicker__multiplier" id="moneyPerSecond">Na sekunde: <span>0</span></p>
+            <p class="clicker__multiplier" id="moneyPerSecond">Na sekunde: <span>0 $</span></p>
             <div id="counter-button" class="clicker__img"></div>
         </section>
 
@@ -51,9 +46,9 @@
                             <div class="upgrade__img-otwieracz upgrade__img"></div>
                             <div class="menu-upgrades__list-item-info menu-upgrades__tooltip">
                                 <h2>Otwieracz</h2>
-                                <p class="upgradeCost">10$</p>
+                                <p class="upgradeCost">10 $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-otwieracz">Punkty na
-                                    klikniecie: +1$<br>Punkty na sekunde: 0$</span>
+                                    klikniecie: +1 $<br>Punkty na sekunde: 0 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -64,9 +59,9 @@
                             <div class="upgrade__img-mietek upgrade__img"></div>
                             <div class="menu-upgrades__list-item-info menu-upgrades__tooltip">
                                 <h2>Mietek żul</h2>
-                                <p class="upgradeCost">150$</p>
+                                <p class="upgradeCost">150 $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-mietek">Punkty na
-                                    klikniecie: 0$<br>Punkty na sekunde: +15$</span>
+                                    klikniecie: 0 $<br>Punkty na sekunde: +15 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -79,7 +74,7 @@
                                 <h2>Seba z osiedla</h2>
                                 <p class="upgradeCost">1.20k $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-seba">Punkty na
-                                    klikniecie: +9$<br>Punkty na sekunde: +100$</span>
+                                    klikniecie: +9 $<br>Punkty na sekunde: +100 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -92,7 +87,7 @@
                                 <h2>Ekspedientka Grażyna</h2>
                                 <p class="upgradeCost">5k $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-ekspedientka">Punkty
-                                    na klikniecie: +150$<br>Punkty na sekunde: +223$</span>
+                                    na klikniecie: +150 $<br>Punkty na sekunde: +223 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -105,7 +100,7 @@
                                 <h2>Gang z podstawówki</h2>
                                 <p class="upgradeCost">30k $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-gang">Punkty na
-                                    klikniecie: +300$<br>Punkty na sekunde: +641$</span>
+                                    klikniecie: +300 $<br>Punkty na sekunde: +641 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -118,7 +113,7 @@
                                 <h2>Monopolowy 24/7</h2>
                                 <p class="upgradeCost">115k $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-monopolowy">Punkty na
-                                    klikniecie: +900$<br>Punkty na sekunde: +1 234$</span>
+                                    klikniecie: +900 $<br>Punkty na sekunde: +1 234 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -131,7 +126,7 @@
                                 <h2>Browar</h2>
                                 <p class="upgradeCost">750k $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-browar">Punkty na
-                                    klikniecie: +3 924$<br>Punkty na sekunde: 0$</span>
+                                    klikniecie: +3 924 $<br>Punkty na sekunde: 0 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
@@ -144,303 +139,15 @@
                                 <h2>Destylarnia</h2>
                                 <p class="upgradeCost">4m $</p>
                                 <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext-destylarnia">Punkty
-                                    na klikniecie: 0$<br>Punkty na sekunde: +4 256$</span>
+                                    na klikniecie: 0 $<br>Punkty na sekunde: +4 256 $</span>
                             </div>
                         </div>
                         <p class="upgradeLevel">0</p>
                     </div>
                 </div>
 
-                <div class="menu__div-list menu-div-achievements achievements" id="tab-achievements">
-                    <div class="menu__achievements-list-item" id="otwieracz1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
-                            <h2 id="headlineotwieracz1">Zablokowane</h2>
-                            <p id="specificationotwieracz1">Opis niedostępny</p>
-                        </div>
-                    </div>
+                <div class="menu__div-list menu-div-achievements" id="tab-achievements">
 
-                    <div class="menu__achievements-list-item" id="otwieracz10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
-                            <h2 id="headlineotwieracz10">Zablokowane</h2>
-                            <p id="specificationotwieracz10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="otwieracz100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
-                            <h2 id="headlineotwieracz100">Zablokowane</h2>
-                            <p id="specificationotwieracz100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="otwieracz1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info" id="Pierwszy-otwieracz">
-                            <h2 id="headlineotwieracz1000">Zablokowane</h2>
-                            <p id="specificationotwieracz1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="mietek1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek1">Zablokowane</h2>
-                            <p id="specificationmietek1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="mietek10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek10">Zablokowane</h2>
-                            <p id="specificationmietek10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="mietek100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek100">Zablokowane</h2>
-                            <p id="specificationmietek100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="mietek1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemietek1000">Zablokowane</h2>
-                            <p id="specificationmietek1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="seba1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba1">Zablokowane</h2>
-                            <p id="specificationseba1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="seba10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba10">Zablokowane</h2>
-                            <p id="specificationseba10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="seba100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba100">Zablokowane</h2>
-                            <p id="specificationseba100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="seba1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineseba1000">Zablokowane</h2>
-                            <p id="specificationseba1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="ekspedientka1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka1">Zablokowane</h2>
-                            <p id="specificationekspedientka1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="ekspedientka10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka10">Zablokowane</h2>
-                            <p id="specificationekspedientka10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="ekspedientka100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka100">Zablokowane</h2>
-                            <p id="specificationekspedientka100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="ekspedientka1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlineekspedientka1000">Zablokowane</h2>
-                            <p id="specificationekspedientka1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="gang1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang1">Zablokowane</h2>
-                            <p id="specificationgang1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="gang10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang10">Zablokowane</h2>
-                            <p id="specificationgang10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="gang100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang100">Zablokowane</h2>
-                            <p id="specificationgang100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="gang1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinegang1000">Zablokowane</h2>
-                            <p id="specificationgang1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="monopolowy1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy1">Zablokowane</h2>
-                            <p id="specificationmonopolowy1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="monopolowy10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy10">Zablokowane</h2>
-                            <p id="specificationmonopolowy10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="monopolowy100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy100">Zablokowane</h2>
-                            <p id="specificationmonopolowy100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="monopolowy1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinemonopolowy1000">Zablokowane</h2>
-                            <p id="specificationmonopolowy1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="browar1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar1">Zablokowane</h2>
-                            <p id="specificationbrowar1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="browar10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar10">Zablokowane</h2>
-                            <p id="specificationbrowar10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="browar100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar100">Zablokowane</h2>
-                            <p id="specificationbrowar100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="browar1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinebrowar1000">Zablokowane</h2>
-                            <p id="specificationbrowar1000">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="destylarnia1">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia1">Zablokowane</h2>
-                            <p id="specificationdestylarnia1">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="destylarnia10">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia10">Zablokowane</h2>
-                            <p id="specificationdestylarnia10">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="destylarnia100">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia100">Zablokowane</h2>
-                            <p id="specificationdestylarnia100">Opis niedostępny</p>
-                        </div>
-                    </div>
-                    <div class="menu__achievements-list-item" id="destylarnia1000">
-                        <div class="achievements-img__wrap">
-                            <div class="achievements-look"></div>
-                        </div>
-                        <div class="menu__achievements-list-item-info">
-                            <h2 id="headlinedestylarnia1000">Zablokowane</h2>
-                            <p id="specificationdestylarnia1000">Opis niedostępny</p>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="menu__div-list menu-div-stats" id="tab-stats">
@@ -536,6 +243,20 @@
                 <button data-close-button class="alert__close-button">&times;</button>
             </div>
         </center>
+    </template>
+
+    <template id="achievement-show">
+
+        <div class="menu__achievements-list-item" id="otwieracz1">
+            <div class="achievements-img__wrap">
+                <div class="achievements-look"></div>
+            </div>
+            <div class="menu__achievements-list-item-info">
+                <h2 id="headlineotwieracz1"></h2>
+                <p id="specificationotwieracz1"></p>
+            </div>
+        </div>
+        </div>
     </template>
 
 </body>
