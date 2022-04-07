@@ -62,25 +62,6 @@ export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
 }
 
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-export function getUpgradesCount(upgradeList) {
-
-    /**
-     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
-     * 
-     * Funkcja powinna przejść za pomocą pętli po każdym ulepszeniu ze zmiennej `upgradeList`
-     * sprawdzić czy w ulepszeniu znajduje się klucz `level`
-     * jeśli tak, to funkcja powinna dodać do zmiennej przechowującej łączną liczbę zakupionych
-     * ulepszeń liczbę stuk danego ulepszenia (`level`)
-     * 
-     * Funkcja powinna zwrócić łączną liczbę sztuk zakupionych ulepszeń
-     * 
-     * Jutro zapytamy Macieja czy można to zrobić nieco prościej dzięki statystykom,
-     * bo nie pamiętam, a jednak nie wysłał nam kodziku ;)
-     */
-}
-
-
 export function getUpgradesStateArray(upgradeList) {
 
     /**

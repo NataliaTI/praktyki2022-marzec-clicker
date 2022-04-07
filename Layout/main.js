@@ -1,9 +1,9 @@
 import { format } from "../src/Scripts/Components/format.js";
-import { updateCatchedBonusesStat, dateFunction, clickCounter, updateUpgradeStat, getStat } from "../src/Scripts/Components/statistics.js";
+import { updateCatchedBonusesStat, dateFunction, clickCounter, updateUpgradeStat, updateAchievementStat, getStat } from "../src/Scripts/Components/statistics.js";
 import { bonus, catchbonusstart } from "../src/Scripts/modules/catchbonusReworked";
 import { changeMenuCategory } from './menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
-import { timer, upgrade, upgradeListUpdate, getUpgradesCount, getUpgradesStateArray } from "../src/Scripts/modules/upgrades.js";
+import { timer, upgrade, upgradeListUpdate, getUpgradesStateArray } from "../src/Scripts/modules/upgrades.js";
 import { clickAnimation } from "./animation";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { changeMobileMenuCategory } from "./mobileMenu.js";
@@ -95,19 +95,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 updateUpgradeStat(gameState.upgradeCount);
             }
              
-
             if ( gameState.hasOwnProperty('startDataTime') ) {
                 dateFunction(gameState.startDataTime);
             }
              
             if ( gameState.hasOwnProperty('clickCount') ) {
                 clickCounter(gameState.clickCount);
-               
             }
 
             if ( gameState.hasOwnProperty('catchedBonuses') ) {
-             
                 updateCatchedBonusesStat(gameState.catchedBonuses);
+            }
+
+            if ( gameState.hasOwnProperty('achievementCount') ) {
+                updateAchievementStat(gameState.achievementCount);
             }
                       
             if ( gameState.hasOwnProperty('points') ) {
@@ -115,7 +116,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
 
             if (gameState.hasOwnProperty('upgrades')) {
-                upgradeList = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
+                const upgradeListTmp = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
+                if (upgradeListTmp) {
+                    upgradeList = upgradeListTmp;
+                }
             }
 
             if (gameState.hasOwnProperty('achievementsObtained')) {
@@ -195,16 +199,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
 
+            const unlockedAchievements = getAchievementsUnlocked(achivementList);
             const currentGameState = {
                 "upgrades": getUpgradesStateArray(upgradeList),
-                "upgradeCount": getUpgradesCount(upgradeList),
+                "upgradeCount": getStat('upgradeCount'),
                 "startDataTime": gameState.startDataTime,
                 "points": counter,
                 "clickPerSec": autoClick,
                 "extraMoneyPerClick": extraMoneyPerClick,
                 "clickCount": getStat('clickCount'),
                 "catchedBonuses": getStat('catchedBonuses'),
-                "achievementsObtained": getAchievementsUnlocked(achivementList)
+                "achievementsObtained": unlockedAchievements,
+                "achievementCount": unlockedAchievements.length
             }    
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
