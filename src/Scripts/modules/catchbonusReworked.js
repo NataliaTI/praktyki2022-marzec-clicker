@@ -51,6 +51,7 @@ function getRandomcoordinates() {
     }
   }
   }, 10000)
+  // 600000
 }
   function removebonus(catchbonus){
     catchbonus.remove();
@@ -78,7 +79,7 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
           
-          let bonuscounter = format(Math.floor(counter / 5))
+          let bonuscounter = format(Math.floor(counter / 5)+10)
           moneyClick.textContent = '+' + bonuscounter + ' $';
           setTimeout(() => {
             money.remove()
@@ -87,7 +88,7 @@ function getRandomcoordinates() {
       
          }else {     
           let oldAutoClick = format(autoClick);
-          autoClick = autoClick + autoClick;
+          autoClick = autoClick + autoClick + 10;
           let autoClickFormat = format(autoClick);
           const this2 = document.querySelector("body");
           let money = document.createElement('div');

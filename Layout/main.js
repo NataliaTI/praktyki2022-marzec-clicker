@@ -9,7 +9,7 @@ import {changeMobileMenuCategory} from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 
 let sumOfCatchedBonuses = 0;
-let counter = 2220000;
+let counter = 11111110;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 const menuDivList = document.querySelectorAll('.menu__div-list');
@@ -69,19 +69,24 @@ document.getElementById("wrap").addEventListener('click', (event) => {
         sumOfCatchedBonuses++;
         document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
         let result = bonus(counter, autoClick);
+    // do {
+            
+    //     } while (upgrade.level++);
         if (result.autoClick) {
             let oldAutoClick = autoClick
             autoClick = autoClick + autoClick;
             setTimeout(() => {
                 
-                autoClick = autoClick - oldAutoClick;
+                autoClick = autoClick - oldAutoClick - 10;
                 let autoClickFormat = format(autoClick);
                 document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
             }, 5000);
             autoClick = result.autoClick
+    
         } else if (result.counter) {
             counter = result.counter
         }
+    
     }
 });
 

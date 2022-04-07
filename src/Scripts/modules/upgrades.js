@@ -10,51 +10,51 @@ const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
 
 const upgradeList = {
     'otwieracz': {
-        currentCost: 10,
+        currentCost: 15,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 1
+        extraMoneyPerClick: 0.5
     },
     'mietek': {
-        currentCost: 150,
+        currentCost: 155,
         level: 0,
-        autoClickValue: 15,
+        autoClickValue: 10,
         extraMoneyPerClick: 0
     },
     'seba': {
-        currentCost: 1200,
+        currentCost: 1600,
         level: 0,
-        autoClickValue: 100,
-        extraMoneyPerClick: 10
+        autoClickValue: 90,
+        extraMoneyPerClick: 9
     },
     'grazyna': {
-        currentCost: 5000,
+        currentCost: 7500,
         level: 0,
-        autoClickValue: 223,
-        extraMoneyPerClick: 150
+        autoClickValue: 299,
+        extraMoneyPerClick: 73
     },
     'gang': {
-        currentCost: 30000,
+        currentCost: 35000,
         level: 0,
-        autoClickValue: 640,
-        extraMoneyPerClick: 300
+        autoClickValue: 779,
+        extraMoneyPerClick: 133
     },
     'monopolowy': {
-        currentCost: 115000,
+        currentCost: 125000,
         level: 0,
-        autoClickValue: 1230,
-        extraMoneyPerClick: 900
+        autoClickValue: 1818,
+        extraMoneyPerClick: 421
     },
     'browar': {
-        currentCost: 750000,
+        currentCost: 800000,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 4000
+        extraMoneyPerClick: 3901
     },
     'destylarnia': {
         currentCost: 4000000,
         level: 0,
-        autoClickValue: 4300,
+        autoClickValue: 6213,
         extraMoneyPerClick: 0
     },
     'current': {
@@ -81,11 +81,8 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
-       // returnedFormatedValue = returnedFormatedValue.replace('.', ',')
         upgradeCostFormat = format(upgrade.currentCost);
-       // upgradeCostFormat = upgradeCostFormat.replace('.', ',')
         autoClickFormat = format(autoClick);
-       // autoClickFormat = autoClickFormat.replace('.', ',')
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
         document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
