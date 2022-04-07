@@ -2,7 +2,6 @@ import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
 import { updateUpgradeStat } from "../Components/statistics.js";
-import { upgradeList } from "../../../Layout/main.js";
 import { clickSound } from "../Components/sounds.js";
 
 const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
@@ -10,7 +9,7 @@ let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
 
-export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList) {
+export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList) {
     const upgrade = upgradeList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
@@ -43,3 +42,69 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
+
+
+export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
+
+    /**
+     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
+     * W zmiennej `upgradeStatus` znajduje się tablica z zakupionymi ulepszeniami
+     * W zmiennej `upgradeHtml` znajduje się lista elementów HTML z ulepszeniami
+     * 
+     * Na podstawie zmiennej `upgradeStatus` funkcja powinna zaktualizować aktualną
+     * liczbę sztuk danego ulepszenia oraz jego koszt w obiekcie `upgradeList`
+     * a następnie zaktualizować koszt i liczbę sztuk ulepszenia wyświetlaną na ekranie
+     * w zakładce Ulepszenia 
+     * 
+     * Funkcja powinna zwrócić zaktualizowana zmienną `upgradeList`
+     */
+
+}
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+export function getUpgradesCount(upgradeList) {
+
+    /**
+     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
+     * 
+     * Funkcja powinna przejść za pomocą pętli po każdym ulepszeniu ze zmiennej `upgradeList`
+     * sprawdzić czy w ulepszeniu znajduje się klucz `level`
+     * jeśli tak, to funkcja powinna dodać do zmiennej przechowującej łączną liczbę zakupionych
+     * ulepszeń liczbę stuk danego ulepszenia (`level`)
+     * 
+     * Funkcja powinna zwrócić łączną liczbę sztuk zakupionych ulepszeń
+     * 
+     * Jutro zapytamy Macieja czy można to zrobić nieco prościej dzięki statystykom,
+     * bo nie pamiętam, a jednak nie wysłał nam kodziku ;)
+     */
+}
+
+
+export function getUpgradesStateArray(upgradeList) {
+
+    /**
+     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
+     * 
+     * Funkcja powinna na podstawie zmiennej `upgradeList` z każdego ulepszenia (mogą być tylko zakupione)
+     * wyciągnąć currentCost, level oraz klucz ulepszenia np. "otwieracz", "seba", itp.
+     * i przypisać je jako obiekt w tablicy
+     * 
+     * Przy założeniu, że uzytkownik kupił:
+     * 
+     * 15 sztuk Otwieracza i jego aktualny koszt to 100$
+     * 10 sztuk Seby i jego aktualny koszt to 200$
+     * 
+     * Funkcja powinna zwrócić tablicę obiektów:
+     * 
+     * [{
+     *  "id": "otwieracz",
+     *  "quantity": 15,
+     *  "cost": 100
+     * }, {
+     *  "id": "seba",
+     *  "quantity": 10,
+     *  "cost": 200
+     * }]
+     */
+}

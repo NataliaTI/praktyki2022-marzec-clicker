@@ -49,3 +49,17 @@ let sumOfUpgrades = 0;
             sumOfCatchedBonuses++;
             document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
  }
+
+
+export function getStat(statKey) {
+
+    /**
+     * W zmiennej `statKey` będzie klucz informujący o tym jaką wartość chcemy uzyskać z funkcji
+     * zmienna przyjmuje wartości: 
+     * 
+     * `clickCount` => sumOfClicks
+     * `catchedBonuses` => sumOfCatchedBonuses
+     * 
+     * Na podstawie zmiennej `statKey` funkcja powinna zwrócić właściwą zmienną
+     */
+}

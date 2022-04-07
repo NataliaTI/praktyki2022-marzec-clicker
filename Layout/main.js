@@ -1,23 +1,23 @@
 import { format } from "../src/Scripts/Components/format.js";
-import { updateCatchedBonusesStat } from "../src/Scripts/Components/statistics.js";
+import { updateCatchedBonusesStat, getStat } from "../src/Scripts/Components/statistics.js";
 import { bonus, catchbonusstart } from "../src/Scripts/modules/catchbonusReworked";
 import { changeMenuCategory } from './menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
-import { timer, upgrade } from "../src/Scripts/modules/upgrades.js";
+import { timer, upgrade, upgradeListUpdate, getUpgradesCount, getUpgradesStateArray } from "../src/Scripts/modules/upgrades.js";
 import { clickAnimation } from "./animation";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
-import { achievementShow } from "../src/Scripts/modules/Achievements.js"
+import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
 
 let sumOfCatchedBonuses = 0;
 let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
-export const upgradeList = {
+let upgradeList = {
     'otwieracz': {
         currentCost: 15,
         level: 0,
@@ -82,8 +82,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
     const achievementWrap = document.getElementById("tab-achievements");
 
-    achievementShow(achivementList, achievementWrap);
-
     loadGameState.then((gameState) => {
 
         // na podstawie obiektu gameState w zaznaczonym poniżej warunku
@@ -97,7 +95,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             //     counter = gameState.points;
             // }
 
+            if (gameState.hasOwnProperty('upgrades')) {
+                upgradeList = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
+            }
+
+            if (gameState.hasOwnProperty('achievementsObtained')) {
+                achivementList = achievementListUpdate(achivementList, gameState.achievementsObtained);
+            }
         }
+
+        achievementShow(achivementList, achievementWrap);
+
         document.getElementById("wrap").addEventListener('click', (event) => {
             if (event.target && event.target.matches(".catchbonus")) {
                 updateCatchedBonusesStat();
@@ -125,7 +133,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 const upgradeId = upgradeDiv;
 
                 upgradeDiv.addEventListener('click', (event) => {
-                    const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
+                    const result = upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
                     counter = result.counter;
                     autoClick = result.autoClick;
                     extraMoneyPerClick = result.extraMoneyPerClick;
@@ -165,11 +173,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
 
-            const gameState = { "startDataTime": "2022-04-06 13:06:01", "timeSpentPlaying": "92459750246436537", "clickCount": 1000, "clickPerSec": autoClick, "points": counter, "catchedBonuses": 15, "upgradeCount": 1500, "achievementsObtained": [1, 2, 6, 12, 15], "upgrades": [{ "id": 1, "quantity": 500 }, { "id": 2, "quantity": 400 }, { "id": 3, "quantity": 300 }, { "id": 4, "quantity": 200 }, { "id": 5, "quantity": 100 }] };
+            const currentGameState = {
+                "upgrades": getUpgradesStateArray(upgradeList),
+                "upgradeCount": getUpgradesCount(upgradeList),
+                "startDataTime": gameState.startDataTime,
+                "points": counter,
+                "clickPerSec": autoClick,
+                "extraMoneyPerClick": extraMoneyPerClick,
+                "clickCount": getStat('clickCount'),
+                "catchedBonuses": getStat('catchedBonuses'),
+                "achievementsObtained": getAchievementsUnlocked(achivementList)
+            }    
 
-            console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
+            console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
-            saveGameState(gameState);
-        }, 60000);
+            saveGameState(currentGameState);
+        }, 600);
     });
 });
