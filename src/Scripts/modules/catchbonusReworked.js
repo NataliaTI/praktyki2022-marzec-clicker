@@ -67,7 +67,7 @@ function getRandomcoordinates() {
         let randombonus = Math.floor (Math.random()*(1 - 0 + 1)+ 0);
         const bonus = bonusList[randombonus];
         if (bonus.type == 'counterValue')  {
-          counter = counter + Math.floor(counter/5);  
+          counter = counter + Math.floor(counter/5 + 10);  
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
@@ -80,7 +80,7 @@ function getRandomcoordinates() {
           money.appendChild(moneyClick);
           
           let bonuscounter = format(Math.floor(counter / 5)+10)
-          moneyClick.textContent = '+' + bonuscounter + ' $';
+          moneyClick.textContent = '+' + bonuscounter + 10 + ' $';
           setTimeout(() => {
             money.remove()
         }, 1500);
@@ -101,7 +101,7 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
   
-          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekundę przez 10 sekund';
+          moneyClick.textContent = '+'+ oldAutoClick + 10 + ' $ na sekundę przez 10 sekund';
            document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
            setTimeout(() => {
             money.remove()

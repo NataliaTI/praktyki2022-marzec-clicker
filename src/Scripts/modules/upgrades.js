@@ -1,12 +1,12 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
+import {updateUpgradeStat } from "../Components/statistics.js"; 
 
-let sumOfUpgrades = 0;
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
-const mobileHeaderH2 = document.querySelector('.mobile_header-h2');
+const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 
 const upgradeList = {
     'otwieracz': {
@@ -71,7 +71,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         upgrade.currentCost *= 1.15;
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;
-        sumOfUpgrades++;
+        updateUpgradeStat();
         upgradeList.current.currentAutoClickValue += upgrade.autoClickValue;
         upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
 
@@ -85,8 +85,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
-        document.getElementById('stat2').innerHTML = sumOfUpgrades;
+        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $'; 
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
@@ -97,4 +96,3 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
-
