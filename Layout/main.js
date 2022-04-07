@@ -16,6 +16,61 @@ let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
+export const upgradeList = {
+    'otwieracz': {
+        currentCost: 10,
+        level: 0,
+        autoClickValue: 0,
+        extraMoneyPerClick: 1
+    },
+    'mietek': {
+        currentCost: 150,
+        level: 0,
+        autoClickValue: 15,
+        extraMoneyPerClick: 0
+    },
+    'seba': {
+        currentCost: 1200,
+        level: 0,
+        autoClickValue: 100,
+        extraMoneyPerClick: 10
+    },
+    'grazyna': {
+        currentCost: 5000,
+        level: 0,
+        autoClickValue: 223,
+        extraMoneyPerClick: 150
+    },
+    'gang': {
+        currentCost: 30000,
+        level: 0,
+        autoClickValue: 640,
+        extraMoneyPerClick: 300
+    },
+    'monopolowy': {
+        currentCost: 115000,
+        level: 0,
+        autoClickValue: 1230,
+        extraMoneyPerClick: 900
+    },
+    'browar': {
+        currentCost: 750000,
+        level: 0,
+        autoClickValue: 0,
+        extraMoneyPerClick: 4000
+    },
+    'destylarnia': {
+        currentCost: 4000000,
+        level: 0,
+        autoClickValue: 4300,
+        extraMoneyPerClick: 0
+    },
+    'current': {
+        currentAutoClickValue: 0,
+        currentExtraMoneyPerClick: 0
+    },
+}
+
 login();
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -33,7 +88,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // N.
         console.log('game state', gameState);
         if (gameState) {
-            // TODO 
+          
         }
     
         if (upgradeFromHtml.length) {
@@ -97,15 +152,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             changeCounterElementText(counter);
         }, 1000)
 
-        setTimeout(() => {
+        setInterval(() => {
 
             // tutaj zamiast obiektu gameState napisanego z ręki trzeba zebrać dane związane ze stanem gry
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
-            const gameState = {"startDataTime":"2022-04-06 13:06:01","timeSpentPlaying":"92459750246436537","clickCount":424642,"clickPerSec":1200,"points":3259247,"catchedBonuses":15,"upgradeCount":1500,"achievementsObtained":[1,2,6,12,15],"upgrades":[{"id":1,"quantity":500},{"id":2,"quantity":400},{"id":3,"quantity":300},{"id":4,"quantity":200},{"id":5,"quantity":100}]};
+
+            const gameState = {"startDataTime":"2022-04-06 13:06:01","timeSpentPlaying":"92459750246436537","clickCount":extraMoneyPerClick,"clickPerSec":autoClick,"points":counter,"catchedBonuses":15,"upgradeCount":1500,"achievementsObtained":[1,2,6,12,15],"upgrades":[{"id":1,"quantity":500},{"id":2,"quantity":400},{"id":3,"quantity":300},{"id":4,"quantity":200},{"id":5,"quantity":100}]};
+
+            // console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
 
             saveGameState(gameState);
-        }, 30000);
+        }, 5000);
     });
 });
-
