@@ -18,43 +18,43 @@ let extraMoneyPerClick = 0;
 
 export const upgradeList = {
     'otwieracz': {
-        currentCost: 10,
+        currentCost: 15,
         level: 0,
         autoClickValue: 0,
         extraMoneyPerClick: 1
     },
     'mietek': {
-        currentCost: 150,
+        currentCost: 155,
         level: 0,
         autoClickValue: 15,
         extraMoneyPerClick: 0
     },
     'seba': {
-        currentCost: 1200,
+        currentCost: 1600,
         level: 0,
         autoClickValue: 100,
         extraMoneyPerClick: 10
     },
     'grazyna': {
-        currentCost: 5000,
+        currentCost: 7500,
         level: 0,
         autoClickValue: 223,
         extraMoneyPerClick: 150
     },
     'gang': {
-        currentCost: 30000,
+        currentCost: 35000,
         level: 0,
         autoClickValue: 640,
         extraMoneyPerClick: 300
     },
     'monopolowy': {
-        currentCost: 115000,
+        currentCost: 125000,
         level: 0,
         autoClickValue: 1230,
         extraMoneyPerClick: 900
     },
     'browar': {
-        currentCost: 750000,
+        currentCost: 800000,
         level: 0,
         autoClickValue: 0,
         extraMoneyPerClick: 4000
@@ -88,7 +88,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // N.
         console.log('game state', gameState);
         if (gameState) {
-          
+
+            if ( gameState.hasOwnProperty('points') ) {
+                counter = gameState.points;
+            }
+            
         }
     
         if (upgradeFromHtml.length) {
