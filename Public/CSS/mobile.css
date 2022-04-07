@@ -137,6 +137,9 @@
         display: none;
     }
 
+    .alert {
+        right: 28%;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -156,7 +159,10 @@
         height: 80px;
         margin-right: 20px;
     }
-
+    
+    .alert{
+        right: 20%;
+    }
 
 }
 
@@ -208,4 +214,7 @@
         margin-right: 5px;
     }
 
+    .alert{
+        right: 10%;
+    }
 }
