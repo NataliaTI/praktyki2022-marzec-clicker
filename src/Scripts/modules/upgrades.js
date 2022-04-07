@@ -1,9 +1,9 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
-import { updateUpgradeStat } from "../Components/statistics.js"; 
+import { updateUpgradeStat } from "../Components/statistics.js";
 import { upgradeList } from "../../../Layout/main.js";
-import {clickSound} from "../Components/sounds.js";
+import { clickSound } from "../Components/sounds.js";
 
 const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 let upgradeCostFormat = 0;
@@ -32,7 +32,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
         autoClickFormat = format(autoClick);
 
         document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
-        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $'; 
+        document.getElementById('moneyPerSecond').innerHTML = 'Na sekunde: ' + autoClickFormat + ' $';
         document.getElementById('stat3').innerHTML = autoClickFormat;
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';

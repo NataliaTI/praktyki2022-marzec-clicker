@@ -10,6 +10,7 @@ import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
+import { achievementShow } from "../src/Scripts/modules/Achievements.js"
 
 let sumOfCatchedBonuses = 0;
 let counter = 0;
@@ -21,48 +22,48 @@ export const upgradeList = {
         currentCost: 15,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 1
+        extraMoneyPerClick: 0.5
     },
     'mietek': {
         currentCost: 155,
         level: 0,
-        autoClickValue: 15,
+        autoClickValue: 10,
         extraMoneyPerClick: 0
     },
     'seba': {
         currentCost: 1600,
         level: 0,
-        autoClickValue: 100,
-        extraMoneyPerClick: 10
+        autoClickValue: 90,
+        extraMoneyPerClick: 9
     },
     'grazyna': {
         currentCost: 7500,
         level: 0,
-        autoClickValue: 223,
-        extraMoneyPerClick: 150
+        autoClickValue: 299,
+        extraMoneyPerClick: 73
     },
     'gang': {
         currentCost: 35000,
         level: 0,
-        autoClickValue: 640,
-        extraMoneyPerClick: 300
+        autoClickValue: 779,
+        extraMoneyPerClick: 133
     },
     'monopolowy': {
-        currentCost: 125000,
+        currentCost: 130000,
         level: 0,
-        autoClickValue: 1230,
-        extraMoneyPerClick: 900
+        autoClickValue: 1818,
+        extraMoneyPerClick: 421
     },
     'browar': {
         currentCost: 800000,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 4000
+        extraMoneyPerClick: 3901
     },
     'destylarnia': {
         currentCost: 4000000,
         level: 0,
-        autoClickValue: 4300,
+        autoClickValue: 6213,
         extraMoneyPerClick: 0
     },
     'current': {
@@ -79,8 +80,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const buttons = document.querySelectorAll('.menu__item');
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
+    const achievementWrap = document.getElementById("tab-achievements");
+
+    achievementShow(achivementList, achievementWrap);
 
     loadGameState.then((gameState) => {
+
         // na podstawie obiektu gameState w zaznaczonym poniżej warunku
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
@@ -88,16 +93,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log('game state', gameState);
         if (gameState) {
 
-            if ( gameState.hasOwnProperty('clickPerSec') ) {
-                autoClick = gameState.clickPerSec;
-            }
-
-            if ( gameState.hasOwnProperty('points') ) {
+            if (gameState.hasOwnProperty('points')) {
                 counter = gameState.points;
             }
-            
+
         }
-    
+
         if (upgradeFromHtml.length) {
             for (let name = 0; name < upgradeFromHtml.length; name++) {
                 const upgradeDiv = upgradeFromHtml[name];
@@ -133,9 +134,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     let oldAutoClick = autoClick;
                     autoClick = autoClick + autoClick + 10;
                     setTimeout(() => {
-                        autoClick = autoClick - oldAutoClick - 10;
+                        autoClick = autoClick - oldAutoClick;
                         let autoClickFormat = format(autoClick);
-                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + 10 + ' $';
+                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
                     }, 5000);
                     autoClick = result.autoClick;
                 } else if (result.counter) {
@@ -149,11 +150,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (buttons.length && menuDivList.length) {
             changeMenuCategory(buttons, menuDivList);
         }
-       
+
         if (menuDivList.length) {
             changeMobileMenuCategory(menuDivList);
-        }      
-        
+        }
+
         setInterval(() => {
             counter = timer(counter, autoClick);
             changeCounterElementText(counter);
