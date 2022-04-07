@@ -14,7 +14,6 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             const name = achivementList[achievementKey].locked;
             const header = achivementList[achievementKey].achievementHeader;
             const description = achivementList[achievementKey].achievementDescription;
-            const achievementImage = achivementList[achievementKey].iconName;
 
             document.getElementById('headline' + szklana + upgradeLevel).innerHTML = header;
             document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
@@ -43,20 +42,22 @@ export function achievementShow(achievementList, achievementWrap, icon) {
     achievements.forEach(achievementKey => {
         const header = achievementList[achievementKey].achievementHeader;
         const description = achievementList[achievementKey].achievementDescription;
-        const unlocked = achievementList[achievementKey].unlocked;
+        // const unlocked = achievementList[achievementKey].unlocked;
         const achievementImage = achievementList[achievementKey].iconName;
 
 
-        if (unlocked == true) {
-            clone.querySelector(".achievements-look").achievementImage = document.getElementsByClassName(".achievements-otwieracz");
+        if (unlocked == false) {
+            let unlocked = achievementList[achievementKey].unlocked;
 
+            document.querySelector(".achievements-look").icon = achievementImage;
+            achievementKey.appendChild(achievementImage)
         }
-
+        clone.querySelector(".achievements-look").icon = achievementImage
         clone.querySelector("#headlineotwieracz1").textContent = header;
         clone.querySelector("#specificationotwieracz1").textContent = description;
         achievementWrap.appendChild(clone);
     })
 
 
-    document.getElementById("achievement-show");
+    document.getElementById("#achievement-show");
 }
