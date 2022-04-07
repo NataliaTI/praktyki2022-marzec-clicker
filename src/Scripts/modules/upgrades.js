@@ -14,7 +14,7 @@ export function upgrade(counter, autoClick, extraMoneyPerClick, upgradeName, upg
     const upgrade = upgradeList[upgradeName];
     if (counter >= upgrade.currentCost) {
         counter -= upgrade.currentCost;
-
+    
         upgrade.currentCost *= 1.15;
         upgrade.currentCost = round(upgrade.currentCost, -1);
         upgrade.level++;

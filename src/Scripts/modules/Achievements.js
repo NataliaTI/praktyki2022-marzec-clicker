@@ -1,6 +1,6 @@
 import { showContent } from "../Components/alert.js";
 import { updateAchievementStat } from "../Components/statistics.js";
-import achivementList from '../../Catalog/achievements.json';
+import { achivementList } from "../../Catalog/achievements.json";
 import { clickSound } from "../Components/sounds.js";
 
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
@@ -9,6 +9,7 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     achievementLevel.forEach(achievementKey => {
         if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
             updateAchievementStat();
+
             const szklana = achivementList[achievementKey].upgradeName;
             const achievement = document.getElementById(achievementKey);
             const upgradeLevel = achivementList[achievementKey].level;
