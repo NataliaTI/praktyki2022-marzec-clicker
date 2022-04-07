@@ -11,7 +11,6 @@ import achivementList from '../src/Catalog/achievements.json';
 import { sound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
 
-
 let counter = 1000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;

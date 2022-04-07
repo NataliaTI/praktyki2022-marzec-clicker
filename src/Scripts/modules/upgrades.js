@@ -2,9 +2,7 @@ import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { osiagniecia } from "./Achievements.js";
 import {updateUpgradeStat } from "../Components/statistics.js"; 
-import {  } from "../../../Layout/mobileMenu.js";
 
- 
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;

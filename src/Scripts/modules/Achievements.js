@@ -39,13 +39,11 @@ export function achievementShow(achievementList, achievementWrap, icon) {
     const clone = stencil.content.cloneNode(true)
     const achievements = Object.keys(achivementList);
 
-
     achievements.forEach(achievementKey => {
         const header = achievementList[achievementKey].achievementHeader;
         const description = achievementList[achievementKey].achievementDescription;
         const unlocked = achievementList[achievementKey].unlocked;
         const achievementImage = achievementList[achievementKey].iconName;
-
 
         if (unlocked == true) {
             clone.querySelector(".achievements-look").achievementImage = document.getElementsByClassName(".achievements-otwieracz");
