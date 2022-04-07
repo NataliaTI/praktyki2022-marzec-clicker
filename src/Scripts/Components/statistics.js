@@ -1,17 +1,30 @@
 const counterButtonElementStats = document.getElementById('counter-button');
-let sumOfClicks = 0;
+ let sumOfClicks = 0;
 
-function clickCounter()
-{
-    sumOfClicks ++;
-    document.getElementById('stat1').innerHTML = sumOfClicks;
+export function clickCounter(gameState)
+{ 
+    //   console.log(sumOfClicks)
+//     console.log('gameState',gameState)
+        if(gameState)
+   {
+       sumOfClicks = sumOfClicks + gameState
+   }
+   else
+   {
+       sumOfClicks++;
+   }
+           
+   document.getElementById('stat1').innerHTML = sumOfClicks;
+//    console.log(sumOfClicks)
 }
-counterButtonElementStats.onclick = clickCounter;
+counterButtonElementStats.addEventListener('click', () => {
+    clickCounter();
+})
 
- 
+export function dateFunction(gameState){
 setInterval(() => {
 
-const dateOne = new Date("2022-03-29 10:00:00"); 
+const dateOne = new Date(gameState); 
 const dateTwo = new Date(); 
 
 let seconds = Math.abs(dateTwo-dateOne)/1000;
@@ -28,24 +41,41 @@ days = parseInt((days-months*30));
 months = parseInt((months-years*12));
     document.getElementById('stat4').innerHTML = years + "l " + months + "m " + days + "d " + hours + "g " + minutes + "m " + seconds + "s";
 }, 1000)
+}
 
-let sumOfUpgrades = 0; 
- export function updateUpgradeStat(value)
- {       
-            sumOfUpgrades ++;
-            document.getElementById('stat2').innerHTML = sumOfUpgrades; 
- }
 
- let achievementCounter = 0;
+ let sumOfUpgrades = 0; 
+ 
+ export function updateUpgradeStat(gameState)
+{
+        if(gameState)
+   {
+       sumOfUpgrades = sumOfUpgrades + gameState
+   }
+   else
+   {
+       sumOfUpgrades++;
+   }
+   document.getElementById('stat2').innerHTML = sumOfUpgrades;
+}
+
+  let achievementCounter = 0;
  export function updateAchievementStat()
  {
             achievementCounter ++;
             document.getElementById('stat6').innerHTML = achievementCounter + "/32" ;
  }
 
- let sumOfCatchedBonuses = 0;
- export function updateCatchedBonusesStat()
- {
-            sumOfCatchedBonuses++;
-            document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
+  let sumOfCatchedBonuses = 0;
+ export function updateCatchedBonusesStat(gameState)
+ {      if(gameState)
+    {
+        sumOfCatchedBonuses = sumOfCatchedBonuses + gameState
+    }
+    else
+    {
+        sumOfCatchedBonuses++;
+    }
+            
+     document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
  }
