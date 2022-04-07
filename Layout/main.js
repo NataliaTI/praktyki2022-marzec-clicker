@@ -8,7 +8,7 @@ import { clickAnimation } from "./animation";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
-import { sound } from '../src/Scripts/Components/sounds.js';
+import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
 
 let sumOfCatchedBonuses = 0;
@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (counterButtonElement) {
             counterButtonElement.addEventListener('click', (event) => {
                 counter = onClickHandler(counter, extraMoneyPerClick);
-                sound('mixkit-spice-jar-open-1809.wav');
+                clickSound("click_sound");
             });
         };
 
