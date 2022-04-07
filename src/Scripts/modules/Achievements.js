@@ -1,6 +1,7 @@
 import { showContent } from "../Components/alert.js";
 import { updateAchievementStat } from "../Components/statistics.js";
 import achivementList from '../../Catalog/achievements.json';
+import { clickSound } from "../Components/sounds.js";
 
 export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
@@ -19,9 +20,8 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             // document.getElementById('specification' + szklana + upgradeLevel).innerHTML = description;
 
             // achievement.querySelector('.achievements-look').classList.add(name);
-            // console.log(achievement.querySelector('.achievements-look'))
             // showContent(header, description, achievementImage);
-            // achievementSound();
+            clickSound("achievement_sound");
         }
     });
 }
@@ -32,32 +32,31 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
 //     sound.play();
 // }
 
-export function achievementShow(achievementList, achievementWrap, icon) {
+// export function achievementShow(achievementList, achievementWrap, icon) {
 
-    const stencil = document.getElementById("achievement-show")
-    const clone = stencil.content.cloneNode(true)
-    const achievements = Object.keys(achivementList);
-
-
-    achievements.forEach(achievementKey => {
-        const header = achievementList[achievementKey].achievementHeader;
-        const description = achievementList[achievementKey].achievementDescription;
-        // const unlocked = achievementList[achievementKey].unlocked;
-        const achievementImage = achievementList[achievementKey].iconName;
+//     const stencil = document.getElementById("achievement-show")
+//     const clone = stencil.content.cloneNode(true)
+//     const achievements = Object.keys(achivementList);
 
 
-        if (unlocked == false) {
-            let unlocked = achievementList[achievementKey].unlocked;
-
-            document.querySelector(".achievements-look").icon = achievementImage;
-            achievementKey.appendChild(achievementImage)
-        }
-        clone.querySelector(".achievements-look").icon = achievementImage
-        clone.querySelector("#headlineotwieracz1").textContent = header;
-        clone.querySelector("#specificationotwieracz1").textContent = description;
-        achievementWrap.appendChild(clone);
-    })
+//     achievements.forEach(achievementKey => {
+//         const header = achievementList[achievementKey].achievementHeader;
+//         const description = achievementList[achievementKey].achievementDescription;
+//         // const unlocked = achievementList[achievementKey].unlocked;
+//         const achievementImage = achievementList[achievementKey].iconName;
 
 
-    document.getElementById("#achievement-show");
-}
+//         if (unlocked == false) {
+//             let unlocked = achievementList[achievementKey].unlocked;
+
+//             document.querySelector(".achievements-look").icon = achievementImage;
+//             achievementKey.appendChild(achievementImage)
+//         }
+//         clone.querySelector("#headlineotwieracz1").textContent = header;
+//         clone.querySelector("#specificationotwieracz1").textContent = description;
+//         achievementWrap.appendChild(clone);
+//     })
+
+
+//     document.getElementById("#achievement-show");
+// }

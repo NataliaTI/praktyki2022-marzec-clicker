@@ -51,6 +51,7 @@ function getRandomcoordinates() {
     }
   }
   }, 10000)
+  // 600000
 }
   function removebonus(catchbonus){
     catchbonus.remove();
@@ -66,7 +67,7 @@ function getRandomcoordinates() {
         let randombonus = Math.floor (Math.random()*(1 - 0 + 1)+ 0);
         const bonus = bonusList[randombonus];
         if (bonus.type == 'counterValue')  {
-          counter = counter + Math.floor(counter/5);  
+          counter = counter + Math.floor(counter/5 + 10);  
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
@@ -78,8 +79,8 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
           
-          let bonuscounter = format(Math.floor(counter / 5))
-          moneyClick.textContent = '+' + bonuscounter + ' $';
+          let bonuscounter = format(Math.floor(counter / 5)+10)
+          moneyClick.textContent = '+' + bonuscounter + 10 + ' $';
           setTimeout(() => {
             money.remove()
         }, 1500);
@@ -87,7 +88,7 @@ function getRandomcoordinates() {
       
          }else {     
           let oldAutoClick = format(autoClick);
-          autoClick = autoClick + autoClick;
+          autoClick = autoClick + autoClick + 10;
           let autoClickFormat = format(autoClick);
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
@@ -100,7 +101,7 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
   
-          moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekundę przez 10 sekund';
+          moneyClick.textContent = '+'+ oldAutoClick + 10 + ' $ na sekundę przez 10 sekund';
            document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
            setTimeout(() => {
             money.remove()

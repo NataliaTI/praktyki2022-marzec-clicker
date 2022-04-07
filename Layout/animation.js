@@ -2,7 +2,7 @@ import { format } from "../src/Scripts/Components/format.js";
 
 export function clickAnimation(e, extraMoneyPerClick, counterButtonElement){
     const moneyOnClick = extraMoneyPerClick + 1;
-    let moneyOnClickFormated = format(moneyOnClick);
+    const moneyOnClickFormated = format(moneyOnClick);
     
     const x = e.clientX - e.target.offsetLeft;
     const y = e.clientY - e.target.offsetTop;
