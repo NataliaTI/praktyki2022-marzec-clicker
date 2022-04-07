@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
                 if (result.autoClick) {
-                    let oldAutoClick = autoClick +10
+                    let oldAutoClick = autoClick + 10
                     autoClick = autoClick + autoClick;
                     setTimeout(() => {
                         autoClick = autoClick - oldAutoClick;
