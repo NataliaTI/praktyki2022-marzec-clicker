@@ -12,6 +12,16 @@ body {
     background: url(../Images/tlo.jpg) no-repeat center top;
 }
 
+@keyframes loadPage {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -59,6 +69,7 @@ html {
     cursor: pointer;
     transform: scale(1);
     transition: .1s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .clicker__img:hover {
@@ -542,7 +553,7 @@ html {
 }
 
 /* CSS osiagniecia */
-#status.achievement {
+#status.alert {
     display: none;
     position: absolute;
     left: 50%;
@@ -551,7 +562,7 @@ html {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.achievement {
+.alert {
     position: absolute;
     align-items: flex-start;
     display: flex;
@@ -560,7 +571,6 @@ html {
     background-color: rgb(0, 157, 65);
     color: #ddd;
     border-radius: 18px 18px 18px 18px;
-    /*background-image: url(../Images/kapsel.png);*/
     background-size: 64px;
     background-repeat: no-repeat;
     background-position: 6px 6px;
@@ -570,38 +580,35 @@ html {
     padding-right: 12px;
     padding-top: 8px;
     bottom: 10%;
-    right: 38%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
-.achievement.locked {
+.alert.locked {
     background-color: #ccc;
     color: #444;
 }
 
-.achievement .title {
+.alert .alert__info {
     color: #fff;
     font-weight: bold;
     text-shadow: 0px 0px 8px #eee;
 }
 
-.achievement.locked .title {
+.alert.locked .alert__info {
     color: #444;
     font-weight: bold;
     text-shadow: 0px 0px 4px #888;
 }
 
-.icon {
+.alert__icon {
     width: 70px;
     height: 70px;
     padding-left: 0px;
     padding-bottom: 18px;
     padding-right: 8px;
 }
-
-
-
-
 
 *,
 *::after,
@@ -656,30 +663,11 @@ html {
     position: absolute;
     width: 100px;
     height: 100px;
+    z-index: 1;
     background-size: cover;
     background-image: url("../Images/kapselwin.png");
     cursor: pointer;
-    animation: catchbonus 1.5s;
-}
-
-.catchbonus2 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-image: url("../Images/kapselwin.png");
-    cursor: pointer;
-    animation: catchbonus2 1.5s;
-}
-
-.catchbonus3 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-image: url("../Images/kapselwin.png");
-    cursor: pointer;
-    animation: catchbonus3 1.5s;
+    animation: catchbonus 1.5s, catchbonus2 1.5s 3.5s, catchbonus3 1.5s 7s;
 }
 
 @keyframes catchbonus {
@@ -711,23 +699,6 @@ html {
 @keyframes catchbonus2 {
 
     0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(1.2);
-    }
-    100%{
-        opacity: 0;
-        transform: scale(0);
-    }
-
-}
-
-@keyframes catchbonus3 {
-
-    0% {
         transform: scale(1);
     }
 
@@ -749,6 +720,24 @@ html {
 
 }
 
+@keyframes catchbonus3 {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+}
+
 .alert__column {
     flex-direction: column;
     background-size: cover;
@@ -758,7 +747,6 @@ html {
     font-size: 100px;
 
 }
-
 
 .alert__text {
     font-size: 10p;

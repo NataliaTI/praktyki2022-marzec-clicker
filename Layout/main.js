@@ -1,68 +1,69 @@
 import { format } from "../src/Scripts/Components/format.js";
-import { updateCatchedBonusesStat, dateFunction, clickCounter, updateUpgradeStat,  } from "../src/Scripts/Components/statistics.js";
+import { updateCatchedBonusesStat, dateFunction, clickCounter, updateUpgradeStat, updateAchievementStat, getStat } from "../src/Scripts/Components/statistics.js";
 import { bonus, catchbonusstart } from "../src/Scripts/modules/catchbonusReworked";
 import { changeMenuCategory } from './menu.js';
 import { changeCounterElementText, onClickHandler } from '../src/Scripts/modules/onClickIncrement.js';
-import { timer, upgrade } from "../src/Scripts/modules/upgrades.js";
+import { timer, upgrade, upgradeListUpdate, getUpgradesStateArray } from "../src/Scripts/modules/upgrades.js";
 import { clickAnimation } from "./animation";
 import { login } from '../src/Scripts/modules/apiLogin.js';
 import { changeMobileMenuCategory } from "./mobileMenu.js";
 import achivementList from '../src/Catalog/achievements.json';
 import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
+import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
 
 
-let counter = 0;
+let counter = 1000000000;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
-export const upgradeList = {
+let upgradeList = {
     'otwieracz': {
         currentCost: 15,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 1
+        extraMoneyPerClick: 0.5
     },
     'mietek': {
         currentCost: 155,
         level: 0,
-        autoClickValue: 15,
+        autoClickValue: 10,
         extraMoneyPerClick: 0
     },
     'seba': {
         currentCost: 1600,
         level: 0,
-        autoClickValue: 100,
-        extraMoneyPerClick: 10
+        autoClickValue: 90,
+        extraMoneyPerClick: 9
     },
     'grazyna': {
         currentCost: 7500,
         level: 0,
-        autoClickValue: 223,
-        extraMoneyPerClick: 150
+        autoClickValue: 299,
+        extraMoneyPerClick: 73
     },
     'gang': {
         currentCost: 35000,
         level: 0,
-        autoClickValue: 640,
-        extraMoneyPerClick: 300
+        autoClickValue: 779,
+        extraMoneyPerClick: 133
     },
     'monopolowy': {
-        currentCost: 125000,
+        currentCost: 130000,
         level: 0,
-        autoClickValue: 1230,
-        extraMoneyPerClick: 900
+        autoClickValue: 1818,
+        extraMoneyPerClick: 421
     },
     'browar': {
         currentCost: 800000,
         level: 0,
         autoClickValue: 0,
-        extraMoneyPerClick: 4000
+        extraMoneyPerClick: 3901
     },
     'destylarnia': {
         currentCost: 4000000,
         level: 0,
-        autoClickValue: 4300,
+        autoClickValue: 6213,
         extraMoneyPerClick: 0
     },
     'current': {
@@ -79,9 +80,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const buttons = document.querySelectorAll('.menu__item');
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
-    
+    const achievementWrap = document.getElementById("tab-achievements");
+    const body = document.querySelector('body');
+
     loadGameState.then((gameState) => {
-        
+
         // na podstawie obiektu gameState w zaznaczonym poniżej warunku
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
@@ -99,27 +102,65 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 updateUpgradeStat(gameState.upgradeCount);
             }
              
-
             if ( gameState.hasOwnProperty('startDataTime') ) {
                 dateFunction(gameState.startDataTime);
             }
              
             if ( gameState.hasOwnProperty('clickCount') ) {
                 clickCounter(gameState.clickCount);
-               
             }
 
             if ( gameState.hasOwnProperty('catchedBonuses') ) {
-             
                 updateCatchedBonusesStat(gameState.catchedBonuses);
+            }
+
+            if ( gameState.hasOwnProperty('achievementCount') ) {
+                updateAchievementStat(gameState.achievementCount);
             }
                       
             if ( gameState.hasOwnProperty('points') ) {
                 counter = gameState.points;
             }
-            
+
+            if (gameState.hasOwnProperty('upgrades')) {
+                const upgradeListTmp = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
+                if (upgradeListTmp) {
+                    upgradeList = upgradeListTmp;
+                }
+            }
+
+            if (gameState.hasOwnProperty('achievementsObtained')) {
+                const achivementListTmp = achievementListUpdate(achivementList, gameState.achievementsObtained);
+                if (achivementListTmp) {
+                    achivementList = achivementListTmp;
+                }
+            }
+
+            body.style.animation = "loadPage 1s"
         }
-   
+
+        achievementShow(achivementList, achievementWrap);
+
+        document.getElementById("wrap").addEventListener('click', (event) => {
+            if (event.target && event.target.matches(".catchbonus")) {
+                updateCatchedBonusesStat();
+                let result = bonus(counter, autoClick);
+                if (result.autoClick) {
+                    let oldAutoClick = autoClick +10
+                    autoClick = autoClick + autoClick;
+                    setTimeout(() => {
+                        autoClick = autoClick - oldAutoClick;
+                        let autoClickFormat = format(autoClick);
+                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
+                    }, 5000);
+                    autoClick = result.autoClick
+                } else if (result.counter) {
+                    counter = result.counter
+                }
+            }
+        });
+
+        catchbonusstart();
     
         if (upgradeFromHtml.length) {
             for (let name = 0; name < upgradeFromHtml.length; name++) {
@@ -127,7 +168,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 const upgradeId = upgradeDiv;
 
                 upgradeDiv.addEventListener('click', (event) => {
-                    const result = upgrade(counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
+                    const result = upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
                     counter = result.counter;
                     autoClick = result.autoClick;
                     extraMoneyPerClick = result.extraMoneyPerClick;
@@ -148,35 +189,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             })
         }
 
-        document.getElementById("wrap").addEventListener('click', (event) => {
-            if (event.target && event.target.matches(".catchbonus")) {
-                updateCatchedBonusesStat();
-                let result = bonus(counter, autoClick);
-                if (result.autoClick) {
-                    let oldAutoClick = autoClick
-                    autoClick = autoClick + autoClick + 10;
-                    setTimeout(() => {
-                        autoClick = autoClick - oldAutoClick - 10;
-                        let autoClickFormat = format(autoClick);
-                        document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + 10 + ' $';
-                    }, 5000);
-                    autoClick = result.autoClick
-                } else if (result.counter) {
-                    counter = result.counter
-                }
-            }
-        });
-
-        catchbonusstart();
-
         if (buttons.length && menuDivList.length) {
             changeMenuCategory(buttons, menuDivList);
         }
-       
+
         if (menuDivList.length) {
             changeMobileMenuCategory(menuDivList);
-        }      
-        
+        }
+
         setInterval(() => {
             counter = timer(counter, autoClick);
             changeCounterElementText(counter);
@@ -188,11 +208,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
 
-            const gameState = {"startDataTime":"2022-04-06 13:06:01","timeSpentPlaying":"92459750246436537","clickCount":0,"clickPerSec":autoClick,"points":counter,"catchedBonuses":0,"upgradeCount":0,"achievementsObtained":[1,2,6,12,15],"upgrades":[{"id":1,"quantity":500},{"id":2,"quantity":400},{"id":3,"quantity":300},{"id":4,"quantity":200},{"id":5,"quantity":100}]};
+            const unlockedAchievements = getAchievementsUnlocked(achivementList);
+            const currentGameState = {
+                "upgrades": getUpgradesStateArray(upgradeList),
+                "upgradeCount": getStat('upgradeCount'),
+                "startDataTime": gameState.startDataTime,
+                "points": counter,
+                "clickPerSec": autoClick,
+                "extraMoneyPerClick": extraMoneyPerClick,
+                "clickCount": getStat('clickCount'),
+                "catchedBonuses": getStat('catchedBonuses'),
+                "achievementsObtained":'',// unlockedAchievements,
+                "achievementCount": ''//unlockedAchievements.length
+            }    
 
-            // console.log('%cmain.js line:109 gameState', 'color: #007acc;', gameState);
+            console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
-            saveGameState(gameState);
-        }, 5000);
+            saveGameState(currentGameState);
+        }, 60000);
     });
 });

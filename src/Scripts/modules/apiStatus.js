@@ -1,6 +1,4 @@
-
 import { showContent } from "../Components/alert";
-
 
 export const loadGameState = fetch('https://praktyki-trol-clicker-api.herokuapp.com/game-states', {
     headers: {
@@ -36,7 +34,7 @@ export async function saveGameState(gameState) {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        showContent('Gra zapisana', '', '');
+        showContent('Zapisano stan gry', 'Kliknij X aby zamknac powiadomienie', 'Saveicon.png');
     })
     .catch((error) => {
         console.error('Error:', error);

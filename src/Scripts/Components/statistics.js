@@ -60,10 +60,15 @@ months = parseInt((months-years*12));
 }
 
   let achievementCounter = 0;
- export function updateAchievementStat()
+ export function updateAchievementStat(gameState)
  {
-            achievementCounter ++;
-            document.getElementById('stat6').innerHTML = achievementCounter + "/32" ;
+    if (gameState) {
+        achievementCounter = achievementCounter + gameState
+    } else {
+        achievementCounter ++;
+    }
+   
+    document.getElementById('stat6').innerHTML = achievementCounter + "/32" ;
  }
 
   let sumOfCatchedBonuses = 0;
@@ -79,3 +84,25 @@ months = parseInt((months-years*12));
             
      document.getElementById('stat5').innerHTML = sumOfCatchedBonuses;
  }
+
+ export function getStat(statKey) {
+
+   
+    //  * W zmiennej `statKey` będzie klucz informujący o tym jaką wartość chcemy uzyskać z funkcji
+    //  * zmienna przyjmuje wartości: 
+    if(statKey == 'clickCount' )
+    {
+        return sumOfClicks;
+    }
+    else if(statKey == 'catchedBonuses')
+    {
+        return sumOfCatchedBonuses;
+    }
+    else if(statKey == 'upgradeCount')
+    {
+        return sumOfUpgrades;
+    }
+   
+       //  * Na podstawie zmiennej `statKey` funkcja powinna zwrócić właściwą zmienną
+    
+}
