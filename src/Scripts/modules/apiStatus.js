@@ -33,7 +33,8 @@ export async function saveGameState(gameState) {
     })
     .then(response => response.json())
     .then(data => {
-        showContent('Gra zapisana', '', '');
+        console.log('Success:', data);
+        showContent('Zapisano stan gry', 'Kliknij X aby zamknac powiadomienie', 'Saveicon.png');
     })
     .catch((error) => {
         console.error('Error:', error);

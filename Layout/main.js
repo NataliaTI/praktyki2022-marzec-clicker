@@ -212,8 +212,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "extraMoneyPerClick": extraMoneyPerClick,
                 "clickCount": getStat('clickCount'),
                 "catchedBonuses": getStat('catchedBonuses'),
-                "achievementsObtained": unlockedAchievements,
-                "achievementCount": unlockedAchievements.length
+                "achievementsObtained":'',// unlockedAchievements,
+                "achievementCount": ''//unlockedAchievements.length
             }    
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
