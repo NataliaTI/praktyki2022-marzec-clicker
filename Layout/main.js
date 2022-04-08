@@ -91,27 +91,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log('game state', gameState);
         if (gameState) {
 
-            if ( gameState.hasOwnProperty('upgradeCount') ) {
+            if (gameState.hasOwnProperty('upgradeCount')) {
                 updateUpgradeStat(gameState.upgradeCount);
             }
-             
-            if ( gameState.hasOwnProperty('startDataTime') ) {
+
+            if (gameState.hasOwnProperty('startDataTime')) {
                 dateFunction(gameState.startDataTime);
             }
-             
-            if ( gameState.hasOwnProperty('clickCount') ) {
+
+            if (gameState.hasOwnProperty('clickCount')) {
                 clickCounter(gameState.clickCount);
             }
 
-            if ( gameState.hasOwnProperty('catchedBonuses') ) {
+            if (gameState.hasOwnProperty('catchedBonuses')) {
                 updateCatchedBonusesStat(gameState.catchedBonuses);
             }
 
-            if ( gameState.hasOwnProperty('achievementCount') ) {
+            if (gameState.hasOwnProperty('achievementCount')) {
                 updateAchievementStat(gameState.achievementCount);
             }
-                      
-            if ( gameState.hasOwnProperty('points') ) {
+
+            if (gameState.hasOwnProperty('points')) {
                 counter = gameState.points;
             }
 
@@ -137,7 +137,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
                 if (result.autoClick) {
-                    let oldAutoClick = autoClick +10
+                    let oldAutoClick = autoClick + 10
                     autoClick = autoClick + autoClick;
                     setTimeout(() => {
                         autoClick = autoClick - oldAutoClick;
@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         });
 
         catchbonusstart();
-    
+
         if (upgradeFromHtml.length) {
             for (let name = 0; name < upgradeFromHtml.length; name++) {
                 const upgradeDiv = upgradeFromHtml[name];
@@ -211,7 +211,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "catchedBonuses": getStat('catchedBonuses'),
                 "achievementsObtained": unlockedAchievements,
                 "achievementCount": unlockedAchievements.length
-            }    
+            }
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 

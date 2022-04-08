@@ -48,12 +48,36 @@ export function achievementShow(achievementList, achievementWrap) {
         achievementWrap.appendChild(clone);
 
         const cloneQuerySelector = document.getElementById("achievementKey");
-        cloneQuerySelector.id = achievementKey;        
+        cloneQuerySelector.id = achievementKey;
+
+        achievementListUpdate(achievementList, achievementsUnlocked);
+
     })
 }
 
 
 export function achievementListUpdate(achievementList, achievementsUnlocked) {
+
+    console.log(achievementList)
+
+    for (let lista in achievementList) {
+        if (!achievementList[lista].unlocked) {
+            achievementList[lista].unlocked = true;
+
+        }
+        //console.log(achievementList[lista].upgradeName)
+    }
+    console.log(achievementList)
+    // for (achievementList) {
+
+    //     const achievementsUnlocked = achievementList[achievementKey].unlocked;
+
+    //     if (achievementsUnlocked == false) {
+    //         achievementsUnlocked.setAttribute('unlocked') == true;
+    //         achievementList = achievementsUnlocked;
+    //     }
+    // }
+
 
     /**
      * W zmiennej `achievementList` znajduje się obiekt z osiągnięciami z pliku achievements.json
@@ -61,8 +85,9 @@ export function achievementListUpdate(achievementList, achievementsUnlocked) {
      *
      * Na podstawie tablicy `achievementsUnlocked` funkcja powinna zaktualizować klucz `unlocked`
      * w odpowiednich osiągnięciach w obiekcie `achievementList` i zwrócić ten obiekt
-     */
+    */
 }
+
 
 
 export function getAchievementsUnlocked(achievementList) {
