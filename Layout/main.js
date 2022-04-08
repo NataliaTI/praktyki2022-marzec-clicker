@@ -200,6 +200,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // - N.        
 
             const unlockedAchievements = getAchievementsUnlocked(achivementList);
+            console.log(unlockedAchievements);
             const currentGameState = {
                 "upgrades": getUpgradesStateArray(upgradeList),
                 "upgradeCount": getStat('upgradeCount'),
@@ -209,13 +210,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "extraMoneyPerClick": extraMoneyPerClick,
                 "clickCount": getStat('clickCount'),
                 "catchedBonuses": getStat('catchedBonuses'),
-                "achievementsObtained":'',// unlockedAchievements,
-                "achievementCount": ''//unlockedAchievements.length
+                "achievementsObtained": unlockedAchievements,
+                "achievementCount": unlockedAchievements.length
             }    
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
             saveGameState(currentGameState);
-        }, 60000);
+        }, 10000);
     });
 });
