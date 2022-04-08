@@ -49,7 +49,6 @@ export function achievementShow(achievementList, achievementWrap) {
         const cloneQuerySelector = document.getElementById("achievementKey");
         cloneQuerySelector.id = achievementKey;
 
-        achievementListUpdate(achievementList, achievementsUnlocked);
     })
 }
 
@@ -62,7 +61,6 @@ export function achievementListUpdate(achievementList, achievementsUnlocked) {
             achievementList[lista].unlocked = true;
 
         }
-        //console.log(achievementList[lista].upgradeName)
     }
     console.log(achievementList)
 }

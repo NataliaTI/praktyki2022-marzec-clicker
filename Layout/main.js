@@ -82,15 +82,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     loadGameState.then((gameState) => {
 
-        // na podstawie obiektu gameState w zaznaczonym poniżej warunku
-        // trzeba zaktualizować zmienne odpowiedzialne za
-        // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
-        // N.
-
-        // updateUpgradeStat(gameState.upgradeCount);
-        // updateCatchedBonusesStat(gameState.catchedBonuses);
-        // clickCounter(gameState.clickCount);
-
         console.log('game state', gameState);
 
         if (gameState) {
