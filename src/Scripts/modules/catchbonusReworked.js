@@ -38,8 +38,7 @@ export function catchbonusstart(){
     let coordinates = getRandomcoordinates();
     makediv(coordinates);
     catchbonusaddable = false
-  }, 10000)
-  // 600000
+  }, 600000)
 }
 
 function removebonus(catchbonus){
