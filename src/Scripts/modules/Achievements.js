@@ -3,7 +3,7 @@ import { updateAchievementStat } from "../Components/statistics.js";
 import achivementList from '../../Catalog/achievements.json';
 import { clickSound } from "../Components/sounds.js";
 
-export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
+export function achievements(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 
     achievementLevel.forEach(achievementKey => {
