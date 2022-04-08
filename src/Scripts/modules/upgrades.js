@@ -36,6 +36,8 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
         mobileHeaderH2.textContent = returnedFormatedValue + " $";
+
+        getUpgradesStateArray(upgradeList);
     }
 
     return { counter, autoClick, extraMoneyPerClick };
@@ -63,29 +65,14 @@ export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
 
 
 export function getUpgradesStateArray(upgradeList) {
-
-    /**
-     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
-     * 
-     * Funkcja powinna na podstawie zmiennej `upgradeList` z każdego ulepszenia (mogą być tylko zakupione)
-     * wyciągnąć currentCost, level oraz klucz ulepszenia np. "otwieracz", "seba", itp.
-     * i przypisać je jako obiekt w tablicy
-     * 
-     * Przy założeniu, że uzytkownik kupił:
-     * 
-     * 15 sztuk Otwieracza i jego aktualny koszt to 100$
-     * 10 sztuk Seby i jego aktualny koszt to 200$
-     * 
-     * Funkcja powinna zwrócić tablicę obiektów:
-     * 
-     * [{
-     *  "id": "otwieracz",
-     *  "quantity": 15,
-     *  "cost": 100
-     * }, {
-     *  "id": "seba",
-     *  "quantity": 10,
-     *  "cost": 200
-     * }]
-     */
+    let upgradeStatus = [];
+    for (let Upgrade in upgradeList){
+        if(Upgrade != "current" && upgradeList[Upgrade].level>0){
+            const level = upgradeList[Upgrade].level;
+            const cost = upgradeList[Upgrade].currentCost;
+            const upgradeObject = {id: Upgrade, quantity: level, cost: cost};
+            upgradeStatus.push(upgradeObject);
+        }
+    } 
+    return upgradeStatus;
 }

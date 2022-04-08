@@ -73,7 +73,6 @@ let upgradeList = {
 }
 
 login();
-
 window.addEventListener('DOMContentLoaded', (event) => {
 
     const menuDivList = document.querySelectorAll('.menu__div-list');
