@@ -214,6 +214,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
             // - N.        
 
+           
             const unlockedAchievements = getAchievementsUnlocked(achivementList);
             console.log(unlockedAchievements);
             const currentGameState = {
@@ -231,7 +232,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
+            extraMoneyPerClick = currentGameState.extraMoneyPerClick;
+            autoClick = currentGameState.clickPerSec;
+            
+
             saveGameState(currentGameState);
         }, 10000);
     });
 });
+
+setInterval(() => {
+    console.log(extraMoneyPerClick);
+    console.log(autoClick);
+}, 10000)
+    
