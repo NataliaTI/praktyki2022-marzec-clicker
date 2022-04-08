@@ -37,7 +37,6 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
         mobileHeaderH2.textContent = returnedFormatedValue + " $";
 
-        getUpgradesStateArray(upgradeList);
     }
 
     return { counter, autoClick, extraMoneyPerClick };
