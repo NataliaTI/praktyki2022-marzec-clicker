@@ -26,7 +26,7 @@ export function achievements(upgradeLevel, upgradeName, achivementList) {
     });
 }
 
-export function achievementShow(achievementList, achievementWrap) {
+export function achievementShow(achievementList, achievementWrap, achievementsUnlocked) {
 
     const stencil = document.getElementById("achievement-show");
     const achievements = Object.keys(achivementList);
@@ -54,12 +54,9 @@ export function achievementShow(achievementList, achievementWrap) {
 
 export function achievementListUpdate(achievementList, achievementsUnlocked) {
 
-    console.log(achievementList)
-
-    for (let lista in achievementList) {
-        if (!achievementList[lista].unlocked) {
-            achievementList[lista].unlocked = true;
-
+    if (Array.isArray(achievementsUnlocked)) {
+        for (let achievementKey of achievementsUnlocked) {
+            achievementList[achievementKey].unlocked = true;
         }
     }
     console.log(achievementList)
