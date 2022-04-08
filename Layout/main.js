@@ -89,7 +89,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
         // N.
+      
+        // updateUpgradeStat(gameState.upgradeCount);
+        // updateCatchedBonusesStat(gameState.catchedBonuses);
+        // clickCounter(gameState.clickCount);
+        
         console.log('game state', gameState);
+
         if (gameState) {
 
             if ( gameState.hasOwnProperty('upgradeCount') ) {
@@ -145,7 +151,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     autoClick = autoClick + autoClick;
                     setTimeout(() => {
                         autoClick = autoClick - result.autoClickAdd
-                        //autoClick = autoClick - oldAutoClick;
                         let autoClickFormat = format(autoClick);
                         document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
                     }, 5000);
