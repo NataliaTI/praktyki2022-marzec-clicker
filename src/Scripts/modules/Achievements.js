@@ -5,7 +5,7 @@ import { clickSound } from "../Components/sounds.js";
 
 export function achievements(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
-    
+
     achievementLevel.forEach(achievementKey => {
         if (achivementList[achievementKey].level == upgradeLevel && achivementList[achievementKey].upgradeName == upgradeName) {
             updateAchievementStat();
@@ -15,7 +15,7 @@ export function achievements(upgradeLevel, upgradeName, achivementList) {
             const header = achivementList[achievementKey].achievementHeader;
             const description = achivementList[achievementKey].achievementDescription;
             const achievementImage = achivementList[achievementKey].iconName;
-            achivementList[achievementKey].unlocked=true;
+            achivementList[achievementKey].unlocked = true;
             achievement.querySelector('.headline').innerHTML = header;
             achievement.querySelector('.specification').innerHTML = description;
 
@@ -47,52 +47,37 @@ export function achievementShow(achievementList, achievementWrap) {
         achievementWrap.appendChild(clone);
 
         const cloneQuerySelector = document.getElementById("achievementKey");
-        cloneQuerySelector.id = achievementKey;        
+        cloneQuerySelector.id = achievementKey;
+
+        achievementListUpdate(achievementList, achievementsUnlocked);
     })
 }
 
 export function achievementListUpdate(achievementList, achievementsUnlocked) {
 
-    /**
-     * W zmiennej `achievementList` znajduje się obiekt z osiągnięciami z pliku achievements.json
-     * W zmiennej `achievementsUnlocked` znajduje się tablica z kluczami odblokowanych osiągnięć
-     *
-     * Na podstawie tablicy `achievementsUnlocked` funkcja powinna zaktualizować klucz `unlocked`
-     * w odpowiednich osiągnięciach w obiekcie `achievementList` i zwrócić ten obiekt
-     */
+    console.log(achievementList)
+
+    for (let lista in achievementList) {
+        if (!achievementList[lista].unlocked) {
+            achievementList[lista].unlocked = true;
+
+        }
+        //console.log(achievementList[lista].upgradeName)
+    }
+    console.log(achievementList)
 }
 
 export function getAchievementsUnlocked(achievementList) {
-const achievments = Object.keys(achievementList);
-let unlockedAchivments = [];    
- 
-    achievments.forEach(achievementKey => {
+    const achievments = Object.keys(achievementList);
+    let unlockedAchivments = [];
 
-    const unlockedAchiv = achievementList[achievementKey];
-   
-         if(unlockedAchiv.unlocked){
-             
-        unlockedAchivments.push(achievementKey);
-       
-         }
+    achievments.forEach(achievementKey => {
+        const unlockedAchiv = achievementList[achievementKey];
+
+        if (unlockedAchiv.unlocked) {
+            unlockedAchivments.push(achievementKey);
+        }
     });
 
-return unlockedAchivments;
+    return unlockedAchivments;
 }
-    /*
-     * W zmiennej `achievementList` znajduje się obiekt z osiągnięciami z pliku achievements.json
-     * 
-     
-     * Na podstawie tej zmiennej należy przejść za pomocą pętli po każdym osiągnięciu po kolei
-     * i sprawdzić czy dane osiągnięcie ma ustawiony klucz `unlocked` na `true`
-     * jeśli tak dodajemy klucz osiągnięcia do tablicy z odblokowanymi osiągnięciami, 
-     * która funkcja powinna zwrócić, zakładając że użytkownik odblokował osiągnięcia:
-     * 
-     * 'Pierwszy otwieracz'
-     * 'Dziesiąty otwieracz'
-     * 'Pierwszy menelik'
-     * 
-     * funkcja powinna zwrócić tablicę:
-     * 
-     * ["otwieracz1", "otwieracz10", "mietek1"]
-     */

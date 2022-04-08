@@ -86,45 +86,45 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
         // N.
-      
+
         // updateUpgradeStat(gameState.upgradeCount);
         // updateCatchedBonusesStat(gameState.catchedBonuses);
         // clickCounter(gameState.clickCount);
-        
+
         console.log('game state', gameState);
 
         if (gameState) {
 
-            if ( gameState.hasOwnProperty('upgradeCount') ) {
+            if (gameState.hasOwnProperty('upgradeCount')) {
                 updateUpgradeStat(gameState.upgradeCount);
             }
-             
-            if ( gameState.hasOwnProperty('startDataTime') ) {
+
+            if (gameState.hasOwnProperty('startDataTime')) {
                 dateFunction(gameState.startDataTime);
             }
-             
-            if ( gameState.hasOwnProperty('clickCount') ) {
+
+            if (gameState.hasOwnProperty('clickCount')) {
                 clickCounter(gameState.clickCount);
             }
 
-            if ( gameState.hasOwnProperty('catchedBonuses') ) {
+            if (gameState.hasOwnProperty('catchedBonuses')) {
                 updateCatchedBonusesStat(gameState.catchedBonuses);
             }
 
-            if ( gameState.hasOwnProperty('achievementCount') ) {
+            if (gameState.hasOwnProperty('achievementCount')) {
                 updateAchievementStat(gameState.achievementCount);
             }
-                      
-            if ( gameState.hasOwnProperty('extraMoneyPerClick') ) {
+
+            if (gameState.hasOwnProperty('extraMoneyPerClick')) {
                 extraMoneyPerClick = gameState.extraMoneyPerClick;
             }
 
-            if ( gameState.hasOwnProperty('clickPerSec') ) {
+            if (gameState.hasOwnProperty('clickPerSec')) {
                 autoClick = gameState.clickPerSec;
             }
             document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + format(autoClick) +' $';
 
-            if ( gameState.hasOwnProperty('points') ) {
+            if (gameState.hasOwnProperty('points')) {
                 counter = gameState.points;
             }
 
@@ -151,9 +151,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if (event.target && event.target.matches(".catchbonus")) {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
-                
+
                 if (result.autoClick) {
-                    let oldAutoClick = autoClick +10
+                    let oldAutoClick = autoClick + 10
                     autoClick = autoClick + autoClick;
                     setTimeout(() => {
                         autoClick = autoClick - result.autoClickAdd
@@ -169,7 +169,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         });
 
         catchbonusstart();
-    
+
         if (upgradeFromHtml.length) {
             for (let name = 0; name < upgradeFromHtml.length; name++) {
                 const upgradeDiv = upgradeFromHtml[name];
@@ -228,7 +228,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "catchedBonuses": getStat('catchedBonuses'),
                 "achievementsObtained": unlockedAchievements,
                 "achievementCount": unlockedAchievements.length
-            }    
+            }
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
