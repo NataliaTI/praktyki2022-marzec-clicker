@@ -3,7 +3,7 @@ import { updateAchievementStat } from "../Components/statistics.js";
 import achivementList from '../../Catalog/achievements.json';
 import { clickSound } from "../Components/sounds.js";
 
-export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
+export function achievements(upgradeLevel, upgradeName, achivementList) {
     const achievementLevel = Object.keys(achivementList);
 
     achievementLevel.forEach(achievementKey => {
@@ -15,7 +15,7 @@ export function osiagniecia(upgradeLevel, upgradeName, achivementList) {
             const header = achivementList[achievementKey].achievementHeader;
             const description = achivementList[achievementKey].achievementDescription;
             const achievementImage = achivementList[achievementKey].iconName;
-
+            achivementList[achievementKey].unlocked=true;
             achievement.querySelector('.headline').innerHTML = header;
             achievement.querySelector('.specification').innerHTML = description;
 
@@ -91,10 +91,28 @@ export function achievementListUpdate(achievementList, achievementsUnlocked) {
 
 
 export function getAchievementsUnlocked(achievementList) {
+const achievments = Object.keys(achievementList);
+let unlockedAchivments = [];    
+  
+ 
+    achievments.forEach(achievementKey => {
 
-    /**
+    const unlockedAchiv = achievementList[achievementKey];
+   
+         if(unlockedAchiv.unlocked){
+             
+        unlockedAchivments.push(achievementKey);
+       
+         }
+
+    });
+
+return unlockedAchivments;
+}
+    /*
      * W zmiennej `achievementList` znajduje się obiekt z osiągnięciami z pliku achievements.json
      * 
+     
      * Na podstawie tej zmiennej należy przejść za pomocą pętli po każdym osiągnięciu po kolei
      * i sprawdzić czy dane osiągnięcie ma ustawiony klucz `unlocked` na `true`
      * jeśli tak dodajemy klucz osiągnięcia do tablicy z odblokowanymi osiągnięciami, 
@@ -108,4 +126,3 @@ export function getAchievementsUnlocked(achievementList) {
      * 
      * ["otwieracz1", "otwieracz10", "mietek1"]
      */
-}
