@@ -26,7 +26,7 @@ export function achievements(upgradeLevel, upgradeName, achivementList) {
     });
 }
 
-export function achievementShow(achievementList, achievementWrap) {
+export function achievementShow(achievementList, achievementWrap, achievementsUnlocked) {
 
     const stencil = document.getElementById("achievement-show");
     const achievements = Object.keys(achivementList);
@@ -50,45 +50,19 @@ export function achievementShow(achievementList, achievementWrap) {
         const cloneQuerySelector = document.getElementById("achievementKey");
         cloneQuerySelector.id = achievementKey;
 
-        achievementListUpdate(achievementList, achievementsUnlocked);
-
     })
 }
 
-
 export function achievementListUpdate(achievementList, achievementsUnlocked) {
 
-    console.log(achievementList)
-
-    for (let lista in achievementList) {
-        if (!achievementList[lista].unlocked) {
-            achievementList[lista].unlocked = true;
-
+    if (Array.isArray(achievementsUnlocked)) {
+        for (let achievementKey of achievementsUnlocked) {
+            achievementList[achievementKey].unlocked = true;
         }
-        //console.log(achievementList[lista].upgradeName)
     }
-    console.log(achievementList)
-    // for (achievementList) {
 
-    //     const achievementsUnlocked = achievementList[achievementKey].unlocked;
-
-    //     if (achievementsUnlocked == false) {
-    //         achievementsUnlocked.setAttribute('unlocked') == true;
-    //         achievementList = achievementsUnlocked;
-    //     }
-    // }
-
-
-    /**
-     * W zmiennej `achievementList` znajduje się obiekt z osiągnięciami z pliku achievements.json
-     * W zmiennej `achievementsUnlocked` znajduje się tablica z kluczami odblokowanych osiągnięć
-     *
-     * Na podstawie tablicy `achievementsUnlocked` funkcja powinna zaktualizować klucz `unlocked`
-     * w odpowiednich osiągnięciach w obiekcie `achievementList` i zwrócić ten obiekt
-    */
+    return achievementList;
 }
-
-
 
 export function getAchievementsUnlocked(achievementList) {
     const achievments = Object.keys(achievementList);
