@@ -60,7 +60,7 @@ export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
         const upgradeCost = upgrade.querySelector('.upgradeCost');
         const upgradeLevel = upgrade.querySelector('.upgradeLevel');
 
-        upgradeCost.innerHTML = upgradeList[upgrade.id].currentCost + " $";
+        upgradeCost.innerHTML = format(upgradeList[upgrade.id].currentCost) + " $";
         upgradeLevel.innerHTML = upgradeList[upgrade.id].level;
     });
 
