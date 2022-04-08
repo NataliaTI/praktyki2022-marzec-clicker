@@ -81,6 +81,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
     const achievementWrap = document.getElementById("tab-achievements");
+    const body = document.querySelector('body');
 
     loadGameState.then((gameState) => {
 
@@ -128,6 +129,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     achivementList = achivementListTmp;
                 }
             }
+
+            body.style.animation = "loadPage 1s"
         }
 
         achievementShow(achivementList, achievementWrap);
@@ -211,8 +214,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "extraMoneyPerClick": extraMoneyPerClick,
                 "clickCount": getStat('clickCount'),
                 "catchedBonuses": getStat('catchedBonuses'),
-                "achievementsObtained": unlockedAchievements,
-                "achievementCount": unlockedAchievements.length
+                "achievementsObtained":'',// unlockedAchievements,
+                "achievementCount": ''//unlockedAchievements.length
             }    
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);

@@ -146,6 +146,11 @@
         padding: 10px;
     }
 
+    .alert {
+        bottom: 55px;
+        width: 300px;
+    }
+
 }
 
 @media screen and (max-width: 640px) {
