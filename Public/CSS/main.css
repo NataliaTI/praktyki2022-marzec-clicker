@@ -1,0 +1,753 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: transparent;
+}
+
+body {
+    background: url(../Images/tlo.jpg) no-repeat center top;
+    opacity: 0;
+    transition: 1s;
+}
+
+.bodyLoad {
+    opacity: 1;
+}
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.ikon-volume {
+    font-size: 30px;
+    color: lightgray;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: 60vh;
+}
+
+.clicker {
+    margin-right: 40px;
+    width: 200px;
+}
+
+.clicker__counter {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+
+.clicker__multiplier {
+    color: lightgray;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.clicker__img {
+    height: 60%;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background-image: url('../Images/zubr.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transform: scale(1);
+    transition: .1s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.clicker__img:hover {
+    transform: scale(1.1);
+}
+
+.clicker__img:active {
+    transform: scale(0.99);
+}
+
+
+.menu {
+    width: 500px;
+    height: 100%;
+}
+
+
+
+.menu__item {
+    position: relative;
+    top: 1px;
+    width: 25%;
+    padding: 10px 5px;
+    margin-right: 5px;
+    background-color: rgb(61, 84, 59, 0.6);
+    border: 1px solid black;
+    border-radius: 5px 5px 0 0;
+    color: rgb(160, 160, 160);
+    cursor: pointer;
+}
+
+.menu__item--active {
+    background-color: rgba(14, 106, 32);
+    color: white;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.menu__div::-webkit-scrollbar {
+    width: 10px;
+}
+
+.menu__div::-webkit-scrollbar-button {
+    display: none;
+}
+
+.menu__div::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+.menu__div::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 10px;
+}
+
+.menu__div::-webkit-scrollbar-thumb:hover {
+    background: lightgray;
+}
+
+.menu__div::-webkit-scrollbar-thumb:window-inactive {
+    background: lightgray;
+}
+
+.menu__div {
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 0 5px 5px 5px;
+    overflow: auto;
+    background-color: rgba(14, 106, 32, 0.785);
+    backdrop-filter: blur(2px);
+    color: lightgray;
+}
+
+.upgradeLevel {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.upgrade__img {
+    align-self: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.upgrade__img-otwieracz {
+    background-image: url('../Images/ikona-otwieracz.png');
+
+}
+
+.upgrade__img-mietek {
+    background-image: url('../Images/ikona-mietek.png');
+
+}
+
+.upgrade__img-seba {
+    background-image: url('../Images/ikona-dostawa.png');
+
+}
+
+.upgrade__img-ekspedientka {
+    background-image: url('../Images/ikona-ekspedientka.png');
+
+}
+
+.upgrade__img-gang {
+    background-image: url('../Images/ikona-hurtownia.png');
+
+}
+
+.upgrade__img-monopolowy {
+    background-image: url('../Images/ikona-monopolowy.png');
+
+}
+
+.upgrade__img-browar {
+    background-image: url('../Images/ikona-browar.png');
+
+}
+
+.upgrade__img-destylarnia {
+    background-image: url('../Images/ikona-destylarnia.png');
+
+}
+
+.menu__div-list {
+    display: none;
+    width: 100%;
+}
+
+
+.menu__div--active {
+    display: block;
+}
+
+.menu-upgrades__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    height: 150px;
+    padding-left: 10px;
+    padding-right: 30px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.upgrade1-div {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.menu-upgrades__list-item-info {
+    align-self: center;
+}
+
+.menu__achievements-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-right: 5px;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid black;
+}
+
+.achievements-img__wrap {
+    display: flex;
+    height: 100%;
+}
+
+.achievements-look {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+    background-image: url('../Images/ikona-locked.png');
+}
+
+.achievements-otwieracz {
+    background-image: url('../Images/ikona-otwieracz.png');
+}
+
+.achievements-mietek {
+    background-image: url('../Images/ikona-mietek.png');
+}
+
+.achievements-seba {
+    background-image: url('../Images/ikona-dostawa.png');
+}
+
+.achievements-ekspedientka {
+    background-image: url('../Images/ikona-ekspedientka.png');
+}
+
+.achievements-gang {
+    background-image: url('../Images/ikona-hurtownia.png');
+}
+
+.achievements-monopolowy {
+    background-image: url('../Images/ikona-monopolowy.png');
+}
+
+.achievements-browar {
+    background-image: url('../Images/ikona-browar.png');
+}
+
+.achievements-destylarnia {
+    background-image: url('../Images/ikona-destylarnia.png');
+}
+
+.menu__stats-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid black;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    height: 10vh;
+    bottom: 0;
+    background-color: rgba(160, 160, 160, 0.4);
+}
+
+.footer__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+}
+
+.click {
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.click-beer {
+    top: 0;
+    left: 0;
+    display: block;
+    position: relative;
+    background-image: url(../Images/zubr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: click 1s linear infinite;
+}
+
+.moneyClick {
+    display: block;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    animation: money 1.5s linear infinite;
+}
+
+.moneyClick2 {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    position: relative;
+    animation: money 1.5s linear infinite;
+}
+
+
+@keyframes click {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 60px;
+        height: 60px;
+        top: -20px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 60px;
+        height: 60px;
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes money {
+    0% {
+        top: -20px;
+        opacity: 1;
+    }
+
+    20% {
+
+
+        opacity: 1;
+    }
+
+    100% {
+
+        top: -100px;
+        opacity: 0;
+    }
+}
+
+.menu-upgrades__tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-otwieracz {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 60%;
+}
+
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-otwieracz {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-mietek {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 60%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-mietek {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-seba {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 45%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-seba {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-ekspedientka {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 25%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-ekspedientka {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-gang {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 30%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-gang {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-monopolowy {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 35%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-monopolowy {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-browar {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 90%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-browar {
+    visibility: visible;
+}
+
+.menu-upgrades__tooltip .menu-upgrades__tooltiptext-destylarnia {
+    visibility: hidden;
+    background-color: rgb(70, 70, 70, 0.7);
+    backdrop-filter: blur(5px);
+    color: lightgray;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 55%;
+}
+
+.menu-upgrades__tooltip:hover .menu-upgrades__tooltiptext-destylarnia {
+    visibility: visible;
+}
+
+/* CSS osiagniecia */
+#status.alert {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: -120px;
+    margin-left: -160px;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.alert {
+    position: absolute;
+    align-items: flex-start;
+    display: flex;
+    filter: alpha(opacity=100);
+    border: 1px solid #fff;
+    background-color: rgb(0, 157, 65);
+    color: #ddd;
+    border-radius: 18px 18px 18px 18px;
+    background-size: 64px;
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+    width: 320px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-top: 8px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.alert.locked {
+    background-color: #ccc;
+    color: #444;
+}
+
+.alert .alert__info {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0px 0px 8px #eee;
+}
+
+.alert.locked .alert__info {
+    color: #444;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px #888;
+}
+
+.alert__icon {
+    width: 70px;
+    height: 70px;
+    padding-left: 0px;
+    padding-bottom: 18px;
+    padding-right: 8px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.save {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.save.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.save-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-header .alert__info {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.alert__close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.save-body {
+    padding: 10px 15px;
+}
+
+.catchbonus {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    background-size: cover;
+    background-image: url("../Images/kapselwin.png");
+    cursor: pointer;
+    animation: catchbonus 1.5s, catchbonus2 1.5s 3.5s, catchbonus3 1.5s 7s;
+}
+
+@keyframes catchbonus {
+
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes catchbonus2 {
+
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+@keyframes catchbonus3 {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+}
+
+.alert__column {
+    flex-direction: column;
+    background-size: cover;
+}
+
+.click {
+    font-size: 100px;
+
+}
+
+.alert__text {
+    font-size: 10p;
+    color: black;
+    text-shadow: 0px 0px 8px #eee;
+    font-weight: bold;
+}
