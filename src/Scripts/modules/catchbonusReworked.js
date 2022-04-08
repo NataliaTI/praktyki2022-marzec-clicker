@@ -37,20 +37,8 @@ function getRandomcoordinates() {
     let coordinates = getRandomcoordinates();
     makediv(coordinates);
     catchbonusaddable = false
-    if (catchbonus) {
-      if (catchbonus.classList.contains("catchbonus")){
-        setTimeout(() => { 
-          catchbonus.classList.add("catchbonus3")
-          if(catchbonus.classList.contains("catchbonus3")){
-            setTimeout(() => { 
-              catchbonus.classList.add("catchbonus2")
-              catchbonus.classList.remove("catchbonus3")
-            }, 3500);
-          }
-        }, 3500);
-    }
-  }
   }, 10000)
+  // 600000
 }
   function removebonus(catchbonus){
     catchbonus.remove();
@@ -63,10 +51,11 @@ function getRandomcoordinates() {
         time: 5000
       }]
       export function bonus(counter, autoClick) {
-        let randombonus = Math.floor (Math.random()*(1 - 0 + 1)+ 0);
+        let randombonus = Math.floor (Math.random()*((bonusList.length-1) + (bonusList.length-1)));
         const bonus = bonusList[randombonus];
         if (bonus.type == 'counterValue')  {
-          counter = counter + Math.floor(counter/5);  
+          const testcounter = counter
+          counter = counter + Math.floor(counter / 5)+10;  
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
           money.classList.add('click');
@@ -78,16 +67,16 @@ function getRandomcoordinates() {
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
           
-          let bonuscounter = format(Math.floor(counter / 5))
+          let bonuscounter = format(Math.floor(testcounter / 5)+10)
           moneyClick.textContent = '+' + bonuscounter + ' $';
           setTimeout(() => {
             money.remove()
         }, 1500);
           return { counter };
       
-         }else {     
-          let oldAutoClick = format(autoClick);
-          autoClick = autoClick + autoClick;
+         }else {
+          let oldAutoClick = format(autoClick+10);
+          autoClick = autoClick + autoClick +10;
           let autoClickFormat = format(autoClick);
           const this2 = document.querySelector("body");
           let money = document.createElement('div');
@@ -95,7 +84,7 @@ function getRandomcoordinates() {
           money.style.left = 50 + '%';
           money.style.top = 50 + '%';
           this2.appendChild(money);
-
+          
           let moneyClick = document.createElement('span');
           moneyClick.classList.add('moneyClick2');
           money.appendChild(moneyClick);
@@ -105,9 +94,49 @@ function getRandomcoordinates() {
            setTimeout(() => {
             money.remove()
         },1500);
-
+      
           document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
-
+        
           return { autoClick };
         }
       }
+
+//  const test123 = document.getElementsByClassName('menu-upgrades__list-item')
+//  if (test123.length) {
+//   for (let name = 0; name < test123.length; name++){
+//     const upgradeDiv = test123[name];
+//     const upgradeId = upgradeDiv;
+  
+// console.log(test123)
+// test123.addEventListener('click', (event) => {
+
+//   let oldAutoClick = format(autoClick+10);
+//   autoClick = autoClick + autoClick +10;
+//   let autoClickFormat = format(autoClick);
+//   const this2 = document.querySelector("body");
+//   let money = document.createElement('div');
+//   money.classList.add('click');
+//   money.style.left = 50 + '%';
+//   money.style.top = 50 + '%';
+//   this2.appendChild(money);
+  
+//   let moneyClick = document.createElement('span');
+//   moneyClick.classList.add('moneyClick2');
+//   money.appendChild(moneyClick);
+
+//   moneyClick.textContent = '+'+ oldAutoClick + ' $ na sekundę przez 10 sekund';
+//    document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
+//    setTimeout(() => {
+//     money.remove()
+// },1500);
+
+//   document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
+
+//   return { autoClick };
+  
+// })
+//  }
+// }
+    
+  
+  
