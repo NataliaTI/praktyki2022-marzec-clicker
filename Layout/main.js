@@ -222,6 +222,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
             saveGameState(currentGameState);
-        }, 10000);
+        }, 60000);
     });
 });
