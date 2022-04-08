@@ -10,7 +10,14 @@
 
 body {
     background: url(../Images/tlo.jpg) no-repeat center top;
+    opacity: 0;
+    transition: 1s;
 }
+
+.bodyLoad {
+    opacity: 1;
+}
+
 
 html {
     font-family: 'Roboto', sans-serif;
@@ -570,7 +577,8 @@ html {
     padding-right: 12px;
     padding-top: 8px;
     bottom: 10%;
-    right: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -652,6 +660,7 @@ html {
     position: absolute;
     width: 100px;
     height: 100px;
+    z-index: 1;
     background-size: cover;
     background-image: url("../Images/kapselwin.png");
     cursor: pointer;

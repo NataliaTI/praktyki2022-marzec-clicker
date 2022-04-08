@@ -1,6 +1,6 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
-import { osiagniecia } from "./Achievements.js";
+import { achievements } from "./Achievements.js";
 import { updateUpgradeStat } from "../Components/statistics.js";
 import { clickSound } from "../Components/sounds.js";
 
@@ -21,9 +21,9 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         upgradeList.current.currentAutoClickValue += upgrade.autoClickValue;
         upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
         clickSound("upgrade_sound");
-        osiagniecia(upgrade.level, upgradeName, achivementList);
+        achievements(upgrade.level, upgradeName, achivementList);
 
-        autoClick = upgradeList.current.currentAutoClickValue;
+        autoClick = autoClick + upgrade.autoClickValue;
         extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
@@ -36,6 +36,7 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
         mobileHeaderH2.textContent = returnedFormatedValue + " $";
+
     }
 
     return { counter, autoClick, extraMoneyPerClick };
@@ -45,17 +46,6 @@ export const timer = (counter, autoClick) => counter + autoClick;
 
 
 export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
-
-    upgradeStatus = [{
-        'id': "otwieracz",
-        'quantity': 15,
-        'cost': 100
-        }, 
-        {   
-        "id": "seba",
-        "quantity": 10,
-        "cost": 200
-        }]
 
     upgradeStatus.forEach(upgrade => {        
             const upgradeCost = upgrade.cost;
@@ -94,29 +84,14 @@ export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
 
 
 export function getUpgradesStateArray(upgradeList) {
-
-    /**
-     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
-     * 
-     * Funkcja powinna na podstawie zmiennej `upgradeList` z każdego ulepszenia (mogą być tylko zakupione)
-     * wyciągnąć currentCost, level oraz klucz ulepszenia np. "otwieracz", "seba", itp.
-     * i przypisać je jako obiekt w tablicy
-     * 
-     * Przy założeniu, że uzytkownik kupił:
-     * 
-     * 15 sztuk Otwieracza i jego aktualny koszt to 100$
-     * 10 sztuk Seby i jego aktualny koszt to 200$
-     * 
-     * Funkcja powinna zwrócić tablicę obiektów:
-     * 
-     * [{
-     *  "id": "otwieracz",
-     *  "quantity": 15,
-     *  "cost": 100
-     * }, {
-     *  "id": "seba",
-     *  "quantity": 10,
-     *  "cost": 200
-     * }]
-     */
+    let upgradeStatus = [];
+    for (let Upgrade in upgradeList){
+        if(Upgrade != "current" && upgradeList[Upgrade].level>0){
+            const level = upgradeList[Upgrade].level;
+            const cost = upgradeList[Upgrade].currentCost;
+            const upgradeObject = {id: Upgrade, quantity: level, cost: cost};
+            upgradeStatus.push(upgradeObject);
+        }
+    } 
+    return upgradeStatus;
 }
