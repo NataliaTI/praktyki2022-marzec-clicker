@@ -122,6 +122,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if (gameState.hasOwnProperty('clickPerSec')) {
                 autoClick = gameState.clickPerSec;
             }
+            document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + format(autoClick) +' $';
 
             if (gameState.hasOwnProperty('points')) {
                 counter = gameState.points;

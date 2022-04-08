@@ -39,7 +39,6 @@ export function achievementShow(achievementList, achievementWrap, achievementsUn
         const unlocked = achievementList[achievementKey].unlocked;
 
         if (unlocked) {
-
             clone.querySelector(".headline").textContent = header;
             clone.querySelector(".specification").textContent = description;
             clone.querySelector(".achievements-look").classList.add(achievementList[achievementKey].class);
@@ -50,6 +49,7 @@ export function achievementShow(achievementList, achievementWrap, achievementsUn
         const cloneQuerySelector = document.getElementById("achievementKey");
         cloneQuerySelector.id = achievementKey;
 
+        achievementListUpdate(achievementList, achievementsUnlocked);
     })
 }
 
@@ -60,45 +60,20 @@ export function achievementListUpdate(achievementList, achievementsUnlocked) {
             achievementList[achievementKey].unlocked = true;
         }
     }
-
-    return achievementList;
+    console.log(achievementList)
 }
 
 export function getAchievementsUnlocked(achievementList) {
     const achievments = Object.keys(achievementList);
     let unlockedAchivments = [];
 
-
     achievments.forEach(achievementKey => {
-
         const unlockedAchiv = achievementList[achievementKey];
 
         if (unlockedAchiv.unlocked) {
-
             unlockedAchivments.push(achievementKey);
-
         }
-
     });
 
     return unlockedAchivments;
 }
-        /*
- 
-/**
-* W zmiennej `achievementList` znajduje się obiekt z osiągnięciami z pliku achievements.json
-* 
- 
-* Na podstawie tej zmiennej należy przejść za pomocą pętli po każdym osiągnięciu po kolei
-* i sprawdzić czy dane osiągnięcie ma ustawiony klucz `unlocked` na `true`
-* jeśli tak dodajemy klucz osiągnięcia do tablicy z odblokowanymi osiągnięciami, 
-* która funkcja powinna zwrócić, zakładając że użytkownik odblokował osiągnięcia:
-* 
-* 'Pierwszy otwieracz'
-* 'Dziesiąty otwieracz'
-* 'Pierwszy menelik'
-* 
-* funkcja powinna zwrócić tablicę:
-* 
-* ["otwieracz1", "otwieracz10", "mietek1"]
-*/
