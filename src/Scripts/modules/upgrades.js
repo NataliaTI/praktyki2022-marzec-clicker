@@ -23,7 +23,7 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         clickSound("upgrade_sound");
         achievements(upgrade.level, upgradeName, achivementList);
 
-        autoClick = upgradeList.current.currentAutoClickValue;
+        autoClick = autoClick + upgrade.autoClickValue;
         extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);

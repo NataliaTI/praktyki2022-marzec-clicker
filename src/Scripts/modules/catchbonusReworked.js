@@ -79,8 +79,9 @@ function removebonus(catchbonus){
         return { counter };
       
       }else {
-        let oldAutoClick = format(autoClick+10);
-        autoClick = autoClick + autoClick +10;
+        const autoClickAdd = autoClick+10
+        let oldAutoClick = format(autoClickAdd);
+        autoClick = autoClick + autoClickAdd;
         let autoClickFormat = format(autoClick);
         const this2 = document.querySelector("body");
         let money = document.createElement('div');
@@ -101,6 +102,6 @@ function removebonus(catchbonus){
       
         document.getElementById('moneyPerSecond').innerHTML ='Na sekundę: ' + autoClickFormat +' $';
         
-        return { autoClick };
+        return { autoClick, autoClickAdd };
       }
   }
