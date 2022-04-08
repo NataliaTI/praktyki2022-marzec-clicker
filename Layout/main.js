@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     loadGameState.then((gameState) => {
 
-        console.log('game state', gameState);
+        
 
         if (gameState) {
 
@@ -207,7 +207,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         setInterval(() => {
             const unlockedAchievements = getAchievementsUnlocked(achivementList);
-            console.log(unlockedAchievements);
             const currentGameState = {
                 "upgrades": getUpgradesStateArray(upgradeList),
                 "upgradeCount": getStat('upgradeCount'),
@@ -221,9 +220,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "achievementCount": unlockedAchievements.length
             }
 
-            console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
             saveGameState(currentGameState);
-        }, 10000);
+        }, 60000);
     });
 });

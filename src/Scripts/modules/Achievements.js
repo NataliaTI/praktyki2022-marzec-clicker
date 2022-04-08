@@ -59,7 +59,6 @@ export function achievementListUpdate(achievementList, achievementsUnlocked) {
             achievementList[achievementKey].unlocked = true;
         }
     }
-    console.log(achievementList)
 }
 
 export function getAchievementsUnlocked(achievementList) {
