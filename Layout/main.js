@@ -13,7 +13,7 @@ import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.j
 import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
 
 
-let counter = 1000000000;
+let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -80,6 +80,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
     const achievementWrap = document.getElementById("tab-achievements");
+    const body = document.querySelector('body');
 
     loadGameState.then((gameState) => {
 
@@ -87,7 +88,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
         // N.
+      
+        // updateUpgradeStat(gameState.upgradeCount);
+        // updateCatchedBonusesStat(gameState.catchedBonuses);
+        // clickCounter(gameState.clickCount);
+        
         console.log('game state', gameState);
+
         if (gameState) {
 
             if ( gameState.hasOwnProperty('upgradeCount') ) {
@@ -127,6 +134,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     achivementList = achivementListTmp;
                 }
             }
+
+            body.style.animation = "loadPage 1s"
         }
 
         achievementShow(achivementList, achievementWrap);
@@ -135,15 +144,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if (event.target && event.target.matches(".catchbonus")) {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
+                
                 if (result.autoClick) {
                     let oldAutoClick = autoClick +10
                     autoClick = autoClick + autoClick;
                     setTimeout(() => {
-                        autoClick = autoClick - oldAutoClick;
+                        autoClick = autoClick - result.autoClickAdd
                         let autoClickFormat = format(autoClick);
                         document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
                     }, 5000);
                     autoClick = result.autoClick
+
                 } else if (result.counter) {
                     counter = result.counter
                 }
@@ -208,8 +219,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 "extraMoneyPerClick": extraMoneyPerClick,
                 "clickCount": getStat('clickCount'),
                 "catchedBonuses": getStat('catchedBonuses'),
-                "achievementsObtained": unlockedAchievements,
-                "achievementCount": unlockedAchievements.length
+                "achievementsObtained":'',// unlockedAchievements,
+                "achievementCount": ''//unlockedAchievements.length
             }    
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);

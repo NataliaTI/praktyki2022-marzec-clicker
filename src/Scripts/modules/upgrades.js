@@ -1,6 +1,6 @@
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
-import { osiagniecia } from "./Achievements.js";
+import { achievements } from "./Achievements.js";
 import { updateUpgradeStat } from "../Components/statistics.js";
 import { clickSound } from "../Components/sounds.js";
 
@@ -21,9 +21,9 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         upgradeList.current.currentAutoClickValue += upgrade.autoClickValue;
         upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
         clickSound("upgrade_sound");
-        osiagniecia(upgrade.level, upgradeName, achivementList);
+        achievements(upgrade.level, upgradeName, achivementList);
 
-        autoClick = upgradeList.current.currentAutoClickValue;
+        autoClick = autoClick + upgrade.autoClickValue;
         extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
