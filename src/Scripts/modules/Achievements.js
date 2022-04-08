@@ -39,7 +39,6 @@ export function achievementShow(achievementList, achievementWrap) {
         const unlocked = achievementList[achievementKey].unlocked;
 
         if (unlocked) {
-
             clone.querySelector(".headline").textContent = header;
             clone.querySelector(".specification").textContent = description;
             clone.querySelector(".achievements-look").classList.add(achievementList[achievementKey].class);
@@ -52,7 +51,6 @@ export function achievementShow(achievementList, achievementWrap) {
     })
 }
 
-
 export function achievementListUpdate(achievementList, achievementsUnlocked) {
 
     /**
@@ -64,11 +62,9 @@ export function achievementListUpdate(achievementList, achievementsUnlocked) {
      */
 }
 
-
 export function getAchievementsUnlocked(achievementList) {
 const achievments = Object.keys(achievementList);
 let unlockedAchivments = [];    
-  
  
     achievments.forEach(achievementKey => {
 
@@ -79,7 +75,6 @@ let unlockedAchivments = [];
         unlockedAchivments.push(achievementKey);
        
          }
-
     });
 
 return unlockedAchivments;

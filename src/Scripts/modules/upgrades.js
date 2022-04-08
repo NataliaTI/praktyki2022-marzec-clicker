@@ -23,8 +23,8 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         clickSound("upgrade_sound");
         achievements(upgrade.level, upgradeName, achivementList);
 
-        autoClick = autoClick + upgrade.autoClickValue;
-        extraMoneyPerClick = upgradeList.current.currentExtraMoneyPerClick;
+        autoClick += upgrade.autoClickValue;
+        extraMoneyPerClick += upgrade.extraMoneyPerClick;
 
         returnedFormatedValue = format(counter);
         upgradeCostFormat = format(upgrade.currentCost);
@@ -36,14 +36,12 @@ export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upg
         upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
         upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
         mobileHeaderH2.textContent = returnedFormatedValue + " $";
-
     }
 
     return { counter, autoClick, extraMoneyPerClick };
 }
 
 export const timer = (counter, autoClick) => counter + autoClick;
-
 
 export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
 
@@ -66,22 +64,8 @@ export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
         upgradeLevel.innerHTML = upgradeList[upgrade.id].level;
     });
 
-    /**
-     * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
-     * W zmiennej `upgradeStatus` znajduje się tablica z zakupionymi ulepszeniami
-     * W zmiennej `upgradeHtml` znajduje się lista elementów HTML z ulepszeniami
-     * 
-     * Na podstawie zmiennej `upgradeStatus` funkcja powinna zaktualizować aktualną
-     * liczbę sztuk danego ulepszenia oraz jego koszt w obiekcie `upgradeList`
-     * a następnie zaktualizować koszt i liczbę sztuk ulepszenia wyświetlaną na ekranie
-     * w zakładce Ulepszenia 
-     * 
-     * Funkcja powinna zwrócić zaktualizowana zmienną `upgradeList`
-     */
-
     return upgradeList;
 }
-
 
 export function getUpgradesStateArray(upgradeList) {
     let upgradeStatus = [];
