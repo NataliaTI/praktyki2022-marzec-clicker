@@ -47,6 +47,25 @@ export const timer = (counter, autoClick) => counter + autoClick;
 
 export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
 
+    upgradeStatus.forEach(upgrade => {        
+            const upgradeCost = upgrade.cost;
+            const upgardeLevel = upgrade.quantity;
+
+            if (upgrade != 'current') {
+                upgradeList[upgrade.id].currentCost = upgradeCost;
+                upgradeList[upgrade.id].level = upgardeLevel;
+            }
+    });
+
+    Array.from(upgradeHtml).forEach((upgrade) => {
+
+        const upgradeCost = upgrade.querySelector('.upgradeCost');
+        const upgradeLevel = upgrade.querySelector('.upgradeLevel');
+
+        upgradeCost.innerHTML = upgradeList[upgrade.id].currentCost + " $";
+        upgradeLevel.innerHTML = upgradeList[upgrade.id].level;
+    });
+
     /**
      * W zmiennej `upgradeList` znajduje się obiekt z konfiguracją ulepszeń z main.js
      * W zmiennej `upgradeStatus` znajduje się tablica z zakupionymi ulepszeniami
@@ -60,6 +79,7 @@ export function upgradeListUpdate(upgradeList, upgradeStatus, upgradeHtml) {
      * Funkcja powinna zwrócić zaktualizowana zmienną `upgradeList`
      */
 
+    return upgradeList;
 }
 
 

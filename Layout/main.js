@@ -12,7 +12,6 @@ import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
 import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
 
-
 let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
@@ -87,11 +86,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // trzeba zaktualizować zmienne odpowiedzialne za
         // aktualny stan gry np. counter, ulepszenia, osiagniecia itd.
         // N.
-      
+
         // updateUpgradeStat(gameState.upgradeCount);
         // updateCatchedBonusesStat(gameState.catchedBonuses);
         // clickCounter(gameState.clickCount);
-        
+
         console.log('game state', gameState);
 
         if (gameState) {
@@ -114,6 +113,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             if (gameState.hasOwnProperty('achievementCount')) {
                 updateAchievementStat(gameState.achievementCount);
+            }
+
+            if (gameState.hasOwnProperty('extraMoneyPerClick')) {
+                extraMoneyPerClick = gameState.extraMoneyPerClick;
+            }
+
+            if (gameState.hasOwnProperty('clickPerSec')) {
+                autoClick = gameState.clickPerSec;
             }
 
             if (gameState.hasOwnProperty('points')) {
@@ -143,7 +150,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if (event.target && event.target.matches(".catchbonus")) {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
-                
+
                 if (result.autoClick) {
                     let oldAutoClick = autoClick + 10
                     autoClick = autoClick + autoClick;
@@ -206,15 +213,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             document.body.classList.add('bodyLoad');
         }, 1000)
 
-        
-
         setInterval(() => {
-
-            // tutaj zamiast obiektu gameState napisanego z ręki trzeba zebrać dane związane ze stanem gry
-            // i przekazać je do funkcji saveGameState tak jak to się dzieje w tej chwili
-            // - N.        
-
-           
             const unlockedAchievements = getAchievementsUnlocked(achivementList);
             console.log(unlockedAchievements);
             const currentGameState = {
@@ -232,17 +231,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
-            extraMoneyPerClick = currentGameState.extraMoneyPerClick;
-            autoClick = currentGameState.clickPerSec;
-            
-
             saveGameState(currentGameState);
         }, 10000);
     });
 });
-
-setInterval(() => {
-    console.log(extraMoneyPerClick);
-    console.log(autoClick);
-}, 10000)
-    
