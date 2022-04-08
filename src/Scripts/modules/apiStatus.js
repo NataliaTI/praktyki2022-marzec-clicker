@@ -15,6 +15,7 @@ export const loadGameState = fetch('https://praktyki-trol-clicker-api.herokuapp.
 })
 .then(data => {
     if (data && data.hasOwnProperty('Data')) {
+        showContent('Przywracanie stanu gry', 'Pomyslnie przywrocono stan gry', 'Recycle.png')
         return data.Data;
     } else {
         return false;
