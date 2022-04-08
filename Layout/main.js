@@ -81,7 +81,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const counterButtonElement = document.getElementById("counter-button");
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
     const achievementWrap = document.getElementById("tab-achievements");
-    const body = document.querySelector('body');
 
     loadGameState.then((gameState) => {
 
@@ -130,7 +129,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
 
-            body.style.animation = "loadPage 1s"
         }
 
         achievementShow(achivementList, achievementWrap);
@@ -198,6 +196,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
             changeCounterElementText(counter);
         }, 1000)
 
+        setTimeout(() => {
+            document.body.classList.add('bodyLoad');
+        }, 1000)
+
+        
+
         setInterval(() => {
 
             // tutaj zamiast obiektu gameState napisanego z ręki trzeba zebrać dane związane ze stanem gry
@@ -221,6 +225,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             console.log('%cmain.js line:109 gameState', 'color: #007acc;', currentGameState);
 
             saveGameState(currentGameState);
-        }, 60000);
+        }, 10000);
     });
 });
