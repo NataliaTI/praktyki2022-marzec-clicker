@@ -13,7 +13,7 @@ import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.j
 import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
 
 
-let counter = 1000000000;
+let counter = 0;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -145,15 +145,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if (event.target && event.target.matches(".catchbonus")) {
                 updateCatchedBonusesStat();
                 let result = bonus(counter, autoClick);
+                console.log(result)
+                
                 if (result.autoClick) {
                     let oldAutoClick = autoClick +10
                     autoClick = autoClick + autoClick;
                     setTimeout(() => {
-                        autoClick = autoClick - oldAutoClick;
+                        autoClick = autoClick - result.autoClickAdd
+                        //autoClick = autoClick - oldAutoClick;
                         let autoClickFormat = format(autoClick);
                         document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $';
                     }, 5000);
                     autoClick = result.autoClick
+
                 } else if (result.counter) {
                     counter = result.counter
                 }
