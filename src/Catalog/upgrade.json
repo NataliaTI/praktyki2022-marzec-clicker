@@ -1,0 +1,127 @@
+{
+  "otwieracz": {
+      "currentCost": 15,
+      "level": 0,
+      "autoClickValue": 0,
+      "extraMoneyPerClick": 0.5,
+      "upgradeName": "otwieracz",
+      "upgradeHeader": "Otwieracz",
+      "iconName": "../../Public/Images/ikona-otwieracz.png",
+      "unlocked": true,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-otwieracz"
+  },
+  "mietek": {
+      "currentCost": 155,
+      "startCost": 155,
+      "level": 0,
+      "autoClickValue": 10,
+      "extraMoneyPerClick": 0,
+      "upgradeName": "mietek",
+      "upgradeHeader": "Mietek żul",
+      "iconName": "../../Public/Images/ikona-mietek.png",
+      "unlocked": true,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-mietek"
+  },
+  "seba": {
+      "currentCost": 1600,
+      "startCost": 1600,
+      "level": 0,
+      "autoClickValue": 90,
+      "extraMoneyPerClick": 9,
+      "upgradeHeader": "Seba z osiedla",
+      "iconName": "../../Public/Images/ikona-dostawa.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-seba"
+  },
+  "grazyna": {
+      "currentCost": 7500,
+      "startCost": 7500,
+      "level": 0,
+      "autoClickValue": 299,
+      "extraMoneyPerClick": 73,
+      "upgradeHeader": "Ekspedientka Grażyna",
+      "iconName": "../../Public/Images/ikona-ekspedientka.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-grazyna"
+  },
+  "gang": {
+      "currentCost": 35000,
+      "startCost": 35000,
+      "level": 0,
+      "autoClickValue": 779,
+      "extraMoneyPerClick": 133,
+      "upgradeHeader": "Gang z podstawówki",
+      "iconName": "../../Public/Images/ikona-hurtownia.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-gang"
+  },
+  "monopolowy": {
+      "currentCost": 130000,
+      "startCost": 130000,
+      "level": 0,
+      "autoClickValue": 1818,
+      "extraMoneyPerClick": 421,
+      "upgradeHeader": "Monopolowy 24/7",
+      "iconName": "../../Public/Images/ikona-monopolowy.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-monopolowy"
+  },
+  "browar": {
+      "currentCost": 800000,
+      "startCost": 800000,
+      "level": 0,
+      "autoClickValue": 0,
+      "extraMoneyPerClick": 3901,
+      "upgradeHeader": "Browar",
+      "iconName": "../../Public/Images/ikona-browar.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-browar"
+  },
+  "destylarnia": {
+      "currentCost": 4000000,
+      "startCost": 4000000,
+      "level": 0,
+      "autoClickValue": 6213,
+      "extraMoneyPerClick": 0,
+      "upgradeHeader": "Destylarnia",
+      "iconName": "../../Public/Images/ikona-destylarnia.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "achievements-destylarnia"
+  },
+  "destylarnia2": {
+      "currentCost": 180000000,
+      "startCost": 180000000,
+      "level": 0,
+      "autoClickValue": 13332,
+      "extraMoneyPerClick": 0,
+      "upgradeHeader": "Destylarnia2",
+      "iconName": "../../Public/Images/ikona-destylarnia.png",
+      "unlocked": false,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-destylarnia2"
+    },
+  "destylarnia3": {
+      "currentCost": 4400000000,
+      "startCost": 4400000000,
+      "level": 0,
+      "autoClickValue": 79023,
+      "extraMoneyPerClick": 0,
+      "upgradeHeader": "Destylarnia3",
+      "iconName": "../../Public/Images/ikona-destylarnia.png",
+      "unlocked": true,
+      "tooltip": "Punkty na klikniecie: 0,5 $ <br> Punkty na sekunde 0 $",
+      "class": "upgrades-destylarnia3"
+    },
+  "current": {
+      "currentAutoClickValue": 0,
+      "currentExtraMoneyPerClick": 0
+  }
+}

@@ -54,7 +54,7 @@
                             <p class="upgradeLevel">0</p>
                         </div>
 
-                        <div class="menu-upgrades__list-item" id="mietek">
+                        <!-- <div class="menu-upgrades__list-item" id="mietek">
                             <div class="upgrade1-div">
                                 <div class="upgrade__img-mietek upgrade__img"></div>
                                 <div class="menu-upgrades__list-item-info menu-upgrades__tooltip">
@@ -147,7 +147,10 @@
                                 </div>
                             </div>
                             <p class="upgradeLevel">0</p>
-                        </div>
+                        </div> -->
+                    </div>
+                    <div class="menu__div-list menu-div-upgrades" id="tab-upgrades">
+                        
                     </div>
 
                     <div class="menu__div-list menu-div-achievements" id="tab-achievements">
@@ -252,6 +255,37 @@
                 </div>
             </div>
         </template>
+        <!-- <template id="upgrade-show">
+            <div class="menu__upgrades-list-item" id="upgradeKey">
+                <div class="upgrades-img__wrap">
+                    <div class="upgrades-look"></div>
+                </div>
+                <div class="menu__upgrades-list-item-info">
+                    <h2 class="headline">Zablokowane</h2>
+                    <p class="specification">Zablokowane</p>
+                </div>
+            </div>
+        </template> -->
+        <template id="upgrade-show">
+        <div class="menu__div-list menu-upgrades menu__div--active" id="upgradeKey">
+            <div class="menu-upgrades__list-item">
+                <div class="upgrade1-div">
+                    <!-- <div class="upgrades-look"></div> -->
+                <div class="upgrades-img__wrap">
+                    <div class="upgrades-look"></div>
+                </div>
+                    <div class=" menu-upgrades__tooltip">
+                        <h2 class="upgrade-headline" >Zablokowane</h2>
+                        <p class="upgrade-specification">Zablokowane</p>
+                        <span class="menu-upgrades__tooltiptext menu-upgrades__tooltiptext">Zablokowane<br>Zablokowane</span>
+                    </div>
+                </div>
+                <p class="upgrade-level">Zablokowane</p>
+            </div>
+        </template>
+        <!-- <script src="../../src/Catalog/upgrade.json"></script> -->
+        <!-- <script type="module" src="../../src/Scripts/modules/upgradesreworked.js"></script> -->
+
 
 </body>
 
