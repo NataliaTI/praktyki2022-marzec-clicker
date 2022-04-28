@@ -13,6 +13,9 @@ body {
     opacity: 0;
     transition: 1s;
 }
+.upgrade-show{
+    cursor: default;
+}
 
 .bodyLoad {
     opacity: 1;
@@ -79,7 +82,7 @@ html {
 
 
 .menu {
-    width: 500px;
+    width: 510px;
     height: 100%;
 }
 
@@ -214,7 +217,6 @@ html {
     padding-left: 10px;
     padding-right: 30px;
     border-bottom: 1px solid black;
-    cursor: pointer;
 }
 
 .upgrade1-div {
@@ -839,3 +841,9 @@ html {
     top: 85%;
     left: 60%;
 }
+
+.testt{
+cursor: default;
+}
+
+

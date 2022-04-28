@@ -12,12 +12,12 @@ import upgradeList from '../src/Catalog/upgrade.json';
 import { clickSound } from '../src/Scripts/Components/sounds.js';
 import { loadGameState, saveGameState } from '../src/Scripts/modules/apiStatus.js'
 import { achievementShow, achievementListUpdate, getAchievementsUnlocked } from "../src/Scripts/modules/Achievements.js"
-import { upgrade, upgradeShow, timer, getUpgradesStateArray, upgradeListUpdate2, getupgradesUnlocked } from "../src/Scripts/modules/upgradesreworked.js"
+import { upgrades, upgrade, upgradeShow, timer, getUpgradesStateArray, upgradeListUpdate, upgradeListUpdate2, getUpgradesUnlocked, obtainupgrade } from "../src/Scripts/modules/upgradesreworked.js"
 
 const DEV_MODE = (window.location.hostname === "nataliati.github.io") ? false : true ;
 
-let counter = 11111;
-let totalCounter = counter;
+let counter = 0;
+let totalCounter = 11111;
 let autoClick = 0;
 let extraMoneyPerClick = 0;
 
@@ -85,6 +85,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const upgradeFromHtml = document.getElementsByClassName("menu-upgrades__list-item");
     const achievementWrap = document.getElementById("tab-achievements");
     const upgradeWrap = document.getElementById("tab-upgrades");
+    
 
     loadGameState.then((gameState) => {
 
@@ -189,12 +190,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 counter = gameState.points;
             }
 
-            // if (gameState.hasOwnProperty('upgrades')) {
-            //     const upgradeListTmp = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
-            //     if (upgradeListTmp) {
-            //         upgradeList = upgradeListTmp;
-            //     }
-            // }
+            if (gameState.hasOwnProperty('upgradeKey')) {
+                const upgradeListTmp = upgradeListUpdate(upgradeList, gameState.upgrades, upgradeFromHtml);
+                if (upgradeListTmp) {
+                    upgradeList = upgradeListTmp;
+                }
+            }
 
             if (gameState.hasOwnProperty('achievementsObtained')) {
                 const achivementListTmp = achievementListUpdate(achivementList, gameState.achievementsObtained);
@@ -238,13 +239,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 const upgradeId = upgradeDiv;
 
                 upgradeDiv.addEventListener('click', (event) => {
-                    const result = upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList);
+                    const result = upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upgradeId.id, upgradeDiv, achivementList, totalCounter);
                     counter = result.counter;
                     autoClick = result.autoClick;
                     extraMoneyPerClick = result.extraMoneyPerClick;
                 });
             }
         }
+
 
         if (counterButtonElement) {
             counterButtonElement.addEventListener('click', (event) => {
@@ -270,6 +272,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setInterval(() => {
             counter = timer(counter, autoClick);
             changeCounterElementText(counter);
+            //obtainupgrade(upgradeList, upgradeWrap, totalCounter)
+
         }, 1000)
 
         setTimeout(() => {
@@ -278,7 +282,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         setInterval(() => {
             const unlockedAchievements = getAchievementsUnlocked(achivementList);
-            //const unlockedUpgrades = getupgradesUnlocked(upgradeList);
+            const unlockedUpgrades = getUpgradesUnlocked(upgradeList); 
+            console.log(unlockedUpgrades)
             const currentGameState = {
                 "upgrades": getUpgradesStateArray(upgradeList),
                 "upgradeCount": getStat('upgradeCount'),

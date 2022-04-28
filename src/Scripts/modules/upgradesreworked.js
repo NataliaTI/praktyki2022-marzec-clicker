@@ -1,9 +1,11 @@
 import  upgradeList  from '../../Catalog/upgrade.json';
+import { showContent } from "../Components/alert.js";
 import { format } from "../Components/format.js";
 import { round } from "../Components/format.js";
 import { achievements } from "./Achievements.js";
 import { updateUpgradeStat } from "../Components/statistics.js";
 import { clickSound } from "../Components/sounds.js";
+//import { totalCounter } from "../modules/onClickIncrement.js"
 
 // let upgradeList2 = {
 //      'current': {
@@ -19,34 +21,83 @@ const mobileHeaderH2 = document.querySelector('.mobile__header--h2');
 let upgradeCostFormat = 0;
 let returnedFormatedValue = 0;
 let autoClickFormat;
+let totalCounter = 0
+setInterval(() => {
+  totalCounter = totalCounter + 100
+  console.log(totalCounter)
+}, 1000);
+setInterval(() => {
+  console.log(totalCounter)
+}, 1001);
 
-export function upgrades(upgradeName, upgradeList, totalCounter ) {
-  const upgradeLevel = Object.keys(upgradeList);
 
-  upgradeLevel.forEach(upgradeKey => {
-      if (upgradeList[upgradeKey].startCost == totalCounter ) {
-          updateUpgradeStat();
+// export function upgrades(upgradeName, upgradeList, totalCounter ) {
+//   const upgradeLevel = Object.keys(upgradeList);
+//   console.log(totalCounter)
 
+
+//   upgradeLevel.forEach(upgradeKey => {
+//     console.log(upgradeKey)
+//       if (upgradeList[upgradeKey].startCost <= totalCounter  ) {
+//           updateUpgradeStat();
+//           console.log(totalCounter)
+
+//           const upgrade = document.getElementById(upgradeKey);
+//           const name = upgradeList[upgradeKey].class;
+//           const cost = format(upgradeList[upgradeKey].currentCost);
+//           const level = upgradeList[upgradeKey].level;
+//           const header = upgradeList[upgradeKey].upgradeHeader;
+//           const tooltip = upgradeList[upgradeKey].tooltip;
+//           const upgradeImage = upgradeList[upgradeKey].iconName;
+//           upgradeList[upgradeKey].unlocked = true;
+//           upgrade.querySelector('.upgrade-headline').innerHTML = header;
+//           upgrade.querySelector('.upgrade-specification').innerHTML = cost + " $";
+//           upgrade.querySelector('.upgrade-level').innerHTML = level;
+//           upgrade.querySelector('.menu-upgrades__tooltiptext').innerHTML = tooltip;
+//           upgrade.querySelector('.upgrades-look').classList.add(name);
+//           //showContent(cost, header, level, upgradeImage);
+//           //clickSound("achievement_sound");
+//       }
+//   });
+// } 
+//export function obtainupgrade(upgradeName, upgradeList, totalCounter) {
+
+  
+
+const upgradeLevel = Object.keys(upgradeList);
+upgradeLevel.forEach(upgradeKey => {
+  document.getElementById("wrap").addEventListener('click', (event) => {
+    console.log(totalCounter)
+if (event.target && event.target.matches(".wrap")) {
+  
+
+if (upgradeList[upgradeKey].startCost <= totalCounter) {
+  upgradeList[upgradeKey].unlocked = true
+  // const stencil = document.getElementById("upgrade-show");
+  // const clone = stencil.content.cloneNode(true);
+  // const testt = clone.querySelector('.testt')
+  // const testt = testt.querySelector('#upgradeKey')
+  // testt.classList.remove('testt');
+  // console.log(testt)
           const upgrade = document.getElementById(upgradeKey);
+          const name = upgradeList[upgradeKey].class;
           const cost = format(upgradeList[upgradeKey].currentCost);
           const level = upgradeList[upgradeKey].level;
           const header = upgradeList[upgradeKey].upgradeHeader;
           const tooltip = upgradeList[upgradeKey].tooltip;
           const upgradeImage = upgradeList[upgradeKey].iconName;
-          upgradeList[upgradeKey].unlocked = true;
           upgrade.querySelector('.upgrade-headline').innerHTML = header;
-          upgrade.querySelector('.upgrade-specification').innerHTML = cost;
+          upgrade.querySelector('.upgrade-specification').innerHTML = cost + " $";
           upgrade.querySelector('.upgrade-level').innerHTML = level;
           upgrade.querySelector('.menu-upgrades__tooltiptext').innerHTML = tooltip;
           upgrade.querySelector('.upgrades-look').classList.add(name);
-          showContent(cost, header, level, upgradeImage);
-          //clickSound("achievement_sound");
-      }
-  });
 }
+}
+})
 
+})
 
-export function upgradeShow(upgradeList, upgradeWrap, upgradesUnlocked, totalCounter) {
+export function upgradeShow(upgradeList, upgradeWrap, upgradesUnlocked) {
 
   const stencil = document.getElementById("upgrade-show");
   const upgrades = Object.keys(upgradeList);
@@ -58,14 +109,17 @@ export function upgradeShow(upgradeList, upgradeWrap, upgradesUnlocked, totalCou
       const cost = format(upgradeList[upgradeKey].currentCost);
       const unlocked = upgradeList[upgradeKey].unlocked;
       const level = upgradeList[upgradeKey].level;
-      const tooltip =upgradeList[upgradeKey].tooltip;
+      const tooltip = upgradeList[upgradeKey].tooltip;
+      const testt = clone.querySelector('.testt')
 
       if (unlocked) {
+          testt.classList.remove('testt');
           clone.querySelector(".upgrade-headline").textContent = header;
           clone.querySelector(".upgrade-specification").textContent = cost + " $";
           clone.querySelector(".upgrade-level").textContent = level;
           clone.querySelector('.menu-upgrades__tooltiptext').innerHTML = tooltip;
           clone.querySelector(".upgrades-look").classList.add(upgradeList[upgradeKey].class);
+          
 
       }
       upgradeWrap.appendChild(clone);
@@ -81,6 +135,8 @@ export function upgradeListUpdate(upgradeList, upgradesUnlocked) {
 
   if (Array.isArray(upgradesUnlocked)) {
       for (let upgradeKey of upgradesUnlocked) {
+        console.log(upgradeList)
+        console.log(upgradeKey)
           upgradeList[upgradeKey].unlocked = true;
       }
   }
@@ -140,11 +196,9 @@ export function getUpgradesStateArray(upgradeList) {
   return upgradeStatus;
 }
 
-export function upgrade(upgradeList, upgradeList2, counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList) {
+export function upgrade(upgradeList, counter, autoClick, extraMoneyPerClick, upgradeName, upgradeDiv, achivementList, totalCounter) {
   const upgrade = upgradeList[upgradeName];
-  console.log(upgradeName)
-  //console.log(upgrade.currentCost)
-  if (counter >= upgrade.currentCost) {
+  if (counter >= upgrade.currentCost && upgrade.unlocked == true) {
       counter -= upgrade.currentCost;
   
       upgrade.currentCost *= 1.15;
@@ -155,6 +209,7 @@ export function upgrade(upgradeList, upgradeList2, counter, autoClick, extraMone
       upgradeList.current.currentExtraMoneyPerClick += upgrade.extraMoneyPerClick;
       clickSound("upgrade_sound");
       achievements(upgrade.level, upgradeName, achivementList);
+      //upgrades(upgradeName, upgradeList, totalCounter )
 
       autoClick += upgrade.autoClickValue;
       extraMoneyPerClick += upgrade.extraMoneyPerClick;
@@ -166,8 +221,8 @@ export function upgrade(upgradeList, upgradeList2, counter, autoClick, extraMone
       document.getElementById('counter').innerHTML = returnedFormatedValue + ' $';
       document.getElementById('moneyPerSecond').innerHTML = 'Na sekundę: ' + autoClickFormat + ' $'; 
       document.getElementById('stat3').innerHTML = autoClickFormat;
-      upgradeDiv.querySelector('.upgradeLevel').innerHTML = upgrade.level;
-      upgradeDiv.querySelector('.upgradeCost').innerHTML = upgradeCostFormat + ' $';
+      upgradeDiv.querySelector('.upgrade-level').innerHTML = upgrade.level;
+      upgradeDiv.querySelector('.upgrade-specification').innerHTML = upgradeCostFormat + ' $';
       mobileHeaderH2.textContent = returnedFormatedValue + " $";
   }
 
